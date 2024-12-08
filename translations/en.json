@@ -1,0 +1,120 @@
+{
+    "MainMenu": {
+        "signin": "Log in",
+        "signup": "Sign Up",
+        "home": "Home",
+        "courses": "Courses",
+        "blog": "Blog",
+        "pages": "Pages",
+        "about_us": "About Us",
+        "contact": "Contact",
+        "shop": "Shop",
+        "lang": "Language",
+        "english": "English",
+        "arabic": "Arabic"
+    },
+    "CartToggle": {
+        "currancy": "AED",
+        "free": "Free",
+        "cart_empty": "Your Shop Cart Is Empty",
+        "total": "Total",
+        "view_cart": "View Cart",
+        "checkout": "Checkout",
+        "continue_shoping": "Continue Buying"
+    },
+    "SearchToggle": {
+        "search_placeholder": "What do you want to learn?"
+    },
+    "HomeHero": {
+        "title_one": "The Begist",
+        "title_two": "Online Education Platform",
+        "title_three": "In UAE",
+        "call_action_one": "Get Started",
+        "call_action_two": "Watch Video",
+        "feature_one": "Over 12000 students",
+        "feature_two": "More than 60 courses",
+        "feature_three": "Learn anything online",
+        "card_one_title": "List of the best",
+        "card_one_bio": "Online Courses",
+        "card_two_title": "Trusted",
+        "card_two_bio": "Certificates",
+        "card_three_title": "The Best",
+        "card_three_bio": "Qualified Teachers"
+    },
+    "LearningPath": {
+        "title": "Why Science Hub?",
+        "bio": "Our qualified teachers offer the best online education experiance in the UAE",
+        "title_one": "Lifetime Access",
+        "description_one": "Unlock courses once and enjoy unlimited access for a lifetime—learn at your own pace, anytime.",
+        "title_two": "Expert Teachers",
+        "description_two": "Learn from the best! Our courses are led by industry experts passionate about sharing their knowledge.",
+        "title_three": "Access Anytime",
+        "description_three": "Flexible learning at your fingertips—study whenever it suits you, day or night.",
+        "title_four": "Learn Anything",
+        "description_four": "Explore a world of possibilities with diverse courses designed to match your interests and goals."
+    },
+    "Courses": {
+        "title": "Explore Our Featured Courses",
+        "bio": "60 + online courses available right now "
+    },
+    "Teachers": {
+        "title": "Verified Teacher",
+        "sample_job_title": "Marketing Coordinator",
+        "sample_students_count": "Students",
+        "sample_courses_count": "Course",
+        "teachers_features_title_one": "Truested By Best",
+        "teachers_features_title_two": "Teachers",
+        "teachers_features_bio": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed doeiusmod tempor incididunt.",
+        "teachers_features_one": "Last Education of Bachelor Degree",
+        "teachers_features_two": "More Than 15 Years Experience",
+        "teachers_features_three": "12 Education Award Winning",
+        "call_action": "See More"
+    },
+    "Categories": {
+        "title": "Top Categories",
+        "bio": "Browse Our Courses by Categories ",
+        "courses_count": "Courses"
+    },
+    "Testimonials": {
+        "title": "Best Learning Experiance",
+        "bio": "Lorem ipsum dolor sit amet, consectetur.",
+        "statictis_one": "9/10 users reported better learning outcomes.",
+        "statictis_two": "85% of students see their course through to completion"
+    },
+    "LearningPathTwo": {
+        "title_one": "Learn",
+        "title_two": "new skills when",
+        "title_three": "and where you like.",
+        "bio": "Use the list below to bring attention to your product’s key",
+        "call_action": "Join Now",
+        "feature_one": "Hand-picked authors",
+        "feature_two": "Easy to follow curriculum",
+        "feature_three": "Free courses",
+        "feature_four": "Money-back guarantee"
+    },
+    "Registeration": {
+        "title_one": "Create Your",
+        "title_two": "Free Account",
+        "email_label": " Email Address",
+        "email_placeholder": "Email...",
+        "password_label": "Password",
+        "password_placeholder": "Password...",
+        "btn": "Start Learning For Free",
+        "tearms_conditions": "By continuing, you accept our Terms of Use, our Privacy Policy and that your data is stored in the USA. You confirm you are at least 16 years old (13 if you are an authorized Classrooms user).",
+        "count_down_title": "Register Now and Get a 70% Discount",
+        "count_down_bio": "Get 100 Online Courses For Free",
+        "days": "Days",
+        "hours": "Hours",
+        "minutes": "Minutes",
+        "seconds": "Seconds"
+    },
+    "Blogs": {
+        "title": "Blog",
+        "bio": "10,000+ unique online course list designs",
+        "link": "Browse Blog"
+    },
+    "Footer": {
+        "copyRight": "Science Hub. All Right Reserved.",
+        "lang": "English"
+    }
+  }
