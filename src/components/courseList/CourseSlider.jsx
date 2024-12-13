@@ -3,20 +3,23 @@
 import React, { useEffect, useState } from "react";
 
 import CourceCard from "../homes/courseCards/CourseCardFive";
-import { coursesData } from "@/data/courses";
-import { courseStates } from "@/data/courses";
+import { arCoursesData } from "@/data/courses";
+import { arCourseStates } from "@/data/courses";
 import { Navigation, Pagination } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
+import { useTranslations } from "next-intl";
 
 export default function CoursesSlider({ tabBtnStyle }) {
+
+  const t = useTranslations("CoursesPage");
   const [showSlider, setShowSlider] = useState(false);
-  const [currentCourseState, setCurrentCourseState] = useState("All");
+  const [currentCourseState, setCurrentCourseState] = useState("الجميع");
   const [pageItem, setPageItem] = useState([]);
   useEffect(() => {
-    if (currentCourseState == "All") {
-      setPageItem(coursesData);
+    if (currentCourseState == "الجميع") {
+      setPageItem(arCoursesData);
     } else {
-      const filtered = coursesData.filter(
+      const filtered = arCoursesData.filter(
         (elm) => elm.state == currentCourseState,
       );
       setPageItem(filtered);
@@ -32,12 +35,12 @@ export default function CoursesSlider({ tabBtnStyle }) {
         <div className="tabs -pills js-tabs">
           <div className="row y-gap-20 justify-between items-end">
             <div className="col-auto">
-              <h2 className="text-24 lh-12">Courses to get you started</h2>
+              <h2 className="text-24 lh-12">{t("coursesTitle")}</h2>
             </div>
 
             <div className="col-auto">
               <div className="tabs__controls d-flex justify-center x-gap-10 js-tabs-controls">
-                {courseStates.map((elm, i) => (
+                {arCourseStates.map((elm, i) => (
                   <div key={i}>
                     <button
                       onClick={() => setCurrentCourseState(elm)}

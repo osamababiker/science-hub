@@ -1,6 +1,10 @@
+import { useTranslations } from "next-intl";
 import React from "react";
-import { steps } from "../../../data/steps";
+import { arSteps } from "../../../data/steps";
 export default function WhyCourse() {
+
+  const t = useTranslations("AboutPage");
+
   return (
     <section className="layout-pt-lg layout-pb-lg bg-dark-2">
       <div className="container">
@@ -12,7 +16,7 @@ export default function WhyCourse() {
                 data-aos="fade-up"
                 data-aos-duration={800}
               >
-                Why learn with our courses?
+                {t("why_us_title")}
               </h2>
 
               <p
@@ -20,14 +24,14 @@ export default function WhyCourse() {
                 data-aos="fade-up"
                 data-aos-duration={800}
               >
-                Lorem ipsum dolor sit amet, consectetur.
+                {t("why_us_bio")}
               </p>
             </div>
           </div>
         </div>
 
         <div className="row y-gap-30 pt-50">
-          {steps.map((elm, i) => (
+          {arSteps.map((elm, i) => (
             <div
               key={i}
               className="col-lg-4 col-md-6"

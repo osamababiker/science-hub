@@ -955,7 +955,7 @@ export const arCoursesData = [
         "discountedPrice": 79,
         "paid": true,
         "category": "تصميم",
-        "state": "Popular",
+        "state": "شائعة",
         "languange": "French",
         "authorName": "اسم المعلم",
         "viewStatus": "Good",
@@ -981,7 +981,7 @@ export const arCoursesData = [
         "popular": true,
         "new": true,
         "bestSeller": true,
-        "state": "Fetured",
+        "state": "مميزة",
         "viewStatus": "Low",
         "difficulty": "Easy",
         "desc": "دورة تمهيدية حول استضافة الويب وتسجيل النطاق وكيف يمكنك نشر موقع الويب الخاص بك وتحريره بسهولة عبر الإنترنت."
@@ -1002,7 +1002,7 @@ export const arCoursesData = [
         "authorName": "اسم الاستاذ",
         "paid": true,
         "category": "برمجة",
-        "state": "Trending",
+        "state": "رائجة",
         "viewStatus": "Great",
         "difficulty": "Easy",
         "desc": "دورة تمهيدية حول استضافة الويب وتسجيل النطاق وكيف يمكنك نشر موقع الويب الخاص بك وتحريره بسهولة عبر الإنترنت.."
@@ -1023,7 +1023,7 @@ export const arCoursesData = [
         "authorName": "اسم الاستاذ",
         "paid": true,
         "category": "فنون",
-        "state": "Trending",
+        "state": "رائجة",
         "viewStatus": "Good",
         "difficulty": "Easy",
         "desc": "دورة تمهيدية حول استضافة الويب وتسجيل النطاق وكيف يمكنك نشر موقع الويب الخاص بك وتحريره بسهولة عبر الإنترنت."
@@ -1044,7 +1044,7 @@ export const arCoursesData = [
         "category": "تصوير",
         "languange": "French",
         "authorName": "اسم الاستاذ",
-        "state": "Popular",
+        "state": "شائعة",
         "viewStatus": "Low",
         "difficulty": "Meduium",
         "desc": "دورة تمهيدية حول استضافة الويب وتسجيل النطاق وكيف يمكنك نشر موقع الويب الخاص بك وتحريره بسهولة عبر الإنترنت."
@@ -1066,7 +1066,7 @@ export const arCoursesData = [
         "discountedPrice": 99,
         "paid": true,
         "category": "رسوم متحركة",
-        "state": "Fetured",
+        "state": "مميزة",
         "viewStatus": "Good",
         "difficulty": "Meduium",
         "desc": "دورة تمهيدية حول استضافة الويب وتسجيل النطاق وكيف يمكنك نشر موقع الويب الخاص بك وتحريره بسهولة عبر الإنترنت."
@@ -1088,7 +1088,7 @@ export const arCoursesData = [
         "discountedPrice": 149,
         "paid": true,
         "category": "كتابة",
-        "state": "Popular",
+        "state": "شائعة",
         "viewStatus": "Great",
         "difficulty": "Hard",
         "desc": "دورة تمهيدية حول استضافة الويب وتسجيل النطاق وكيف يمكنك نشر موقع الويب الخاص بك وتحريره بسهولة عبر الإنترنت."
@@ -1110,7 +1110,7 @@ export const arCoursesData = [
         "discountedPrice": 109,
         "paid": true,
         "category": "تصوير",
-        "state": "Fetured",
+        "state": "مميزة",
         "viewStatus": "Medium",
         "difficulty": "Meduium",
         "desc": "دورة تمهيدية حول استضافة الويب وتسجيل النطاق وكيف يمكنك نشر موقع الويب الخاص بك وتحريره بسهولة عبر الإنترنت."
@@ -1132,7 +1132,7 @@ export const arCoursesData = [
         "discountedPrice": 89,
         "paid": true,
         "category": "برمجة",
-        "state": "Popular",
+        "state": "شائعة",
         "viewStatus": "Great",
         "difficulty": "Hard",
         "desc": "دورة تمهيدية حول استضافة الويب وتسجيل النطاق وكيف يمكنك نشر موقع الويب الخاص بك وتحريره بسهولة عبر الإنترنت."
@@ -1154,7 +1154,7 @@ export const arCoursesData = [
         "discountedPrice": 99,
         "paid": true,
         "category": "كتابة",
-        "state": "Trending",
+        "state": "رائجة",
         "viewStatus": "Medium",
         "difficulty": "Meduium",
         "desc": "دورة تمهيدية حول استضافة الويب وتسجيل النطاق وكيف يمكنك نشر موقع الويب الخاص بك وتحريره بسهولة عبر الإنترنت."
@@ -1176,7 +1176,7 @@ export const arCoursesData = [
         "discountedPrice": 119,
         "paid": true,
         "category": "تصميم",
-        "state": "Popular",
+        "state": "شائعة",
         "viewStatus": "Medium",
         "difficulty": "Hard",
         "desc": "دورة تمهيدية حول استضافة الويب وتسجيل النطاق وكيف يمكنك نشر موقع الويب الخاص بك وتحريره بسهولة عبر الإنترنت."
@@ -1198,7 +1198,7 @@ export const arCoursesData = [
         "discountedPrice": 119,
         "paid": true,
         "category": "تصميم",
-        "state": "Popular",
+        "state": "شائعة",
         "viewStatus": "Medium",
         "difficulty": "Hard",
         "desc": "دورة تمهيدية حول استضافة الويب وتسجيل النطاق وكيف يمكنك نشر موقع الويب الخاص بك وتحريره بسهولة عبر الإنترنت."
@@ -1217,7 +1217,7 @@ export const arCoursesData = [
         "discountedPrice": 79,
         "paid": true,
         "category": "تصميم",
-        "state": "Popular",
+        "state": "شائعة",
         "languange": "French",
         "authorName": "اسم الاستاذ",
         "viewStatus": "Good",
@@ -1243,7 +1243,7 @@ export const arCoursesData = [
         "popular": true,
         "new": true,
         "bestSeller": true,
-        "state": "Fetured",
+        "state": "مميزة",
         "viewStatus": "Low",
         "difficulty": "Easy",
         "desc": "دورة تمهيدية حول استضافة الويب وتسجيل النطاق وكيف يمكنك نشر موقع الويب الخاص بك وتحريره بسهولة عبر الإنترنت."
@@ -1264,7 +1264,7 @@ export const arCoursesData = [
         "authorName": "اسم الاستاذ",
         "paid": true,
         "category": "برمجة",
-        "state": "Trending",
+        "state": "رائجة",
         "viewStatus": "Great",
         "difficulty": "Easy",
         "desc": "دورة تمهيدية حول استضافة الويب وتسجيل النطاق وكيف يمكنك نشر موقع الويب الخاص بك وتحريره بسهولة عبر الإنترنت."
@@ -1285,7 +1285,7 @@ export const arCoursesData = [
         "authorName": "اسم الاستاذ",
         "paid": true,
         "category": "فنون",
-        "state": "Trending",
+        "state": "رائجة",
         "viewStatus": "Good",
         "difficulty": "Easy",
         "desc": "دورة تمهيدية حول استضافة الويب وتسجيل النطاق وكيف يمكنك نشر موقع الويب الخاص بك وتحريره بسهولة عبر الإنترنت."
@@ -1306,7 +1306,7 @@ export const arCoursesData = [
         "category": "تصوير",
         "languange": "French",
         "authorName": "اسم الاستاذ",
-        "state": "Popular",
+        "state": "شائعة",
         "viewStatus": "Low",
         "difficulty": "Meduium",
         "desc": "دورة تمهيدية حول استضافة الويب وتسجيل النطاق وكيف يمكنك نشر موقع الويب الخاص بك وتحريره بسهولة عبر الإنترنت."
@@ -1328,7 +1328,7 @@ export const arCoursesData = [
         "discountedPrice": 99,
         "paid": true,
         "category": "رسوم متحركة",
-        "state": "Fetured",
+        "state": "مميزة",
         "viewStatus": "Good",
         "difficulty": "Meduium",
         "desc": "دورة تمهيدية حول استضافة الويب وتسجيل النطاق وكيف يمكنك نشر موقع الويب الخاص بك وتحريره بسهولة عبر الإنترنت."
@@ -1350,7 +1350,7 @@ export const arCoursesData = [
         "discountedPrice": 149,
         "paid": true,
         "category": "كتابة",
-        "state": "Popular",
+        "state": "شائعة",
         "viewStatus": "Great",
         "difficulty": "Hard",
         "desc": "دورة تمهيدية حول استضافة الويب وتسجيل النطاق وكيف يمكنك نشر موقع الويب الخاص بك وتحريره بسهولة عبر الإنترنت."
@@ -1372,7 +1372,7 @@ export const arCoursesData = [
         "discountedPrice": 109,
         "paid": true,
         "category": "تصوير",
-        "state": "Fetured",
+        "state": "مميزة",
         "viewStatus": "Medium",
         "difficulty": "Meduium",
         "desc": "دورة تمهيدية حول استضافة الويب وتسجيل النطاق وكيف يمكنك نشر موقع الويب الخاص بك وتحريره بسهولة عبر الإنترنت."
@@ -1394,7 +1394,7 @@ export const arCoursesData = [
         "discountedPrice": 89,
         "paid": true,
         "category": "برمجة",
-        "state": "Popular",
+        "state": "شائعة",
         "viewStatus": "Great",
         "difficulty": "Hard",
         "desc": "دورة تمهيدية حول استضافة الويب وتسجيل النطاق وكيف يمكنك نشر موقع الويب الخاص بك وتحريره بسهولة عبر الإنترنت."
@@ -1416,7 +1416,7 @@ export const arCoursesData = [
         "discountedPrice": 0,
         "paid": false,
         "category": "كتابة",
-        "state": "Trending",
+        "state": "رائجة",
         "viewStatus": "Medium",
         "difficulty": "Meduium",
         "desc": "دورة تمهيدية حول استضافة الويب وتسجيل النطاق وكيف يمكنك نشر موقع الويب الخاص بك وتحريره بسهولة عبر الإنترنت."
@@ -1438,7 +1438,7 @@ export const arCoursesData = [
         "discountedPrice": 119,
         "paid": true,
         "category": "تصميم",
-        "state": "Popular",
+        "state": "شائعة",
         "viewStatus": "Medium",
         "difficulty": "Hard",
         "desc": "دورة تمهيدية حول استضافة الويب وتسجيل النطاق وكيف يمكنك نشر موقع الويب الخاص بك وتحريره بسهولة عبر الإنترنت."
@@ -1460,7 +1460,7 @@ export const arCoursesData = [
         "discountedPrice": 0,
         "paid": false,
         "category": "تصميم",
-        "state": "Popular",
+        "state": "شائعة",
         "viewStatus": "Medium",
         "difficulty": "Hard",
         "desc": "دورة تمهيدية حول استضافة الويب وتسجيل النطاق وكيف يمكنك نشر موقع الويب الخاص بك وتحريره بسهولة عبر الإنترنت."
@@ -1479,7 +1479,7 @@ export const arCoursesData = [
         "discountedPrice": 79,
         "paid": true,
         "category": "تصميم",
-        "state": "Popular",
+        "state": "شائعة",
         "languange": "English",
         "authorName": "اسم الاستاذ",
         "viewStatus": "Good",
@@ -1505,7 +1505,7 @@ export const arCoursesData = [
         "popular": true,
         "new": true,
         "bestSeller": true,
-        "state": "Fetured",
+        "state": "مميزة",
         "viewStatus": "Low",
         "difficulty": "Easy",
         "desc": "دورة تمهيدية حول استضافة الويب وتسجيل النطاق وكيف يمكنك نشر موقع الويب الخاص بك وتحريره بسهولة عبر الإنترنت."
@@ -1526,7 +1526,7 @@ export const arCoursesData = [
         "authorName": "اسم الاستاذ",
         "paid": true,
         "category": "برمجة",
-        "state": "Trending",
+        "state": "رائجة",
         "viewStatus": "Great",
         "difficulty": "Easy",
         "desc": "دورة تمهيدية حول استضافة الويب وتسجيل النطاق وكيف يمكنك نشر موقع الويب الخاص بك وتحريره بسهولة عبر الإنترنت."
@@ -1547,7 +1547,7 @@ export const arCoursesData = [
         "authorName": "اسم الاستاذ",
         "paid": false,
         "category": "فنون",
-        "state": "Trending",
+        "state": "رائجة",
         "viewStatus": "Good",
         "difficulty": "Easy",
         "desc": "دورة تمهيدية حول استضافة الويب وتسجيل النطاق وكيف يمكنك نشر موقع الويب الخاص بك وتحريره بسهولة عبر الإنترنت."
@@ -1568,7 +1568,7 @@ export const arCoursesData = [
         "category": "تصوير",
         "languange": "English",
         "authorName": "اسم الاستاذ",
-        "state": "Popular",
+        "state": "شائعة",
         "viewStatus": "Low",
         "difficulty": "Meduium",
         "desc": "دورة تمهيدية حول استضافة الويب وتسجيل النطاق وكيف يمكنك نشر موقع الويب الخاص بك وتحريره بسهولة عبر الإنترنت."
@@ -1590,7 +1590,7 @@ export const arCoursesData = [
         "discountedPrice": 0,
         "paid": false,
         "category": "رسوم متحركة",
-        "state": "Fetured",
+        "state": "مميزة",
         "viewStatus": "Good",
         "difficulty": "Meduium",
         "desc": "دورة تمهيدية حول استضافة الويب وتسجيل النطاق وكيف يمكنك نشر موقع الويب الخاص بك وتحريره بسهولة عبر الإنترنت."
@@ -1612,7 +1612,7 @@ export const arCoursesData = [
         "discountedPrice": 149,
         "paid": true,
         "category": "كتابة",
-        "state": "Popular",
+        "state": "شائعة",
         "viewStatus": "Great",
         "difficulty": "Hard",
         "desc": "دورة تمهيدية حول استضافة الويب وتسجيل النطاق وكيف يمكنك نشر موقع الويب الخاص بك وتحريره بسهولة عبر الإنترنت."
@@ -1634,7 +1634,7 @@ export const arCoursesData = [
         "discountedPrice": 0,
         "paid": false,
         "category": "تصوير",
-        "state": "Fetured",
+        "state": "مميزة",
         "viewStatus": "Medium",
         "difficulty": "Meduium",
         "desc": "دورة تمهيدية حول استضافة الويب وتسجيل النطاق وكيف يمكنك نشر موقع الويب الخاص بك وتحريره بسهولة عبر الإنترنت."
@@ -1656,7 +1656,7 @@ export const arCoursesData = [
         "discountedPrice": 89,
         "paid": true,
         "category": "برمجة",
-        "state": "Popular",
+        "state": "شائعة",
         "viewStatus": "Great",
         "difficulty": "Hard",
         "desc": "دورة تمهيدية حول استضافة الويب وتسجيل النطاق وكيف يمكنك نشر موقع الويب الخاص بك وتحريره بسهولة عبر الإنترنت."
@@ -1678,7 +1678,7 @@ export const arCoursesData = [
         "discountedPrice": 0,
         "paid": false,
         "category": "كتابة",
-        "state": "Trending",
+        "state": "رائجة",
         "viewStatus": "Medium",
         "difficulty": "Meduium",
         "desc": "دورة تمهيدية حول استضافة الويب وتسجيل النطاق وكيف يمكنك نشر موقع الويب الخاص بك وتحريره بسهولة عبر الإنترنت."
@@ -1700,7 +1700,7 @@ export const arCoursesData = [
         "discountedPrice": 119,
         "paid": true,
         "category": "تصميم",
-        "state": "Popular",
+        "state": "شائعة",
         "viewStatus": "Medium",
         "difficulty": "Hard",
         "desc": "دورة تمهيدية حول استضافة الويب وتسجيل النطاق وكيف يمكنك نشر موقع الويب الخاص بك وتحريره بسهولة عبر الإنترنت."
@@ -1722,7 +1722,7 @@ export const arCoursesData = [
         "discountedPrice": 0,
         "paid": false,
         "category": "تصميم",
-        "state": "Popular",
+        "state": "شائعة",
         "viewStatus": "Medium",
         "difficulty": "Hard",
         "desc": "دورة تمهيدية حول استضافة الويب وتسجيل النطاق وكيف يمكنك نشر موقع الويب الخاص بك وتحريره بسهولة عبر الإنترنت."
@@ -1741,7 +1741,7 @@ export const arCoursesData = [
         "discountedPrice": 79,
         "paid": true,
         "category": "تصميم",
-        "state": "Popular",
+        "state": "شائعة",
         "languange": "English",
         "authorName": "اسم الاستاذ",
         "viewStatus": "Good",
@@ -1767,7 +1767,7 @@ export const arCoursesData = [
         "popular": true,
         "new": true,
         "bestSeller": true,
-        "state": "Fetured",
+        "state": "مميزة",
         "viewStatus": "Low",
         "difficulty": "Easy",
         "desc": "دورة تمهيدية حول استضافة الويب وتسجيل النطاق وكيف يمكنك نشر موقع الويب الخاص بك وتحريره بسهولة عبر الإنترنت."
@@ -1788,7 +1788,7 @@ export const arCoursesData = [
         "authorName": "اسم الاستاذ",
         "paid": true,
         "category": "برمجة",
-        "state": "Trending",
+        "state": "رائجة",
         "viewStatus": "Great",
         "difficulty": "Easy",
         "desc": "دورة تمهيدية حول استضافة الويب وتسجيل النطاق وكيف يمكنك نشر موقع الويب الخاص بك وتحريره بسهولة عبر الإنترنت."
@@ -1809,7 +1809,7 @@ export const arCoursesData = [
         "authorName": "اسم الاستاذ",
         "paid": true,
         "category": "فنون",
-        "state": "Trending",
+        "state": "رائجة",
         "viewStatus": "Good",
         "difficulty": "Easy",
         "desc": "دورة تمهيدية حول استضافة الويب وتسجيل النطاق وكيف يمكنك نشر موقع الويب الخاص بك وتحريره بسهولة عبر الإنترنت."
@@ -1830,7 +1830,7 @@ export const arCoursesData = [
         "category": "تصوير",
         "languange": "English",
         "authorName": "اسم الاستاذ",
-        "state": "Popular",
+        "state": "شائعة",
         "viewStatus": "Low",
         "difficulty": "Meduium",
         "desc": "دورة تمهيدية حول استضافة الويب وتسجيل النطاق وكيف يمكنك نشر موقع الويب الخاص بك وتحريره بسهولة عبر الإنترنت."
@@ -1852,7 +1852,7 @@ export const arCoursesData = [
         "discountedPrice": 99,
         "paid": true,
         "category": "رسوم متحركة",
-        "state": "Fetured",
+        "state": "مميزة",
         "viewStatus": "Good",
         "difficulty": "Meduium",
         "desc": "دورة تمهيدية حول استضافة الويب وتسجيل النطاق وكيف يمكنك نشر موقع الويب الخاص بك وتحريره بسهولة عبر الإنترنت."
@@ -1874,7 +1874,7 @@ export const arCoursesData = [
         "discountedPrice": 149,
         "paid": true,
         "category": "كتابة",
-        "state": "Popular",
+        "state": "شائعة",
         "viewStatus": "Great",
         "difficulty": "Hard",
         "desc": "دورة تمهيدية حول استضافة الويب وتسجيل النطاق وكيف يمكنك نشر موقع الويب الخاص بك وتحريره بسهولة عبر الإنترنت."
@@ -1904,6 +1904,8 @@ export const arCatagories = [
   ];
 
 export const courseStates = ["All", "Fetured", "Popular", "Trending"];
+
+export const arCourseStates = ["الجميع", "مميزة", "شائعة", "رائجة"];
 
 export const viewStatus = ["All", "Great", "Good", "Medium", "Low"];
 

@@ -1281,6 +1281,233 @@ export const teamMembersFull = [
   },
 ];
 
+export const arTeamMembersFull = [
+  {
+    id: 55,
+    name: "دكتور رآئد",
+    role: "تقنية معلومات",
+    imageSrc: "/assets/img/team/1.png",
+    rating: "4.5",
+    studentCount: 692,
+    courseCount: 15,
+    category: "Animation",
+    socialProfile: [
+      {
+        icon: "icon-facebook",
+        url: "https://www.facebook.com/",
+      },
+      {
+        icon: "icon-twitter",
+        url: "https://twitter.com/?lang=en",
+      },
+      {
+        icon: "icon-instagram",
+        url: "https://www.instagram.com/",
+      },
+      {
+        icon: "icon-linkedin",
+        url: "https://www.linkedin.com/",
+      },
+    ],
+  },
+  {
+    id: 56,
+    name: "دكتور رآئد",
+    role: "تصميم ",
+    imageSrc: "/assets/img/team/2.png",
+    rating: "4.5",
+    studentCount: 692,
+    courseCount: 15,
+    category: "Design",
+    socialProfile: [
+      {
+        icon: "icon-facebook",
+        url: "https://www.facebook.com/",
+      },
+      {
+        icon: "icon-twitter",
+        url: "https://twitter.com/?lang=en",
+      },
+      {
+        icon: "icon-instagram",
+        url: "https://www.instagram.com/",
+      },
+      {
+        icon: "icon-linkedin",
+        url: "https://www.linkedin.com/",
+      },
+    ],
+  },
+  {
+    id: 57,
+    name: "دكتور رآئد",
+    role: "هندسة",
+    imageSrc: "/assets/img/team/3.png",
+    rating: "4.5",
+    studentCount: 692,
+    courseCount: 15,
+    category: "Illustration",
+    socialProfile: [
+      {
+        icon: "icon-facebook",
+        url: "https://www.facebook.com/",
+      },
+      {
+        icon: "icon-twitter",
+        url: "https://twitter.com/?lang=en",
+      },
+      {
+        icon: "icon-instagram",
+        url: "https://www.instagram.com/",
+      },
+      {
+        icon: "icon-linkedin",
+        url: "https://www.linkedin.com/",
+      },
+    ],
+  },
+  {
+    id: 58,
+    name: "دكتور رآئد",
+    role: "تسويق",
+    imageSrc: "/assets/img/team/4.png",
+    rating: "4.5",
+    studentCount: 692,
+    courseCount: 15,
+    category: "Business",
+    socialProfile: [
+      {
+        icon: "icon-facebook",
+        url: "https://www.facebook.com/",
+      },
+      {
+        icon: "icon-twitter",
+        url: "https://twitter.com/?lang=en",
+      },
+      {
+        icon: "icon-instagram",
+        url: "https://www.instagram.com/",
+      },
+      {
+        icon: "icon-linkedin",
+        url: "https://www.linkedin.com/",
+      },
+    ],
+  },
+  {
+    id: 59,
+    name: "دكتور رآئد",
+    role: "اعلام وتلفزيون",
+    imageSrc: "/assets/img/team/5.png",
+    rating: "4.5",
+    studentCount: 692,
+    courseCount: 15,
+    category: "Animation",
+    socialProfile: [
+      {
+        icon: "icon-facebook",
+        url: "https://www.facebook.com/",
+      },
+      {
+        icon: "icon-twitter",
+        url: "https://twitter.com/?lang=en",
+      },
+      {
+        icon: "icon-instagram",
+        url: "https://www.instagram.com/",
+      },
+      {
+        icon: "icon-linkedin",
+        url: "https://www.linkedin.com/",
+      },
+    ],
+  },
+  {
+    id: 60,
+    name: "دكتور رآئد",
+    role: "هندسة اتصالات",
+    imageSrc: "/assets/img/team/6.png",
+    rating: "4.5",
+    studentCount: 692,
+    courseCount: 15,
+    category: "Design",
+    socialProfile: [
+      {
+        icon: "icon-facebook",
+        url: "https://www.facebook.com/",
+      },
+      {
+        icon: "icon-twitter",
+        url: "https://twitter.com/?lang=en",
+      },
+      {
+        icon: "icon-instagram",
+        url: "https://www.instagram.com/",
+      },
+      {
+        icon: "icon-linkedin",
+        url: "https://www.linkedin.com/",
+      },
+    ],
+  },
+  {
+    id: 61,
+    name: "دكتور رآئد",
+    role: "برمجة ويب",
+    imageSrc: "/assets/img/team/7.png",
+    rating: "4.5",
+    studentCount: 692,
+    courseCount: 15,
+    category: "Illustration",
+    socialProfile: [
+      {
+        icon: "icon-facebook",
+        url: "https://www.facebook.com/",
+      },
+      {
+        icon: "icon-twitter",
+        url: "https://twitter.com/?lang=en",
+      },
+      {
+        icon: "icon-instagram",
+        url: "https://www.instagram.com/",
+      },
+      {
+        icon: "icon-linkedin",
+        url: "https://www.linkedin.com/",
+      },
+    ],
+  },
+  {
+    id: 62,
+    name: "دكتور رآئد",
+    role: "مبيعات",
+    imageSrc: "/assets/img/team/8.png",
+    rating: "4.5",
+    studentCount: 692,
+    courseCount: 15,
+    category: "Business",
+    socialProfile: [
+      {
+        icon: "icon-facebook",
+        url: "https://www.facebook.com/",
+      },
+      {
+        icon: "icon-twitter",
+        url: "https://twitter.com/?lang=en",
+      },
+      {
+        icon: "icon-instagram",
+        url: "https://www.instagram.com/",
+      },
+      {
+        icon: "icon-linkedin",
+        url: "https://www.linkedin.com/",
+      },
+    ],
+  },
+];
+
 export const populerTags = [
   { id: 1, text: "User Experience Design" },
   { id: 2, text: "Figma" },

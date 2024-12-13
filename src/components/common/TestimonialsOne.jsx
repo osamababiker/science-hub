@@ -5,11 +5,15 @@ import { Navigation, Pagination } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
 import SwiperCore from "swiper";
 // import 'swiper/swiper.min.css';
-import { testimonials } from "../../../data/tesimonials";
+import { arTestimonials } from "../../../data/tesimonials";
 import { counters } from "../../../data/count";
+import { useTranslations } from "next-intl";
 // SwiperCore.use([Pagination]);
 
 export default function TestimonialsOne() {
+
+  const t = useTranslations("AboutPage");
+
   const [showSlider, setShowSlider] = useState(false);
   useEffect(() => {
     setShowSlider(true);
@@ -21,11 +25,11 @@ export default function TestimonialsOne() {
           <div className="col-auto">
             <div className="sectionTitle ">
               <h2 className="sectionTitle__title text-green-1">
-                What People Say
+                {t("testimonial_title")}
               </h2>
 
               <p className="sectionTitle__text text-white">
-                Lorem ipsum dolor sit amet, consectetur.
+              {t("testimonial_bio")}
               </p>
             </div>
           </div>
@@ -59,7 +63,7 @@ export default function TestimonialsOne() {
                 },
               }}
             >
-              {testimonials.map((elm, i) => (
+              {arTestimonials.map((elm, i) => (
                 <SwiperSlide key={i} className="swiper-slide">
                   <div
                     className="testimonials -type-1"
@@ -98,35 +102,20 @@ export default function TestimonialsOne() {
             </Swiper>
           )}
 
-          <div className="d-flex x-gap-20 items-center justify-end pt-60 lg:pt-40">
+          <div className="d-flex x-gap-20 items-center justify-start pt-60 lg:pt-40">
             <div className="col-auto">
               <button className="button -outline-white text-white size-50 rounded-full d-flex justify-center items-center js-prev">
-                <i className="icon icon-arrow-left text-24"></i>
+                <i className="icon icon-arrow-right text-24"></i>
               </button>
             </div>
             <div className="col-auto">
               <button className="button -outline-white text-white size-50 rounded-full d-flex justify-center items-center js-next">
-                <i className="icon icon-arrow-right text-24"></i>
+                <i className="icon icon-arrow-left text-24"></i>
               </button>
             </div>
           </div>
         </div>
 
-        <div className="row y-gap-30  counter__row">
-          {counters.map((elm, i) => (
-            <div
-              key={i}
-              className="col-lg-3 col-sm-6"
-              data-aos="fade-left"
-              data-aos-duration={(i + 1) * 350}
-            >
-              <div className="counter -type-1">
-                <div className="counter__number">{elm.number}</div>
-                <div className="counter__title">{elm.title}</div>
-              </div>
-            </div>
-          ))}
-        </div>
       </div>
     </section>
   );

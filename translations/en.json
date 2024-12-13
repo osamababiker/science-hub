@@ -116,5 +116,33 @@
     "Footer": {
         "copyRight": "Science Hub. All Right Reserved.",
         "lang": "English"
+    },
+
+
+
+    "CoursesPage": {
+        "title": "Our Courses",
+        "bio": "List of all our courses to choose from",
+        "coursesTitle": "Courses to get you started",
+        "lesson": "lessons",
+        "currancy": "AED",
+        "free": "Free",
+        "instructorsTitle": "Popular Instructors",
+        "students_count": "Students",
+        "courses_count": "Course"
+    },
+
+
+    "AboutPage": {
+        "title": "About Us",
+        "bio": "We’re on a mission to deliver engaging, curated courses at areasonable price.",
+        "sub_title": "Welcome to Sciance Hub Enhance your skills with best Online courses",
+        "sub_bio" : "We are your gateway to a world of learning and self-improvement. Whether you’re looking to enhance your career, explore new interests, or gain practical skills, our expertly crafted online courses are designed to help you succeed. With a wide range of topics, experienced instructors, and flexible learning options, Sciance Hub is here to empower you on your educational journey. Join us and take the first step toward achieving your goals and unlocking your full potential.",
+        "btn": "Start Learning Now",
+        "why_us_title": "Why learn with our courses?",
+        "why_us_bio": "Our courses combine expert instruction, engaging content, and flexible learning options, empowering you to achieve your goals at your own pace. With lifetime access and a diverse range of topics, you’ll always find the right course to suit your needs.",
+        "testimonial_title": "What People Say",
+        "testimonial_bio": "Lorem ipsum dolor sit amet, consectetur."
     }
+
   }

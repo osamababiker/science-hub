@@ -75,7 +75,7 @@ export default function Menu({ allClasses, headerPosition }) {
             <li>
               <Link
                 data-barba
-                href="#"
+                href="/courses-list"
                 className={menuItem == "Courses" ? "activeMenu" : ""}
               >
                {t('courses')} 
@@ -109,7 +109,7 @@ export default function Menu({ allClasses, headerPosition }) {
                 </li>
                 <li>
                   <Link
-                    href="#"
+                    href="/about"
                     className={
                       submenu == "About Us" ? "activeMenu" : "inActiveMenu"
                     }

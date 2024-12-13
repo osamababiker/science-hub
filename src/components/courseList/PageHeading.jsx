@@ -1,6 +1,10 @@
+import { useTranslations } from "next-intl";
 import React from "react";
 
 export default function PageHeading() {
+
+  const t = useTranslations("CoursesPage");
+
   return (
     <section className="page-header -type-1">
       <div className="container">
@@ -8,12 +12,12 @@ export default function PageHeading() {
           <div className="row">
             <div className="col-auto">
               <div>
-                <h1 className="page-header__title">User Interface Courses</h1>
+                <h1 className="page-header__title">{t('title')}</h1>
               </div>
 
               <div>
                 <p className="page-header__text">
-                  Write an introductory description of the category.
+                {t('bio')}
                 </p>
               </div>
             </div>

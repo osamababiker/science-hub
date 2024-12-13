@@ -3,8 +3,12 @@ import React from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { useState, useEffect } from "react";
+import { useTranslations } from "next-intl";
 export default function CourceCardFive({ data, index }) {
   const [rating, setRating] = useState([]);
+
+  const t = useTranslations("CoursesPage");
+
   useEffect(() => {
     for (let i = Math.round(data.rating); i >= 1; i--) {
       setRating((pre) => [...pre, "star"]);
@@ -34,7 +38,7 @@ export default function CourceCardFive({ data, index }) {
 
           <div className="h-100 pt-15">
             <div className="d-flex items-center">
-              <div className="text-14 lh-1 text-yellow-1 mr-10">
+              <div className="text-14 lh-1 text-yellow-1 ml-10">
                 {data.rating}
               </div>
               <div className="d-flex x-gap-5 items-center">
@@ -42,7 +46,7 @@ export default function CourceCardFive({ data, index }) {
                   <div key={i} className="icon-star text-9 text-yellow-1"></div>
                 ))}
               </div>
-              <div className="text-13 lh-1 ml-10">({data.ratingCount})</div>
+              <div className="text-13 lh-1 mr-10">({data.ratingCount})</div>
             </div>
 
             <div className="text-17 lh-15 fw-500 text-dark-1 mt-10">
@@ -57,19 +61,19 @@ export default function CourceCardFive({ data, index }) {
                   <Image
                     width={16}
                     height={17}
-                    src="assets/img/coursesCards/icons/1.svg"
+                    src="/assets/img/coursesCards/icons/1.svg"
                     alt="icon"
                   />
                 </div>
-                <div className="text-14 lh-1">{data.lessonCount} lesson</div>
+                <div className="text-14 lh-1">{data.lessonCount} {t('lesson')}</div>
               </div>
 
               <div className="d-flex items-center">
-                <div className="mr-8">
+                <div className="ml-8">
                   <Image
                     width={16}
                     height={17}
-                    src="assets/img/coursesCards/icons/2.svg"
+                    src="/assets/img/coursesCards/icons/2.svg"
                     alt="icon"
                   />
                 </div>
@@ -79,11 +83,11 @@ export default function CourceCardFive({ data, index }) {
               </div>
 
               <div className="d-flex items-center">
-                <div className="mr-8">
+                <div className="ml-8">
                   <Image
                     width={16}
                     height={17}
-                    src="assets/img/coursesCards/icons/3.svg"
+                    src="/assets/img/coursesCards/icons/3.svg"
                     alt="icon"
                   />
                 </div>
@@ -93,25 +97,27 @@ export default function CourceCardFive({ data, index }) {
 
             <div className="coursesCard-footer">
               <div className="coursesCard-footer__author">
-                <Image
-                  width={30}
-                  height={30}
-                  src={data.authorImageSrc}
-                  alt="image"
-                />
+                <div className="ml-8">
+                  <Image
+                    width={30}
+                    height={30}
+                    src={data.authorImageSrc}
+                    alt="image"
+                  />
+                </div>
                 <div>{data.authorName}</div>
               </div>
 
               <div className="coursesCard-footer__price">
                 {data.paid ? (
                   <>
-                    <div>${data.originalPrice}</div>
-                    <div>${data.discountedPrice}</div>
+                    <div>{t('currancy')} {data.originalPrice}</div>
+                    <div>{t('currancy')} {data.discountedPrice}</div>
                   </>
                 ) : (
                   <>
                     <div></div>
-                    <div>Free</div>
+                    <div>{t('free')}</div>
                   </>
                 )}
               </div>

@@ -1,8 +1,3 @@
-
-
-
-
-
 import About from '@/src/components/about/About'
 
 
@@ -14,7 +9,7 @@ import TestimonialsOne from '@/src/components/common/TestimonialsOne'
 import WhyCourse from '@/src/components/homes/WhyCourse'
 
 
-import FooterOne from '@/src/components/layout/footers/FooterOne'
+import FooterThree from '@/src/components/layout/footers/FooterThree'
 import Header from '@/src/components/layout/headers/Header'
 import React from 'react'
 
@@ -38,13 +33,9 @@ export default function page() {
             
 
             <TestimonialsOne/>
-            <Instructors/>
-            <Brands/>
-           
 
             
-            
-            <FooterOne/>
+            <FooterThree/>
         </div>
 
     </div>

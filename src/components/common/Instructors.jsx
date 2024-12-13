@@ -1,6 +1,6 @@
 import React from "react";
 import Image from "next/image";
-import { teamMembers } from "../../../data/instractors";
+import { arTeachers } from "../../../data/instractors";
 import Link from "next/link";
 export default function Instructors({ backgroundColor }) {
   return (
@@ -35,7 +35,7 @@ export default function Instructors({ backgroundColor }) {
         </div>
 
         <div className="row y-gap-30 pt-50">
-          {teamMembers.slice(0, 4).map((elm, i) => (
+          {arTeachers.slice(0, 4).map((elm, i) => (
             <div
               key={i}
               className="col-lg-3 col-sm-6"

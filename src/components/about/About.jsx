@@ -1,7 +1,11 @@
 import React from "react";
 import Image from "next/image";
 import Link from "next/link";
+import { useTranslations } from "next-intl";
 export default function About() {
+
+  const t = useTranslations("AboutPage");
+
   return (
     <>
       <section className="page-header -type-1">
@@ -10,13 +14,12 @@ export default function About() {
             <div className="row justify-center text-center">
               <div className="col-auto">
                 <div>
-                  <h1 className="page-header__title">About Us</h1>
+                  <h1 className="page-header__title">{t("title")}</h1>
                 </div>
 
                 <div>
                   <p className="page-header__text">
-                    We’re on a mission to deliver engaging, curated courses at a
-                    reasonable price.
+                  {t("bio")}
                   </p>
                 </div>
               </div>
@@ -58,25 +61,17 @@ export default function About() {
 
             <div className="col-lg-5">
               <h2 className="text-30 lh-16">
-                Welcome to Educrat Enhance your skills with best Online courses
+              {t("sub_title")}
               </h2>
               <p className="text-dark-1 mt-30">
-                You can start and finish one of these popular courses in under a
-                day – for free! Check out the list below.. Take the course for
-                free
-              </p>
-              <p className="pr-50 lg:pr-0 mt-25">
-                Neque convallis a cras semper auctor. Libero id faucibus nisl
-                tincidunt egetnvallis a cras semper auctonvallis a cras semper
-                aucto. Neque convallis a cras semper auctor. Liberoe convallis a
-                cras semper atincidunt egetnval
+              {t("sub_bio")}
               </p>
               <div className="d-inline-block">
                 <Link
                   href="/signup"
                   className="button -md -purple-1 text-white mt-30"
                 >
-                  Start Learning For Free
+                  {t("btn")}
                 </Link>
               </div>
             </div>
