@@ -1,10 +1,13 @@
 "use client";
 
 import React, { useState } from "react";
-import { faq } from "@/data/faq";
+import { arFaq } from "@/data/faq";
 import { faMinus, faPlus } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { useTranslations } from "next-intl";
 export default function Faq() {
+
+  const t = useTranslations("ContactPage");
   const [activeFaq, setActiveFaq] = useState(0);
   return (
     <section className="layout-pt-lg layout-pb-lg bg-light-4">
@@ -13,16 +16,16 @@ export default function Faq() {
           <div className="col-xl-8 col-lg-9 col-md-11">
             <div className="sectionTitle ">
               <h2 className="sectionTitle__title ">
-                Frequently Asked Questions.
+                {t("faq_title")}
               </h2>
 
               <p className="sectionTitle__text ">
-                Ut enim ad minim veniam, quis nostrud exercitation ullamco
+              {t("faq_bio")}
               </p>
             </div>
 
-            <div className="accordion -block text-left pt-60 lg:pt-40 js-accordion">
-              {faq.map((elm, i) => (
+            <div className="accordion -block text-right pt-60 lg:pt-40 js-accordion">
+              {arFaq.map((elm, i) => (
                 <div
                   onClick={() =>
                     setActiveFaq((pre) => (pre == elm.id ? 0 : elm.id))

@@ -1,26 +1,29 @@
 "use client";
 
 import React from "react";
-import { locationData } from "@/data/officeLocation";
+import { arLocationData } from "@/data/officeLocation";
+import { useTranslations } from "next-intl";
 export default function ContactTwo() {
+
+  const t = useTranslations("ContactPage");
+
   const handleSubmit = (e) => {
     e.preventDefault();
   };
   return (
     <>
       <section className="page-header -type-4 bg-beige-1">
-        <div className="container">
+        <div className="container"> 
           <div className="page-header__content">
             <div className="row">
               <div className="col-auto">
                 <div>
-                  <h1 className="page-header__title">Contact Us</h1>
+                  <h1 className="page-header__title">{t("title")}</h1>
                 </div>
 
                 <div>
                   <p className="page-header__text">
-                    We’re on a mission to deliver engaging, curated
-                    <br /> courses at a reasonable price.
+                  {t("bio")}
                   </p>
                 </div>
               </div>
@@ -33,9 +36,9 @@ export default function ContactTwo() {
         <div className="container">
           <div className="row y-gap-50 justify-between">
             <div className="col-xl-5 col-lg-6">
-              <h3 className="text-24 lh-1 fw-500">Our offices</h3>
+              <h3 className="text-24 lh-1 fw-500">{t("address_title")}</h3>
               <div className="row y-gap-30 pt-40">
-                {locationData.map((elm, i) => (
+                {arLocationData.map((elm, i) => (
                   <div key={i} className="col-sm-6">
                     <div className="text-20 fw-500 text-dark-1">
                       {elm.location}
@@ -58,10 +61,9 @@ export default function ContactTwo() {
 
             <div className="col-lg-6">
               <div className="px-40 py-40 bg-white border-light shadow-1 rounded-8 contact-form-to-top">
-                <h3 className="text-24 fw-500">Send a Message</h3>
+                <h3 className="text-24 fw-500">{t("form_title")}</h3>
                 <p className="mt-25">
-                  Neque convallis a cras semper auctor. Libero id faucibus nisl
-                  <br /> tincidunt egetnvallis.
+                {t("form_bio")}
                 </p>
 
                 <form
@@ -70,33 +72,33 @@ export default function ContactTwo() {
                 >
                   <div className="col-12">
                     <label className="text-16 lh-1 fw-500 text-dark-1 mb-10">
-                      Name
+                    {t("name_label")}
                     </label>
                     <input
                       required
                       type="text"
                       name="title"
-                      placeholder="Name..."
+                      placeholder={t("name_placeholder")}
                     />
                   </div>
                   <div className="col-12">
                     <label className="text-16 lh-1 fw-500 text-dark-1 mb-10">
-                      Email Address
+                    {t("email_label")}
                     </label>
                     <input
                       required
                       type="text"
                       name="title"
-                      placeholder="Email..."
+                      placeholder={t("email_placeholder")}
                     />
                   </div>
                   <div className="col-12">
                     <label className="text-16 lh-1 fw-500 text-dark-1 mb-10">
-                      Message...
+                    {t("message_label")}
                     </label>
                     <textarea
                       name="comment"
-                      placeholder="Message"
+                      placeholder={t("message_placeholder")}
                       rows="8"
                       required
                     ></textarea>
@@ -108,7 +110,7 @@ export default function ContactTwo() {
                       id="submit"
                       className="button -md -purple-1 text-white"
                     >
-                      Send Message
+                      {t("send_btn")}
                     </button>
                   </div>
                 </form>

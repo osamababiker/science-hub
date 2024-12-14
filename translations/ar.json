@@ -140,6 +140,100 @@
         "why_us_bio": "تجمع دوراتنا بين تعليم الخبراء والمحتوى الممتع وخيارات التعلم المرنة، مما يمنحك القدرة على تحقيق أهدافك بالوتيرة التي تناسبك. مع الوصول مدى الحياة وتنوع المواضيع، ستجد دائمًا الدورة المناسبة لاحتياجاتك.",
         "testimonial_title": "ماذا يقول الناس؟",
         "testimonial_bio": "هذا النص هو مثال لنص يمكن أن يستبدل في نفس المساحة،"
+    },
+
+
+    "ContactPage": {
+        "title": "تواصل معنا",
+        "bio": "هذا النص هو مثال لنص يمكن أن يستبدل في نفس المساحة،",
+        "address_title": "مكتبنا",
+        "form_title": "ارسل رسالة",
+        "form_bio": "هذا النص هو مثال لنص يمكن أن يستبدل في نفس المساحة، لقد تم توليد هذا النص",
+        "name_label": "الاسم",
+        "name_placeholder": "الاسم...",
+        "email_label": "عنوان البريد",
+        "email_placeholder": "البريد ...",
+        "message_label": "الرسالة...",
+        "message_placeholder": "الرسالة",
+        "send_btn": "ارسال الرسالة" ,
+        "faq_title": "آسئلة شائعة",
+        "faq_bio": "هذا النص هو مثال لنص يمكن أن يستبدل في نفس المساحة، "
+    },
+
+
+
+    "ShopListPage": {
+        "title": "متجرنا",
+        "bio": "نسعى لتقديم دورات تدريبية مفيدة و بسعر معقول.",
+        "filter_search": "ابحث عن كورس",
+        "filter_categories": "التصنيفات",
+        "filter_price": "تصفية حسب السعر",
+        "min_price": "اقل سعر:",
+        "max_price": "اعلى سعر:",
+        "result_count_one": "عرض",
+        "result_count_two": "اجمالي النتائع",
+        "sort_by": ":ترتيب حسب",
+        "default_sort": "ترتيب افتراضي",
+        "currancy": "درهم",
+        "add_to_cart": "اضف للسلة",
+        "alredy_added": "مضاف مسبقا"
+    },
+
+
+    "ShopPage": {
+        "currancy": "درهم",
+        "withlist": "اضف للمفضلة",
+        "category": "التصنيف",
+        "add_to_cart": "اضف للسلة",
+        "alredy_added": "مضاف مسبقا",
+        "description_tab": "الوصف",
+        "reviews_tab": "التقييمات",
+        "reviews_title": "آراء الطلبة",
+        "review_form_title": "اكتب تقييما",
+        "review_title_label": "عنوان التقييم",
+        "review_title_placeholder": "كورس ممتاز",
+        "review_content_label": "محتوى التقييم",
+        "review_content_placeholder": "الرسالة",
+        "review_btn": "ارسال التقييم",
+        "related_courses_title": "كورسات مشابهة"
+    },
+
+
+    "BlogListPage": {
+        "title": "اخر الاخبار",
+        "bio": "غايتنا تقديم دورات تدريبية جذابة ومختارة بأسعار معقولة.",
+        "related_blogs": "مقالات مشابهة"
+    },
+
+
+
+    "signipPage": {
+        "title": "انشاء حساب",
+        "have_account": "لديك حساب مسبقا؟",
+        "login_link": "تسجيل دخول",
+        "email_label": "البريد الالكتروني *",
+        "email_placeholder": "البريد ...",
+        "username_label": "اسم المستخدم *",
+        "username_placeholder": "اسم المستخدم",
+        "password_label": "كلمة المرور",
+        "password_placeholder":"كلمة المرور...",
+        "confirm_password_label": " تآكيد كلمة المرور *",
+        "confirm_password_placeholder": "تآكيد كلمة المرور",
+        "register_btn": "انشاء حساب"
+    },
+
+
+
+
+    "LoginPage": {
+        "title": "تسجيل دخول",
+        "dont_have_account": "لا تملك حساب؟",
+        "register_link": "انشاء حساب مجانا",
+        "email_label": "البريد الالكتروني *",
+        "email_placeholder": "البريد ...",
+        "password_label": "كلمة المرور",
+        "password_placeholder":"كلمة المرور...",
+        "login_btn": "تسجيل دخول"
     }
 
   }

@@ -21,3 +21,28 @@ export const locationData = [
     email: "hi@educrat.com",
   },
 ];
+
+
+export const arLocationData = [
+  {
+    id: 1,
+    location: "لندن",
+    address: "هذا النص هو مثال لنص يمكن أن يستبدل في نفس المساحة، لقد تم توليد",
+    phoneNumber: "+(1) 123 456 7890",
+    email: "info@sciancehub.ae",
+  },
+  {
+    id: 2,
+    location: "الامارات",
+    address: "هذا النص هو مثال لنص يمكن أن يستبدل في نفس المساحة، لقد تم توليد",
+    phoneNumber: "+(1) 123 456 7890",
+    email: "info@sciancehub.ae",
+  },
+  {
+    id: 3,
+    location: "الرياض",
+    address: "هذا النص هو مثال لنص يمكن أن يستبدل في نفس المساحة، لقد تم توليد",
+    phoneNumber: "+(1) 123 456 7890",
+    email: "info@sciancehub.ae",
+  },
+];

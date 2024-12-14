@@ -1,7 +1,7 @@
 "use client";
 import { Navigation, Pagination } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { productData } from "@/data/products";
+import { arProductData } from "@/data/products";
 import { useRef, useEffect, useState } from "react";
 import Image from "next/image";
 import React from "react";
@@ -9,7 +9,10 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faMinus, faPlus } from "@fortawesome/free-solid-svg-icons";
 import ImageLightBox from "./ImageLightBox";
 import { useContextElement } from "@/context/Context";
+import { useTranslations } from "next-intl";
 export default function ProductDetails({ id }) {
+
+  const t = useTranslations("ShopPage");
   const { addProductToCart, isAddedToCartProducts } = useContextElement();
   const swiperRef = useRef(null);
   const [currentSlideIndex, setCurrentSlideIndex] = useState(0);
@@ -31,9 +34,9 @@ export default function ProductDetails({ id }) {
   }, [currentSlideIndex]);
 
   useEffect(() => {
-    const item = productData.filter((elm) => elm.id == id)[0] || productData[0];
+    const item = arProductData.filter((elm) => elm.id == id)[0] || arProductData[0];
     setCurrentItem(item);
-    const OtherItems = productData.filter((elm) => elm != item).slice(0, 3);
+    const OtherItems = arProductData.filter((elm) => elm != item).slice(0, 3);
     setpageItems([item, ...OtherItems]);
   }, []);
 
@@ -146,14 +149,12 @@ export default function ProductDetails({ id }) {
               <div className="pb-90 md:pb-0">
                 <h2 className="text-30 fw-500 mt-4">{currentItem.name}</h2>
                 <div className="text-24 fw-500 text-purple-1 mt-15">
-                  ${currentItem.price}
+                  {currentItem.price} {t("currancy")} 
                 </div>
 
                 <div className="mt-30">
                   <p>
-                    Besides, random text risks to be unintendedly humorous or
-                    offensive, an unacceptable risk in corporate environments
-                    and its many variants have been employed.
+                  هذا النص هو مثال لنص يمكن أن يستبدل في نفس المساحة، لقد تم توليد هذا النص من مولد النص العربى، حيث يمكنك أن تولد مثل هذا النص أو العديد من النصوص الأخرى إضافة إلى زيادة عدد الحروف التى يولدها التطبيق.
                   </p>
                 </div>
 
@@ -194,22 +195,21 @@ export default function ProductDetails({ id }) {
                       onClick={() => addProductToCart(currentItem.id)}
                     >
                       {isAddedToCartProducts(currentItem.id)
-                        ? "Already Added"
-                        : "Add To Cart"}
+                        ? t("alredy_added")
+                        : t("add_to_cart")}
                     </button>
                   </div>
                 </div>
 
                 <div className="pt-30">
                   <button className="d-flex items-center text-light-1">
-                    <i className="icon size-20 mr-8" data-feather="heart"></i>
-                    Add to withlist
+                    <i className="icon size-20 ml-8" data-feather="heart"></i>
+                    {t("withlist")}
                   </button>
                 </div>
 
                 <div className="pt-30">
-                  <p>Category: Classic</p>
-                  <p>Tags: Men, Sports, Women</p>
+                  <p>{ t("category") }: برمجة</p>
                 </div>
               </div>
             </div>
@@ -230,17 +230,17 @@ export default function ProductDetails({ id }) {
                   type="button"
                   onClick={() => setActiveTab(1)}
                 >
-                  Description
+                  {t("description_tab")}
                 </button>
                 <button
-                  className={`tabs__button js-tabs-button ml-30  ${
+                  className={`tabs__button js-tabs-button mr-30  ${
                     activeTab == 2 ? "is-active" : ""
                   } `}
                   data-tab-target=".-tab-item-2"
                   type="button"
                   onClick={() => setActiveTab(2)}
                 >
-                  Reviews (2)
+                  {t("reviews_tab")} (2)
                 </button>
               </div>
             </div>
@@ -255,19 +255,13 @@ export default function ProductDetails({ id }) {
                       } `}
                     >
                       <h4 className="text-18 fw-500">
-                        What makes a good brand book?
+                      هذا النص هو مثال لنص يمكن أن يستبدل في نفس المساحة،
                       </h4>
                       <p className="mt-30">
-                        Sed viverra ipsum nunc aliquet bibendum enim facilisis
-                        gravida. Diam phasellus vestibulum lorem sed risus
-                        ultricies. Magna sit amet purus gravida quis blandit.
-                        Arcu cursus vitae congue mauris. Nunc mattis enim ut
-                        tellus elementum sagittis vitae et leo. Semper risus in
-                        hendrerit gravida rutrum quisque non. At urna
-                        condimentum mattis pellentesque id nibh tortor. A erat
-                        nam at lectus urna duis convallis convallis tellus. Sit
-                        amet mauris commodo quis imperdiet massa. Vitae congue
-                        eu consequat ac felis.
+                      هذا النص هو مثال لنص يمكن أن يستبدل في نفس المساحة، لقد تم توليد هذا النص من مولد النص العربى،
+                       حيث يمكنك أن تولد مثل هذا النص أو العديد من النصوص الأخرى إضافة إلى زيادة عدد الحروف التى يولدها التطبيق.
+                       إذا كنت تحتاج إلى عدد أكبر من الفقرات يتيح لك مولد النص العربى زيادة عدد الفقرات كما تريد،
+                        النص لن يبدو مقسما ولا يحوي أخطاء لغوية، مولد النص العربى مفيد لمصممي المواقع على وجه الخصوص، حيث يحتاج العميل فى كثير من الأحيان أن يطلع على صورة حقيقية لتصميم الموقع.
                       </p>
                     </div>
 
@@ -278,12 +272,12 @@ export default function ProductDetails({ id }) {
                     >
                       <div className="blogPost -comments">
                         <div className="blogPost__content">
-                          <h2 className="text-20 fw-500">Reviews</h2>
+                          <h2 className="text-20 fw-500">{t("reviews_title")}</h2>
 
                           <ul className="comments__list mt-30">
                             <li className="comments__item">
                               <div className="comments__item-inner md:direction-column">
-                                <div className="comments__img mr-20">
+                                <div className="comments__img ml-20">
                                   <div
                                     className="bg-image rounded-full js-lazy"
                                     style={{
@@ -296,9 +290,9 @@ export default function ProductDetails({ id }) {
                                 <div className="comments__body md:mt-15">
                                   <div className="comments__header">
                                     <h4 className="text-17 fw-500 lh-15">
-                                      Ali Tufan
-                                      <span className="text-13 text-light-1 fw-400">
-                                        3 Days ago
+                                      آسامة محمد
+                                      <span className="text-13 text-light-1 fw-400  mr-8">
+                                        قبل ثلاثة ايام
                                       </span>
                                     </h4>
 
@@ -306,37 +300,21 @@ export default function ProductDetails({ id }) {
                                   </div>
 
                                   <h5 className="text-15 fw-500 mt-15">
-                                    The best LMS Design
+                                    افضل كورس بالعالم
                                   </h5>
                                   <div className="comments__text mt-10">
                                     <p>
-                                      This course is a very applicable.
-                                      Professor Ng explains precisely each
-                                      algorithm and even tries to give an
-                                      intuition for mathematical and statistic
-                                      concepts behind each algorithm. Thank you
-                                      very much.
+                                    هذا النص هو مثال لنص يمكن أن يستبدل في نفس المساحة، لقد تم توليد هذا النص من مولد النص العربى، حيث يمكنك أن تولد مثل هذا النص أو العديد من النصوص الأخرى
                                     </p>
                                   </div>
 
-                                  <div className="comments__helpful mt-20">
-                                    <span className="text-13 text-purple-1">
-                                      Was this review helpful?
-                                    </span>
-                                    <button className="button text-13 -sm -purple-1 text-white">
-                                      Yes
-                                    </button>
-                                    <button className="button text-13 -sm -light-7 text-purple-1">
-                                      No
-                                    </button>
-                                  </div>
                                 </div>
                               </div>
                             </li>
 
                             <li className="comments__item">
                               <div className="comments__item-inner md:direction-column">
-                                <div className="comments__img mr-20">
+                                <div className="comments__img ml-20">
                                   <div
                                     className="bg-image rounded-full js-lazy"
                                     style={{
@@ -349,9 +327,9 @@ export default function ProductDetails({ id }) {
                                 <div className="comments__body md:mt-15">
                                   <div className="comments__header">
                                     <h4 className="text-17 fw-500 lh-15">
-                                      Ali Tufan
-                                      <span className="text-13 text-light-1 fw-400">
-                                        3 Days ago
+                                      علي احمد
+                                      <span className="text-13 text-light-1 fw-400 mr-8">
+                                        قبل ساعة
                                       </span>
                                     </h4>
 
@@ -359,29 +337,12 @@ export default function ProductDetails({ id }) {
                                   </div>
 
                                   <h5 className="text-15 fw-500 mt-15">
-                                    The best LMS Design
+                                    معلومات مفيدة جدا
                                   </h5>
                                   <div className="comments__text mt-10">
-                                    <p>
-                                      This course is a very applicable.
-                                      Professor Ng explains precisely each
-                                      algorithm and even tries to give an
-                                      intuition for mathematical and statistic
-                                      concepts behind each algorithm. Thank you
-                                      very much.
+                                  <p>
+                                    هذا النص هو مثال لنص يمكن أن يستبدل في نفس المساحة، لقد تم توليد هذا النص من مولد النص العربى، حيث يمكنك أن تولد مثل هذا النص أو العديد من النصوص الأخرى
                                     </p>
-                                  </div>
-
-                                  <div className="comments__helpful mt-20">
-                                    <span className="text-13 text-purple-1">
-                                      Was this review helpful?
-                                    </span>
-                                    <button className="button text-13 -sm -purple-1 text-white">
-                                      Yes
-                                    </button>
-                                    <button className="button text-13 -sm -light-7 text-purple-1">
-                                      No
-                                    </button>
                                   </div>
                                 </div>
                               </div>
@@ -391,20 +352,7 @@ export default function ProductDetails({ id }) {
                       </div>
 
                       <div className="respondForm pt-30">
-                        <h3 className="text-20 fw-500">Write a Review</h3>
-
-                        <div className="mt-30">
-                          <h4 className="text-16 fw-500">
-                            What is it like to Course?
-                          </h4>
-                          <div className="d-flex x-gap-10 pt-10">
-                            <div className="icon-star text-14 text-yellow-1"></div>
-                            <div className="icon-star text-14 text-yellow-1"></div>
-                            <div className="icon-star text-14 text-yellow-1"></div>
-                            <div className="icon-star text-14 text-yellow-1"></div>
-                            <div className="icon-star text-14 text-yellow-1"></div>
-                          </div>
-                        </div>
+                        <h3 className="text-20 fw-500">{t("review_form_title")}</h3>
 
                         <form
                           className="contact-form respondForm__form row y-gap-30 pt-30"
@@ -412,23 +360,23 @@ export default function ProductDetails({ id }) {
                         >
                           <div className="col-12">
                             <label className="text-16 lh-1 fw-500 text-dark-1 mb-10">
-                              Review Title
+                            {t("review_title_label")}
                             </label>
                             <input
                               required
                               type="text"
                               name="title"
-                              placeholder="Great Courses"
+                              placeholder={t("review_title_placeholder")}
                             />
                           </div>
                           <div className="col-12">
                             <label className="text-16 lh-1 fw-500 text-dark-1 mb-10">
-                              Review Content
+                            {t("review_content_label")}
                             </label>
                             <textarea
                               required
                               name="comment"
-                              placeholder="Message"
+                              placeholder={t("review_content_placeholder")}
                               rows="8"
                             ></textarea>
                           </div>
@@ -439,7 +387,7 @@ export default function ProductDetails({ id }) {
                               id="submit"
                               className="button -md -purple-1 text-white"
                             >
-                              Submit Review
+                              {t("review_btn")}
                             </button>
                           </div>
                         </form>

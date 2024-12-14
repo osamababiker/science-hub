@@ -163,6 +163,18 @@ export const categories = [
   "Writing",
 ];
 
+
+export const arCategories = [
+  "جميع التصنيفات",
+  "برمجة",
+  "تصميم",
+  "هندسة",
+  "مختبرات",
+  "اعلام",
+  "بزنس",
+  "رياضيات",
+];
+
 export const tags = [
   { id: 1, href: "#", name: "Courses" },
   { id: 2, href: "#", name: "Learn" },

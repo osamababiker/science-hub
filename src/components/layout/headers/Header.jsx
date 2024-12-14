@@ -5,7 +5,7 @@ import { HeaderExplore } from "../component/header-explore";
 import SearchToggle from "../component/SearchToggle";
 import CartToggle from "../component/CartToggle";
 import Menu from "../component/Menu";
-import Link from "next/link";
+import {Link} from '@/src/i18n/routing';
 import Image from "next/image";
 import { useState } from "react";
 import { useTranslations } from "next-intl";
@@ -63,11 +63,11 @@ export default function Header() {
                 </div>
 
                 <div className="header-right__buttons d-flex items-center mr-30 xl:ml-20 lg:d-none">
-                <Link href="#" className="button -underline text-white">
+                <Link href="/login" className="button -underline text-white">
                   {t('signin')}
                 </Link>
                 <Link
-                  href="#"
+                  href="/signup"
                   className="button h-50 px-40 -purple-1 -rounded text-white mr-30 xl:ml-20"
                 >
                   {t('signup')}

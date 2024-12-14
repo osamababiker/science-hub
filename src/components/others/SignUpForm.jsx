@@ -1,9 +1,12 @@
 "use client";
 
-import Link from "next/link";
+import { useTranslations } from "next-intl";
+import {Link} from '@/src/i18n/routing';
 import React from "react";
 
 export default function SignUpForm() {
+
+  const t = useTranslations("signipPage");
   const handleSubmit = (e) => {
     e.preventDefault();
   };
@@ -13,11 +16,11 @@ export default function SignUpForm() {
         <div className="row justify-center items-center">
           <div className="col-xl-8 col-lg-9">
             <div className="px-50 py-50 md:px-25 md:py-25 bg-white shadow-1 rounded-16">
-              <h3 className="text-30 lh-13">Sign Up</h3>
+              <h3 className="text-30 lh-13">{t("title")}</h3>
               <p className="mt-10">
-                Already have an account?
-                <Link href="/login" className="text-purple-1">
-                  Log in
+                {t("have_account")}
+                <Link href="/login" className="text-purple-1 mr-8">
+                 {t("login_link")}
                 </Link>
               </p>
 
@@ -27,27 +30,27 @@ export default function SignUpForm() {
               >
                 <div className="col-lg-6">
                   <label className="text-16 lh-1 fw-500 text-dark-1 mb-10">
-                    Email address *
+                    {t("email_label")}
                   </label>
-                  <input required type="text" name="title" placeholder="Name" />
+                  <input required type="text" name="title" placeholder={t("email_placeholder")} />
                 </div>
                 <div className="col-lg-6">
                   <label className="text-16 lh-1 fw-500 text-dark-1 mb-10">
-                    Username *
+                    {t("username_label")}
                   </label>
-                  <input required type="text" name="title" placeholder="Name" />
+                  <input required type="text" name="title" placeholder={t("username_placeholder")} />
                 </div>
                 <div className="col-lg-6">
                   <label className="text-16 lh-1 fw-500 text-dark-1 mb-10">
-                    Password *
+                  {t("password_label")}
                   </label>
-                  <input required type="text" name="title" placeholder="Name" />
+                  <input required type="text" name="title" placeholder={t("password_placeholder")}/>
                 </div>
                 <div className="col-lg-6">
                   <label className="text-16 lh-1 fw-500 text-dark-1 mb-10">
-                    Confirm Password *
+                  {t("confirm_password_label")}
                   </label>
-                  <input required type="text" name="title" placeholder="Name" />
+                  <input required type="text" name="title" placeholder={t("confirm_password_placeholder")} />
                 </div>
                 <div className="col-12">
                   <button
@@ -56,12 +59,12 @@ export default function SignUpForm() {
                     id="submit"
                     className="button -md -green-1 text-dark-1 fw-500 w-1/1"
                   >
-                    Register
+                    {t("register_btn")}
                   </button>
                 </div>
               </form>
 
-              <div className="lh-12 text-dark-1 fw-500 text-center mt-20">
+              {/* <div className="lh-12 text-dark-1 fw-500 text-center mt-20">
                 Or sign in using
               </div>
 
@@ -76,7 +79,7 @@ export default function SignUpForm() {
                     Log In via Google+
                   </button>
                 </div>
-              </div>
+              </div> */}
             </div>
           </div>
         </div>

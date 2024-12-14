@@ -1,12 +1,4 @@
 
-
-
-
-
-
-
-
-
 import PageLinks from '@/src/components/common/PageLinks'
 import Preloader from '@/src/components/common/Preloader'
 
@@ -29,7 +21,7 @@ export default function page() {
     <div className="main-content  ">
       <Preloader/>
 
-        <HeaderAuth/>
+ 
         <div className="content-wrapper js-content-wrapper overflow-hidden">
             <section  className="form-page js-mouse-move-container">
                 <AuthImageMove/>

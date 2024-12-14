@@ -1,16 +1,9 @@
-
-
-
-
-
-
-
 import PageLinks from '@/src/components/common/PageLinks'
 import Preloader from '@/src/components/common/Preloader'
 
 
 
-import FooterOne from '@/src/components/layout/footers/FooterOne'
+import FooterThree from '@/src/components/layout/footers/FooterThree'
 import Header from '@/src/components/layout/headers/Header'
 import ProductDetails from '@/src/components/shop/ProductDetails'
 import RelatedProducts from '@/src/components/shop/RelatedProducts'
@@ -35,7 +28,7 @@ export default function page({ params }) {
 
             
        
-            <FooterOne/>
+            <FooterThree/>
         </div>
 
     </div>

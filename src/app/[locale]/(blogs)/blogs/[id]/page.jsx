@@ -1,12 +1,4 @@
 
-
-
-
-
-
-
-
-
 import RelatedBlogs from '@/src/components/blogs/RelatedBlogs'
 import PageLinks from '@/src/components/common/PageLinks'
 

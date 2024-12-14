@@ -4,7 +4,7 @@ export default function Pagination() {
   return (
     <div className="pagination -buttons">
       <button className="pagination__button -prev">
-        <i className="icon icon-chevron-left"></i>
+        <i className="icon icon-chevron-right"></i>
       </button>
 
       <div className="pagination__count">
@@ -18,7 +18,7 @@ export default function Pagination() {
       </div>
 
       <button className="pagination__button -next">
-        <i className="icon icon-chevron-right"></i>
+        <i className="icon icon-chevron-left"></i>
       </button>
     </div>
   );

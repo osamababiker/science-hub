@@ -1,16 +1,19 @@
 "use client";
 import Image from "next/image";
 import React, { useState, useEffect } from "react";
-import { blogs, categories } from "@/data/blog";
-import Link from "next/link";
+import { arBlogs, arCategories } from "@/data/blog";
+import {Link} from '@/src/i18n/routing';
+import { useTranslations } from "next-intl";
 export default function BlogsOne() {
+
+  const t = useTranslations("BlogListPage");
   const [pageItems, setPageItems] = useState([]);
-  const [currentCategory, setCurrentCategory] = useState("All Categories");
+  const [currentCategory, setCurrentCategory] = useState("جميع التصنيفات");
   useEffect(() => {
-    if (currentCategory == "All Categories") {
-      setPageItems(blogs);
+    if (currentCategory == "جميع التصنيفات") {
+      setPageItems(arBlogs);
     } else {
-      let filtered = blogs.filter((elm) => elm.category == currentCategory);
+      let filtered = arBlogs.filter((elm) => elm.category == currentCategory);
       setPageItems(filtered);
     }
   }, [currentCategory]);
@@ -22,13 +25,12 @@ export default function BlogsOne() {
             <div className="row justify-center text-center">
               <div className="col-auto">
                 <div>
-                  <h1 className="page-header__title">Latest News</h1>
+                  <h1 className="page-header__title">{t("title")}</h1>
                 </div>
 
                 <div>
                   <p className="page-header__text">
-                    We’re on a mission to deliver engaging, curated courses at a
-                    reasonable price.
+                  {t("bio")}
                   </p>
                 </div>
               </div>
@@ -41,7 +43,7 @@ export default function BlogsOne() {
         <div className="container">
           <div className="tabs -pills js-tabs">
             <div className="tabs__controls d-flex justify-center flex-wrap y-gap-20 x-gap-10 js-tabs-controls">
-              {categories.map((elm, i) => (
+              {arCategories.map((elm, i) => (
                 <div key={i} onClick={() => setCurrentCategory(elm)}>
                   <button
                     className={`tabs__button px-15 py-8 rounded-8 js-tabs-button ${
@@ -96,7 +98,7 @@ export default function BlogsOne() {
                   <div className="col-auto">
                     <div className="pagination -buttons">
                       <button className="pagination__button -prev">
-                        <i className="icon icon-chevron-left"></i>
+                        <i className="icon icon-chevron-right"></i>
                       </button>
 
                       <div className="pagination__count">
@@ -110,7 +112,7 @@ export default function BlogsOne() {
                       </div>
 
                       <button className="pagination__button -next">
-                        <i className="icon icon-chevron-right"></i>
+                        <i className="icon icon-chevron-left"></i>
                       </button>
                     </div>
                   </div>

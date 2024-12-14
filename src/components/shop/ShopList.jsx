@@ -2,27 +2,30 @@
 
 import React, { useState, useEffect } from "react";
 import Image from "next/image";
-import { productData, tags, categories } from "@/data/products";
+import { arProductData, tags, arCategories } from "@/data/products";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEye, faHeart } from "@fortawesome/free-regular-svg-icons";
 import Slider from "@mui/material/Slider";
 import Pagination from "../common/Pagination";
 import { faChevronDown } from "@fortawesome/free-solid-svg-icons";
 import { useContextElement } from "@/context/Context";
-import Link from "next/link";
+import {Link} from '@/src/i18n/routing';
+import { useTranslations } from "next-intl";
 export default function ShopList() {
+
+  const t = useTranslations("ShopListPage");
   const { addProductToCart, isAddedToCartProducts } = useContextElement();
 
   const [value, setValue] = useState([200, 1500]);
   const [pageData, setpageData] = useState();
 
-  const [pageItems, setPageItems] = useState(productData);
+  const [pageItems, setPageItems] = useState(arProductData);
   const handleSubmit = (e) => {
     e.preventDefault();
   };
 
   // useEffect(() => {
-  //   const filtered = productData.filter(
+  //   const filtered = arProductData.filter(
   //     (elm, i) => elm.price >= value[0] && elm.price <= value[1],
   //   );
   //   setPageItems(filtered);
@@ -39,13 +42,12 @@ export default function ShopList() {
             <div className="row justify-center text-center">
               <div className="col-auto">
                 <div>
-                  <h1 className="page-header__title">Shop List</h1>
+                  <h1 className="page-header__title">{t("title")}</h1>
                 </div>
 
                 <div>
                   <p className="page-header__text">
-                    We’re on a mission to deliver engaging, curated courses at a
-                    reasonable price.
+                  {t("bio")}
                   </p>
                 </div>
               </div>
@@ -70,16 +72,16 @@ export default function ShopList() {
                           required
                           className="field"
                           type="text"
-                          placeholder="Search"
+                          placeholder={t("filter_search")}
                         />
                       </form>
                     </div>
                   </div>
 
-                  <h5 className="sidebar__title">Categories</h5>
+                  <h5 className="sidebar__title">{t("filter_categories")}</h5>
 
                   <div className="sidebar-content -list">
-                    {categories.map((elm, i) => (
+                    {arCategories.map((elm, i) => (
                       <a key={i} className="text-dark-1" href={elm.href}>
                         {elm.name}
                       </a>
@@ -88,7 +90,7 @@ export default function ShopList() {
                 </div>
 
                 <div className="sidebar__item">
-                  <h5 className="sidebar__title">Filter by price</h5>
+                  <h5 className="sidebar__title">{t("filter_price")}</h5>
 
                   <div className="sidebar-content -slider">
                     <div className="js-price-rangeSlider">
@@ -107,11 +109,11 @@ export default function ShopList() {
                       <div className="mt-25">
                         <div className="d-flex items-center justify-between text-14">
                           <span>
-                            Min Price:
+                          {t("min_price")}
                             <span className="js-lower">{value[0]}</span>
                           </span>
                           <span>
-                            Max Price:
+                          {t("max_price")}
                             <span className="js-upper">{value[1]}</span>
                           </span>
                         </div>
@@ -120,22 +122,6 @@ export default function ShopList() {
                   </div>
                 </div>
 
-                <div className="sidebar__item">
-                  <h5 className="sidebar__title">Tags</h5>
-
-                  <div className="sidebar-content -tags">
-                    {tags.map((elm, i) => (
-                      <div key={i} className="sidebar-tag">
-                        <a
-                          className="text-11 fw-500 text-dark-1"
-                          href={elm.href}
-                        >
-                          {elm.name}
-                        </a>
-                      </div>
-                    ))}
-                  </div>
-                </div>
               </div>
             </div>
 
@@ -143,22 +129,22 @@ export default function ShopList() {
               <div className="row y-gap-10 justify-between items-center">
                 <div className="col-auto">
                   <div className="text-14">
-                    Showing <span className="fw-500 text-dark-1">250</span>{" "}
-                    total results
+                  {t("result_count_one")} <span className="fw-500 text-dark-1">250</span>{" "}
+                  {t("result_count_two")}
                   </div>
                 </div>
 
                 <div className="col-auto">
                   <div className="d-flex items-center">
-                    <div className="fw-500 text-dark-1 mr-20">Sort by:</div>
+                    <div className="fw-500 text-dark-1 ml-20">{t("sort_by")}</div>
 
                     <div className="dropdown js-shop-dropdown">
                       <div className="d-flex items-center text-14">
                         <span className="js-dropdown-title">
-                          Default Sorting
+                        {t("default_sort")}
                         </span>
                         <FontAwesomeIcon
-                          className="icon size-15 ml-40"
+                          className="icon size-15 mr-40"
                           icon={faChevronDown}
                         />
                       </div>
@@ -170,31 +156,7 @@ export default function ShopList() {
                               className="d-block decoration-none js-dropdown-link"
                               href="#"
                             >
-                              Default Sorting
-                            </a>
-                          </div>
-                          <div>
-                            <a
-                              className="d-block decoration-none js-dropdown-link"
-                              href="#"
-                            >
-                              Clothing
-                            </a>
-                          </div>
-                          <div>
-                            <a
-                              className="d-block decoration-none js-dropdown-link"
-                              href="#"
-                            >
-                              Glasses
-                            </a>
-                          </div>
-                          <div>
-                            <a
-                              className="d-block decoration-none js-dropdown-link"
-                              href="#"
-                            >
-                              T-Shirts
+                              {t("default_sort")}
                             </a>
                           </div>
                         </div>
@@ -242,7 +204,7 @@ export default function ShopList() {
                           </Link>
                         </h4>
                         <div className="text-17 fw-500 text-purple-1 mt-15">
-                          ${elm.price.toFixed(2)}
+                          {t("currancy")} {elm.price.toFixed(2)}
                         </div>
 
                         <div
@@ -251,8 +213,8 @@ export default function ShopList() {
                         >
                           <span className="button -md -outline-purple-1 text-dark-1 mt-15">
                             {isAddedToCartProducts(elm.id)
-                              ? "Already Added"
-                              : "Add To Cart"}
+                              ? t("alredy_added")
+                              : t("add_to_cart")}
                           </span>
                         </div>
                       </div>

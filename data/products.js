@@ -73,6 +73,82 @@ export const productData = [
   },
 ];
 
+
+export const arProductData = [
+  {
+    id: 1,
+    image: "/assets/img/shop/products/1.png",
+    categories: ["برمجة", "هندسة", "صحافة واعلام"],
+    name: "عنوان الكورس",
+    price: 500,
+    preDiscount: 678,
+  },
+  {
+    id: 2,
+    image: "/assets/img/shop/products/2.png",
+    categories: ["برمجة", "هندسة", "صحافة واعلام"],
+    name: "عنوان الكورس",
+    price: 1000,
+    preDiscount: 1200,
+  },
+  {
+    id: 3,
+    image: "/assets/img/shop/products/3.png",
+    categories: ["برمجة", "هندسة", "صحافة واعلام"],
+    name: "عنوان الكورس",
+    price: 750,
+    preDiscount: 800,
+  },
+  {
+    id: 4,
+    image: "/assets/img/shop/products/4.png",
+    categories: ["برمجة", "هندسة", "صحافة واعلام"],
+    name: "عنوان الكورس",
+    price: 200,
+    preDiscount: 300,
+  },
+  {
+    id: 5,
+    image: "/assets/img/shop/products/5.png",
+    categories: ["برمجة", "هندسة", "صحافة واعلام"],
+    name: "عنوان الكورس",
+    price: 1800,
+    preDiscount: 2300,
+  },
+  {
+    id: 6,
+    image: "/assets/img/shop/products/6.png",
+    categories: ["برمجة", "هندسة", "صحافة واعلام"],
+    name: "عنوان الكورس",
+    price: 950,
+    preDiscount: 1200,
+  },
+  {
+    id: 7,
+    image: "/assets/img/shop/products/7.png",
+    categories: ["برمجة", "هندسة", "صحافة واعلام"],
+    name: "عنوان الكورس",
+    price: 1300,
+    preDiscount: 1600,
+  },
+  {
+    id: 8,
+    image: "/assets/img/shop/products/8.png",
+    categories: ["برمجة", "هندسة", "صحافة واعلام"],
+    name: "عنوان الكورس",
+    price: 2000,
+    preDiscount: 1400,
+  },
+  {
+    id: 9,
+    image: "/assets/img/shop/products/9.png",
+    categories: ["برمجة", "هندسة", "صحافة واعلام"],
+    name: "عنوان الكورس",
+    price: 400,
+    preDiscount: 590,
+  },
+];
+
 export const tags = [
   { id: 1, href: "#", name: "Courses" },
   { id: 2, href: "#", name: "Learn" },
@@ -90,4 +166,15 @@ export const categories = [
   { id: 5, href: "#", name: "University" },
   { id: 5, href: "#", name: "University" },
   { id: 5, href: "#", name: "College" },
+];
+
+
+export const arCategories = [
+  { id: 1, href: "#", name: "برمجة" },
+  { id: 2, href: "#", name: "هندسة" },
+  { id: 3, href: "#", name: "صحافة واعلام" },
+  { id: 4, href: "#", name: "طب" },
+  { id: 5, href: "#", name: "مختبرات" },
+  { id: 5, href: "#", name: "رياضيات" },
+  { id: 5, href: "#", name: "لغات" },
 ];

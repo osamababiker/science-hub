@@ -1,13 +1,9 @@
 
-
-
-
-
 import BlogsOne from '@/src/components/blogs/BlogsOne'
 import PageLinks from '@/src/components/common/PageLinks'
 import Preloader from '@/src/components/common/Preloader'
 
-import FooterOne from '@/src/components/layout/footers/FooterOne'
+import FooterThree from '@/src/components/layout/footers/FooterThree'
 import Header from '@/src/components/layout/headers/Header'
 import React from 'react'
 
@@ -30,7 +26,7 @@ export default function page() {
 
             <BlogsOne/>
             
-            <FooterOne/>
+            <FooterThree/>
         </div>
 
     </div>

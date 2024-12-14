@@ -52,10 +52,10 @@ export default function Menu({ allClasses, headerPosition }) {
         <div className="mobile-bg js-mobile-bg"></div>
 
         <div className="d-none xl:d-flex items-center px-20 py-20 border-bottom-light">
-          <Link href="#" className="text-dark-1">
+          <Link href="/login" className="text-dark-1">
             {t('signin')}
           </Link>
-          <Link href="#" className="text-dark-1 ml-30">
+          <Link href="/signup" className="text-dark-1 ml-30">
             {t('signup')}
           </Link>
         </div>
@@ -85,7 +85,7 @@ export default function Menu({ allClasses, headerPosition }) {
             <li>
               <Link
                 data-barba
-                href="#"
+                href="/blog-list"
                 className={menuItem == "Blogs" ? "activeMenu" : ""}
               >
                 {t('blog')} <i className="text-13 ml-10"></i>
@@ -120,7 +120,7 @@ export default function Menu({ allClasses, headerPosition }) {
 
                 <li>
                   <Link
-                    href="#"
+                    href="/contact"
                     className={
                       submenu == "Contact" ? "activeMenu" : "inActiveMenu"
                     }
@@ -131,7 +131,7 @@ export default function Menu({ allClasses, headerPosition }) {
 
                 <li>
                   <Link
-                    href="#"
+                    href="/shop-list"
                     className={
                       submenu == "Shop" ? "activeMenu" : "inActiveMenu"
                     }
@@ -145,8 +145,8 @@ export default function Menu({ allClasses, headerPosition }) {
             <li
               
             >
-              <Link data-barba href="#"  className={
-                pathname == "/contact-1" ? "activeMenu" : "inActiveMenuTwo"
+              <Link data-barba href="/contact"  className={
+                pathname == "/contact" ? "activeMenu" : "inActiveMenuTwo"
               }>
                 {t('contact')}
               </Link>

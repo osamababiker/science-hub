@@ -1,14 +1,8 @@
 
-
-
-
-
-
-
 import PageLinks from '@/src/components/common/PageLinks'
 import Preloader from '@/src/components/common/Preloader'
 
-import FooterOne from '@/src/components/layout/footers/FooterOne'
+import FooterThree from '@/src/components/layout/footers/FooterThree'
 import Header from '@/src/components/layout/headers/Header'
 import ShopList from '@/src/components/shop/ShopList'
 import React from 'react'
@@ -29,7 +23,7 @@ export default function page() {
 
             <ShopList/>
             
-            <FooterOne/>
+            <FooterThree/>
         </div>
 
     </div>

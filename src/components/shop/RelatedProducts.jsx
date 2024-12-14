@@ -1,13 +1,16 @@
 "use client";
 import React from "react";
-import { productData } from "@/data/products";
+import { arProductData } from "@/data/products";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEye, faHeart } from "@fortawesome/free-solid-svg-icons";
 import { useContextElement } from "@/context/Context";
 
 import Image from "next/image";
 import Link from "next/link";
+import { useTranslations } from "next-intl";
 export default function RelatedProducts() {
+
+  const t = useTranslations("ShopPage");
   const { addProductToCart, isAddedToCartProducts } = useContextElement();
   return (
     <section className="layout-pt-md layout-pb-lg">
@@ -15,17 +18,13 @@ export default function RelatedProducts() {
         <div className="row justify-center text-center">
           <div className="col-auto">
             <div className="sectionTitle ">
-              <h2 className="sectionTitle__title ">Related Products</h2>
-
-              <p className="sectionTitle__text ">
-                10,000+ unique online course list designs
-              </p>
+              <h2 className="sectionTitle__title ">{t("related_courses_title")}</h2>
             </div>
           </div>
         </div>
 
         <div className="row y-gap-32 pt-60 sm:pt-40">
-          {productData.slice(2, 6).map((elm, i) => (
+          {arProductData.slice(2, 6).map((elm, i) => (
             <div key={i} className="col-lg-3 col-sm-6">
               <div className="productCard -type-1 text-center">
                 <div className="productCard__image">
@@ -61,7 +60,7 @@ export default function RelatedProducts() {
                     </Link>
                   </h4>
                   <div className="text-17 fw-500 text-purple-1 mt-15">
-                    ${elm.price}
+                    {elm.price} {t("currancy")}
                   </div>
 
                   <div
@@ -70,8 +69,8 @@ export default function RelatedProducts() {
                   >
                     <span className="button -md -outline-purple-1 -rounded text-dark-1 mt-15">
                       {isAddedToCartProducts(elm.id)
-                        ? "Already Added"
-                        : "Add To Cart"}
+                        ? t("alredy_added")
+                        : t("add_to_cart")}
                     </span>
                   </div>
                 </div>

@@ -1,9 +1,12 @@
 "use client";
 
-import Link from "next/link";
+import { useTranslations } from "next-intl";
+import {Link} from '@/src/i18n/routing';
 import React from "react";
 
 export default function LoginForm() {
+
+  const t = useTranslations("LoginPage");
   const handleSubmit = (e) => {
     e.preventDefault();
   };
@@ -11,13 +14,13 @@ export default function LoginForm() {
     <div className="form-page__content lg:py-50">
       <div className="container">
         <div className="row justify-center items-center">
-          <div className="col-xl-6 col-lg-8">
+          <div className="col-xl-8 col-lg-9">
             <div className="px-50 py-50 md:px-25 md:py-25 bg-white shadow-1 rounded-16">
-              <h3 className="text-30 lh-13">Login</h3>
+              <h3 className="text-30 lh-13">{t("title")}</h3>
               <p className="mt-10">
-                Don't have an account yet?
-                <Link href="/signup" className="text-purple-1">
-                  Sign up for free
+                {t("dont_have_account")}
+                <Link href="/signup" className="text-purple-1 mr-8">
+                {t("register_link")}
                 </Link>
               </p>
 
@@ -27,19 +30,19 @@ export default function LoginForm() {
               >
                 <div className="col-12">
                   <label className="text-16 lh-1 fw-500 text-dark-1 mb-10">
-                    Username Or Email
+                  {t("email_label")}
                   </label>
-                  <input required type="text" name="title" placeholder="Name" />
+                  <input required type="text" name="title" placeholder= {t("email_placeholder")} />
                 </div>
                 <div className="col-12">
                   <label className="text-16 lh-1 fw-500 text-dark-1 mb-10">
-                    Password
+                  {t("password_label")}
                   </label>
                   <input
                     required
                     type="password"
                     name="title"
-                    placeholder="Password"
+                    placeholder= {t("password_placeholder")}
                   />
                 </div>
                 <div className="col-12">
@@ -49,12 +52,12 @@ export default function LoginForm() {
                     id="submit"
                     className="button -md -green-1 text-dark-1 fw-500 w-1/1"
                   >
-                    Login
+                     {t("login_btn")}
                   </button>
                 </div>
               </form>
 
-              <div className="lh-12 text-dark-1 fw-500 text-center mt-20">
+              {/* <div className="lh-12 text-dark-1 fw-500 text-center mt-20">
                 Or sign in using
               </div>
 
@@ -69,7 +72,7 @@ export default function LoginForm() {
                     Log In via Google+
                   </button>
                 </div>
-              </div>
+              </div> */}
             </div>
           </div>
         </div>
