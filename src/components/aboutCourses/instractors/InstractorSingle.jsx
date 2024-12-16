@@ -1,24 +1,31 @@
 "use client";
 
 import Star from "@/src/components/common/Star";
-import { coursesData } from "@/data/courses";
+import { coursesData, arCoursesData } from "@/data/courses";
 import React, { useState, useEffect } from "react";
 import {
   teamMembers,
+  arTeamMembers,
   teamMembersFull,
+  arTeamMembersFull,
   instractorsEight,
   instractorsNine,
   marketingCoordinator,
 } from "@/data/instractors";
 import Image from "next/image";
 import Link from "next/link";
+import { useTranslations, useLocale } from "next-intl";
 export default function InstractorSingle({ id }) {
+
+
+  const t = useTranslations("InstractorPage");
+  const locale = useLocale();
   const [activeTab, setActiveTab] = useState(1);
   const [pageItem, setPageItem] = useState(teamMembers[0]);
   useEffect(() => {
     const filtered = [
-      ...teamMembers,
-      ...teamMembersFull,
+      ...arTeamMembers,
+      ...arTeamMembersFull,
       ...instractorsEight,
       ...instractorsNine,
       marketingCoordinator,
@@ -64,38 +71,35 @@ export default function InstractorSingle({ id }) {
                   <div className="text-white">{pageItem.role}</div>
                   <div className="d-flex x-gap-20 pt-15">
                     <div className="d-flex items-center text-white">
-                      <div className="icon-star mr-10"></div>
-                      <div className="text-13 lh-1">Instructor Rating</div>
+                      <div className={`icon-star ${ locale == 'en' ? 'mr-10' : 'ml-10' }`}></div>
+                      <div className="text-13 lh-1">{t('rating')}</div>
                     </div>
 
                     <div className="d-flex items-center text-white">
-                      <div className="icon-video-file mr-10"></div>
+                      <div className={`icon-video-file ${ locale == 'en' ? 'mr-10' : 'ml-10' }`}></div>
                       <div className="text-13 lh-1">
-                        {pageItem.reviews || 3545} Reviews
+                        {pageItem.reviews || 3545}  {t('reviews')}
                       </div>
                     </div>
 
                     <div className="d-flex items-center text-white">
-                      <div className="icon-person-3 mr-10"></div>
+                      <div className={`icon-person-3 ${ locale == 'en' ? 'mr-10' : 'ml-10' }`}></div>
                       <div className="text-13 lh-1">
                         {pageItem.students || pageItem.studentCount || 143}{" "}
-                        Students
+                        {t('students')}
                       </div>
                     </div>
 
                     <div className="d-flex items-center text-white">
-                      <div className="icon-play mr-10"></div>
+                      <div className={`icon-play ${ locale == 'en' ? 'mr-10' : 'ml-10' }`}></div>
                       <div className="text-13 lh-1">
-                        {pageItem.courses || pageItem.courseCount || 453} Course
+                        {pageItem.courses || pageItem.courseCount || 453} {t('course')}
                       </div>
                     </div>
                   </div>
                 </div>
 
                 <div className="d-flex items-center mt-30">
-                  <button className="button -md -green-1 text-dark-1">
-                    Send Message
-                  </button>
 
                   <div className="d-flex items-center x-gap-15 text-white ml-25">
                     {pageItem.socialProfile?.map((itm, index) => (
@@ -125,17 +129,17 @@ export default function InstractorSingle({ id }) {
                     data-tab-target=".-tab-item-1"
                     type="button"
                   >
-                    Overview
+                    {t('overview_tab')}
                   </button>
                   <button
                     onClick={() => setActiveTab(2)}
-                    className={`tabs__button js-tabs-button ml-30 ${
+                    className={`tabs__button js-tabs-button ${ locale == 'en' ? 'ml-30 ' : 'mr-30 ' } ${
                       activeTab == 2 ? "is-active" : ""
                     } `}
                     data-tab-target=".-tab-item-2"
                     type="button"
                   >
-                    Courses
+                    {t('courses_tab')}
                   </button>
                 </div>
 
@@ -145,33 +149,23 @@ export default function InstractorSingle({ id }) {
                       activeTab == 1 ? "is-active" : ""
                     } `}
                   >
-                    <h4 className="text-20">Description</h4>
+                    <h4 className="text-20">{t('description')}</h4>
                     <p className="text-light-1 mt-30">
-                      Phasellus enim magna, varius et commodo ut, ultricies
-                      vitae velit. Ut nulla tellus, eleifend euismod
-                      pellentesque vel, sagittis vel justo. In libero urna,
-                      venenatis sit amet ornare non, suscipit nec risus. Sed
-                      consequat justo non mauris pretium at tempor justo
-                      sodales. Quisque tincidunt laoreet malesuada. Cum sociis
-                      natoque penatibus et magnis dis parturient montes,
-                      nascetur.
+                    هذا النص هو مثال لنص يمكن أن يستبدل في نفس المساحة، لقد تم توليد هذا النص من مولد النص العربى،
+                     حيث يمكنك أن تولد مثل هذا النص أو العديد من النصوص الأخرى إضافة إلى زيادة عدد الحروف التى يولدها التطبيق.
                       <br />
                       <br />
-                      This course is aimed at people interested in UI/UX Design.
-                      We’ll start from the very beginning and work all the way
-                      through, step by step. If you already have some UI/UX
-                      Design experience but want to get up to speed using Adobe
-                      XD then this course is perfect for you too!
+                      هذا النص هو مثال لنص يمكن أن يستبدل في نفس المساحة، لقد تم توليد هذا النص من مولد النص العربى،
+                     حيث يمكنك أن تولد مثل هذا النص أو العديد من النصوص الأخرى إضافة إلى زيادة عدد الحروف التى يولدها التطبيق.
+                     هذا النص هو مثال لنص يمكن أن يستبدل في نفس المساحة، لقد تم توليد هذا النص من مولد النص العربى،
+                     حيث يمكنك أن تولد مثل هذا النص أو العديد من النصوص الأخرى إضافة إلى زيادة عدد الحروف التى يولدها التطبيق.
                       <br />
                       <br />
-                      First, we will go over the differences between UX and UI
-                      Design. We will look at what our brief for this real-world
-                      project is, then we will learn about low-fidelity
-                      wireframes and how to make use of existing UI design kits.
+                      هذا النص هو مثال لنص يمكن أن يستبدل في نفس المساحة، لقد تم توليد هذا النص من مولد النص العربى،
+                     حيث يمكنك أن تولد مثل هذا النص أو العديد من النصوص الأخرى إضافة إلى زيادة عدد الحروف التى يولدها التطبيق.
+                     هذا النص هو مثال لنص يمكن أن يستبدل في نفس المساحة، لقد تم توليد هذا النص من مولد النص العربى،
+                     حيث يمكنك أن تولد مثل هذا النص أو العديد من النصوص الأخرى إضافة إلى زيادة عدد الحروف التى يولدها التطبيق.
                     </p>
-                    <button className="button underline text-purple-1 mt-30">
-                      Show More
-                    </button>
                   </div>
 
                   <div
@@ -180,7 +174,7 @@ export default function InstractorSingle({ id }) {
                     } `}
                   >
                     <div className="row">
-                      {coursesData.slice(0, 2).map((elm, i) => (
+                      {arCoursesData.slice(0, 2).map((elm, i) => (
                         <div key={i} className="col-md-6">
                           <div className="coursesCard -type-1 rounded-8 shadow-3 bg-white">
                             <div className="relative">
@@ -199,7 +193,7 @@ export default function InstractorSingle({ id }) {
                                   <div>
                                     <div className="px-15 rounded-200 bg-purple-1">
                                       <span className="text-11 lh-1 uppercase fw-500 text-white">
-                                        Popular
+                                      {t('popular')}
                                       </span>
                                     </div>
                                   </div>
@@ -208,7 +202,7 @@ export default function InstractorSingle({ id }) {
                                   <div>
                                     <div className="px-15 rounded-200 bg-green-1">
                                       <span className="text-11 lh-1 uppercase fw-500 text-dark-1">
-                                        Best sellers
+                                      {t('best_sellers')}
                                       </span>
                                     </div>
                                   </div>
@@ -218,13 +212,13 @@ export default function InstractorSingle({ id }) {
 
                             <div className="h-100 pt-20 pb-15 px-30">
                               <div className="d-flex items-center">
-                                <div className="text-14 lh-1 text-yellow-1 mr-10">
+                                <div className={`text-14 lh-1 text-yellow-1 ${ locale == 'en' ? 'mr-10' : 'ml-10' }`}>
                                   {elm.rating}
                                 </div>
                                 <div className="d-flex x-gap-5 items-center">
                                   <Star star={Math.round(elm.rating)} />
                                 </div>
-                                <div className="text-13 lh-1 ml-10">
+                                <div className={`text-13 lh-1 ${ locale == 'en' ? 'ml-10' : 'mr-10' }`}>
                                   ({elm.ratingCount})
                                 </div>
                               </div>
@@ -240,7 +234,7 @@ export default function InstractorSingle({ id }) {
 
                               <div className="d-flex x-gap-10 items-center pt-10">
                                 <div className="d-flex items-center">
-                                  <div className="mr-8">
+                                  <div className={ locale == 'en' ? 'mr-8' : 'ml-8' }>
                                     <Image
                                       width={16}
                                       height={17}
@@ -249,12 +243,12 @@ export default function InstractorSingle({ id }) {
                                     />
                                   </div>
                                   <div className="text-14 lh-1">
-                                    {elm.lessonCount} lesson
+                                    {elm.lessonCount} {t('lesson')}
                                   </div>
                                 </div>
 
                                 <div className="d-flex items-center">
-                                  <div className="mr-8">
+                                  <div className={ locale == 'en' ? 'mr-8' : 'ml-8' }>
                                     <Image
                                       width={16}
                                       height={17}
@@ -268,7 +262,7 @@ export default function InstractorSingle({ id }) {
                                 </div>
 
                                 <div className="d-flex items-center">
-                                  <div className="mr-8">
+                                  <div className={ locale == 'en' ? 'mr-8' : 'ml-8' }>
                                     <Image
                                       width={16}
                                       height={17}
@@ -290,19 +284,19 @@ export default function InstractorSingle({ id }) {
                                     src={elm.authorImageSrc}
                                     alt="image"
                                   />
-                                  <div>Ali Tufa{elm.authorName}</div>
+                                  <div className={ locale == 'en' ? 'ml-8' : 'mr-8' }>{elm.authorName}</div>
                                 </div>
 
                                 <div className="coursesCard-footer__price">
                                   {elm.paid ? (
                                     <>
-                                      <div>${elm.originalPrice}</div>
-                                      <div>${elm.discountedPrice}</div>
+                                      <div>{t('currancy')} {elm.originalPrice}</div>
+                                      <div>{t('currancy')} {elm.discountedPrice}</div>
                                     </>
                                   ) : (
                                     <>
                                       <div></div>
-                                      <div>Free</div>
+                                      <div>{t('free')}</div>
                                     </>
                                   )}
                                 </div>

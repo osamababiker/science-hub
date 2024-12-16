@@ -233,6 +233,21 @@
         "password_label": "Password *",
         "password_placeholder":"Password...",
         "login_btn": "Login"
+    },
+
+    "InstractorPage": {
+        "rating": "Instructor Rating",
+        "reviews": "Reviews",
+        "students": "Students",
+        "course": "Course",
+        "overview_tab": "Overview",
+        "courses_tab": "Courses",
+        "description": "Description",
+        "popular": "Popular",
+        "best_sellers": "Best sellers",
+        "lesson": "lesson",
+        "free": "Free",
+        "currancy": "AED"
     }
 
   }

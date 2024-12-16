@@ -4,7 +4,7 @@ import React from "react";
 import Image from "next/image";
 import { arTeachers, marketingCoordinator } from "../../../../data/instractors";
 import { teachingFeatures } from "../../../../data/features";
-import Link from "next/link";
+import {Link} from '@/src/i18n/routing';
 import { useTranslations } from 'next-intl';
 export default function Teachers() {
 
@@ -159,9 +159,9 @@ export default function Teachers() {
               </div>
 
               <div className="d-inline-block mt-35">
-                <a href="#" className="button -md -dark-2 text-white">
+                <Link href="/instructors/1" className="button -md -dark-2 text-white">
                   {t('call_action')}
-                </a>
+                </Link>
               </div>
             </div>
           </div>

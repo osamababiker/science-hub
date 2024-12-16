@@ -1,25 +1,30 @@
 "use client";
 
 import React, { useState, useEffect } from "react";
-import { useTranslations } from "next-intl";
-import { arCoursesData, arCatagories } from "../../../../data/courses";
+import { useTranslations, useLocale } from "next-intl";
+import { arCoursesData, arCatagories, catagories, coursesData } from "../../../../data/courses";
 import CourseCardSix from "@/src/components/homes/courseCards/CourseCardSix";
 export default function CoursesSix() {
+
+
+  const t = useTranslations('Courses');
+  const locale = useLocale();
+
+
   const [pageItems, setPageItems] = useState([]);
-  const [currentCategory, setCurrentCategory] = useState("جميع التصنيفات");
+  const [currentCategory, setCurrentCategory] = useState(locale == 'en' ? 'All Categories' : 'جميع التصنيفات');
   useEffect(() => {
     let filtered = [];
 
-    if (currentCategory == "جميع التصنيفات") {
-      filtered = arCoursesData;
+    if (currentCategory == locale == 'en' ? 'All Categories' : 'جميع التصنيفات') {
+      filtered = locale == 'en' ? coursesData : arCoursesData;
     } else {
-      filtered = arCoursesData.filter((elm) => elm.category == currentCategory);
+      let CoursesdataToFilter = locale == 'en' ? coursesData : arCoursesData;
+      filtered = CoursesdataToFilter.filter((elm) => elm.category == currentCategory);
     }
 
     setPageItems(filtered);
   }, [currentCategory]);
-
-  const t = useTranslations('Courses');
 
 
   return (
@@ -38,7 +43,8 @@ export default function CoursesSix() {
 
           <div className="col-auto">
             <div className="tabs__controls row justify-center x-gap-10 bg-light-3 rounded-200 py-5 js-tabs-controls">
-              {arCatagories.slice(0, 4).map((elm, i) => (
+              {locale == 'en' ?
+              catagories.slice(0, 4).map((elm, i) => (
                 <div
                   key={i}
                   className="col-auto"
@@ -54,7 +60,23 @@ export default function CoursesSix() {
                     {elm}
                   </button>
                 </div>
-              ))}
+              )) : arCatagories.slice(0, 4).map((elm, i) => (
+                <div
+                  key={i}
+                  className="col-auto"
+                  onClick={() => setCurrentCategory(elm)}
+                >
+                  <button
+                    className={`tabs__button px-20 py-8 rounded-200 fw-500 js-tabs-button ${
+                      currentCategory == elm ? "is-active" : ""
+                    } `}
+                    data-tab-target=".-tab-item-1"
+                    type="button"
+                  >
+                    {elm}
+                  </button>
+                </div>
+              )) }
             </div>
           </div>
         </div>

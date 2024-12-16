@@ -4,7 +4,7 @@ import React, { useState, useEffect, useTransition } from "react";
 import {Link} from '@/src/i18n/routing';
 import MobileFooter from "./MobileFooter";
 import Image from "next/image";
-import { useTranslations } from "next-intl";
+import { useTranslations, useLocale } from "next-intl";
 import { menuList } from "@/data/menu";
 import { usePathname, useRouter } from "next/navigation";
 
@@ -12,7 +12,9 @@ export default function Menu({ allClasses, headerPosition }) {
   const [menuItem, setMenuItem] = useState("");
   const [submenu, setSubmenu] = useState("");
   const pathname = usePathname();
+
   const t = useTranslations('MainMenu');
+  const locale = useLocale();
 
   useEffect(() => {
     menuList.forEach((elm) => {
@@ -98,7 +100,7 @@ export default function Menu({ allClasses, headerPosition }) {
                 href="#"
                 className={menuItem == "Pages" ? "activeMenu" : ""}
               >
-                <i className="icon-chevron-right text-13 ml-10"></i> {t('pages')}
+                <i className={`icon-chevron-right text-13 ${ locale == 'en' ? 'mr-10' : 'ml-10' }`}></i> {t('pages')}
               </Link>
 
               <ul className="subnav">
@@ -158,7 +160,7 @@ export default function Menu({ allClasses, headerPosition }) {
                 href="#"
                 className={menuItem == "Pages" ? "activeMenu" : ""}
               >
-                <i className="icon-chevron-right text-13 ml-10"></i> {t('lang')}
+                <i className={`icon-chevron-right text-13 ${ locale == 'en' ? 'mr-10' : 'ml-10' }`}></i> {t('lang')}
               </Link>
 
               <ul className="subnav">

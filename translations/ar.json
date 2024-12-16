@@ -234,6 +234,22 @@
         "password_label": "كلمة المرور",
         "password_placeholder":"كلمة المرور...",
         "login_btn": "تسجيل دخول"
+    },
+
+
+    "InstractorPage": {
+        "rating": "تقييم المعلم",
+        "reviews": "تقييم",
+        "students": "طالب",
+        "course": "كورس",
+        "overview_tab": "نبذة عامة",
+        "courses_tab": "الكورسات",
+        "description": "الوصف",
+        "popular": "شائع",
+        "best_sellers": "اكثر مبيعا",
+        "lesson": "درس",
+        "free": "مجاني",
+        "currancy": "درهم"
     }
 
   }

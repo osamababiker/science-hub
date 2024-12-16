@@ -948,7 +948,7 @@ export const arCoursesData = [
         "title": "تعلم Figma - التدريب الأساسي لتصميم واجهة المستخدم/تجربة المستخدم",
         "rating": 4.3,
         "ratingCount": 1991,
-        "lessonCount": 6,
+        "lessonCount": 6, 
         "duration": 1320,
         "level": "مبتدئ",
         "originalPrice": 199,
