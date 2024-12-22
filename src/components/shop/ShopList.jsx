@@ -10,10 +10,12 @@ import Pagination from "../common/Pagination";
 import { faChevronDown } from "@fortawesome/free-solid-svg-icons";
 import { useContextElement } from "@/context/Context";
 import {Link} from '@/src/i18n/routing';
-import { useTranslations } from "next-intl";
+import { useTranslations, useLocale } from "next-intl";
 export default function ShopList() {
 
   const t = useTranslations("ShopListPage");
+  const locale = useLocale();
+
   const { addProductToCart, isAddedToCartProducts } = useContextElement();
 
   const [value, setValue] = useState([200, 1500]);
@@ -136,7 +138,7 @@ export default function ShopList() {
 
                 <div className="col-auto">
                   <div className="d-flex items-center">
-                    <div className="fw-500 text-dark-1 ml-20">{t("sort_by")}</div>
+                    <div className={`fw-500 text-dark-1 ${ locale == 'en' ? 'mr-20' : 'ml-20' }`}>{t("sort_by")}</div>
 
                     <div className="dropdown js-shop-dropdown">
                       <div className="d-flex items-center text-14">

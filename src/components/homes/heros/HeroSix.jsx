@@ -5,11 +5,15 @@ import Image from "next/image";
 import ModalVideo from "@/src/components/common/ModalVideo";
 import gsap from "gsap";
 import Link from "next/link";
-import { useTranslations } from "next-intl";
+import { useTranslations, useLocale } from "next-intl";
  
 export default function HeroSix() {
+
   const [isOpen, setIsOpen] = useState(false);
   const t = useTranslations('HomeHero');
+  const locale = useLocale();
+
+
   useEffect(() => {
     const parallaxIt = () => {
       const target = document.querySelectorAll(".js-mouse-move-container");
@@ -106,7 +110,7 @@ export default function HeroSix() {
                       <div className="d-flex justify-center items-center size-60 rounded-full border-dark-1-lg">
                         <div className="icon-play text-20 text-dark-1 pl-5"></div>
                       </div>
-                      <div className="mr-10">{t('call_action_two')}</div>
+                      <div className={ locale == 'en' ? 'ml-10' : 'mr-10' }>{t('call_action_two')}</div>
                     </div>
                   </div>
                 </div>

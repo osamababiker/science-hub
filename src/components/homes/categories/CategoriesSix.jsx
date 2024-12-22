@@ -1,6 +1,6 @@
 "use client";
 import Image from "next/image";
-import { useTranslations } from "next-intl";
+import { useTranslations, useLocale } from "next-intl";
 import { Navigation, Pagination } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
 
@@ -17,6 +17,7 @@ export default function CategoriesSix() {
   }, []);
 
   const t = useTranslations('Categories');
+  const locale = useLocale();
 
   return (
     <section className="layout-pt-lg layout-pb-lg">
@@ -103,16 +104,16 @@ export default function CategoriesSix() {
 
           <div className="d-flex x-gap-15 items-center justify-center pt-50">
             <div className="col-auto">
-              <button className="d-flex items-center text-24 arrow-right-hover js-prev category-six-right">
-                <i className="icon icon-arrow-right"></i>
+              <button className={`d-flex items-center text-24 js-prev ${ locale == 'en' ? 'arrow-left-hover  category-six-left' : 'arrow-right-hover  category-six-right' }`}>
+                <i className={`icon icon-arrow-${ locale == 'en' ? 'left' : 'right' }`}></i>
               </button>
             </div>
             <div className="col-auto">
               <div className="pagination -arrows js-pagination category-six-pagination"></div>
             </div>
             <div className="col-auto">
-              <button className="d-flex items-center text-24 arrow-left-hover js-next category-six-left">
-                <i className="icon icon-arrow-left"></i>
+              <button className={`d-flex items-center text-24  js-next ${ locale == 'en' ? 'arrow-right-hover category-six-right' : 'arrow-left-hover category-six-left' }`}>
+                <i className={`icon icon-arrow-${ locale == 'en' ? 'right' : 'left' }`}></i>
               </button>
             </div>
           </div>

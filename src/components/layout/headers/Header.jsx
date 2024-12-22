@@ -8,13 +8,14 @@ import Menu from "../component/Menu";
 import {Link} from '@/src/i18n/routing';
 import Image from "next/image";
 import { useState } from "react";
-import { useTranslations } from "next-intl";
+import { useTranslations, useLocale } from "next-intl";
 import MobileMenu from "../component/MobileMenu";
 
 export default function Header() {
 
   const [activeMobileMenu, setActiveMobileMenu] = useState(false);
   const t = useTranslations('MainMenu');
+  const locale = useLocale();
 
   return (
     <>
@@ -47,11 +48,11 @@ export default function Header() {
                 <div className="header-right__icons text-white d-flex items-center">
                   <SearchToggle color={"text-white"} />
                   <CartToggle
-                    parentClassess={"relative pr-30 sm:pl-15"}
+                    parentClassess={`relative sm:pl-15 ${ locale == 'en' ? 'pl-30' : 'pr-30' }`}
                     allClasses={"d-flex items-center text-white"}
                   />
 
-                  <div className="d-none xl:d-block pr-30 sm:pl-15">
+                  <div className={`d-none xl:d-block sm:pl-15 ${ locale == 'en' ? 'pl-30' : 'pr-30' }`}>
                     <button
                       className="text-dark-1 items-center"
                       data-el-toggle=".js-mobile-menu-toggle"
@@ -62,13 +63,13 @@ export default function Header() {
                   </div>
                 </div>
 
-                <div className="header-right__buttons d-flex items-center mr-30 xl:ml-20 lg:d-none">
+                <div className={`header-right__buttons d-flex items-center  xl:ml-20 lg:d-none ${ locale == 'en' ? 'ml-30' : 'mr-30' }`}>
                 <Link href="/login" className="button -underline text-white">
                   {t('signin')}
                 </Link>
                 <Link
                   href="/signup"
-                  className="button h-50 px-40 -purple-1 -rounded text-white mr-30 xl:ml-20"
+                  className={`button h-50 px-40 -purple-1 -rounded text-white xl:ml-20 ${ locale == 'en' ? 'ml-30' : 'mr-30' }`}
                 >
                   {t('signup')}
                 </Link>

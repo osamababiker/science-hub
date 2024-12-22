@@ -7,12 +7,13 @@ import SwiperCore from "swiper";
 // import 'swiper/swiper.min.css';
 import { arTestimonials } from "../../../data/tesimonials";
 import { counters } from "../../../data/count";
-import { useTranslations } from "next-intl";
+import { useTranslations, useLocale } from "next-intl";
 // SwiperCore.use([Pagination]);
 
 export default function TestimonialsOne() {
 
   const t = useTranslations("AboutPage");
+  const locale = useLocale();
 
   const [showSlider, setShowSlider] = useState(false);
   useEffect(() => {
@@ -105,12 +106,12 @@ export default function TestimonialsOne() {
           <div className="d-flex x-gap-20 items-center justify-start pt-60 lg:pt-40">
             <div className="col-auto">
               <button className="button -outline-white text-white size-50 rounded-full d-flex justify-center items-center js-prev">
-                <i className="icon icon-arrow-right text-24"></i>
+                <i className={ `icon ${ locale == 'en' ? 'icon-arrow-left' : 'icon-arrow-right' } text-24` }></i>
               </button>
             </div>
             <div className="col-auto">
               <button className="button -outline-white text-white size-50 rounded-full d-flex justify-center items-center js-next">
-                <i className="icon icon-arrow-left text-24"></i>
+                <i className={ `icon ${ locale == 'en' ? 'icon-arrow-right' : 'icon-arrow-left' } text-24` }></i>
               </button>
             </div>
           </div>

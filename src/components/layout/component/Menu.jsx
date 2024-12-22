@@ -4,9 +4,13 @@ import React, { useState, useEffect, useTransition } from "react";
 import {Link} from '@/src/i18n/routing';
 import MobileFooter from "./MobileFooter";
 import Image from "next/image";
+
+import {useParams} from 'next/navigation';
 import { useTranslations, useLocale } from "next-intl";
+import {usePathname, useRouter} from '@/src/i18n/routing';
+
 import { menuList } from "@/data/menu";
-import { usePathname, useRouter } from "next/navigation";
+
 
 export default function Menu({ allClasses, headerPosition }) {
   const [menuItem, setMenuItem] = useState("");
@@ -36,13 +40,19 @@ export default function Menu({ allClasses, headerPosition }) {
 
   const [ isPending, startTransition ] = useTransition()
   const router = useRouter()
+  const params = useParams();
+
   const changeLang = (e) => {
     e.preventDefault();
     const nextLocale = e.target.getAttribute('data-locale');
     startTransition(() => {
-      router.replace(`/${nextLocale}`)
+      router.replace(
+        {pathname, params},
+        {locale: nextLocale}
+      );
     })
   }
+
 
   return (
     <div
@@ -160,10 +170,16 @@ export default function Menu({ allClasses, headerPosition }) {
                 href="#"
                 className={menuItem == "Pages" ? "activeMenu" : ""}
               >
-                <i className={`icon-chevron-right text-13 ${ locale == 'en' ? 'mr-10' : 'ml-10' }`}></i> {t('lang')}
+                <i className={`icon-chevron-right text-13 ${ locale == 'en' ? 'mr-10' : 'ml-10' }`}></i> 
+                <Image width={20}
+                  height={20}
+                  className={locale == 'en' ? 'mr-8' : 'ml-8'}
+                  src={locale == 'en' ? '/assets/img/general/uk.png' : '/assets/img/general/uae.png'}
+                  alt="icon"
+                />
               </Link>
 
-              <ul className="subnav">
+              <ul className={`subnav ${ locale == 'en' ? 'subnav-en' : 'subnav-ar' }`}>
                 <li className="menu__backButton js-nav-list-back">
                   <Link href="#">
                     <i className="icon-chevron-left text-13 mr-10"></i> {t('lang')}
@@ -171,13 +187,15 @@ export default function Menu({ allClasses, headerPosition }) {
                 </li>
                 <li>
                   <Link href="#" data-locale="en"  onClick={changeLang}>
-                  {t('english')}<div className="text-11"></div>
+                  {t('english')} 
+                  <div className="text-11"></div>
                   </Link>
                 </li>
 
                 <li>
                   <Link href="#" data-locale="ar" onClick={changeLang}>
-                  {t('arabic')}<div className="text-11"></div>
+                  {t('arabic')}
+                  <div className="text-11"></div>
                   </Link>
                 </li>
               </ul>

@@ -5,11 +5,12 @@ import Image from "next/image";
 import { arTeachers, marketingCoordinator } from "../../../../data/instractors";
 import { teachingFeatures } from "../../../../data/features";
 import {Link} from '@/src/i18n/routing';
-import { useTranslations } from 'next-intl';
+import { useTranslations, useLocale } from 'next-intl';
 export default function Teachers() {
 
 
   const t = useTranslations("Teachers");
+  const locale = useLocale();
 
   const teachingFeatures = [
     {
@@ -55,7 +56,7 @@ export default function Teachers() {
                             src={elm.imageSrc}
                             alt="image"
                           />
-                          <div className="mr-20">
+                          <div className={locale == 'en' ? 'ml-20' : 'mr-20'}>
                             <div className="text-15 text-dark-1 lh-11 fw-500">
                               {elm.name}
                             </div>
@@ -92,7 +93,7 @@ export default function Teachers() {
                       </div>
                       <div className="d-flex x-gap-15 pt-15">
                         <div className="d-flex items-center">
-                          <div className="icon-star text-11 text-yellow-1 ml-10"></div>
+                          <div className={`icon-star text-11 text-yellow-1 ${ locale == 'en' ? 'mr-10' : 'ml-10' }`}></div>
                           <div className="text-13 lh-12 text-yellow-1">
                             {marketingCoordinator.rating}
                           </div>
@@ -102,7 +103,7 @@ export default function Teachers() {
                           <Image
                             width={16}
                             height={16}
-                            className="shrink-0 ml-10"
+                            className={`shrink-0 ${ locale == 'en' ? 'mr-10' : 'ml-10' }`}
                             src="/assets/img/team/icons/1.svg"
                             alt="icon"
                           />
@@ -115,7 +116,7 @@ export default function Teachers() {
                           <Image
                             width={12}
                             height={12}
-                            className="shrink-0 ml-10"
+                            className={`shrink-0 ${ locale == 'en' ? 'mr-10' : 'ml-10' }`}
                             src="/assets/img/team/icons/2.svg"
                             alt="icon"
                           />
@@ -142,7 +143,7 @@ export default function Teachers() {
               <div className="y-gap-20 pt-25">
                 {teachingFeatures.map((elm, i) => (
                   <div key={i} className="d-flex items-center">
-                    <div className="d-flex items-center justify-center size-25 rounded-full bg-purple-1 ml-15">
+                    <div className={`d-flex items-center justify-center size-25 rounded-full bg-purple-1 ${ locale == 'en' ? 'mr-15' : 'ml-15' }`}>
                       <i
                         className="fa fa-check text-white"
                         style={{

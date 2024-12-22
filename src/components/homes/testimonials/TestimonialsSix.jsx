@@ -7,8 +7,10 @@ import { EffectCards } from "swiper";
 import { statictis } from "../../../../data/features";
 import { arTestimonials } from "../../../../data/tesimonials";
 import "swiper/css/effect-cards";
-import { useTranslations } from "use-intl";
+import { useTranslations, useLocale } from "use-intl";
+
 export default function TestimonialsSix() {
+
   const [showSlider, setShowSlider] = useState(false);
   const [currentSlide, setCurrentSlide] = useState(0);
   const [roteteSwiper, setRoteteSwiper] = useState(4);
@@ -19,7 +21,8 @@ export default function TestimonialsSix() {
     setRoteteSwiper((1 - slide.activeIndex / 1) * 4);
   };
 
-  const t = useTranslations("Testimonials")
+  const t = useTranslations("Testimonials");
+  const locale = useLocale();
 
   const statictis = [
     {
@@ -134,7 +137,7 @@ export default function TestimonialsSix() {
               <div className="d-flex x-gap-15 items-center justify-center pt-30">
                 <div className="col-auto">
                   <button className="d-flex items-center text-24 arrow-right-hover text-white js-prev icon-arrow-right-6">
-                    <i className="icon icon-arrow-right"></i>
+                    <i className={`icon icon-arrow-${ locale == 'en' ? 'left' : 'right' }`}></i>
                   </button>
                 </div>
                 <div className="col-auto">
@@ -142,7 +145,7 @@ export default function TestimonialsSix() {
                 </div>
                 <div className="col-auto">
                   <button className="d-flex items-center text-24 arrow-right-hover text-white js-next icon-arrow-right-6">
-                    <i className="icon icon-arrow-left"></i>
+                    <i className={`icon icon-arrow-${ locale == 'en' ? 'right' : 'left' }`}></i>
                   </button>
                 </div>
               </div>

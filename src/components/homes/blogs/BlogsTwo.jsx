@@ -4,10 +4,12 @@ import React from "react";
 import { arBlogs } from "../../../../data/blog";
 import Image from "next/image";
 import Link from "next/link";
-import { useTranslations } from "next-intl";
+import { useTranslations, useLocale } from "next-intl";
+
 export default function BlogsTwo() {
 
   const t = useTranslations("Blogs");
+  const locale = useLocale();
 
   return (
     <section className="layout-pt-lg layout-pb-lg">
@@ -29,7 +31,7 @@ export default function BlogsTwo() {
               className="button -icon -purple-3 text-purple-1"
             >
               {t('link')}
-              <i className="icon-arrow-top-right text-13 mr-10"></i>
+              <i className={`icon-arrow-top-right text-13 ${ locale == 'en' ? 'ml-10' : 'mr-10' }`}></i>
             </Link>
           </div>
         </div>

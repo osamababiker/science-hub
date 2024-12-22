@@ -1,12 +1,14 @@
 "use client";
 
-import { useTranslations } from "next-intl";
+import { useLocale, useTranslations } from "next-intl";
 import {Link} from '@/src/i18n/routing';
 import React from "react";
 
 export default function SignUpForm() {
 
   const t = useTranslations("signipPage");
+  const locale = useLocale();
+
   const handleSubmit = (e) => {
     e.preventDefault();
   };
@@ -19,7 +21,7 @@ export default function SignUpForm() {
               <h3 className="text-30 lh-13">{t("title")}</h3>
               <p className="mt-10">
                 {t("have_account")}
-                <Link href="/login" className="text-purple-1 mr-8">
+                <Link href="/login" className={`text-purple-1 ${ locale == 'en' ? 'ml-8' : 'mr-8' }`}>
                  {t("login_link")}
                 </Link>
               </p>

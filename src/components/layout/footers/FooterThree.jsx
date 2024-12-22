@@ -5,11 +5,12 @@ import Links from "../component/Links";
 import Socials from "@/src/components/common/Socials";
 import FooterLinks from "../component/FooterLinks";
 import Image from "next/image";
-import { useTranslations } from "next-intl";
+import { useTranslations, useLocale } from "next-intl";
 
 export default function FooterThree() {
 
   const t = useTranslations("Footer");
+  const locale = useLocale();
 
   return (
     <footer className="footer -type-5 pt-60">
@@ -36,7 +37,7 @@ export default function FooterThree() {
                     href="#"
                     className="button -md -light-4 px-20 -purple-3 text-purple-1"
                   >
-                    <i className="icon-worldwide ml-5"></i> {t('lang')}
+                    <i className={`icon-worldwide ${ locale == 'en' ? 'mr-5' : 'ml-5' }`}></i> {t('lang')}
                   </a>
                 </div>
               </div>

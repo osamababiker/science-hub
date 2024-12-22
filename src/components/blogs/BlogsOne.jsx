@@ -3,10 +3,12 @@ import Image from "next/image";
 import React, { useState, useEffect } from "react";
 import { arBlogs, arCategories } from "@/data/blog";
 import {Link} from '@/src/i18n/routing';
-import { useTranslations } from "next-intl";
+import { useTranslations, useLocale } from "next-intl";
 export default function BlogsOne() {
 
   const t = useTranslations("BlogListPage");
+  const locale = useLocale();
+
   const [pageItems, setPageItems] = useState([]);
   const [currentCategory, setCurrentCategory] = useState("جميع التصنيفات");
   useEffect(() => {
@@ -98,7 +100,7 @@ export default function BlogsOne() {
                   <div className="col-auto">
                     <div className="pagination -buttons">
                       <button className="pagination__button -prev">
-                        <i className="icon icon-chevron-right"></i>
+                        <i className={`icon ${ locale == 'en' ? 'icon-chevron-left' : 'icon-chevron-right' }`}></i>
                       </button>
 
                       <div className="pagination__count">
@@ -112,7 +114,7 @@ export default function BlogsOne() {
                       </div>
 
                       <button className="pagination__button -next">
-                        <i className="icon icon-chevron-left"></i>
+                        <i className={`icon ${ locale == 'en' ? 'icon-chevron-right' : 'icon-chevron-left' }`}></i>
                       </button>
                     </div>
                   </div>

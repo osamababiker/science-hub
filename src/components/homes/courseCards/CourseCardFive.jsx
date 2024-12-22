@@ -3,11 +3,12 @@ import React from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { useState, useEffect } from "react";
-import { useTranslations } from "next-intl";
+import { useTranslations, useLocale } from "next-intl";
 export default function CourceCardFive({ data, index }) {
   const [rating, setRating] = useState([]);
 
   const t = useTranslations("CoursesPage");
+  const locale = useLocale();
 
   useEffect(() => {
     for (let i = Math.round(data.rating); i >= 1; i--) {
@@ -69,7 +70,7 @@ export default function CourceCardFive({ data, index }) {
               </div>
 
               <div className="d-flex items-center">
-                <div className="ml-8">
+                <div className={locale == 'en' ? 'mr-8' : 'ml-8'}>
                   <Image
                     width={16}
                     height={17}
@@ -83,7 +84,7 @@ export default function CourceCardFive({ data, index }) {
               </div>
 
               <div className="d-flex items-center">
-                <div className="ml-8">
+                <div className={locale == 'en' ? 'mr-8' : 'ml-8'}>
                   <Image
                     width={16}
                     height={17}
@@ -97,7 +98,7 @@ export default function CourceCardFive({ data, index }) {
 
             <div className="coursesCard-footer">
               <div className="coursesCard-footer__author">
-                <div className="ml-8">
+                <div className={locale == 'en' ? 'mr-8' : 'ml-8'}>
                   <Image
                     width={30}
                     height={30}

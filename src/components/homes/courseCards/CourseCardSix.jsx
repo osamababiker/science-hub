@@ -3,8 +3,12 @@
 import { useState, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
+import { useLocale } from "next-intl";
 export default function CourseCardSix({ data, index }) {
+
   const [rating, setRating] = useState([]); 
+  const locale = useLocale();
+
   useEffect(() => {
     for (let i = Math.round(data.rating); i >= 1; i--) {
       setRating((pre) => [...pre, "star"]);
@@ -26,7 +30,7 @@ export default function CourseCardSix({ data, index }) {
         <div className="coursesCard__content pl-20 sm:pl-10 pr-10">
           <div className="coursesCard__stars">
             <div className="d-flex items-center">
-              <div className="text-14 lh-1 text-yellow-1 ml-10">
+              <div className={`text-14 lh-1 text-yellow-1 ${ locale == 'en' ? 'mr-10' : 'ml-10' }`}>
                 {data.rating}
               </div>
               <div className="d-flex x-gap-5 items-center">
@@ -44,7 +48,7 @@ export default function CourseCardSix({ data, index }) {
 
           <div className="d-flex x-gap-15 items-center py-10">
             <div className="d-flex items-center">
-              <div className="ml-10">
+              <div className={ locale == 'en' ? 'mr-10' : 'ml-10' }>
                 <Image
                   width={16}
                   height={17}
@@ -56,7 +60,7 @@ export default function CourseCardSix({ data, index }) {
             </div>
 
             <div className="d-flex items-center">
-              <div className="ml-10">
+              <div className={ locale == 'en' ? 'mr-10' : 'ml-10' }>
                 <Image
                   width={16}
                   height={17}
@@ -70,7 +74,7 @@ export default function CourseCardSix({ data, index }) {
             </div>
 
             <div className="d-flex items-center">
-              <div className="ml-10">
+              <div className={ locale == 'en' ? 'mr-10' : 'ml-10' }>
                 <Image
                   width={16}
                   height={17}
@@ -90,7 +94,7 @@ export default function CourseCardSix({ data, index }) {
                 src={data.authorImageSrc}
                 alt="image"
               />
-              <div className="text-light-1 mr-10">{data.authorName}</div>
+              <div className={`text-light-1 ${ locale == 'en' ? 'ml-10' : 'mr-10' }`}>{data.authorName}</div>
             </div>
 
             <div className="d-flex items-center">

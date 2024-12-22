@@ -1075,14 +1075,14 @@
 html {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  font-family: var(--font-poppins);
+  font-family: var(--font-primary)!important;
   min-height: 100%;
   font-size: 15px;
   line-height: 1;
 }
 
 body, h1, h2, h3, h4, h5, h6, p, div, span, a {
-  font-family: "Tajawal", sans-serif;
+  font-family: var(--font-primary)!important;
 }
 
 html:not(.-dark-mode) .-light-d-none {
@@ -4327,11 +4327,21 @@ h1, h2, h3, h4, h5, h6 {
     color: var(--color-green-1);
     background-color: rgba(255, 255, 255, 0.15);
   }
-  .header .header-menu .menu__nav > li > .subnav::before {
+  .header .header-menu .menu__nav > li > .subnav-ar::before {
     content: '';
     position: absolute;
     top: -5px;
     right: 20px;
+    width: 10px;
+    height: 10px;
+    background-color: white;
+    transform: rotate(45deg);
+  }
+  .header .header-menu .menu__nav > li > .subnav-en::before {
+    content: '';
+    position: absolute;
+    top: -5px;
+    left: 20px;
     width: 10px;
     height: 10px;
     background-color: white;

@@ -1,7 +1,7 @@
 "use client";
 
 import { populerTags, arTeamMembersFull } from "@/data/instractors";
-import { useTranslations } from "next-intl";
+import { useTranslations, useLocale } from "next-intl";
 import Image from "next/image";
 import Link from "next/link";
 import React, { useEffect, useState } from "react";
@@ -11,6 +11,9 @@ import { Swiper, SwiperSlide } from "swiper/react";
 export default function Instractors() {
 
   const t = useTranslations("CoursesPage");
+  const locale = useLocale();
+
+
   const [showSlider, setShowSlider] = useState(false);
   useEffect(() => {
     setShowSlider(true);
@@ -27,16 +30,16 @@ export default function Instractors() {
             <div className="col-auto">
               <div className="d-flex justify-center x-gap-15 items-center">
                 <div className="col-auto">
-                  <button className="d-flex items-center text-24 arrow-right-hover js-events-slider-prev instractor-right">
-                    <i className="icon icon-arrow-right"></i>
+                  <button className={`d-flex items-center text-24  js-events-slider-prev ${ locale == 'en' ? 'arrow-left-hover instractor-left' : 'arrow-right-hover instractor-right' }`}>
+                    <i className={`icon ${ locale == 'en' ? 'icon-arrow-left' : 'icon-arrow-right' }`}></i>
                   </button>
                 </div>
                 <div className="col-auto">
                   <div className="pagination -arrows js-events-slider-pagination instractor-pagination"></div>
                 </div>
                 <div className="col-auto">
-                  <button className="d-flex items-center text-24 arrow-left-hover js-events-slider-next instractor-left">
-                    <i className="icon icon-arrow-left"></i>
+                  <button className={`d-flex items-center text-24  js-events-slider-next ${ locale == 'en' ? 'arrow-right-hover instractor-right' : 'arrow-left-hover instractor-left' }`}>
+                    <i className={`icon ${ locale == 'en' ? 'icon-arrow-right' : 'icon-arrow-left' }`}></i>
                   </button>
                 </div>
               </div>
@@ -98,7 +101,7 @@ export default function Instractors() {
 
                         <div className="teamCard__content text-center">
                           <div className="d-flex items-center justify-center">
-                            <div className="icon-star text-yellow-1 text-9 ml-5"></div>
+                            <div className={`icon-star text-yellow-1 text-9 ${ locale == 'en' ? 'mr-5' : 'ml-5' }`}></div>
                             <div className="text-14 text-yellow-1">
                               {elm.rating}
                             </div>
@@ -119,7 +122,7 @@ export default function Instractors() {
                               <Image
                                 width={16}
                                 height={16}
-                                className="ml-8"
+                                className={locale == 'en' ? 'mr-8' : 'ml-8'}
                                 src="/assets/img/team/icons/1.svg"
                                 alt="icon"
                               />
@@ -132,7 +135,7 @@ export default function Instractors() {
                               <Image
                                 width={12}
                                 height={12}
-                                className="ml-8"
+                                className={locale == 'en' ? 'mr-8' : 'ml-8'}
                                 src="/assets/img/team/icons/2.svg"
                                 alt="icon"
                               />
