@@ -250,6 +250,62 @@
         "lesson": "درس",
         "free": "مجاني",
         "currancy": "درهم"
-    }
+    },
 
+    "CheckoutPage": {
+        "title": "طلب كورسات",
+        "bio": "غايتنا تقديم دورات تدريبية جذابة ومختارة بأسعار معقولة.",
+        "form_title": "تفاصيل الفاتورة",
+        "first_name_label": "الاسم الاول",
+        "first_name_placeholder": "الاسم الاول",
+        "last_name_label": "الاسم الاخير",
+        "last_name_placeholder": "الاسم الاخير",
+        "country_label": "الدولة / القطر *",
+        "city_label": "المدينة *",
+        "city_placeholder": "المدينة *",
+        "street_label": "اسم الشارع",
+        "street_placeholder": "اسم الشارع",
+        "state_label": "الولاية *",
+        "state_placeholder": "الولاية *",
+        "zip_label": "الرمز البريدي *",
+        "zip_placeholder": "الرمز البريدي *",
+        "phone_label": "رقم الهاتف *",
+        "phone_placeholder": "رقم الهاتف *",
+        "email_label": "عنوان البريد",
+        "email_placeholder": "عنوان البريد *",
+        "additional_info": "معلومات اضافية",
+        "order_note_label": "ملاحظات الطلب (اختياري)",
+        "order_note_placeholder": "ملاحظات الطلب (اختياري)",
+        "order_title": "تفاصيل الطلب",
+        "course": "الكورس",
+        "subtotal": "المجموع الفرعي",
+        "total": "المجموع الكلي",
+        "payment_title": "تفاصيل الدفع",
+        "bank_transfer_title": "تحويل بنكي مباشر",
+        "bank_transfer_bio": "قم بإجراء الدفع مباشرة في حسابنا المصرفي. يرجى استخدام معرف الطلب الخاص بك كمرجع للدفع. لن يتم شحن طلبك حتى يتم تحويل الأموال إلى حسابنا.",
+        "credit_card_title": "بطاقة ائتمانية",
+        "place_order_btn": "ارسال الطلب",
+        "currancy": "درهم"
+
+    },
+
+    "CartPage": {
+        "title": "سلة التسوق",
+        "bio": "غايتنا تقديم دورات تدريبية جذابة ومختارة بأسعار معقولة.",
+        "course": "الكورس",
+        "price": "السعر",
+        "quantity": "الكمية",
+        "quantity_placeholder": "الكمية...",
+        "subtotal": "المجموع الفرعي",
+        "remove": "حذف",
+        "coupon": "تطبيق الكوبون",
+        "coupon_placeholder": "ادخل الكوبون",
+        "update_cart": "تحديث السلة",
+        "buy_courses": "مواصلة التسوق",
+        "cart_totals": "مجموع السلة",
+        "total": "المجموع",
+        "checkout_btn": "مواصلة للشراء",
+        "currancy":"درهم"
+    }
+ 
   }

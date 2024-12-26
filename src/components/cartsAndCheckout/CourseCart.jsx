@@ -5,9 +5,14 @@ import React, { useState, useEffect } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faMinus, faPlus, faX } from "@fortawesome/free-solid-svg-icons";
 import { useContextElement } from "@/context/Context";
-import Link from "next/link";
+import {Link} from '@/src/i18n/routing';
+import { useTranslations, useLocale } from "next-intl";
 
 export default function CourseCart() {
+
+  const t = useTranslations('CartPage');
+  const locale = useLocale();
+
   const { cartCourses, setCartCourses } = useContextElement();
   const [totalPrice, setTotalPrice] = useState(0);
 
@@ -16,7 +21,7 @@ export default function CourseCart() {
   };
 
   const handleIncrease = (index) => {
-    const item = cartCourses[index];
+    const item = cartCourses[index]; 
 
     item.quantity += 1;
     const updated = [...cartCourses];
@@ -56,13 +61,12 @@ export default function CourseCart() {
             <div className="row justify-center text-center">
               <div className="col-auto">
                 <div>
-                  <h1 className="page-header__title">Course Cart</h1>
+                  <h1 className="page-header__title">{t('title')}</h1>
                 </div>
 
                 <div>
                   <p className="page-header__text">
-                    We’re on a mission to deliver engaging, curated courses at a
-                    reasonable price.
+                  {t('bio')}
                   </p>
                 </div>
               </div>
@@ -78,20 +82,20 @@ export default function CourseCart() {
               <div className="px-30 pr-60 py-25 rounded-8 bg-light-6 md:d-none">
                 <div className="row justify-between">
                   <div className="col-md-4">
-                    <div className="fw-500 text-purple-1">Product</div>
+                    <div className="fw-500 text-purple-1">{t('course')}</div>
                   </div>
                   <div className="col-md-2">
-                    <div className="fw-500 text-purple-1">Price</div>
+                    <div className="fw-500 text-purple-1">{t('price')}</div>
                   </div>
                   <div className="col-md-2">
-                    <div className="fw-500 text-purple-1">Quantity</div>
+                    <div className="fw-500 text-purple-1">{t('quantity')}</div>
                   </div>
                   <div className="col-md-2">
-                    <div className="fw-500 text-purple-1">Subtotal</div>
+                    <div className="fw-500 text-purple-1">{t('subtotal')}</div>
                   </div>
                   <div className="col-md-1">
                     <div className="d-flex justify-end">
-                      <div className="fw-500 text-purple-1">Remove</div>
+                      <div className="fw-500 text-purple-1">{t('remove')}</div>
                     </div>
                   </div>
                 </div>
@@ -125,7 +129,7 @@ export default function CourseCart() {
                     <div className="col-md-2 md:mt-15">
                       <div className="">
                         <div className="shopCart-products__title d-none md:d-block mb-10">
-                          Price
+                        {t('price')}
                         </div>
                         <p>{elm.paid ? `$${elm.discountedPrice}` : "Free"}</p>
                       </div>
@@ -134,7 +138,7 @@ export default function CourseCart() {
                     <div className="col-md-2">
                       <div className="">
                         <div className="shopCart-products__title d-none md:d-block mb-10">
-                          Quantity
+                        {t('quantity')}
                         </div>
 
                         <div className="input-counter md:mt-20 js-input-counter">
@@ -142,7 +146,7 @@ export default function CourseCart() {
                             required
                             className="input-counter__counter"
                             type="number"
-                            placeholder="value..."
+                            placeholder={t('quantity_placeholder')}
                             value={elm.quantity}
                           />
 
@@ -168,11 +172,11 @@ export default function CourseCart() {
                     <div className="col-md-1">
                       <div className="">
                         <div className="shopCart-products__title d-none md:d-block mb-10">
-                          Subtotal
+                        {t('subtotal')}
                         </div>
 
                         <p>
-                          ${(elm.quantity * elm.discountedPrice).toFixed(2)}
+                        {t('currancy')} {(elm.quantity * elm.discountedPrice).toFixed(2)}
                         </p>
                       </div>
                     </div>
@@ -199,10 +203,10 @@ export default function CourseCart() {
                             required
                             className="rounded-8 px-25 py-20"
                             type="text"
-                            placeholder="Coupon Code"
+                            placeholder={t('coupon_placeholder')}
                           />
                           <button className="text-black fw-500" type="submit">
-                            Apply coupon
+                          {t('coupon')}
                           </button>
                         </div>
                       </form>
@@ -211,7 +215,7 @@ export default function CourseCart() {
                     <div className="col-auto">
                       <div className="shopCart-footer__item">
                         <button className="button -md -purple-3 text-purple-1">
-                          Update cart
+                        {t('update_cart')}
                         </button>
                       </div>
                     </div>
@@ -220,10 +224,10 @@ export default function CourseCart() {
                   <div className="row justify-center pt-60 lg:pt-40">
                     <div className="col-auto">
                       <Link
-                        href="/courses-list-1"
+                        href="/courses-list"
                         className="button -md -outline-purple-1 text-purple-1"
                       >
-                        Buy Course
+                        {t('buy_courses')}
                       </Link>
                     </div>
                   </div>
@@ -233,19 +237,19 @@ export default function CourseCart() {
 
             <div className="col-xl-4 col-lg-5 layout-pt-lg">
               <div className="py-30 bg-light-4 rounded-8 border-light">
-                <h5 className="px-30 text-20 fw-500">Cart Totals</h5>
+                <h5 className="px-30 text-20 fw-500">{t('cart_totals')}</h5>
 
                 <div className="d-flex justify-between px-30 item mt-25">
-                  <div className="py-15 fw-500 text-dark-1">Subtotal</div>
+                  <div className="py-15 fw-500 text-dark-1">{t('subtotal')}</div>
                   <div className="py-15 fw-500 text-dark-1">
-                    ${totalPrice.toFixed(2)}
+                    {t('currancy')} {totalPrice.toFixed(2)}
                   </div>
                 </div>
 
                 <div className="d-flex justify-between px-30 item border-top-dark">
-                  <div className="pt-15 fw-500 text-dark-1">Total</div>
+                  <div className="pt-15 fw-500 text-dark-1">{t('total')}</div>
                   <div className="pt-15 fw-500 text-dark-1">
-                    ${totalPrice.toFixed(2)}
+                    {t('currancy')} {totalPrice.toFixed(2)}
                   </div>
                 </div>
               </div>
@@ -254,7 +258,7 @@ export default function CourseCart() {
                 href="/course-checkout"
                 className="button -md -purple-1 text-white col-12 mt-30"
               >
-                Proceed to checkout
+                {t('checkout_btn')}
               </Link>
             </div>
           </div>

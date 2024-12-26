@@ -4,7 +4,7 @@ import React from "react";
 import Image from "next/image";
 import { useState, useEffect } from "react";
 import { useContextElement } from "@/context/Context";
-import Link from "next/link";
+import {Link} from '@/src/i18n/routing';
 import { useTranslations } from "next-intl";
 
 const CourseCart = () => {
@@ -112,7 +112,7 @@ const CourseCart = () => {
                 </button>
               </Link>
               <Link
-                href={"/course-checkout"}
+                href={"/course-checkout"} 
                 style={{ textDecoration: "none" }}
                 className="col-sm-6"
               >
@@ -125,12 +125,12 @@ const CourseCart = () => {
           {!cartCourses.length && (
             <>
               <Link
-                href={"/courses-list-1"}
+                href={"/course-cart"}
                 style={{ textDecoration: "none" }}
                 className="col-12"
               >
                 <button className="button py-20 -purple-1 text-white col-12">
-                   {t('continue_shoping')}
+                   {t('view_cart')}
                 </button>
               </Link>
             </>

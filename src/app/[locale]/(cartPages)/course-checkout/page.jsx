@@ -11,7 +11,7 @@
 import PageLinks from '@/src/components/common/PageLinks'
 import Preloader from '@/src/components/common/Preloader'
 
-import FooterOne from '@/src/components/layout/footers/FooterOne'
+import FooterThree from '@/src/components/layout/footers/FooterThree'
 import Header from '@/src/components/layout/headers/Header'
 
 
@@ -30,11 +30,11 @@ export default function page() {
 
         <Header/>
         <div className="content-wrapper js-content-wrapper overflow-hidden">
-            <PageLinks/>
+            <PageLinks/> 
 
             <CourseCheckOut/>
             
-            <FooterOne/>
+            <FooterThree/>
         </div>
 
     </div>

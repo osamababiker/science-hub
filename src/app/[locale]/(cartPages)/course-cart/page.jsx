@@ -9,12 +9,12 @@ import BlogsOne from '@/src/components/blogs/BlogsOne'
 import PageLinks from '@/src/components/common/PageLinks'
 import Preloader from '@/src/components/common/Preloader'
 
-import FooterOne from '@/src/components/layout/footers/FooterOne'
+import FooterThree from '@/src/components/layout/footers/FooterThree'
 import Header from '@/src/components/layout/headers/Header'
 
 import React from 'react'
 
-import CourseCart from '../../../components/cartsAndCheckout/CourseCart'
+import CourseCart from '../../../../components/cartsAndCheckout/CourseCart'
 export const metadata = {
   title: 'Course-cart || Educrat - Professional LMS Online Education Course NextJS Template',
   description:
@@ -32,7 +32,7 @@ export default function page() {
 
             <CourseCart/>
             
-            <FooterOne/>
+            <FooterThree/>
         </div>
 
     </div>
