@@ -2,12 +2,11 @@
 
 import React, { useState, useEffect, useTransition } from "react";
 import {Link} from '@/src/i18n/routing';
-import MobileFooter from "./MobileFooter";
 import Image from "next/image";
 
 import {useParams} from 'next/navigation';
 import { useTranslations, useLocale } from "next-intl";
-import {usePathname, useRouter} from '@/src/i18n/routing';
+import {usePathname, useRouter} from '@/src/i18n/routing'; 
 
 import { menuList } from "@/data/menu";
 
@@ -38,8 +37,8 @@ export default function Menu({ allClasses, headerPosition }) {
   }, []); 
 
 
-  const [ isPending, startTransition ] = useTransition()
-  const router = useRouter()
+  const [ isPending, startTransition ] = useTransition();
+  const router = useRouter();
   const params = useParams();
 
   const changeLang = (e) => {
@@ -204,9 +203,7 @@ export default function Menu({ allClasses, headerPosition }) {
           </ul>
         </div>
 
-        {/* mobile footer start */}
-        <MobileFooter />
-        {/* mobile footer end */}
+    
       </div>
 
       <div

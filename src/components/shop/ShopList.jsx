@@ -16,14 +16,14 @@ export default function ShopList() {
   const t = useTranslations("ShopListPage");
   const locale = useLocale();
 
-  const { addProductToCart, isAddedToCartProducts } = useContextElement();
+  const { addCourseToCart, isAddedToCartCourses } = useContextElement();
 
   const [value, setValue] = useState([200, 1500]);
   const [pageData, setpageData] = useState();
 
   const [pageItems, setPageItems] = useState(arProductData);
   const handleSubmit = (e) => {
-    e.preventDefault();
+    e.preventDefault(); 
   };
 
   // useEffect(() => {
@@ -211,10 +211,10 @@ export default function ShopList() {
 
                         <div
                           className="productCard__button d-inline-block cursor"
-                          onClick={() => addProductToCart(elm.id)}
+                          onClick={() => addCourseToCart(elm.id)}
                         >
                           <span className="button -md -outline-purple-1 text-dark-1 mt-15">
-                            {isAddedToCartProducts(elm.id)
+                            {isAddedToCartCourses(elm.id)
                               ? t("alredy_added")
                               : t("add_to_cart")}
                           </span>

@@ -13,7 +13,7 @@ export const useContextElement = () => {
 
   export default function Context({ children }) {
     const [cartProducts, setCartProducts] = useState([])
-  
+   
     const [cartCourses, setCartCourses] = useState([])
     const [cartEvents, setCartEvents] = useState([])
     const addCourseToCart = (id)=>{
@@ -34,6 +34,7 @@ export const useContextElement = () => {
 
     }
     const addProductToCart = (id)=>{
+
 
         if (!cartProducts.filter((elm)=>elm.id == id)[0]) {
 
