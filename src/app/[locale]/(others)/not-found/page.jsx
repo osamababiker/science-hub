@@ -12,7 +12,6 @@
 import NotFound from '@/src/components/not-found/NotFound'
 import PageLinks from '@/src/components/common/PageLinks'
 import Preloader from '@/src/components/common/Preloader'
-import EventsOne from '@/src/components/events/EventsOne'
 import FooterOne from '@/src/components/layout/footers/FooterOne'
 import Header from '@/src/components/layout/headers/Header'
 import React from 'react'
