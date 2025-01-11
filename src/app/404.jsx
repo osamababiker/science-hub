@@ -1,9 +1,3 @@
-
-
-
-
-
-
 import NotFound from '@/src/components/not-found/NotFound'
 import PageLinks from '@/src/components/common/PageLinks'
 import Preloader from '@/src/components/common/Preloader'
