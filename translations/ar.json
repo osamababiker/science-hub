@@ -1,0 +1,329 @@
+{
+    "MainMenu": {
+        "signin": "تسجيل دخول",
+        "signup": "انشاء حساب",
+        "home": "الرئيسية",
+        "courses": "الكورسات",
+        "blog": "المدونة",
+        "pages": "صفحات اخرى",
+        "about_us": "عن سينس هب",
+        "contact": "تواصل معنا",
+        "shop": "المتجر",
+        "lang": "اللغة",
+        "english": "انجليزي",
+        "arabic": "عربي"
+    },
+    "CartToggle": {
+        "currancy": "درهم",
+        "free": "مجاني",
+        "cart_empty": "سلة التسوق فارغة",
+        "total": "المجموع",
+        "view_cart": "عرض السلة",
+        "checkout": "ارسال الطلب",
+        "continue_shoping": "مواصلة الشراء"
+    },
+    "SearchToggle": {
+        "search_placeholder": "ماذا تود ان تتعلم؟"
+    },
+    "HomeHero": {
+        "title_one": "المنصة التعليمية الالكترونية ",
+        "title_two": "الاكبر",
+        "title_three": "في الامارات",
+        "call_action_one": "سجل الان",
+        "call_action_two": "شاهد الفيديو",
+        "feature_one": "اكثر من 1200 طالب",
+        "feature_two": "اكثر من 60 كورس",
+        "feature_three": "تعلم كل شئ اونلاين",
+        "card_one_title": "قائمة بآفضل",
+        "card_one_bio": "الكورسات اونلاين",
+        "card_two_title": "شهادات",
+        "card_two_bio": "معتمدة و موثوقة",
+        "card_three_title": "معلمين",
+        "card_three_bio": "على مستوى عالي من  التآهيل"
+    },
+    "LearningPath": {
+        "title": "لماذا سينس هب ؟",
+        "bio": "يقدم مدرسونا المؤهلون أفضل تجربة تعليمية عبر الإنترنت في الإمارات العربية المتحدة",
+        "title_one": "الوصول مدى الحياة",
+        "description_one": " احصل على الدورات مرة واحدة واستمتع بالوصول غير المحدود مدى الحياة—تعلم بالوتيرة التي تناسبك وفي أي وقت.",
+        "title_two": "معلمون خبراء",
+        "description_two": "تعلم من الأفضل! دوراتنا يقدمها خبراء في المجال، شغوفون بمشاركة معرفتهم.",
+        "title_three": "الوصول في أي وقت",
+        "description_three": " تعلم بمرونة مطلقة—ادرس وقتما تشاء، سواء في الليل أو النهار.",
+        "title_four": "تعلم أي شيء",
+        "description_four": "استكشف عالماً من الاحتمالات مع دورات متنوعة مصممة لتناسب اهتماماتك وأهدافك."
+    },
+    "Courses": {
+        "title": "تصفح قائمة كورساتنا المميزة",
+        "bio": "اكثر من ٦٠ كورس مميز متاح الآن",
+        "leason": "درس",
+        "currancy": "درهم",
+        "free":"مجاني"
+    },
+    "Teachers": {
+        "title": "اساتذة موثوقين",
+        "sample_job_title": "منسق التسويق",
+        "sample_students_count": "طالب",
+        "sample_courses_count": "كورس",
+        "teachers_features_title_one": "موثوق من قبل",
+        "teachers_features_title_two": "المعلمين",
+        "teachers_features_bio": "هذا النص هو مثال لنص يمكن أن يستبدل في نفس المساحة، لقد تم توليد هذا النص من مولد النص العربى، حيث يمكنك أن تولد مثل هذا النص أو العديد من النصوص الأخرى",
+        "teachers_features_one": "آخر شهادة جامعية درجة البكالوريوس",
+        "teachers_features_two": "أكثر من 15 عامًا من الخبرة",
+        "teachers_features_three": "12 جائزة التعليم الفائزة",
+        "call_action": "اعرض المزيد"
+    },
+    "Categories": {
+        "title": "تصنيف الكورسات",
+        "bio": "تصفح الكورسات الخاصة بنا حسب التصنيفات ",
+        "courses_count": "كورس"
+    },
+    "Testimonials": {
+        "title": "افضل تجربة تعليمية اونلاين",
+        "bio": "هذا النص هو مثال لنص يمكن أن يستبدل في نفس المساحة، لقد تم توليد هذا النص من مولد النص العربى.",
+        "statictis_one": "استفاد 9/10 مستخدمين بنتائج تعليمية أفضل.",
+        "statictis_two": "85% من الطلاب يكملون دراستهم حتى الانتهاء"
+    },
+    "LearningPathTwo": {
+        "title_one": "تعلم",
+        "title_two": "مهارات جديدة متى",
+        "title_three": "واينما تشاء",
+        "bio": "هذا النص هو مثال لنص يمكن أن يستبدل في نفس المساحة، لقد تم توليد هذا النص من مولد النص العربى",
+        "call_action": "انضم الان",
+        "feature_one": "اساتذة مختارون بعناية",
+        "feature_two": "منهج دراسي سهل المتابعة",
+        "feature_three": "كورسات مجانية",
+        "feature_four": "ضمان استعادة الأموال"
+    },
+    "Registeration": {
+        "title_one": "انشاء",
+        "title_two": "حساب مجانا",
+        "email_label": "عنوان البريد",
+        "email_placeholder": "البريد ...",
+        "password_label": "كلمة المرور",
+        "password_placeholder": "كلمة المرور...",
+        "btn": "ابدآ التعلم مجانا",
+        "tearms_conditions": "من خلال الاستمرار، فإنك توافق على شروط الاستخدام وسياسة الخصوصية الخاصة بنا وأن بياناتك مخزنة في الولايات المتحدة. أنت تؤكد أنك تبلغ من العمر 16 عامًا على الأقل (13 عامًا إذا كنت مستخدمًا معتمدًا لـ Classrooms).",
+        "count_down_title": "سجل الآن واحصل على خصم 70%",
+        "count_down_bio": "احصل على 100 دورة تدريبية مجانية عبر الإنترنت",
+        "days": "ايام",
+        "hours": "ساعات",
+        "minutes": "دقائق",
+        "seconds": "ثواني"
+    },
+    "Blogs": {
+        "title": "المدونة",
+        "bio": "هذا النص هو مثال لنص يمكن أن يستبدل في نفس المساحة",
+        "link": "تصفح المقالات"
+    },
+    "Footer": {
+        "copyRight": "سينس هب. جميع الحقوق محفوظة.",
+        "lang": "العربية"
+    },
+
+    "CoursesPage": {
+        "title": "كورساتنا",
+        "bio": "قائمة بجميع دوراتنا للاختيار من بينها",
+        "coursesTitle": "دورات لمساعدتك على البدء",
+        "lesson": "دروس",
+        "currancy": "درهم",
+        "free": "مجاني",
+        "instructorsTitle": "اشهر المعلمين",
+        "students_count": "طالب",
+        "courses_count": "كورس"
+    },
+
+    "CourseDetails": {
+        "lessons": "الدروس",
+        "duration": "المدة",
+        "hours": "ساعة",
+        "level": "المستوى",
+        "language": "اللغة",
+        "difficulty": "الصعوبة",
+        "currancy":"درهم",
+        "add_to_cart":"اضف للسلة",
+        "buy_courses":"مواصلة التسوق",
+        "alredy_added":"مضاف مسبقا",
+        "description":"الوصف"
+    },
+
+    "AboutPage": {
+        "title": "عن سينس هب",
+        "bio": "غايتنا تقديم دورات تدريبية جذابة ومختارة بأسعار معقولة.",
+        "sub_title": "مرحبًا بكم في سينس عزز مهاراتك بأفضل الدورات التدريبية عبر الإنترنت",
+        "sub_bio" : "ساينس هب هي منصة تعليمية رائدة متخصصة في تقديم دورات تدريبية عالية الجودة، ودورات عبر الإنترنت، وخدمات التدريس. نحن ملتزمون بتمكين الطلاب والمحترفين من خلال حلول تعليمية مبتكرة ومرنة وقابلة للوصول. سواء كنت تتطلع إلى تحسين أدائك الأكاديمي، تعلم مهارات جديدة، أو اتقان لغة، فإن ساينس هب هي شريكك الموثوق في التعليم",
+        "btn": "ابدأ التعلم الآن",
+        "why_us_title": "لماذا تتعلم معنا؟",
+        "why_us_bio": "تجمع دوراتنا بين تعليم الخبراء والمحتوى الممتع وخيارات التعلم المرنة، مما يمنحك القدرة على تحقيق أهدافك بالوتيرة التي تناسبك. مع الوصول مدى الحياة وتنوع المواضيع، ستجد دائمًا الدورة المناسبة لاحتياجاتك.",
+        "testimonial_title": "ماذا يقول الناس؟",
+        "testimonial_bio": "هذا النص هو مثال لنص يمكن أن يستبدل في نفس المساحة،"
+    },
+
+
+    "ContactPage": {
+        "title": "تواصل معنا",
+        "bio": "هذا النص هو مثال لنص يمكن أن يستبدل في نفس المساحة،",
+        "address_title": "مكتبنا",
+        "form_title": "ارسل رسالة",
+        "form_bio": "هذا النص هو مثال لنص يمكن أن يستبدل في نفس المساحة، لقد تم توليد هذا النص",
+        "name_label": "الاسم",
+        "name_placeholder": "الاسم...",
+        "email_label": "عنوان البريد",
+        "email_placeholder": "البريد ...",
+        "message_label": "الرسالة...",
+        "message_placeholder": "الرسالة",
+        "send_btn": "ارسال الرسالة" ,
+        "faq_title": "آسئلة شائعة",
+        "faq_bio": "هذا النص هو مثال لنص يمكن أن يستبدل في نفس المساحة، ",
+        "success_message": "شكرًا لك على الاتصال بنا، سنتواصل معك قريبًا"
+    },
+
+
+
+    "ShopListPage": {
+        "title": "متجرنا",
+        "bio": "نسعى لتقديم دورات تدريبية مفيدة و بسعر معقول.",
+        "filter_search": "ابحث عن كورس",
+        "filter_categories": "التصنيفات",
+        "filter_price": "تصفية حسب السعر",
+        "min_price": "اقل سعر:",
+        "max_price": "اعلى سعر:",
+        "result_count_one": "عرض",
+        "result_count_two": "اجمالي النتائع",
+        "sort_by": ":ترتيب حسب",
+        "default_sort": "ترتيب افتراضي",
+        "currancy": "درهم",
+        "add_to_cart": "اضف للسلة",
+        "alredy_added": "مضاف مسبقا"
+    },
+
+
+    "ShopPage": {
+        "currancy": "درهم",
+        "withlist": "اضف للمفضلة",
+        "category": "التصنيف",
+        "add_to_cart": "اضف للسلة",
+        "alredy_added": "مضاف مسبقا",
+        "description_tab": "الوصف",
+        "reviews_tab": "التقييمات",
+        "reviews_title": "آراء الطلبة",
+        "review_form_title": "اكتب تقييما",
+        "review_title_label": "عنوان التقييم",
+        "review_title_placeholder": "كورس ممتاز",
+        "review_content_label": "محتوى التقييم",
+        "review_content_placeholder": "الرسالة",
+        "review_btn": "ارسال التقييم",
+        "related_courses_title": "كورسات مشابهة"
+    },
+
+
+    "BlogListPage": {
+        "title": "اخر الاخبار",
+        "bio": "غايتنا تقديم دورات تدريبية جذابة ومختارة بأسعار معقولة.",
+        "related_blogs": "مقالات مشابهة"
+    },
+
+
+
+    "signipPage": {
+        "title": "انشاء حساب",
+        "have_account": "لديك حساب مسبقا؟",
+        "login_link": "تسجيل دخول",
+        "email_label": "البريد الالكتروني *",
+        "email_placeholder": "البريد ...",
+        "username_label": "اسم المستخدم *",
+        "username_placeholder": "اسم المستخدم",
+        "password_label": "كلمة المرور",
+        "password_placeholder":"كلمة المرور...",
+        "confirm_password_label": " تآكيد كلمة المرور *",
+        "confirm_password_placeholder": "تآكيد كلمة المرور",
+        "register_btn": "انشاء حساب"
+    },
+
+
+
+
+    "LoginPage": {
+        "title": "تسجيل دخول",
+        "dont_have_account": "لا تملك حساب؟",
+        "register_link": "انشاء حساب مجانا",
+        "email_label": "البريد الالكتروني *",
+        "email_placeholder": "البريد ...",
+        "password_label": "كلمة المرور",
+        "password_placeholder":"كلمة المرور...",
+        "login_btn": "تسجيل دخول"
+    },
+
+
+    "InstractorPage": {
+        "rating": "تقييم المعلم",
+        "reviews": "تقييم",
+        "students": "طالب",
+        "course": "كورس",
+        "overview_tab": "نبذة عامة",
+        "courses_tab": "الكورسات",
+        "description": "الوصف",
+        "popular": "شائع",
+        "best_sellers": "اكثر مبيعا",
+        "lesson": "درس",
+        "free": "مجاني",
+        "currancy": "درهم"
+    },
+
+    "CheckoutPage": {
+        "title": "طلب كورسات",
+        "bio": "غايتنا تقديم دورات تدريبية جذابة ومختارة بأسعار معقولة.",
+        "form_title": "تفاصيل الفاتورة",
+        "first_name_label": "الاسم الاول",
+        "first_name_placeholder": "الاسم الاول",
+        "last_name_label": "الاسم الاخير",
+        "last_name_placeholder": "الاسم الاخير",
+        "country_label": "الدولة / القطر *",
+        "city_label": "المدينة *",
+        "city_placeholder": "المدينة *",
+        "street_label": "اسم الشارع",
+        "street_placeholder": "اسم الشارع",
+        "state_label": "الولاية *",
+        "state_placeholder": "الولاية *",
+        "zip_label": "الرمز البريدي *",
+        "zip_placeholder": "الرمز البريدي *",
+        "phone_label": "رقم الهاتف *",
+        "phone_placeholder": "رقم الهاتف *",
+        "email_label": "عنوان البريد",
+        "email_placeholder": "عنوان البريد *",
+        "additional_info": "معلومات اضافية",
+        "order_note_label": "ملاحظات الطلب (اختياري)",
+        "order_note_placeholder": "ملاحظات الطلب (اختياري)",
+        "order_title": "تفاصيل الطلب",
+        "course": "الكورس",
+        "subtotal": "المجموع الفرعي",
+        "total": "المجموع الكلي",
+        "payment_title": "تفاصيل الدفع",
+        "bank_transfer_title": "تحويل بنكي مباشر",
+        "bank_transfer_bio": "قم بإجراء الدفع مباشرة في حسابنا المصرفي. يرجى استخدام معرف الطلب الخاص بك كمرجع للدفع. لن يتم شحن طلبك حتى يتم تحويل الأموال إلى حسابنا.",
+        "credit_card_title": "بطاقة ائتمانية",
+        "place_order_btn": "ارسال الطلب",
+        "currancy": "درهم"
+
+    },
+
+    "CartPage": {
+        "title": "سلة التسوق",
+        "bio": "غايتنا تقديم دورات تدريبية جذابة ومختارة بأسعار معقولة.",
+        "course": "الكورس",
+        "price": "السعر",
+        "quantity": "الكمية",
+        "quantity_placeholder": "الكمية...",
+        "subtotal": "المجموع الفرعي",
+        "remove": "حذف",
+        "coupon": "تطبيق الكوبون",
+        "coupon_placeholder": "ادخل الكوبون",
+        "update_cart": "تحديث السلة",
+        "buy_courses": "مواصلة التسوق",
+        "cart_totals": "مجموع السلة",
+        "total": "المجموع",
+        "checkout_btn": "مواصلة للشراء",
+        "currancy":"درهم"
+    }
+ 
+  }
