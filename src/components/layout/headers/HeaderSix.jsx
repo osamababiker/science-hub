@@ -63,7 +63,7 @@ export default function HeaderSix() {
               <div className="header-right__icons text-white d-flex items-center">
                 <SearchToggle color={"text-dark-1"} />
                 <CartToggle
-                  parentClassess={`relative sm:pl-15 ${ locale == 'en' ? 'pr-30' : 'pr-30' }`}
+                  parentClassess={`relative sm:pl-15 ${ locale == 'en' ? 'pl-30' : 'pr-30' }`}
                   allClasses={"d-flex items-center text-dark-1"}
                 />
 
