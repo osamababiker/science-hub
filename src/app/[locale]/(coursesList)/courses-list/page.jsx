@@ -2,9 +2,7 @@
 
 import PageLinks from '@/src/components/common/PageLinks'
 import Preloader from '@/src/components/common/Preloader'
-import CourseListSix from '@/src/components/courseList/CourseListSix'
 import CoursesSlider from '@/src/components/courseList/CourseSlider'
-import Instractors from '@/src/components/courseList/Instractors'
 import PageHeading from '@/src/components/courseList/PageHeading'
 import FooterThree from "@/src/components/layout/footers/FooterThree";
 import Header from '@/src/components/layout/headers/Header'

@@ -113,8 +113,21 @@ export default function CourceCardFive({ data }) {
               </div>
 
               <div className="coursesCard-footer__price">
-                <div>{t('currancy')} {data.original_price}</div>
-                <div>{t('currancy')} {data.discounted_price}</div>
+                {data.original_price || data.discounted_price ? (
+                  <>
+                    <div>
+                      { t("currancy") } {data.original_price}
+                    </div>
+                    <div>
+                      {t("currancy")} {data.discounted_price}
+                    </div>
+                  </>
+                ) : (
+                  <>
+                    <div></div>
+                    <div> { t("free") } </div>
+                  </>
+                )}
               </div>
             </div>
           </div>

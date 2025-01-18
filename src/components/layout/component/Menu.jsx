@@ -12,6 +12,7 @@ import { menuList } from "@/data/menu";
 
 
 export default function Menu({ allClasses, headerPosition }) {
+
   const [menuItem, setMenuItem] = useState("");
   const [submenu, setSubmenu] = useState("");
   const pathname = usePathname();
@@ -109,7 +110,17 @@ export default function Menu({ allClasses, headerPosition }) {
                 href="#"
                 className={menuItem == "Pages" ? "activeMenu" : ""}
               >
-                <i className={`icon-chevron-right text-13 ${ locale == 'en' ? 'mr-10' : 'ml-10' }`}></i> {t('pages')}
+                {locale == 'en' ? (
+                  <>
+                    {t('pages')}
+                    <i className="icon-chevron-right text-13 ml-10"></i>
+                  </>
+                ) : (
+                  <>
+                    <i className="icon-chevron-right text-13 ml-10"></i>
+                    {t('pages')}
+                  </>
+                )}
               </Link>
 
               <ul className="subnav">
@@ -167,15 +178,29 @@ export default function Menu({ allClasses, headerPosition }) {
               <Link
                 data-barba
                 href="#"
-                className={menuItem == "Pages" ? "activeMenu" : ""}
+                className={menuItem == "Language" ? "activeMenu" : ""}
               >
-                <i className={`icon-chevron-right text-13 ${ locale == 'en' ? 'mr-10' : 'ml-10' }`}></i> 
-                <Image width={20}
-                  height={20}
-                  className={locale == 'en' ? 'mr-8' : 'ml-8'}
-                  src={locale == 'en' ? '/assets/img/general/uk.png' : '/assets/img/general/uae.png'}
-                  alt="icon"
-                />
+                {locale == 'en' ? (
+                  <>
+                    <Image width={20}
+                      height={20}
+                      className={locale == 'en' ? 'mr-8' : 'ml-8'}
+                      src={locale == 'en' ? '/assets/img/general/uk.png' : '/assets/img/general/uae.png'}
+                      alt="icon"
+                    />
+                    <i className="icon-chevron-right text-13 ml-10"></i>
+                  </>
+                ) : (
+                  <>
+                    <i className="icon-chevron-right text-13 ml-10"></i>
+                    <Image width={20}
+                      height={20}
+                      className={locale == 'en' ? 'mr-8' : 'ml-8'}
+                      src={locale == 'en' ? '/assets/img/general/uk.png' : '/assets/img/general/uae.png'}
+                      alt="icon"
+                    />
+                  </>
+                )}
               </Link>
 
               <ul className={`subnav ${ locale == 'en' ? 'subnav-en' : 'subnav-ar' }`}>

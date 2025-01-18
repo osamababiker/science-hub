@@ -103,7 +103,7 @@ export default function CourseCardSix({ data }) {
             </div>
 
             <div className="d-flex items-center">
-              {data.paid ? (
+              {data.original_price || data.discounted_price ? (
                 <>
                   <div className="fw-500 ml-10 line-through text-light-1">
                     { t("currancy") } {data.original_price}
