@@ -10,12 +10,13 @@ import React from 'react'
 import BlogDetails from '@/src/components/blogs/BlogDetails'
 import Preloader from '@/src/components/common/Preloader'
 
+
 export const metadata = {
-  title: 'Blog-details || Educrat - Professional LMS Online Education Course NextJS Template',
+  title:
+    "Our Blog || Science Hub",
   description:
-    'Elevate your e-learning content with Educrat, the most impressive LMS template for online courses, education and LMS platforms.',
-  
-}
+    "Science Hub is a leading educational platform specializing in delivering high-quality training, online courses, and tutoring services .",
+};
 
 
 export default function page({ params }) {

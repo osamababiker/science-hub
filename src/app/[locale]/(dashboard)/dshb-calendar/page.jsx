@@ -5,12 +5,13 @@ import Sidebar from '@/src/components/dashboard/Sidebar'
 import Calender from '@/src/components/dashboard/calendar/Calender'
 import HeaderSix from "@/src/components/layout/headers/HeaderSix";
 import React from 'react'
+
 export const metadata = {
-  title: 'Dashboard-calendar || Educrat - Professional LMS Online Education Course NextJS Template',
+  title:
+    "Calender || Science Hub",
   description:
-    'Elevate your e-learning content with Educrat, the most impressive LMS template for online courses, education and LMS platforms.',
-  
-}
+    "Science Hub is a leading educational platform specializing in delivering high-quality training, online courses, and tutoring services .",
+};
 
 export default function page() {
   return (

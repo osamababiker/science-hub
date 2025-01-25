@@ -10,11 +10,12 @@ import {  getCategories, getCourses, getTeachers } from "@/lib/data"
 import React from 'react'
 
 export const metadata = {
-  title: 'Couese-list-6 || Educrat - Professional LMS Online Education Course NextJS Template',
+  title:
+    "Courses List || Science Hub",
   description:
-    'Elevate your e-learning content with Educrat, the most impressive LMS template for online courses, education and LMS platforms.',
-  
-}
+    "Science Hub is a leading educational platform specializing in delivering high-quality training, online courses, and tutoring services .",
+};
+
 export default async function page() {
 
   const courses = await getCourses();

@@ -15,9 +15,9 @@ import { getTeachers, getPosts, getCategories, getCourses, getTestimonials } fro
 
 export const metadata = {
   title:
-    "Home-6 || Educrat - Professional LMS Online Education Course NextJS Template",
+    "Home || Science Hub",
   description:
-    "Elevate your e-learning content with Educrat, the most impressive LMS template for online courses, education and LMS platforms.",
+    "Science Hub is a leading educational platform specializing in delivering high-quality training, online courses, and tutoring services .",
 };
 
 export default async function page() {

@@ -3,12 +3,14 @@ import HeaderAuth from "@/src/components/layout/headers/HeaderAuth";
 import AuthImageMove from "@/src/components/others/AuthImageMove";
 import LoginForm from "@/src/components/others/LoginForm";
 import React from "react";
+
 export const metadata = {
   title:
-    "Login || Educrat - Professional LMS Online Education Course NextJS Template",
+    "Login || Science Hub",
   description:
-    "Elevate your e-learning content with Educrat, the most impressive LMS template for online courses, education and LMS platforms.",
+    "Science Hub is a leading educational platform specializing in delivering high-quality training, online courses, and tutoring services .",
 };
+
 export default function page() {
   return (
     <div className="main-content  ">
