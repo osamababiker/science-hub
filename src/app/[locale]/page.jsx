@@ -9,7 +9,6 @@ import TestimonialsSix from "@/src/components/homes/testimonials/TestimonialsSix
 import LearningPathsSix from "@/src/components/homes/LearningPath/LearningPathsSix";
 import CountdownRegistration from "@/src/components/homes/CountdownRegistration";
 import BlogsTwo from "@/src/components/homes/blogs/BlogsTwo";
-import GetAppSix from "@/src/components/homes/getApp/GetAppSix";
 import FooterThree from "@/src/components/layout/footers/FooterThree";
 import Preloader from "@/src/components/common/Preloader";
 import { getTeachers, getPosts, getCategories, getCourses, getTestimonials } from "@/lib/data";

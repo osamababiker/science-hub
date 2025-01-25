@@ -1,6 +1,5 @@
 "use client";
 import React from "react";
-import { HeaderExplore } from "../component/header-explore";
 
 import SearchToggle from "../component/SearchToggle";
 import CartToggle from "../component/CartToggle";
@@ -10,12 +9,14 @@ import Image from "next/image";
 import { useState } from "react";
 import { useTranslations, useLocale } from "next-intl";
 import MobileMenu from "../component/MobileMenu";
+import { useSession } from "next-auth/react";
 
 export default function Header() {
 
   const [activeMobileMenu, setActiveMobileMenu] = useState(false);
   const t = useTranslations('MainMenu');
   const locale = useLocale();
+  const { data: session, status } = useSession();
 
   return (
     <>
@@ -64,15 +65,23 @@ export default function Header() {
                 </div>
 
                 <div className={`header-right__buttons d-flex items-center  xl:ml-20 lg:d-none ${ locale == 'en' ? 'ml-30' : 'mr-30' }`}>
-                <Link href="/login" className="button -underline text-white">
-                  {t('signin')}
+                {!session ?
+                <>
+                  <Link href="/login" className="button -underline text-white">
+                    {t('signin')}
+                  </Link>
+                  <Link
+                    href="/signup"
+                    className={`button h-50 px-40 -purple-1 -rounded text-white xl:ml-20 ${ locale == 'en' ? 'ml-30' : 'mr-30' }`}
+                  >
+                    {t('signup')}
+                  </Link>
+                </>
+                : 
+                <Link href="/dashboard" className="button -underline text-white">
+                  {t('dashboard')}
                 </Link>
-                <Link
-                  href="/signup"
-                  className={`button h-50 px-40 -purple-1 -rounded text-white xl:ml-20 ${ locale == 'en' ? 'ml-30' : 'mr-30' }`}
-                >
-                  {t('signup')}
-                </Link>
+                }
               </div>
               </div>
             </div>

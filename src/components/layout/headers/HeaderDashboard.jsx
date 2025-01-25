@@ -7,7 +7,7 @@ import { sidebarItems } from "../../../../data/homeSidebarItems";
 import { notifications } from "@/data/notifications";
 import Messages from "../component/Messages";
 import MyCourses from "../component/MyCourses";
-import Link from "next/link";
+import Link from "next/link"; 
 
 export default function HeaderDashboard() {
   const [messageOpen, setMessageOpen] = useState(false);

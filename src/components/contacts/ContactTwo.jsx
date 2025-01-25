@@ -11,9 +11,7 @@ export default function ContactTwo() {
   const t = useTranslations("ContactPage");
   const [state, formAction] = useFormState(sendMessage, undefined); 
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-  };
+
   return (
     <>
       <section className="page-header -type-4 bg-beige-1">

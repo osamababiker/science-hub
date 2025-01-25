@@ -8,15 +8,17 @@ import SearchToggle from "../component/SearchToggle";
 import Image from "next/image"; 
 import {Link} from '@/src/i18n/routing';
 import { useTranslations, useLocale } from "next-intl";
+import { useSession } from "next-auth/react";
 
 export default function HeaderSix() {
-  const [activeMobileMenu, setActiveMobileMenu] = useState(false);
 
+  const [activeMobileMenu, setActiveMobileMenu] = useState(false);
   const [scrollPosition, setScrollPosition] = useState(0);
+  const { data: session, status } = useSession();
 
   const t = useTranslations('MainMenu');
   const locale = useLocale();
-
+ 
   useEffect(() => {
     const handleScroll = () => {
       const position = window.scrollY;
@@ -79,16 +81,25 @@ export default function HeaderSix() {
               </div>
 
               <div className={`header-right__buttons d-flex items-center xl:ml-20 lg:d-none ${ locale == 'en' ? 'ml-30' : 'mr-30 ' }`}>
-                <Link href="/login" className="button -underline text-dark-1">
-                  {t('signin')}
+                {!session ?
+                  <>
+                  <Link href="/login" className="button -underline text-dark-1">
+                    {t('signin')}
+                  </Link>
+                  <Link
+                    href="/signup"
+                    className={`button h-50 px-40 -purple-1 -rounded text-white xl:ml-20 ${ locale == 'en' ? 'ml-30' : 'mr-30' }`}
+                  >
+                    {t('signup')}
+                  </Link>
+                  </>
+                : 
+                <Link href="/dashboard" className="button -underline text-dark-1">
+                  {t('dashboard')}
                 </Link>
-                <Link
-                  href="/signup"
-                  className={`button h-50 px-40 -purple-1 -rounded text-white xl:ml-20 ${ locale == 'en' ? 'ml-30' : 'mr-30' }`}
-                >
-                  {t('signup')}
-                </Link>
+                }
               </div>
+
             </div>
           </div>
         </div>

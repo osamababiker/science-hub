@@ -3,30 +3,27 @@
 import React, { useState } from "react";
 import EditProfile from "./EditProfile";
 import Password from "./Password";
-import SocialProfiles from "./SocialProfiles";
-import CloseAccount from "./CloseAccount";
-import FooterNine from "@/src/components/layout/footers/FooterNine";
-import Notification from "./Notifications";
-
-const buttons = [
-  "Edit Profile",
-  "Password",
-  "Social Profiles",
-  "Notifications",
-  "Close Account",
-];
+import FooterThree from "@/src/components/layout/footers/FooterThree";
+import { useTranslations } from "next-intl";
 
 export default function Settings() {
+
   const [activeTab, setActiveTab] = useState(1);
+  const t = useTranslations('Dashboard');
+
+  const buttons = [
+    t("edit_profile_tab"),
+    t("change_password_tab"),
+  ];
 
   return (
     <div className="dashboard__main">
       <div className="dashboard__content bg-light-4">
         <div className="row pb-50 mb-10">
           <div className="col-auto">
-            <h1 className="text-30 lh-12 fw-700">Settings</h1>
+            <h1 className="text-30 lh-12 fw-700">{t("my_settings_title")}</h1>
             <div className="mt-10">
-              Lorem ipsum dolor sit amet, consectetur.
+              {t("my_settings_bio")}
             </div>
           </div>
         </div>
@@ -53,9 +50,6 @@ export default function Settings() {
                 <div className="tabs__content py-30 px-30 js-tabs-content">
                   <EditProfile activeTab={activeTab} />
                   <Password activeTab={activeTab} />
-                  <SocialProfiles activeTab={activeTab} />
-                  <Notification activeTab={activeTab} />
-                  <CloseAccount activeTab={activeTab} />
                 </div>
               </div>
             </div>
@@ -63,7 +57,7 @@ export default function Settings() {
         </div>
       </div>
 
-      <FooterNine />
+      <FooterThree />
     </div>
   );
 }

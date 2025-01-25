@@ -1,17 +1,61 @@
-"use client";
+"use client"
 
+import { z } from 'zod';
 import { useLocale, useTranslations } from "next-intl";
-import {Link} from '@/src/i18n/routing';
-import React from "react";
+import { Link  } from '@/src/i18n/routing';
+import { signUp } from "@/lib/auth";
+import { useForm, Controller } from "react-hook-form";
+import { useRouter } from '@/src/i18n/routing';
+import { useState } from 'react';
+import { useSession } from "next-auth/react";
 
 export default function SignUpForm() {
 
   const t = useTranslations("signipPage");
+  const { data: session, status} = useSession();
   const locale = useLocale();
+  const router = useRouter();
+  const [error, setError] = useState(null);
+  const { control, handleSubmit, formState } = useForm({
+    defaultValues: {
+      name: '',
+      phone: '',
+      email: '',
+      password: '',
+      password_confirmation: ''
+    }
+  });
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
+  const onSubmit = async (formData) => {
+    const { name, email, phone, password, password_confirmation } = formData;
+    const parsedCredentials = z
+        .object({ name: z.string(), phone: z.string(), email: z.string().email(), password: z.string().min(6), password_confirmation: z.string().min(6) })
+        .safeParse({ name, email, phone, password, password_confirmation });
+    if (parsedCredentials.success) {
+      const res = await signUp(parsedCredentials);
+      if(res.status == 201) {
+        router.push('/login');
+      } else if(res.status == 400) {
+        // email or phone are not unique
+        setError(t("400Error"));
+      } else if(res.status == 500) {
+        setError(t("500Error"));
+      }
+    } else {
+      // setup validation error message
+      setError(parsedCredentials.error.ZodError[0].message);
+      console.log(parsedCredentials.error)
+    }
   };
+
+  if (status === "loading") {
+    return <p>...</p>; 
+  }
+
+  if (status === "authenticated") {
+    router.push('/dashboard');
+  }
+
   return (
     <div className="form-page__content lg:py-50">
       <div className="container">
@@ -28,31 +72,58 @@ export default function SignUpForm() {
 
               <form
                 className="contact-form respondForm__form row y-gap-20 pt-30"
-                onSubmit={handleSubmit}
+                onSubmit={handleSubmit(onSubmit)}
               >
+                {error ? <div className="alert alert-danger"> { error } </div>: ''}
                 <div className="col-lg-6">
                   <label className="text-16 lh-1 fw-500 text-dark-1 mb-10">
                     {t("email_label")}
                   </label>
-                  <input required type="text" name="title" placeholder={t("email_placeholder")} />
+                  <Controller 
+                    name="email"
+                    control={control}
+                    render={({ field }) => <input {...field} required type="email" name="email" placeholder={t("email_placeholder")} />}
+                  />
                 </div>
                 <div className="col-lg-6">
                   <label className="text-16 lh-1 fw-500 text-dark-1 mb-10">
                     {t("username_label")}
                   </label>
-                  <input required type="text" name="title" placeholder={t("username_placeholder")} />
+                  <Controller
+                    name="name"
+                    control={control}
+                    render={({ field }) => <input {...field}  required type="text" name="name" placeholder={t("username_placeholder")} />}
+                  />
+                </div>
+                <div className="col-lg-12">
+                  <label className="text-16 lh-1 fw-500 text-dark-1 mb-10">
+                    {t("phone_label")}
+                  </label>
+                  <Controller
+                    name="phone"
+                    control={control}
+                    render={({ field }) => <input {...field}  required type="text" name="phone" placeholder={t("phone_placeholder")} />}
+                  />
                 </div>
                 <div className="col-lg-6">
                   <label className="text-16 lh-1 fw-500 text-dark-1 mb-10">
                   {t("password_label")}
                   </label>
-                  <input required type="text" name="title" placeholder={t("password_placeholder")}/>
+                  <Controller
+                    name="password"
+                    control={control}
+                    render={({ field }) => <input {...field}  required type="password" name="password" placeholder={t("password_placeholder")}/>}
+                  />
                 </div>
                 <div className="col-lg-6">
                   <label className="text-16 lh-1 fw-500 text-dark-1 mb-10">
                   {t("confirm_password_label")}
                   </label>
-                  <input required type="text" name="title" placeholder={t("confirm_password_placeholder")} />
+                  <Controller
+                    name="password_confirmation"
+                    control={control}
+                    render={({ field }) =>  <input {...field}  required type="password" name="password_confirmation" placeholder={t("confirm_password_placeholder")} />}
+                  />
                 </div>
                 <div className="col-12">
                   <button

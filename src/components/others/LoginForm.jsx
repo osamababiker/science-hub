@@ -2,16 +2,46 @@
 
 import { useLocale, useTranslations } from "next-intl";
 import {Link} from '@/src/i18n/routing';
+import { signIn } from 'next-auth/react';
+import { z } from 'zod';
 import React from "react";
+import { useState } from "react";
+import {useRouter} from '@/src/i18n/routing'; 
+import { useSession } from "next-auth/react";
 
 export default function LoginForm() {
 
   const t = useTranslations("LoginPage");
+  const { data: session, status} = useSession();
   const locale = useLocale();
+  const router = useRouter();
+  const [error, setError] = useState(null);
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
+  const handleSubmit = async (formData) => {
+    const email = formData.get("email");
+    const password = formData.get("password");
+    const parsedCredentials = z
+        .object({ email: z.string().email(), password: z.string().min(6) })
+        .safeParse({ email, password });
+
+    if (parsedCredentials.success) {
+      const res =  await signIn("credentials", {email: email, password: password, redirect: false});
+      if(res.status == 401) {
+        setError(t("auth_error"));
+      } else {
+        router.push('/dashboard');
+      }
+    }else setError(t("validation_error"));
   };
+
+  if (status === "loading") {
+    return <p>...</p>; 
+  }
+
+  if (status === "authenticated") {
+    router.push('/dashboard');
+  }
+  
   return (
     <div className="form-page__content lg:py-50">
       <div className="container">
@@ -28,13 +58,14 @@ export default function LoginForm() {
 
               <form
                 className="contact-form respondForm__form row y-gap-20 pt-30"
-                onSubmit={handleSubmit}
+                action={handleSubmit}
               >
+                {error ? <div className="alert alert-danger"> { error } </div>: ''}
                 <div className="col-12">
                   <label className="text-16 lh-1 fw-500 text-dark-1 mb-10">
                   {t("email_label")}
                   </label>
-                  <input required type="text" name="title" placeholder= {t("email_placeholder")} />
+                  <input required type="email" name="email" placeholder= {t("email_placeholder")} />
                 </div>
                 <div className="col-12">
                   <label className="text-16 lh-1 fw-500 text-dark-1 mb-10">
@@ -43,10 +74,11 @@ export default function LoginForm() {
                   <input
                     required
                     type="password"
-                    name="title"
+                    name="password"
                     placeholder= {t("password_placeholder")}
                   />
                 </div>
+                
                 <div className="col-12">
                   <button
                     type="submit"

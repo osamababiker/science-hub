@@ -2,15 +2,12 @@ import FullCalendar from "@fullcalendar/react";
 import dayGridPlugin from "@fullcalendar/daygrid";
 
 const events = [
-  { title: "Birthday Party", start: new Date() },
-  { title: "Group Project is due", start: new Date() },
+  { title: "درس اساسيات البرمجة", start: new Date() },
 ];
 
 function renderEventContent(eventInfo) {
   return (
     <>
-      {/* <b>{eventInfo.timeText}</b>
-        <i>{eventInfo.event.title}</i> */}
       <div
         className="text-left pt-5 pb-15 px-10"
         style={{ overflow: "hidden" }}

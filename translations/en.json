@@ -2,6 +2,7 @@
     "MainMenu": {
         "signin": "Log in",
         "signup": "Sign Up",
+        "dashboard": "Dashboard",
         "home": "Home",
         "courses": "Courses",
         "blog": "Blog",
@@ -233,12 +234,17 @@
         "email_label": "Email address *",
         "email_placeholder": "Email...",
         "username_label": "Username *",
+        "phone_label": "Phone Number *",
+        "phone_placeholder": "Phone Number",
         "username_placeholder": "Username",
         "password_label": "Password *",
         "password_placeholder":"Password...",
         "confirm_password_label": " Confirm Password *",
         "confirm_password_placeholder": "Confirm Password",
-        "register_btn": "Register"
+        "register_btn": "Register",
+        "400Error": "Email and Phone Number should be unique",
+        "500Error": "Something went wrong Please try again later",
+        "validationError": ""
     },
 
 
@@ -250,7 +256,9 @@
         "email_placeholder": "Email...",
         "password_label": "Password *",
         "password_placeholder":"Password...",
-        "login_btn": "Login"
+        "login_btn": "Login",
+        "auth_error": "Email or/and password are not correct",
+        "validation_error": "Invalid email or password"
     },
 
     "InstractorPage": {
@@ -321,6 +329,47 @@
         "total": "Total",
         "checkout_btn": "Proceed to checkout",
         "currancy": "AED"
+    },
+
+    "Dashboard": {
+        "sidebar_dashboard": "Dashboard",
+        "sidebar_courses": "My Courses",
+        "sidebar_settings": "Settings",
+        "sidebar_calender": "Calendar",
+        "sidebar_logout": "Logout",
+        "title": "Dashboard",
+        "bio": "Manage your courses and get insights about your progress",
+        "total_courses": "Total Courses",
+        "total_leasons": "Total Leasons",
+        "totoal_certificates": "Total Certificates",
+        "my_courses_title": "My Courses",
+        "my_courses_bio": "List with all the courses that you enroll in and your progress in each course",
+        "all_courses_tab": "All Courses",
+        "finished_tab": "Finished",
+        "not_enrolled": "Not enrolled",
+        "no_courses": "No courses available ",
+        "completed": "Completed",
+        "my_settings_title": "Settings",
+        "my_settings_bio": "Update your profile info and change your password to",
+        "edit_profile_tab": "Edit Profile",
+        "change_password_tab": "Change Your Password",
+        "profile_pic": "Your Profile Pic",
+        "profile_pic_bio": "PNG or JPG no bigger than 800px wide and tall",
+        "edit_profile_name_label": "Your Full Name",
+        "edit_profile_phone_label": "Your Phone Number",
+        "edit_profile_email_label": "Your email address",
+        "edit_profile_bio_label": "Your Personal Bio",
+        "edit_profile_btn": "Update Profile",
+        "current_password_label": "Your Current password",
+        "new_password_label": "Your new Password",
+        "new_password_confirm_label": "Confirm Your new Password",
+        "change_password_btn": "Change Your Password",
+        "calendar_title": "Calendar",
+        "200Message": "Your Profile has been updated Successfully",
+        "400Error": "Plese enter valide information",
+        "500Error":"Something went wrong Please try again later",
+        "loading": "Loading",
+        "un_authrized": "You need to sign in to access this page."
     }
 
   }

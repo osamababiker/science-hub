@@ -5,91 +5,102 @@ import { events } from "@/data/events";
 import { productData } from "@/data/products";
 import React from "react";
 import { useContext ,useState } from "react";
+import { SessionProvider } from "next-auth/react"
+
+
 const dataContext = React.createContext();
 export const useContextElement = () => {
 
     return useContext(dataContext);
-  };
+};
 
-  export default function Context({ children }) {
-    const [cartProducts, setCartProducts] = useState([])
-   
-    const [cartCourses, setCartCourses] = useState([])
-    const [cartEvents, setCartEvents] = useState([])
-    const addCourseToCart = (id)=>{
+export default function Context({ children }) {
+const [cartProducts, setCartProducts] = useState([])
 
-        if (!cartCourses.filter((elm)=>elm.id == id)[0]) {
+const [cartCourses, setCartCourses] = useState([])
+const [cartEvents, setCartEvents] = useState([])
+const addCourseToCart = (id)=>{
 
-           const item = {...coursesData.filter(elm=>elm.id == id)[0],quantity:1}
-           setCartCourses(pre=>[...pre,item])
-            
-        }
+    if (!cartCourses.filter((elm)=>elm.id == id)[0]) {
 
-    }
-    const isAddedToCartCourses = (id)=>{
-        if (cartCourses.filter((elm)=>elm.id == id)[0]) {
-            return true
-         }
-         return false
-
-    }
-    const addProductToCart = (id)=>{
-
-
-        if (!cartProducts.filter((elm)=>elm.id == id)[0]) {
-
-           const item = {...productData.filter(elm=>elm.id == id)[0],quantity:1}
-           setCartProducts(pre=>[...pre,item])
-            
-        }
-
-    }
-    const isAddedToCartProducts = (id)=>{
-        if (cartProducts.filter((elm)=>elm.id == id)[0]) {
-            return true
-         }
-         return false
-
-    }
-    const addEventToCart = (id)=>{
-
-        if (!cartEvents.filter((elm)=>elm.id == id)[0]) {
-
-           const item = {...events.filter(elm=>elm.id == id)[0],quantity:1}
-           setCartEvents(pre=>[...pre,item])
-            
-        }
-
-    }
-    const isAddedToCartEvents = (id)=>{
-        if (cartEvents.filter((elm)=>elm.id == id)[0]) {
-            return true
-         }
-         return false
-
-    }
-
-    const contextElement = {
+        const item = {...coursesData.filter(elm=>elm.id == id)[0],quantity:1}
+        setCartCourses(pre=>[...pre,item])
         
-        cartProducts,
-        setCartProducts,
-        addProductToCart,
-        isAddedToCartProducts,
+    }
+
+}
+const isAddedToCartCourses = (id)=>{
+    if (cartCourses.filter((elm)=>elm.id == id)[0]) {
+        return true
+        }
+        return false
+
+}
+const addProductToCart = (id)=>{
 
 
-        addCourseToCart,
-        isAddedToCartCourses,
-        cartCourses,
-        setCartCourses,
+    if (!cartProducts.filter((elm)=>elm.id == id)[0]) {
+
+        const item = {...productData.filter(elm=>elm.id == id)[0],quantity:1}
+        setCartProducts(pre=>[...pre,item])
+        
+    }
+
+}
+const isAddedToCartProducts = (id)=>{
+    if (cartProducts.filter((elm)=>elm.id == id)[0]) {
+        return true
+        }
+        return false
+
+}
+const addEventToCart = (id)=>{
+
+    if (!cartEvents.filter((elm)=>elm.id == id)[0]) {
+
+        const item = {...events.filter(elm=>elm.id == id)[0],quantity:1}
+        setCartEvents(pre=>[...pre,item])
+        
+    }
+
+}
+const isAddedToCartEvents = (id)=>{
+    if (cartEvents.filter((elm)=>elm.id == id)[0]) {
+        return true
+        }
+        return false
+
+}
+
+const contextElement = {
+    
+    cartProducts,
+    setCartProducts,
+    addProductToCart,
+    isAddedToCartProducts,
 
 
-        cartEvents,
-        setCartEvents,
-        addEventToCart,
-        isAddedToCartEvents
+    addCourseToCart,
+    isAddedToCartCourses,
+    cartCourses,
+    setCartCourses,
 
-      };
+
+    cartEvents,
+    setCartEvents,
+    addEventToCart,
+    isAddedToCartEvents
+
+    };
+return (
+    <dataContext.Provider value={contextElement}>{children}</dataContext.Provider>
+    );
+}
+
+export function SessionProviders({ children }) {
     return (
-        <dataContext.Provider value={contextElement}>{children}</dataContext.Provider>
-      );
-  }
+        <SessionProvider >
+            {children}
+        </SessionProvider>
+    )
+}

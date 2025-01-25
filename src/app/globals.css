@@ -3,3 +3,25 @@
 body{
     font-family: "Tajawal", sans-serif;
 } 
+
+.alert {
+    padding: 5px;
+}
+
+.alert-success{
+    background-color: rgb(113, 194, 111);
+    color: #FFF;
+    border-radius: 5px;
+}
+
+.alert-danger{
+    background-color: rgb(219, 151, 164);
+    color: #FFF;
+    border-radius: 5px;
+}
+
+.alert-info{
+    background-color: rgb(156, 199, 224);
+    color: #FFF;
+    border-radius: 5px;
+}

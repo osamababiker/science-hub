@@ -2,6 +2,7 @@
     "MainMenu": {
         "signin": "تسجيل دخول",
         "signup": "انشاء حساب",
+        "dashboard": "لوحة التحكم",
         "home": "الرئيسية",
         "courses": "الكورسات",
         "blog": "المدونة",
@@ -233,11 +234,16 @@
         "email_placeholder": "البريد ...",
         "username_label": "اسم المستخدم *",
         "username_placeholder": "اسم المستخدم",
+        "phone_label": "رقم الهاتف *",
+        "phone_placeholder": "رقم الهاتف",
         "password_label": "كلمة المرور",
         "password_placeholder":"كلمة المرور...",
         "confirm_password_label": " تآكيد كلمة المرور *",
         "confirm_password_placeholder": "تآكيد كلمة المرور",
-        "register_btn": "انشاء حساب"
+        "register_btn": "انشاء حساب",
+        "400Error": "الايميل او رقم الهاتف مستخدم بالفعل",
+        "500Error": "حدث خطآ ما الرجاء المحاولة في وقت لاحق",
+        "validationError": ""
     },
 
 
@@ -251,7 +257,9 @@
         "email_placeholder": "البريد ...",
         "password_label": "كلمة المرور",
         "password_placeholder":"كلمة المرور...",
-        "login_btn": "تسجيل دخول"
+        "login_btn": "تسجيل دخول",
+        "auth_error": "الايميل  و / او البريد الالكتوني غير صحيحان",
+        "validation_error": "الرجاء ادخال ايميل وباسورد صحيحين"
     },
 
 
@@ -324,6 +332,47 @@
         "total": "المجموع",
         "checkout_btn": "مواصلة للشراء",
         "currancy":"درهم"
+    },
+
+    "Dashboard": {
+        "sidebar_dashboard": "لوحة التحكم",
+        "sidebar_courses": "كورساتي",
+        "sidebar_settings": "الاعدادات",
+        "sidebar_calender": "التقويم",
+        "sidebar_logout": "تسجيل خروج",
+        "title": "لوحة التحكم",
+        "bio": "قم بإدارة كورساتك واحصل على احصائات حول درساتك",
+        "total_courses": "مجموع الكورسات",
+        "total_leasons": "مجموع الدروس",
+        "totoal_certificates": "مجموع الشهادات",
+        "my_courses_title": "كورساتي",
+        "my_courses_bio": "قائمة بجميع الدورات التي قمت بالتسجيل فيها ومدى تقدمك في كل دورة",
+        "all_courses_tab": "جميع الكورسات",
+        "finished_tab": "مكتملة",
+        "not_enrolled": "غير مدرج",
+        "no_courses": "لا توجد كورسات متاحة",
+        "completed": "مكتمل",
+        "my_settings_title": "الاعدادات",
+        "my_settings_bio": "قم بتحديث معلومات ملفك الشخصي وقم بتغيير كلمة المرور الخاصة بك",
+        "edit_profile_tab": "تحديث البيانات الشخصية",
+        "change_password_tab": "تغيير كلمة المرور",
+        "profile_pic": "صورة الملف الشخصي",
+        "profile_pic_bio": "PNG أو JPG لا يزيد عرضها وارتفاعها عن 800 بكسل",
+        "edit_profile_name_label": "الاسم كاملا",
+        "edit_profile_phone_label": "رقم الهاتف الخاص بك",
+        "edit_profile_email_label": "عنوان البريد الالكتروني",
+        "edit_profile_bio_label": "نبذة تعريفية مختصرة",
+        "edit_profile_btn": "تحديث الملف الشخصي",
+        "current_password_label": "كلمة المرور الحالية",
+        "new_password_label": "كلمة المرور الجديدة",
+        "new_password_confirm_label": "تآكيد كلمة المرور الجديدة",
+        "change_password_btn": "تحديث كلمة المرور",
+        "calendar_title": "التقويم",
+        "200Message": "تم تحديث البيانات الشخصية الخاصة بك",
+        "400Error": "الرجاء ادخال معلومات صحيحة",
+        "500Error":"حدث خطآ ما الرجاء المحاولة في وقت لاحق",
+        "loading": "جاري التحميل",
+        "un_authrized": "تحتاج لتسجيل دخول للوصول لهذه الصفحة."
     }
- 
+
   }

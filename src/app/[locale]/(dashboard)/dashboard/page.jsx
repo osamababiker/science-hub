@@ -4,7 +4,7 @@
 import Preloader from '@/src/components/common/Preloader'
 import DashboardOne from '@/src/components/dashboard/DashboardOne'
 import Sidebar from '@/src/components/dashboard/Sidebar'
-import HeaderDashboard from '@/src/components/layout/headers/HeaderDashboard'
+import HeaderSix from "@/src/components/layout/headers/HeaderSix";
 import React from 'react'
 
 export const metadata = {
@@ -19,12 +19,11 @@ export default function page() {
     <div  className="barba-container" data-barba="container">
         <main  className="main-content">
         <Preloader/>
-            <HeaderDashboard/>
+          <HeaderSix />
             <div  className="content-wrapper js-content-wrapper overflow-hidden">
               <div id='dashboardOpenClose'  className="dashboard -home-9 js-dashboard-home-9">
                 <div  className="dashboard__sidebar scroll-bar-1">
                     <Sidebar/>
-
                 </div>
                 <DashboardOne/>
               </div>
