@@ -80,15 +80,15 @@
         "courses_count": "Courses"
     },
     "Testimonials": {
-        "title": "Best Learning Experiance",
+        "title": "Best Learning Experience",
         "bio": "Lorem ipsum dolor sit amet, consectetur.",
         "statictis_one": "9/10 users reported better learning outcomes.",
         "statictis_two": "85% of students see their course through to completion"
     },
     "LearningPathTwo": {
         "title_one": "Learn",
-        "title_two": "new skills when",
-        "title_three": "and where you like.",
+        "title_two": "new skills ANYTIME,",
+        "title_three": " ANYWHERE!",
         "bio": "Use the list below to bring attention to your product’s key",
         "call_action": "Join Now",
         "feature_one": "Hand-picked authors",
