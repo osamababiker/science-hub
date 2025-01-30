@@ -6,6 +6,7 @@ import { useState, useEffect } from "react";
 import { useContextElement } from "@/context/Context";
 import {Link} from '@/src/i18n/routing';
 import { useTranslations } from "next-intl";
+import { coursesUploadUrl } from "@/lib/constants";
 
 const CourseCart = () => {
 
@@ -14,25 +15,26 @@ const CourseCart = () => {
   const { cartCourses, setCartCourses } = useContextElement();
   const [totalPrice, setTotalPrice] = useState(0);
 
-  const handleRemoveCart = (index) => {
-    const item = cartCourses[index];
-
+  const handleRemoveCart = (id) => {
+    const item = cartCourses[id];
     setCartCourses((pre) => [...pre.filter((elm) => elm !== item)]);
   };
+  
   useEffect(() => {
     const sum = cartCourses.reduce((accumulator, currentValue) => {
       return accumulator + currentValue.discountedPrice * currentValue.quantity;
     }, 0);
     setTotalPrice(sum);
   }, [cartCourses]);
+
   return (
     <div className="header-cart bg-white -dark-bg-dark-1 rounded-8">
       <div
         className="px-30 pt-30 pb-10"
         style={{ maxHeight: "300px", overflowY: "scroll" }}
       >
-        {cartCourses.map((elm, i) => (
-          <div key={i} className="row justify-between x-gap-40 pb-20">
+        {cartCourses.map((elm) => (
+          <div key={elm.id} className="row justify-between x-gap-40 pb-20">
             <Link
               style={{ textDecoration: "none" }}
               href={`/courses/${elm.id}`}
@@ -43,38 +45,27 @@ const CourseCart = () => {
                   <Image
                     width={80}
                     height={80}
-                    src={elm.imageSrc}
+                    src={coursesUploadUrl + elm.image}
                     alt="image"
                   />
                 </div>
 
                 <div className="col">
-                  <div className="text-dark-1 lh-15">{elm.title}</div>
+                  <div className="text-dark-1 lh-15">{elm.en_name}</div>
 
                   <div className="d-flex items-center mt-10">
-                    {elm.paid ? (
-                      <>
-                        <div className="lh-12 fw-500 line-through text-light-1 mr-10">
-                          {t('currancy')} {elm.originalPrice}
-                        </div>
-                        <div className="text-18 lh-12 fw-500 text-dark-1">
-                        {t('currancy')} {elm.discountedPrice}
-                        </div>
-                      </>
-                    ) : (
-                      <>
-                        <div></div>
-                        <div className="text-18 lh-12 fw-500 text-dark-1">
-                        {t('free')}
-                        </div>
-                      </>
-                    )}
+                    <div className="lh-12 fw-500 line-through text-light-1 mr-10">
+                      {t('currancy')} {elm.original_price}
+                    </div>
+                    <div className="text-18 lh-12 fw-500 text-dark-1">
+                    {t('currancy')} {elm.discounted_price}
+                    </div>
                   </div>
                 </div>
               </div>
             </Link>
 
-            <div className="col-auto" onClick={() => handleRemoveCart(i)}>
+            <div className="col-auto" onClick={() => handleRemoveCart(elm.id)}>
               <button>
                 <Image
                   width={12}

@@ -1,11 +1,8 @@
 "use client";
 
 import Overview from "./Overview";
-import CourseContent from "./CourseContent";
-import Star from "../common/Star";
 import React, { useState, useEffect } from "react";
 
-import ModalVideo from "react-modal-video";
 import { useLocale, useTranslations } from "next-intl";
 import ModalVideoComponent from "../common/ModalVideo";
 import Image from "next/image";
@@ -157,7 +154,7 @@ export default function CourseDetailsSix({ course }) {
                       <button
                         className="button -md -purple-1 text-white w-1/1"
                         onClick={() => addCourseToCart(course.id)}
-                      >
+                      > 
                         {isAddedToCartCourses(course.id)
                           ? t("alredy_added")
                           : t("add_to_cart") }

@@ -22,7 +22,8 @@ export const metadata = {
  
 export default async function page({ params }) { 
 
-  const course = await getCourseDetails(params.id);
+  const { id } = await params;
+  const course = await getCourseDetails(id);
 
   <Preloader/>
   return (

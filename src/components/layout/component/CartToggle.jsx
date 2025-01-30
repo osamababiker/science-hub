@@ -10,7 +10,7 @@ import EventCart from "./EventCart";
 
 const CartToggle = ({ allClasses, parentClassess }) => {
 
-  const { cartProducts, cartCourses, cartEvents } = useContextElement();
+  const { cartCourses } = useContextElement();
   const [activeCart, setActiveCart] = useState(false);
   const [menuItem, setMenuItem] = useState("");
   const [submenu, setSubmenu] = useState("");
