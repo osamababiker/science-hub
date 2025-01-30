@@ -3,6 +3,7 @@ import PageLinks from '@/src/components/common/PageLinks'
 import Preloader from '@/src/components/common/Preloader'
 import TestimonialsOne from '@/src/components/common/TestimonialsOne'
 import WhyCourse from '@/src/components/homes/WhyCourse'
+import AboutUsFaq from '@/src/components/common/AboutUsFaq'
 
 
 import FooterThree from '@/src/components/layout/footers/FooterThree'
@@ -29,7 +30,7 @@ export default async function page() {
         <div className="content-wrapper js-content-wrapper overflow-hidden">
             <PageLinks/>
             <About/>
-            <WhyCourse/>
+            <AboutUsFaq/>
             <TestimonialsOne testimonials={testimonials}/>
             <FooterThree/>
         </div>
