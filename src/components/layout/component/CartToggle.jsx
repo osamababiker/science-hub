@@ -2,15 +2,13 @@
 import { menuList } from "@/data/menu";
 import { usePathname } from "next/navigation";
 import React from "react";
-import { useContextElement } from "@/context/Context";
+import useCartStore from "@/store/cartStore";
 import { useState, useEffect } from "react";
-import ShopCart from "./ShopCart";
 import CourseCart from "./CourseCart";
-import EventCart from "./EventCart"; 
 
 const CartToggle = ({ allClasses, parentClassess }) => {
 
-  const { cartCourses } = useContextElement();
+  const { cartCourses } = useCartStore();
   const [activeCart, setActiveCart] = useState(false);
   const [menuItem, setMenuItem] = useState("");
   const [submenu, setSubmenu] = useState("");
@@ -62,8 +60,6 @@ const CartToggle = ({ allClasses, parentClassess }) => {
             activeCart ? "-is-el-visible" : ""
           }`}
         >
-          {submenu == "Shop" && <ShopCart />}
-          {menuItem == "Events" && <EventCart />}
           {!(submenu == "Shop" || menuItem == "Events") && <CourseCart />}
         </div>
       </div>

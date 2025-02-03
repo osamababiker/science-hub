@@ -4,16 +4,17 @@ import React, { useState, useEffect } from "react";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faMinus, faPlus, faX } from "@fortawesome/free-solid-svg-icons";
-import { useContextElement } from "@/context/Context";
+import useCartStore from "@/store/cartStore";
 import {Link} from '@/src/i18n/routing';
 import { useTranslations, useLocale } from "next-intl";
+import { coursesUploadUrl } from "@/lib/constants";
 
 export default function CourseCart() {
 
   const t = useTranslations('CartPage');
   const locale = useLocale();
 
-  const { cartCourses, setCartCourses } = useContextElement();
+  const { cartCourses, removeCourseFromCart, increaseQuantity, decreaseQuantity } = useCartStore();
   const [totalPrice, setTotalPrice] = useState(0);
 
   const handleSubmit = (e) => {
@@ -48,7 +49,7 @@ export default function CourseCart() {
   };
   useEffect(() => {
     const sum = cartCourses.reduce((accumulator, currentValue) => {
-      return accumulator + currentValue.discountedPrice * currentValue.quantity;
+      return accumulator + currentValue.discounted_price * currentValue.quantity;
     }, 0);
     setTotalPrice(sum);
   }, [cartCourses]);
@@ -112,7 +113,7 @@ export default function CourseCart() {
                         <div className="">
                           <div
                             className="size-100 bg-image rounded-8 js-lazy"
-                            style={{ backgroundImage: `url(${elm.imageSrc})` }}
+                            style={{ backgroundImage: `url(${ coursesUploadUrl + elm.image })` }}
                           ></div>
                         </div>
                         <div className="fw-500 text-dark-1 ml-30">
@@ -120,7 +121,7 @@ export default function CourseCart() {
                           className="linkCustom"
                           href={`/courses/${elm.id}`}
                         >
-                          {elm.title}{" "}
+                          { locale == 'en' ? elm.en_name : elm.ar_name }{" "}
                         </Link>
                         </div>
                       </div>
@@ -131,7 +132,7 @@ export default function CourseCart() {
                         <div className="shopCart-products__title d-none md:d-block mb-10">
                         {t('price')}
                         </div>
-                        <p>{elm.paid ? `$${elm.discountedPrice}` : "Free"}</p>
+                        <p>{elm.discounted_price} {t("currancy")} </p>
                       </div>
                     </div>
 
@@ -153,14 +154,14 @@ export default function CourseCart() {
                           <div className="input-counter__controls">
                             <button
                               className="input-counter__up js-down"
-                              onClick={() => handleDecrease(i)}
+                              onClick={() => decreaseQuantity(elm.id)}
                             >
                               <FontAwesomeIcon icon={faMinus} />
                             </button>
 
                             <button
                               className="input-counter__down js-up"
-                              onClick={() => handleIncrease(i)}
+                              onClick={() => increaseQuantity(elm.id)}
                             >
                               <FontAwesomeIcon icon={faPlus} />
                             </button>
@@ -176,7 +177,7 @@ export default function CourseCart() {
                         </div>
 
                         <p>
-                        {t('currancy')} {(elm.quantity * elm.discountedPrice).toFixed(2)}
+                        {t('currancy')} {(elm.quantity * elm.discounted_price).toFixed(2)}
                         </p>
                       </div>
                     </div>
@@ -184,7 +185,7 @@ export default function CourseCart() {
                     <div className="col-md-1">
                       <div
                         className="md:d-none d-flex justify-end"
-                        onClick={() => handleRemoveCart(i)}
+                        onClick={() => removeCourseFromCart(elm.id)}
                       >
                         <FontAwesomeIcon icon={faX} />
                       </div>

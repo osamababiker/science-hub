@@ -66,7 +66,7 @@
         "sample_job_title": "Marketing Coordinator",
         "sample_students_count": "Students",
         "sample_courses_count": "Course",
-        "teachers_features_title_one": "Truested By Best",
+        "teachers_features_title_one": "Trusted By Best",
         "teachers_features_title_two": "Teachers",
         "teachers_features_bio": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed doeiusmod tempor incididunt.",
         "teachers_features_one": "Last Education of Bachelor Degree",
@@ -154,7 +154,7 @@
     "AboutPage": {
         "title": "About Us",
         "bio": "We’re on a mission to deliver engaging, curated courses at areasonable price.",
-        "sub_title": "Welcome to Sciance Hub Enhance your skills with best Online courses",
+        "sub_title": "Welcome to Science Hub Enhance your skills with best Online courses",
         "sub_bio" : "Science Hub is a leading educational platform specializing in delivering high-quality training, online courses, and tutoring services. We are committed to empowering students and professionals through innovative, flexible, and accessible learning solutions. Whether you're looking to enhance your academic performance, learn new skills, or master a language, Science Hub is your trusted partner in education.",
         "btn": "Start Learning Now",
         "why_us_title": "Why learn with our courses?",
@@ -280,10 +280,8 @@
         "title": "Course Checkout",
         "bio": "We’re on a mission to deliver engaging, curated courses at a reasonable price.",
         "form_title": "Billing details",
-        "first_name_label": "First name",
-        "first_name_placeholder": "First name",
-        "last_name_label": "Last name",
-        "last_name_placeholder": "Last name",
+        "name_label": "Your name",
+        "name_placeholder": "Your name",
         "country_label": "Country / Region *",
         "city_label": "Town / City *",
         "city_placeholder": "Town / City *",
@@ -309,7 +307,13 @@
         "bank_transfer_bio": "Make your payment directly into our bank account. Please use your Order ID as the payment reference. Your order will not be shipped until the funds have cleared in our account.",
         "credit_card_title": "Credit Card / Depit Card",
         "place_order_btn": "Place order",
-        "currancy": "AED"
+        "currancy": "AED",
+        "unauthenticated": "You have to login first to send an order ",
+        "signin":"Log in",
+        "loading": "Loading",
+        "orderSuccess": "Your Order has been send Successfully, our team will contact you soon !",
+        "400Error": "Plese enter valide information",
+        "500Error":"Something went wrong Please try again later"
     },
 
     "CartPage": {

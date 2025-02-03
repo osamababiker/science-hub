@@ -6,7 +6,7 @@ import { Link  } from '@/src/i18n/routing';
 import { signUp } from "@/lib/auth";
 import { useForm, Controller } from "react-hook-form";
 import { useRouter } from '@/src/i18n/routing';
-import { useState } from 'react';
+import { useState } from 'react'; 
 import { useSession } from "next-auth/react";
 
 export default function SignUpForm() {

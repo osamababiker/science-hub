@@ -24,7 +24,7 @@ export default async function page({ params }) {
 
   const { id } = await params;
   const course = await getCourseDetails(id);
-
+  
   <Preloader/>
   return (
     <div  className="main-content  ">

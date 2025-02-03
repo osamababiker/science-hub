@@ -6,7 +6,7 @@ import React, { useState, useEffect } from "react";
 import { useLocale, useTranslations } from "next-intl";
 import ModalVideoComponent from "../common/ModalVideo";
 import Image from "next/image";
-import { useContextElement } from "@/context/Context";
+import useCartStore from "@/store/cartStore";
 import { coursesUploadUrl } from "@/lib/constants";
 
 
@@ -17,7 +17,7 @@ export default function CourseDetailsSix({ course }) {
   const [activeTab, setActiveTab] = useState(1);
   const t = useTranslations('CourseDetails');
   const locale = useLocale();
-  const { isAddedToCartCourses, addCourseToCart } = useContextElement();
+  const { addCourseToCart, isAddedToCartCourses } = useCartStore();
   // useEffect(() => {
   //   setPageItem(coursesData.filter((elm) => elm.id == id)[0] || coursesData[0]);
   // }, []);
@@ -153,7 +153,7 @@ export default function CourseDetailsSix({ course }) {
                     <div className="col-sm-6">
                       <button
                         className="button -md -purple-1 text-white w-1/1"
-                        onClick={() => addCourseToCart(course.id)}
+                        onClick={() => addCourseToCart(course)}
                       > 
                         {isAddedToCartCourses(course.id)
                           ? t("alredy_added")

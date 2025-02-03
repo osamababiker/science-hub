@@ -3,7 +3,7 @@
 import React from "react";
 import Image from "next/image";
 import { useState, useEffect } from "react";
-import { useContextElement } from "@/context/Context";
+import useCartStore from "@/store/cartStore";
 import {Link} from '@/src/i18n/routing';
 import { useTranslations } from "next-intl";
 import { coursesUploadUrl } from "@/lib/constants";
@@ -12,17 +12,13 @@ const CourseCart = () => {
 
   const t = useTranslations("CartToggle");
 
-  const { cartCourses, setCartCourses } = useContextElement();
+  const { cartCourses, removeCourseFromCart, increaseQuantity, decreaseQuantity } = useCartStore();
   const [totalPrice, setTotalPrice] = useState(0);
 
-  const handleRemoveCart = (id) => {
-    const item = cartCourses[id];
-    setCartCourses((pre) => [...pre.filter((elm) => elm !== item)]);
-  };
   
   useEffect(() => {
     const sum = cartCourses.reduce((accumulator, currentValue) => {
-      return accumulator + currentValue.discountedPrice * currentValue.quantity;
+      return accumulator + currentValue.discounted_price * currentValue.quantity;
     }, 0);
     setTotalPrice(sum);
   }, [cartCourses]);
@@ -65,7 +61,7 @@ const CourseCart = () => {
               </div>
             </Link>
 
-            <div className="col-auto" onClick={() => handleRemoveCart(elm.id)}>
+            <div className="col-auto" onClick={() => removeCourseFromCart(elm.id)}>
               <button>
                 <Image
                   width={12}

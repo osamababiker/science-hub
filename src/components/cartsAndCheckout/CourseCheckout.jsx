@@ -1,21 +1,66 @@
 "use client";
 
+import { z } from 'zod';
 import React, { useState, useEffect } from "react";
-import { useContextElement } from "@/context/Context";
-import Link from "next/link";
+import useCartStore from "@/store/cartStore";
+import {Link} from '@/src/i18n/routing';
+import { useForm, Controller } from "react-hook-form";
 import { useTranslations, useLocale } from "next-intl";
+import { useSession } from "next-auth/react";
+import { sendOrder } from '@/lib/action';
 
 export default function CourseCheckOut() {
 
   const t = useTranslations('CheckoutPage');
-  const locale = useLocale();
+  const locale = useLocale(); 
+  const { data: session, status} = useSession();
 
-  const { cartCourses } = useContextElement();
+  const { cartCourses } = useCartStore();
   const [totalPrice, setTotalPrice] = useState(0);
   const [shiping, setShiping] = useState(0);
+  const [error, setError] = useState(null);
+  const [success, setSuccess] = useState(null);
+
+  const { control, handleSubmit, formState } = useForm({
+    defaultValues: {
+      user_id: '',
+      course_id: '',
+      country: 'UAE',
+      city: '',
+      payment_method: 'Cashe',
+      notes: ''
+    }
+  });
+
+  const onSubmit = async (formData) => {
+    const { notes, city } = formData;
+    const parsedCredentials = z
+    .object({ notes: z.string(), city: z.string()})
+      .safeParse({ notes, city });
+    if (parsedCredentials.success) {
+      formData.user_id = session.user.id;
+      formData.course_id = 1;
+      formData.payment_method = "cashe";
+      formData.status = 0;
+      const res = await sendOrder(formData);
+      if(res) {
+        setSuccess(t("orderSuccess"));
+      } else if(res.status == 400) {
+        // email or phone are not unique
+        setError(t("400Error"));
+      } else if(res.status == 500) {
+        setError(t("500Error"));
+      }
+    } else {
+      // setup validation error message
+      setError(parsedCredentials.error.ZodError[0].message);
+      console.log(parsedCredentials.error)
+    }
+  };
+
   useEffect(() => {
     const sum = cartCourses.reduce((accumulator, currentValue) => {
-      return accumulator + currentValue.discountedPrice * currentValue.quantity;
+      return accumulator + currentValue.discounted_price * currentValue.quantity;
     }, 0);
     const sumQuantity = cartCourses.reduce((accumulator, currentValue) => {
       return accumulator + currentValue.quantity;
@@ -23,9 +68,42 @@ export default function CourseCheckOut() {
     setShiping(sumQuantity * 10);
     setTotalPrice(sum);
   }, [cartCourses]);
-  const handleSubmit = (e) => {
-    e.preventDefault();
-  };
+
+  if (status === "loading") {
+    return <p>{t("loading")}...</p>; 
+  }
+
+  if (status === "unauthenticated") {
+    return <>
+      <section className="page-header -type-1">
+        <div className="container">
+          <div className="page-header__content">
+            <div className="row justify-center text-center">
+              <div className="col-auto">
+                <div>
+                  <h1 className="page-header__title">{t("title")}</h1>
+                </div>
+
+                <div>
+                  <p className="page-header__text">
+                  {t("unauthenticated")}
+                  </p>
+                </div>
+
+                <div className="mt-30">
+                  <Link href="/login" className="button -md -accent col-12 -uppercase text-white -purple-1">
+                  {t("signin")}
+                  </Link>
+                </div>
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      </>
+  }
+
   return (
     <>
       <section className="page-header -type-1">
@@ -54,44 +132,38 @@ export default function CourseCheckOut() {
             <div className="col-lg-8">
               <div className="shopCheckout-form">
                 <form
-                  onSubmit={handleSubmit}
+                  onSubmit={handleSubmit(onSubmit)}
+                  id="checkoutForm"
                   className="contact-form row x-gap-30 y-gap-30"
                 >
+
+                  {success ? <div className="alert alert-success"> { success } </div>: ''}
+
+                  {error ? <div className="alert alert-danger"> { error } </div>: ''}
+
                   <div className="col-12">
                     <h5 className="text-20">{t("form_title")}</h5>
                   </div>
                   <div className="col-sm-6">
                     <label className="text-16 lh-1 fw-500 text-dark-1 mb-10">
-                    {t("first_name_label")}
+                    {t("name_label")}
                     </label>
                     <input
                       required
                       type="text"
-                      name="firstName"
-                      placeholder={t("first_name_placeholder")}
-                    />
-                  </div>
-                  <div className="col-sm-6">
-                    <label className="text-16 lh-1 fw-500 text-dark-1 mb-10">
-                    {t("last_name_label")}
-                    </label>
-                    <input
-                      required
-                      type="text"
-                      name="lastName"
-                      placeholder={t("last_name_placeholder")}
+                      name="name"
+                      value={session.user.name}
+                      disabled
+                      placeholder={t("name_placeholder")}
                     />
                   </div>
 
-                  <div className="col-12">
+                  <div className="col-sm-6">
                     <label className="text-16 lh-1 fw-500 text-dark-1 mb-10">
                     {t("country_label")}
                     </label>
                     <select className="selectize wide js-selectize">
-                      <option value="UEA">الامارات العربية المتحدة</option>
-                      <option value="Germany">Germany</option>
-                      <option value="France">France</option>
-                      <option value="Greece">Greece</option>
+                      <option >الامارات العربية المتحدة</option>
                     </select>
                   </div>
 
@@ -99,47 +171,10 @@ export default function CourseCheckOut() {
                     <label className="text-16 lh-1 fw-500 text-dark-1 mb-10">
                     {t("city_label")}
                     </label>
-                    <input
-                      required
-                      type="text"
+                    <Controller
                       name="city"
-                      placeholder= {t("city_placeholder")}
-                    />
-                  </div>
-
-                  <div className="col-sm-6">
-                    <label className="text-16 lh-1 fw-500 text-dark-1 mb-10">
-                    {t("street_label")}
-                    </label>
-                    <input
-                      required
-                      type="text"
-                      name="address"
-                      placeholder={t("street_placeholder")}
-                    />
-                  </div>
-
-                  <div className="col-sm-6">
-                    <label className="text-16 lh-1 fw-500 text-dark-1 mb-10">
-                    {t("state_label")}
-                    </label>
-                    <input
-                      required
-                      type="text"
-                      name="state"
-                      placeholder={t("state_placeholder")}
-                    />
-                  </div>
-
-                  <div className="col-sm-6">
-                    <label className="text-16 lh-1 fw-500 text-dark-1 mb-10">
-                    {t("zip_label")}
-                    </label>
-                    <input
-                      required
-                      type="text"
-                      name="zip"
-                      placeholder={t("zip_placeholder")}
+                      control={control}
+                      render={({ field }) => <input {...field}  required type="text" name="city" placeholder={t("city_placeholder")} />}
                     />
                   </div>
 
@@ -147,15 +182,16 @@ export default function CourseCheckOut() {
                     <label className="text-16 lh-1 fw-500 text-dark-1 mb-10">
                     {t("phone_label")}
                     </label>
-                    <input
-                      required
-                      type="text"
-                      name="phone"
-                      placeholder={t("phone_placeholder")}
-                    />
+                    <input 
+                      required  
+                      disabled 
+                      value={session.user.phone} 
+                      type="text" 
+                      name="phone" 
+                      placeholder={t("phone_placeholder")} />
                   </div>
 
-                  <div className="col-sm-6">
+                  <div className="col-sm-12">
                     <label className="text-16 lh-1 fw-500 text-dark-1 mb-10">
                     {t("email_label")}
                     </label>
@@ -163,26 +199,21 @@ export default function CourseCheckOut() {
                       required
                       type="email"
                       name="email"
+                      value={session.user.email}
+                      disabled
                       placeholder={t("email_placeholder")}
                     />
                   </div>
 
                   <div className="col-12">
-                    <h5 className="text-20 fw-500 pt-30">
-                    {t("additional_info")}
-                    </h5>
-                  </div>
-                  <div className="col-12">
                     <label className="text-16 lh-1 fw-500 text-dark-1 mb-10">
                     {t("order_note_label")}
                     </label>
-                    <textarea
-                      required
+                    <Controller
                       name="notes"
-                      id="form_notes"
-                      rows="8"
-                      placeholder={t("order_note_placeholder")}
-                    ></textarea>
+                      control={control}
+                      render={({ field }) =>  <textarea {...field}  required name="notes" id="form_notes" rows="8"  placeholder={t("order_note_placeholder")}></textarea>}
+                    />
                   </div>
                 </form>
               </div>
@@ -215,7 +246,7 @@ export default function CourseCheckOut() {
                       </div>
                       <div className="py-15 text-grey">
                       {t("currancy")}
-                        {(elm.discountedPrice * elm.quantity).toFixed(2) ||
+                         {(elm.discounted_price * elm.quantity).toFixed(2) ||
                           "Free"}
                       </div>
                     </div>
@@ -270,7 +301,7 @@ export default function CourseCheckOut() {
                 </div>
 
                 <div className="mt-30">
-                  <button className="button -md -accent col-12 -uppercase text-white -purple-1">
+                  <button type='submit' form='checkoutForm' className="button -md -accent col-12 -uppercase text-white -purple-1">
                   {t("place_order_btn")}
                   </button>
                 </div>

@@ -25,3 +25,7 @@ body{
     color: #FFF;
     border-radius: 5px;
 }
+
+input:disabled {
+    background: #F7F8FB!important;
+}

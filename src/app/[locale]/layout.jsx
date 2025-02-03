@@ -31,13 +31,11 @@ export default async function RootLayout({ children, params }) {
     <html lang={locale} dir={locale == 'ar' ? "rtl" : "ltr"}>
       <head></head>
       <body>
-        <Context>
-          <NextIntlClientProvider messages={messages}>
-            <SessionProviders>
-              {children}
-            </SessionProviders>
-          </NextIntlClientProvider>
-        </Context>
+        <NextIntlClientProvider messages={messages}>
+          <SessionProviders>
+            {children}
+          </SessionProviders>
+        </NextIntlClientProvider>
       </body>
     </html>
   );
