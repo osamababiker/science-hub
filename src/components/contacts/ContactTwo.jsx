@@ -49,7 +49,7 @@ export default function ContactTwo() {
                       <a href="#" className="d-block">
                         {elm.address}
                       </a>
-                      <a href="#" className="d-block">
+                      <a href="#" className="d-block"> 
                         {elm.phoneNumber}
                       </a>
                       <a href="#" className="d-block">
