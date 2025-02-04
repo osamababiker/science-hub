@@ -32,4 +32,5 @@ jobs:
 
     - name: Change Directory
       run: cd /home/gitstartup/actions-runner/_work/science-hub/science-hub
-    - run: pm2 restart 0 
+    - run: pm2 restart 0 --update-env
+ 
