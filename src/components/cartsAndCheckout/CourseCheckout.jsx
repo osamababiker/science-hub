@@ -24,33 +24,33 @@ export default function CourseCheckOut() {
   const { control, handleSubmit, formState } = useForm({
     defaultValues: {
       user_id: '',
-      course_id: '',
+      courses_ids: '',
       country: 'UAE',
       city: '',
-      payment_method: 'Cashe',
+      payment_method: '',
       notes: ''
     }
   });
 
   const onSubmit = async (formData) => {
-    const { notes, city } = formData;
+    const { notes, city, payment_method } = formData;
+    const courses_ids = cartCourses.map((course) => course.id);
     const parsedCredentials = z
-    .object({ notes: z.string(), city: z.string()})
-      .safeParse({ notes, city });
+    .object({ notes: z.string().nullable(), city: z.string(), payment_method: z.string()})
+      .safeParse({ notes, city, payment_method });
     if (parsedCredentials.success) {
       formData.user_id = session.user.id;
-      formData.course_id = 1;
-      formData.payment_method = "cashe";
+      formData.courses_ids = courses_ids;
       formData.status = 0;
+
+
       const res = await sendOrder(formData);
       if(res) {
         setSuccess(t("orderSuccess"));
-      } else if(res.status == 400) {
-        // email or phone are not unique
-        setError(t("400Error"));
-      } else if(res.status == 500) {
+      }else {
         setError(t("500Error"));
-      }
+        console.log(res)
+      } 
     } else {
       // setup validation error message
       setError(parsedCredentials.error.ZodError[0].message);
@@ -272,7 +272,11 @@ export default function CourseCheckOut() {
                   <div className="mt-30">
                     <div className="form-radio d-flex items-center">
                       <div className="radio">
-                        <input type="radio" name="radio" checked="checked" />
+                        <Controller
+                          name="payment_method"
+                          control={control}
+                          render={({ field }) => <input {...field} value="cash" checked={field.value === "cash"} onChange={(e) => field.onChange(e.target.value)} type="radio" name="payment_method"/> }
+                        />
                         <div className="radio__mark">
                           <div className="radio__icon"></div>
                         </div>
@@ -290,7 +294,11 @@ export default function CourseCheckOut() {
                   <div className="mt-30">
                     <div className="form-radio d-flex items-center">
                       <div className="radio">
-                        <input type="radio" name="radio" checked="checked" />
+                        <Controller
+                          name="payment_method"
+                          control={control}
+                          render={({ field }) => <input {...field} value="card" checked={field.value === "card"} onChange={(e) => field.onChange(e.target.value)} type="radio" name="payment_method" disabled /> }
+                        />
                         <div className="radio__mark">
                           <div className="radio__icon"></div>
                         </div>
