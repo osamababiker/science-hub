@@ -244,7 +244,8 @@
         "register_btn": "Register",
         "400Error": "Email and Phone Number should be unique",
         "500Error": "Something went wrong Please try again later",
-        "validationError": ""
+        "validationError": "",
+        "register_loading": "creating your account ..."
     },
 
 
@@ -258,7 +259,8 @@
         "password_placeholder":"Password...",
         "login_btn": "Login",
         "auth_error": "Email or/and password are not correct",
-        "validation_error": "Invalid email or password"
+        "validation_error": "Invalid email or password",
+        "auth_loading": "Log you in ..."
     },
 
     "InstractorPage": {
@@ -283,8 +285,8 @@
         "name_label": "Your name",
         "name_placeholder": "Your name",
         "country_label": "Country / Region *",
-        "city_label": "Town / City *",
-        "city_placeholder": "Town / City *",
+        "city_label": "Town / City (optional)",
+        "city_placeholder": "Town / City (optional)",
         "street_label": "street name",
         "street_placeholder": "street name",
         "state_label": "State *",
@@ -313,7 +315,9 @@
         "loading": "Loading",
         "orderSuccess": "Your Order has been send Successfully, our team will contact you soon !",
         "400Error": "Plese enter valide information",
-        "500Error":"Something went wrong Please try again later"
+        "500Error":"Something went wrong Please try again later",
+        "country": "United Arabs Emirates",
+        "sending_order": "Sending Order ..."
     },
 
     "CartPage": {

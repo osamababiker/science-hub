@@ -16,6 +16,8 @@ export default function SignUpForm() {
   const locale = useLocale();
   const router = useRouter();
   const [error, setError] = useState(null);
+  const [loading, setLoading] = useState(false);
+
   const { control, handleSubmit, formState } = useForm({
     defaultValues: {
       name: '',
@@ -27,6 +29,7 @@ export default function SignUpForm() {
   });
 
   const onSubmit = async (formData) => {
+    setLoading(true);
     const { name, email, phone, password, password_confirmation } = formData;
     const parsedCredentials = z
         .object({ name: z.string(), phone: z.string(), email: z.string().email(), password: z.string().min(6), password_confirmation: z.string().min(6) })
@@ -34,17 +37,20 @@ export default function SignUpForm() {
     if (parsedCredentials.success) {
       const res = await signUp(parsedCredentials);
       if(res.status == 201) {
+        setLoading(false);
         router.push('/login');
       } else if(res.status == 400) {
         // email or phone are not unique
+        setLoading(false);
         setError(t("400Error"));
       } else if(res.status == 500) {
+        setLoading(false);
         setError(t("500Error"));
       }
     } else {
       // setup validation error message
+      setLoading(false);
       setError(parsedCredentials.error.ZodError[0].message);
-      console.log(parsedCredentials.error)
     }
   };
 
@@ -126,14 +132,20 @@ export default function SignUpForm() {
                   />
                 </div>
                 <div className="col-12">
-                  <button
-                    type="submit"
-                    name="submit"
-                    id="submit"
-                    className="button -md -green-1 text-dark-1 fw-500 w-1/1"
-                  >
-                    {t("register_btn")}
-                  </button>
+                  { !loading ?
+                    <button
+                      type="submit"
+                      name="submit"
+                      id="submit"
+                      className="button -md -green-1 text-dark-1 fw-500 w-1/1"
+                    >
+                      {t("register_btn")}
+                    </button> 
+                    : 
+                    <button className="button -md -green-1 text-dark-1 fw-500 w-1/1">
+                      {t("register_loading")}
+                    </button>
+                    }
                 </div>
               </form>
 

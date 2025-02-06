@@ -20,6 +20,7 @@ export default function CourseCheckOut() {
   const [shiping, setShiping] = useState(0);
   const [error, setError] = useState(null);
   const [success, setSuccess] = useState(null);
+  const [loading, setLoading] = useState(false);
 
   const { control, handleSubmit, formState } = useForm({
     defaultValues: {
@@ -33,6 +34,7 @@ export default function CourseCheckOut() {
   });
 
   const onSubmit = async (formData) => {
+    setLoading(true);
     const { notes, city, payment_method } = formData;
     const courses_ids = cartCourses.map((course) => course.id);
     const parsedCredentials = z
@@ -47,14 +49,18 @@ export default function CourseCheckOut() {
       const res = await sendOrder(formData);
       if(res) {
         setSuccess(t("orderSuccess"));
+        setError(null);
+        setLoading(false);
       }else {
         setError(t("500Error"));
-        console.log(res)
+        setSuccess(null);
+        setLoading(false);
       } 
     } else {
       // setup validation error message
       setError(parsedCredentials.error.ZodError[0].message);
-      console.log(parsedCredentials.error)
+      setSuccess(null);
+      setLoading(false);
     }
   };
 
@@ -163,7 +169,7 @@ export default function CourseCheckOut() {
                     {t("country_label")}
                     </label>
                     <select className="selectize wide js-selectize">
-                      <option >الامارات العربية المتحدة</option>
+                      <option > { t("country") }</option>
                     </select>
                   </div>
 
@@ -174,7 +180,7 @@ export default function CourseCheckOut() {
                     <Controller
                       name="city"
                       control={control}
-                      render={({ field }) => <input {...field}  required type="text" name="city" placeholder={t("city_placeholder")} />}
+                      render={({ field }) => <input {...field}  type="text" name="city" placeholder={t("city_placeholder")} />}
                     />
                   </div>
 
@@ -212,7 +218,7 @@ export default function CourseCheckOut() {
                     <Controller
                       name="notes"
                       control={control}
-                      render={({ field }) =>  <textarea {...field}  required name="notes" id="form_notes" rows="8"  placeholder={t("order_note_placeholder")}></textarea>}
+                      render={({ field }) =>  <textarea {...field}  name="notes" id="form_notes" rows="8"  placeholder={t("order_note_placeholder")}></textarea>}
                     />
                   </div>
                 </form>
@@ -309,9 +315,15 @@ export default function CourseCheckOut() {
                 </div>
 
                 <div className="mt-30">
-                  <button type='submit' form='checkoutForm' className="button -md -accent col-12 -uppercase text-white -purple-1">
-                  {t("place_order_btn")}
-                  </button>
+                  {!loading ?
+                    <button type='submit' disabled={loading} form='checkoutForm' className="button -md -accent col-12 -uppercase text-white -purple-1">
+                    {t("place_order_btn")}
+                    </button>
+                  : 
+                    <button disabled={loading} className="button -md -accent col-12 -uppercase text-white -purple-1">
+                    {t("sending_order")}
+                    </button>
+                  }
                 </div>
               </div>
             </div>

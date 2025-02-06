@@ -29,3 +29,8 @@ body{
 input:disabled {
     background: #F7F8FB!important;
 }
+
+input[type="radio"]:disabled {
+    opacity: 0.5; /* Makes it look faded */
+    cursor: not-allowed;
+}

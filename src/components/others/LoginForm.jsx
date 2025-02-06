@@ -16,8 +16,10 @@ export default function LoginForm() {
   const locale = useLocale();
   const router = useRouter();
   const [error, setError] = useState(null);
+  const [loading, setLoading] = useState(false);
 
   const handleSubmit = async (formData) => {
+    setLoading(true);
     const email = formData.get("email");
     const password = formData.get("password");
     const parsedCredentials = z
@@ -27,11 +29,16 @@ export default function LoginForm() {
     if (parsedCredentials.success) {
       const res =  await signIn("credentials", {email: email, password: password, redirect: false});
       if(res.status == 401) {
+        setLoading(false);
         setError(t("auth_error"));
       } else {
+        setLoading(false);
         router.push('/dashboard');
       }
-    }else setError(t("validation_error"));
+    }else {
+      setLoading(false);
+      setError(t("validation_error"));
+    }
   };
 
   if (status === "loading") {
@@ -80,6 +87,7 @@ export default function LoginForm() {
                 </div>
                 
                 <div className="col-12">
+                  { !loading ?
                   <button
                     type="submit"
                     name="submit"
@@ -88,6 +96,11 @@ export default function LoginForm() {
                   >
                      {t("login_btn")}
                   </button>
+                  : 
+                    <button className="button -md -green-1 text-dark-1 fw-500 w-1/1" >
+                      {t("auth_loading")}
+                    </button> 
+                  }
                 </div>
               </form>
 
