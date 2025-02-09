@@ -3,7 +3,6 @@
 import React from "react";
 import Links from "../component/Links";
 import Socials from "@/src/components/common/Socials";
-import FooterLinks from "../component/FooterLinks";
 import Image from "next/image";
 import { useTranslations, useLocale } from "next-intl";
 
@@ -14,8 +13,7 @@ export default function FooterThree() {
 
   return (
     <footer className="footer -type-5 pt-60">
-      <div className="container">
-
+      <div className="container"> 
         <div className="py-30 border-top-light">
           <div className="row justify-between items-center y-gap-20">
             <div className="col-auto">
@@ -42,6 +40,9 @@ export default function FooterThree() {
                 </div>
               </div>
             </div>
+          </div>
+          <div className="footer-header-socials__list pt-30">
+            <Socials  />
           </div>
         </div>
       </div>

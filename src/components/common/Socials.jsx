@@ -1,15 +1,15 @@
 import Link from "next/link";
 
-import { socialMediaLinks } from "../../../data/socialLinks";
+import { socialMediaLinks } from "@/data/socialLinks";
 import React from "react";
 
 export default function Socials({ componentsClass, textSize }) {
   return (
     <>
       {socialMediaLinks.map((link, index) => (
-        <a
+        <a 
           key={index}
-          className={componentsClass ? componentsClass : ""}
+          className={componentsClass ? componentsClass : "p-4"}
           href={link.href}
         >
           <i className={`${link.iconClassName} ${textSize}`}></i>

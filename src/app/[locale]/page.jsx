@@ -43,7 +43,7 @@ export default async function page() {
         <LearningPathsSix />
         <CountdownRegistration />
         <BlogsTwo posts={posts} />
-        <FooterThree />
+        <FooterThree /> 
       </div>
     </div>
   );

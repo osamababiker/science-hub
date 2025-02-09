@@ -12,9 +12,10 @@ export default function FooterFour() {
   return (
     <footer className="footer -type-1 -dark bg-light-9">
       <div className="container">
+        
         <div className="footer-header border-bottom-dark">
           <div className="row y-gap-20 justify-between items-center">
-            <div className="col-auto">
+            <div className="col-auto"> 
               <div className="footer-header__logo">
                 <Image
                   width={140}
