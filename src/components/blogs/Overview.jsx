@@ -5,10 +5,10 @@ import { useLocale, useTranslations } from "next-intl";
 
 import parse from 'html-react-parser'
 
-export default function Overview({course}) {
+export default function Overview({blog}) {
  
   const [showMore, setShowMore] = useState(false);
-  const t = useTranslations('CourseDetails');
+  const t = useTranslations('BlogListPage');
   const locale = useLocale();
 
   useEffect(() => {
@@ -34,7 +34,7 @@ export default function Overview({course}) {
         >
           <p className="">
             { isClient ?
-            locale == 'en' ? parse(course.en_desc) : parse(course.ar_desc) 
+            locale == 'en' ? parse(blog.en_content) : parse(blog.ar_content) 
             : ''}
           </p>
         </div>

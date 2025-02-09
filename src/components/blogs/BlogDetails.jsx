@@ -1,13 +1,42 @@
 "use client";
 
 import React from "react";
-import { arBlogs, tags } from "@/data/blog";
-import Image from "next/image";
-export default function BlogDetails({ id }) {
-  const data = arBlogs.filter((elm) => elm.id == id)[0] || arBlogs[0];
-  const handleSubmit = (e) => {
-    e.preventDefault();
-  };
+import { useState, useEffect } from "react";
+import {  getPostDetails } from "@/lib/data";
+import moment from 'moment';
+import { useTranslations, useLocale } from "next-intl";
+import Overview from "./Overview";
+import { blogsUploadUrl } from "@/lib/constants";
+
+export default function BlogDetails({ blogId }) { 
+
+
+  const [blog, setBlog] = useState(null);
+  const t = useTranslations("BlogListPage");
+  const locale = useLocale();
+
+  useEffect(() => {
+    if (!blogId) return; 
+
+    const fetchBlog = async () => {
+      try {
+        const res = await getPostDetails(blogId);
+        if (res) {
+          console.log(res)
+          setBlog(res);
+        }
+      } catch (error) {
+        console.error("Error fetching blog details:", error);
+      }
+    };
+
+    fetchBlog();
+  }, [blogId]);
+
+  if (!blog) {
+    return <p>{t("loading")}...</p>; 
+  }
+
   return (
     <>
       <section className="page-header -type-1">
@@ -17,16 +46,22 @@ export default function BlogDetails({ id }) {
               <div className="col-auto">
                 <div>
                   <div className="text-14 text-purple-1 uppercase fw-500 mb-8">
-                    {data.category.toUpperCase()}
+                    { locale == "en" ? blog.category.en_name.toUpperCase() : blog.category.ar_name }
                   </div>
 
                   <h1 className="page-header__title lh-14">
-                    {data.title.split(" ").slice(0, 4).join(" ")}
+                    { 
+                      locale == "en" ?  blog.en_title.split(" ").slice(0, 4).join(" ") : 
+                      blog.ar_title.split(" ").slice(0, 4).join(" ") 
+                    }
                     <br />
-                    {data.title.split(" ").slice(4, -1).join(" ")}
+                    {
+                      locale == "en" ? blog.en_title.split(" ").slice(4, -1).join(" ") : 
+                      blog.ar_title.split(" ").slice(4, -1).join(" ")
+                    }
                   </h1>
 
-                  <p className="page-header__text">{data.date}</p>
+                  <p className="page-header__text">{ moment(blog.created_at).format('MMMM Do YYYY') }</p>
                 </div>
               </div>
             </div>
@@ -38,7 +73,7 @@ export default function BlogDetails({ id }) {
         <div className="container">
           <div
             className="ratio ratio-16:9 rounded-8 bg-image js-lazy"
-            style={{ backgroundImage: `url(${data.imageSrc})` }}
+            style={{ backgroundImage: `url(${blogsUploadUrl + blog.image})` }}
             data-bg="img/blog/blog-single/images.png"
           ></div>
         </div>
@@ -51,109 +86,7 @@ export default function BlogDetails({ id }) {
               <div className="row justify-center">
                 <div className="col-xl-8 col-lg-9 col-md-11">
                   <div className="blogCard__content">
-                    <h4 className="text-18 fw-500">
-                    هذا النص هو مثال لنص يمكن أن يستبدل في نفس المساحة،
-                    </h4>
-                    <p className="mt-30">
-                    هذا النص هو مثال لنص يمكن أن يستبدل في نفس المساحة، لقد تم توليد هذا النص من مولد النص العربى،
-                     حيث يمكنك أن تولد مثل هذا النص أو العديد من النصوص الأخرى إضافة إلى زيادة عدد الحروف التى يولدها التطبيق.
-                     هذا النص هو مثال لنص يمكن أن يستبدل في نفس المساحة، لقد تم توليد هذا النص من مولد النص العربى،
-                     حيث يمكنك أن تولد مثل هذا النص أو العديد من النصوص الأخرى إضافة إلى زيادة عدد الحروف التى يولدها التطبيق.
-                     هذا النص هو مثال لنص يمكن أن يستبدل في نفس المساحة، لقد تم توليد هذا النص من مولد النص العربى،
-                     حيث يمكنك أن تولد مثل هذا النص أو العديد من النصوص الأخرى إضافة إلى زيادة عدد الحروف التى يولدها التطبيق.
-                    </p>
-
-                    <ul className="ul-list y-gap-10 mt-30">
-                      <li>
-                      هذا النص هو مثال لنص يمكن أن يستبدل في نفس المساحة،
-                      </li>
-                      <li>
-                      هذا النص هو مثال لنص يمكن أن يستبدل في نفس المساحة،
-                      </li>
-                      <li>هذا النص هو مثال لنص يمكن أن يستبدل في نفس المساحة،</li>
-                      <li>
-                      هذا النص هو مثال لنص يمكن أن يستبدل في نفس المساحة،
-                      </li>
-                    </ul>
-
-                    {/* <!-- <div className="py-25 pl-90 lg:pl-80 md:px-32 border-left-2-accent text-center mt-30 lg:mt-40">
-                  <div className="">
-                    <i className="icon icon-quote"></i>
-                  </div>
-
-                  <div className="text-dark-1 fw-500 italic text-2xl lh-17">
-                    “Sed viverra ipsum nunc aliquet bibendum enim facilisis gravida. Diam phasellus vestibulum lorem sed risus ultricies. Magna sit amet purus gravida quis blandit. Arcu cursus vitae congue mauris.“
-                  </div>
-                </div> --> */}
-
-                    <p className="mt-30">
-                    هذا النص هو مثال لنص يمكن أن يستبدل في نفس المساحة، لقد تم توليد هذا النص من مولد النص العربى،
-                     حيث يمكنك أن تولد مثل هذا النص أو العديد من النصوص الأخرى إضافة إلى زيادة عدد الحروف التى يولدها التطبيق.
-                     هذا النص هو مثال لنص يمكن أن يستبدل في نفس المساحة، لقد تم توليد هذا النص من مولد النص العربى،
-                     حيث يمكنك أن تولد مثل هذا النص أو العديد من النصوص الأخرى إضافة إلى زيادة عدد الحروف التى يولدها التطبيق.
-                     هذا النص هو مثال لنص يمكن أن يستبدل في نفس المساحة، لقد تم توليد هذا النص من مولد النص العربى،
-                     حيث يمكنك أن تولد مثل هذا النص أو العديد من النصوص الأخرى إضافة إلى زيادة عدد الحروف التى يولدها التطبيق.
-                     هذا النص هو مثال لنص يمكن أن يستبدل في نفس المساحة، لقد تم توليد هذا النص من مولد النص العربى،
-                     حيث يمكنك أن تولد مثل هذا النص أو العديد من النصوص الأخرى إضافة إلى زيادة عدد الحروف التى يولدها التطبيق.
-                     هذا النص هو مثال لنص يمكن أن يستبدل في نفس المساحة، لقد تم توليد هذا النص من مولد النص العربى،
-                     حيث يمكنك أن تولد مثل هذا النص أو العديد من النصوص الأخرى إضافة إلى زيادة عدد الحروف التى يولدها التطبيق.
-                     هذا النص هو مثال لنص يمكن أن يستبدل في نفس المساحة، لقد تم توليد هذا النص من مولد النص العربى،
-                     حيث يمكنك أن تولد مثل هذا النص أو العديد من النصوص الأخرى إضافة إلى زيادة عدد الحروف التى يولدها التطبيق.
-                      <br />
-                      <br />
-                      هذا النص هو مثال لنص يمكن أن يستبدل في نفس المساحة، لقد تم توليد هذا النص من مولد النص العربى،
-                     حيث يمكنك أن تولد مثل هذا النص أو العديد من النصوص الأخرى إضافة إلى زيادة عدد الحروف التى يولدها التطبيق.
-                     هذا النص هو مثال لنص يمكن أن يستبدل في نفس المساحة، لقد تم توليد هذا النص من مولد النص العربى،
-                     حيث يمكنك أن تولد مثل هذا النص أو العديد من النصوص الأخرى إضافة إلى زيادة عدد الحروف التى يولدها التطبيق.
-                     هذا النص هو مثال لنص يمكن أن يستبدل في نفس المساحة، لقد تم توليد هذا النص من مولد النص العربى،
-                     حيث يمكنك أن تولد مثل هذا النص أو العديد من النصوص الأخرى إضافة إلى زيادة عدد الحروف التى يولدها التطبيق.
-                    </p>
-                  </div>
-
-                  <div className="row y-gap-30 pt-30">
-                    <div className="col-sm-6">
-                      <Image
-                        width={530}
-                        height={450}
-                        src="/assets/img/blog/blog-single/1.png"
-                        alt="image"
-                        className="w-1/1 initial-img rounded-8"
-                      />
-                    </div>
-                    <div className="col-sm-6">
-                      <Image
-                        width={530}
-                        height={450}
-                        src="/assets/img/blog/blog-single/2.png"
-                        alt="image"
-                        className="w-1/1 initial-img rounded-8"
-                      />
-                    </div>
-                  </div>
-
-                  <div className="blogCard__content pt-30">
-                    <p>
-                    هذا النص هو مثال لنص يمكن أن يستبدل في نفس المساحة، لقد تم توليد هذا النص من مولد النص العربى،
-                     حيث يمكنك أن تولد مثل هذا النص أو العديد من النصوص الأخرى إضافة إلى زيادة عدد الحروف التى يولدها التطبيق.
-                     هذا النص هو مثال لنص يمكن أن يستبدل في نفس المساحة، لقد تم توليد هذا النص من مولد النص العربى،
-                     حيث يمكنك أن تولد مثل هذا النص أو العديد من النصوص الأخرى إضافة إلى زيادة عدد الحروف التى يولدها التطبيق.
-                     هذا النص هو مثال لنص يمكن أن يستبدل في نفس المساحة، لقد تم توليد هذا النص من مولد النص العربى،
-                     حيث يمكنك أن تولد مثل هذا النص أو العديد من النصوص الأخرى إضافة إلى زيادة عدد الحروف التى يولدها التطبيق.
-                     هذا النص هو مثال لنص يمكن أن يستبدل في نفس المساحة، لقد تم توليد هذا النص من مولد النص العربى،
-                     حيث يمكنك أن تولد مثل هذا النص أو العديد من النصوص الأخرى إضافة إلى زيادة عدد الحروف التى يولدها التطبيق.
-                     هذا النص هو مثال لنص يمكن أن يستبدل في نفس المساحة، لقد تم توليد هذا النص من مولد النص العربى،
-                     حيث يمكنك أن تولد مثل هذا النص أو العديد من النصوص الأخرى إضافة إلى زيادة عدد الحروف التى يولدها التطبيق.
-                     هذا النص هو مثال لنص يمكن أن يستبدل في نفس المساحة، لقد تم توليد هذا النص من مولد النص العربى،
-                     حيث يمكنك أن تولد مثل هذا النص أو العديد من النصوص الأخرى إضافة إلى زيادة عدد الحروف التى يولدها التطبيق.
-                      <br />
-                      <br />
-                      هذا النص هو مثال لنص يمكن أن يستبدل في نفس المساحة، لقد تم توليد هذا النص من مولد النص العربى،
-                     حيث يمكنك أن تولد مثل هذا النص أو العديد من النصوص الأخرى إضافة إلى زيادة عدد الحروف التى يولدها التطبيق.
-                     هذا النص هو مثال لنص يمكن أن يستبدل في نفس المساحة، لقد تم توليد هذا النص من مولد النص العربى،
-                     حيث يمكنك أن تولد مثل هذا النص أو العديد من النصوص الأخرى إضافة إلى زيادة عدد الحروف التى يولدها التطبيق.
-                     هذا النص هو مثال لنص يمكن أن يستبدل في نفس المساحة، لقد تم توليد هذا النص من مولد النص العربى،
-                     حيث يمكنك أن تولد مثل هذا النص أو العديد من النصوص الأخرى إضافة إلى زيادة عدد الحروف التى يولدها التطبيق.
-                    </p>
+                    <Overview blog={blog} />
                   </div>
                 </div>
               </div>

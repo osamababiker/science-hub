@@ -56,7 +56,7 @@ export default function BlogsOne({ categories, posts }) {
                     data-tab-target=".-tab-item-1"
                     type="button"
                   >
-                    {locale == 'en' ? elm.en_name : elm.ar_name}
+                    {locale == 'en' ? elm.en_title : elm.ar_title}
                   </button>
                 </div>
               ))}
@@ -86,7 +86,7 @@ export default function BlogsOne({ categories, posts }) {
                               className="linkCustom"
                               href={`/blogs/${elm.id}`}
                             >
-                              {locale == 'en' ? elm.en_name : elm.ar_name}
+                              {locale == 'en' ? elm.en_title : elm.ar_title}
                             </Link>
                           </h4>
                           <div className="blogCard__date text-14 mt-5">

@@ -19,7 +19,10 @@ export const metadata = {
 };
 
 
-export default function page({ params }) {
+export default async function page({ params }) {
+
+  const { id } = await params;
+
   return (
     <div className="main-content  ">
       <Preloader/>
@@ -28,9 +31,7 @@ export default function page({ params }) {
         <div className="content-wrapper js-content-wrapper overflow-hidden">
             <PageLinks/>
 
-            <BlogDetails id={params.id} />
-
-            <RelatedBlogs/>
+            <BlogDetails blogId={id} />
        
             <FooterOne/>
         </div>

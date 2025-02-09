@@ -1,25 +1,25 @@
 import Link from "next/link";
 import React from "react";
+import { useTranslations, useLocale } from "next-intl";
 
-export default function PageLinks({ dark }) {
+export default function PageLinks() {
+
+  const t = useTranslations("breadcrumbs");
+  const locale = useLocale();
+
   return (
-    <section className={`breadcrumbs ${dark ? "bg-dark-1" : ""} `}>
+    <section className="breadcrumbs">
       <div className="container">
         <div className="row">
           <div className="col-auto">
             <div className="breadcrumbs__content">
-              <div
-                className={`breadcrumbs__item ${dark ? "text-dark-3" : ""} `}
-              >
-                <Link href="/">Home</Link>
+              <div className="breadcrumbs__item">
+                <Link href="/">{t("homePage")}</Link>
               </div>
-
-              <div
-                className={`breadcrumbs__item ${dark ? "text-dark-3" : ""} `}
-              >
-                <Link href="/courses-list-3"> Courses</Link>
-              </div>
-
+              {/* <div
+                className="breadcrumbs__item">
+                <Link href={page.url}> { page.name } </Link>
+              </div> */}
             </div>
           </div>
         </div>

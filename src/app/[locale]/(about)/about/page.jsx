@@ -28,7 +28,7 @@ export default async function page() {
 
         <Header/>
         <div className="content-wrapper js-content-wrapper overflow-hidden">
-            <PageLinks/>
+            <PageLinks />
             <About/>
             <AboutUsFaq/>
             <TestimonialsOne testimonials={testimonials}/>

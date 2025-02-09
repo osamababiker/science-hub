@@ -38,7 +38,7 @@ export default function CourseDetailsSix({ courseId }) {
   }, [courseId]);
 
   if (!course) {
-    return <p>Loading...</p>; 
+    return <p>{t("loading")}...</p>; 
   }
 
   return (
