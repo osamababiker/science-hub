@@ -7,20 +7,39 @@ import { useLocale, useTranslations } from "next-intl";
 import ModalVideoComponent from "../common/ModalVideo";
 import Image from "next/image";
 import useCartStore from "@/store/cartStore";
-import { coursesUploadUrl } from "@/lib/constants";
+import { getCourseDetails } from "@/lib/data";
+import { coursesUploadUrl, teachersUploadUrl } from "@/lib/constants";
 
 
-export default function CourseDetailsSix({ course }) {
+export default function CourseDetailsSix({ courseId }) {
 
-  const [pageItem, setPageItem] = useState(course);
+  const [course, setPageCourse] = useState(null);
   const [isOpen, setIsOpen] = useState(false);
   const [activeTab, setActiveTab] = useState(1);
   const t = useTranslations('CourseDetails');
   const locale = useLocale();
   const { addCourseToCart, isAddedToCartCourses } = useCartStore();
-  // useEffect(() => {
-  //   setPageItem(coursesData.filter((elm) => elm.id == id)[0] || coursesData[0]);
-  // }, []);
+  
+  useEffect(() => {
+    if (!courseId) return; 
+
+    const fetchCourse = async () => {
+      try {
+        const res = await getCourseDetails(courseId);
+        if (res) {
+          setPageCourse(res);
+        }
+      } catch (error) {
+        console.error("Error fetching course details:", error);
+      }
+    };
+
+    fetchCourse();
+  }, [courseId]);
+
+  if (!course) {
+    return <p>Loading...</p>; 
+  }
 
   return (
     <>
@@ -67,11 +86,11 @@ export default function CourseDetailsSix({ course }) {
                   <div
                     className="bg-image size-30 rounded-full js-lazy"
                     style={{
-                      backgroundImage: `url(${pageItem.authorImageSrc})`,
+                      backgroundImage: `url(${teachersUploadUrl + course.teacher.image})`,
                     }}
                   ></div>
                   <div className="text-14 lh-1 ml-10 text-dark-3">
-                    {pageItem.authorName}
+                    { locale == "en" ? course.teacher.en_name : course.teacher.ar_name }
                   </div>
                 </div>
 
@@ -197,7 +216,7 @@ export default function CourseDetailsSix({ course }) {
         </div>
       </section>
       <ModalVideoComponent
-        videoId={"LlCwHnp3kL4"}
+        videoId={"Kkqm7wxiybs"}
         isOpen={isOpen}
         setIsOpen={setIsOpen}
       />

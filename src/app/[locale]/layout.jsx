@@ -12,7 +12,6 @@ import "@fortawesome/fontawesome-svg-core/styles.css";
 import "react-calendar/dist/Calendar.css";
 config.autoAddCss = false;
 
-import Context from "@/context/Context";
 import { SessionProviders } from '@/context/Context';
 
 

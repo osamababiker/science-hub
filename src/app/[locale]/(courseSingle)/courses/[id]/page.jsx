@@ -10,7 +10,6 @@ import CourseSlider from '@/src/components/courseSingle/CourseSlider'
 import FooterThree from '@/src/components/layout/footers/FooterThree'
 
 import Header from '@/src/components/layout/headers/Header';
-import { getCourseDetails } from "@/lib/data";
 import React from 'react'
 
 export const metadata = {
@@ -23,7 +22,6 @@ export const metadata = {
 export default async function page({ params }) { 
 
   const { id } = await params;
-  const course = await getCourseDetails(id);
   
   <Preloader/>
   return (
@@ -31,7 +29,7 @@ export default async function page({ params }) {
         <Header/>
         <div  className="content-wrapper  js-content-wrapper ">
             <PageLinks/>
-            <CourseDetailsSix course={course} />
+            <CourseDetailsSix courseId={id} />
             {/* <CourseSlider/> */}
             <FooterThree/>
         </div>
