@@ -1,10 +1,7 @@
 
-import RelatedBlogs from '@/src/components/blogs/RelatedBlogs'
 import PageLinks from '@/src/components/common/PageLinks'
 
-
-
-import FooterOne from '@/src/components/layout/footers/FooterOne'
+import FooterThree from '@/src/components/layout/footers/FooterThree'
 import Header from '@/src/components/layout/headers/Header'
 import React from 'react'
 import BlogDetails from '@/src/components/blogs/BlogDetails'
@@ -33,7 +30,7 @@ export default async function page({ params }) {
 
             <BlogDetails blogId={id} />
        
-            <FooterOne/>
+            <FooterThree/> 
         </div>
 
     </div>

@@ -360,6 +360,7 @@
         "my_courses_bio": "List with all the courses that you enroll in and your progress in each course",
         "all_courses_tab": "All Courses",
         "finished_tab": "Finished",
+        "enrolled": "Enrolled",
         "not_enrolled": "Not enrolled",
         "no_courses": "No courses available ",
         "completed": "Completed",

@@ -2,7 +2,7 @@ import FullCalendar from "@fullcalendar/react";
 import dayGridPlugin from "@fullcalendar/daygrid";
 
 const events = [
-  { title: "درس اساسيات البرمجة", start: new Date() },
+  // { title: "درس اساسيات البرمجة", start: new Date() },
 ];
 
 function renderEventContent(eventInfo) {

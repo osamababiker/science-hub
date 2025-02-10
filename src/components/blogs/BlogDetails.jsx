@@ -19,7 +19,7 @@ export default function BlogDetails({ blogId }) {
     if (!blogId) return; 
 
     const fetchBlog = async () => {
-      try {
+      try { 
         const res = await getPostDetails(blogId);
         if (res) {
           console.log(res)

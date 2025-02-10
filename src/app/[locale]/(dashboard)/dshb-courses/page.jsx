@@ -4,7 +4,6 @@ import MyCourses from '@/src/components/dashboard/MyCourses'
 import Sidebar from '@/src/components/dashboard/Sidebar'
 import HeaderSix from "@/src/components/layout/headers/HeaderSix";
 import { getServerSession } from "next-auth/next";
-import { getUserOrders, getCategories } from '@/lib/data';
 import { authOptions } from '@/lib/auth';
 import React from 'react';
 
@@ -22,9 +21,6 @@ export default async function page() {
     return <div>Please log in to access this page.</div>;
   }
 
-  const orders = await getUserOrders( 2 );
-  const categories = await getCategories();
-
   return ( 
     <div  className="barba-container" data-barba="container">
         <main  className="main-content">
@@ -36,7 +32,7 @@ export default async function page() {
                     <Sidebar/>
 
                 </div>
-                <MyCourses categories={categories} orders={orders} />
+                <MyCourses userId={session.user.id} />
               </div>
           </div>
         </main>

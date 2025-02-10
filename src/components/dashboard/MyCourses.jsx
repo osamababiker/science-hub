@@ -4,40 +4,41 @@ import React, { useEffect, useState } from "react";
 import FooterThree from "@/src/components/layout/footers/FooterThree";
 import CoursesCardDashboard from "./DashBoardCards/CoursesCardDashboard";
 import { useTranslations, useLocale } from "next-intl";
+import { getUserOrders } from '@/lib/data';
 
-export default function MyCourses({categories, orders}) {
+export default function MyCourses({ userId }) {
 
-  const [currentCategory, setCurrentCategory] = useState(categories[0].id);
-  const [pageItems, setPageItems] = useState([]);
   const [activeTab, setActiveTab] = useState(1);
-  const [pageData, setPageData] = useState(orders);
-
+  const [pageData, setPageData] = useState(null);
 
   const t = useTranslations('Dashboard');
-  const locale = useLocale();
+  const locale = useLocale(); 
 
   useEffect(() => {
-    if (activeTab == 1) {
-      setPageData(orders);
-    } else if (activeTab == 2) {
-      setPageData(orders.filter((elm) => elm.status == 0));
-    } else if (activeTab == 3) {
-      setPageData(orders.filter((elm) => elm.status == 1));
-    }
+
+    const fetchOrders = async () => {
+      try { 
+        const res = await getUserOrders(userId);
+        if (res) {
+          if (activeTab == 1) {
+            setPageData(res);
+          } else if (activeTab == 2) {
+            setPageData(res.filter((elm) => elm.status == 1));
+          }
+        }
+      } catch (error) {
+        console.error("Error fetching orders details:", error);
+      }
+    };
+
+    fetchOrders();
   }, [activeTab]);
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-  };
-  useEffect(() => {
-    if (currentCategory == categories[0].id) {
-      setPageItems(pageData);
-    } else {
-      setPageItems([
-        ...pageData.filter((elm) => elm.category.id == currentCategory),
-      ]);
-    }
-  }, [currentCategory, pageData]);
+
+  if (!pageData) {
+    return <p>{t("loading")}...</p>; 
+  }
+
 
   return (
     <div className="dashboard__main">
@@ -67,24 +68,14 @@ export default function MyCourses({categories, orders}) {
                     { t("all_courses_tab") }
                   </button>
                   <button
-                    className={`text-light-1 lh-12 tabs__button js-tabs-button ${ locale == 'en' ? 'ml-30 ' : 'mr-30 ' } ${
-                      activeTab == 2 ? "is-active" : ""
-                    } `}
-                    data-tab-target=".-tab-item-2"
-                    type="button"
-                    onClick={() => setActiveTab(2)}
-                  >
-                    { t("finished_tab") }
-                  </button>
-                  <button
                     className={`text-light-1 lh-12 tabs__button js-tabs-button ${ locale == 'en' ? 'ml-30 ' : 'mr-30 ' }  ${
-                      activeTab == 3 ? "is-active" : ""
+                      activeTab == 2 ? "is-active" : ""
                     } `}
                     data-tab-target=".-tab-item-3"
                     type="button"
-                    onClick={() => setActiveTab(3)}
+                    onClick={() => setActiveTab(2)}
                   >
-                    { t("not_enrolled") }
+                    { t("enrolled") }
                   </button>
                 </div>
 
@@ -92,10 +83,10 @@ export default function MyCourses({categories, orders}) {
                   <div className="tabs__pane -tab-item-1 is-active">
                     <div className="row y-gap-30 pt-30">
                       {
-                        pageItems.length == 0 ? 
+                        pageData.length == 0 ? 
                         <div className="alert alert-info">  { t("no_courses") } </div>
                         : 
-                        pageItems.map((order) => (
+                        pageData.map((order) => (
                           <CoursesCardDashboard order={order} key={order.id} />
                         ))
                       }
