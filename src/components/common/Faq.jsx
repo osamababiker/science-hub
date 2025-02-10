@@ -1,14 +1,18 @@
 "use client";
 
 import React, { useState } from "react";
-import { arFaq } from "@/data/faq";
+import { faq, arFaq } from "@/data/faq";
 import { faMinus, faPlus } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { useTranslations } from "next-intl";
+import { useTranslations, useLocale } from "next-intl";
 export default function Faq() {
 
   const t = useTranslations("ContactPage");
   const [activeFaq, setActiveFaq] = useState(0);
+  const locale = useLocale();
+
+  const faqData = locale == "en" ? faq : arFaq;
+
   return (
     <section className="layout-pt-lg layout-pb-lg bg-light-4">
       <div className="container">
@@ -25,7 +29,7 @@ export default function Faq() {
             </div>
 
             <div className="accordion -block text-right pt-60 lg:pt-40 js-accordion">
-              {arFaq.map((elm, i) => (
+              {faqData.map((elm, i) => (
                 <div
                   onClick={() =>
                     setActiveFaq((pre) => (pre == elm.id ? 0 : elm.id))
@@ -69,7 +73,7 @@ export default function Faq() {
                     style={activeFaq == elm.id ? { maxHeight: "139px" } : {}}
                     className="accordion__content"
                   >
-                    <div className="accordion__content__inner">
+                    <div  className={`accordion__content__inner ${ locale == "en" ? ' text-left' : '' }`}>
                       <p>{elm.answer}</p>
                     </div>
                   </div>

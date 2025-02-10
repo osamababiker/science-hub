@@ -3,7 +3,6 @@
 import React from "react";
 import Links from "../component/Links";
 import Socials from "@/src/components/common/Socials";
-import Image from "next/image";
 import { useTranslations, useLocale } from "next-intl";
 
 export default function FooterThree() {

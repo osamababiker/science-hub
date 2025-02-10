@@ -1,40 +1,45 @@
 "use client";
-
-import Star from "@/src/components/common/Star";
-import { coursesData, arCoursesData } from "@/data/courses";
+import Star from "../../common/Star";
+import { Link } from "@/src/i18n/routing";
+import Overview from "./Overview";
 import React, { useState, useEffect } from "react";
-import {
-  teamMembers,
-  arTeamMembers,
-  teamMembersFull,
-  arTeamMembersFull,
-  instractorsEight,
-  instractorsNine,
-  marketingCoordinator,
-} from "@/data/instractors";
 import Image from "next/image";
-import Link from "next/link";
 import { useTranslations, useLocale } from "next-intl";
-export default function InstractorSingle({ id }) {
+import { coursesUploadUrl, teachersUploadUrl } from "@/lib/constants";
+import { getTeacherDetails } from "@/lib/data";
+
+
+export default function InstractorSingle({ instractorId }) {
 
 
   const t = useTranslations("InstractorPage");
   const locale = useLocale();
   const [activeTab, setActiveTab] = useState(1);
-  const [pageItem, setPageItem] = useState(teamMembers[0]);
-  useEffect(() => {
-    const filtered = [
-      ...arTeamMembers,
-      ...arTeamMembersFull,
-      ...instractorsEight,
-      ...instractorsNine,
-      marketingCoordinator,
-    ].filter((elm) => elm.id == id)[0];
 
-    if (filtered) {
-      setPageItem(filtered);
-    }
-  }, []);
+
+
+  const [instractor, setInstractor] = useState(null);
+  useEffect(() => {
+    if (!instractorId) return; 
+
+    const fetchInstractor = async () => {
+      try {
+        const res = await getTeacherDetails(instractorId);
+        if (res) {
+          console.log(res)
+          setInstractor(res);
+        }
+      } catch (error) {
+        console.error("Error fetching instractor details:", error);
+      }
+    };
+
+    fetchInstractor();
+  }, [instractorId]);
+
+  if (!instractor) {
+    return <p>{t("loading")}...</p>; 
+  }
 
   return (
     <>
@@ -55,20 +60,16 @@ export default function InstractorSingle({ id }) {
                       overflow: "hidden",
                       objectFit: "cover",
                     }}
-                    src={
-                      pageItem.image ||
-                      pageItem.imageSrc ||
-                      "/assets/img/Instructors-single/1.png"
-                    }
-                    alt="image"
+                    src={teachersUploadUrl + instractor.image}
+                    alt={instractor.en_name}
                   />
                 </div>
 
                 <div className="page-header__info pt-20">
                   <h1 className="text-30 lh-14 fw-700 text-white">
-                    {pageItem.name}
+                    { locale == "en" ? instractor.en_name : instractor.ar_name }
                   </h1>
-                  <div className="text-white">{pageItem.role}</div>
+                  <div className="text-white">{ locale == "en" ? instractor.role_en : instractor.role_ar }</div>
                   <div className="d-flex x-gap-20 pt-15">
                     <div className="d-flex items-center text-white">
                       <div className={`icon-star ${ locale == 'en' ? 'mr-10' : 'ml-10' }`}></div>
@@ -78,14 +79,14 @@ export default function InstractorSingle({ id }) {
                     <div className="d-flex items-center text-white">
                       <div className={`icon-video-file ${ locale == 'en' ? 'mr-10' : 'ml-10' }`}></div>
                       <div className="text-13 lh-1">
-                        {pageItem.reviews || 3545}  {t('reviews')}
+                        {instractor.rating || 3545}  {t('reviews')}
                       </div>
                     </div>
 
                     <div className="d-flex items-center text-white">
                       <div className={`icon-person-3 ${ locale == 'en' ? 'mr-10' : 'ml-10' }`}></div>
                       <div className="text-13 lh-1">
-                        {pageItem.students || pageItem.studentCount || 143}{" "}
+                        { instractor.students }{" "}
                         {t('students')}
                       </div>
                     </div>
@@ -93,14 +94,13 @@ export default function InstractorSingle({ id }) {
                     <div className="d-flex items-center text-white">
                       <div className={`icon-play ${ locale == 'en' ? 'mr-10' : 'ml-10' }`}></div>
                       <div className="text-13 lh-1">
-                        {pageItem.courses || pageItem.courseCount || 453} {t('course')}
+                        { instractor.courses.length } {t('course')}
                       </div>
                     </div>
                   </div>
                 </div>
 
-                <div className="d-flex items-center mt-30">
-
+                {/* <div className="d-flex items-center mt-30">
                   <div className="d-flex items-center x-gap-15 text-white ml-25">
                     {pageItem.socialProfile?.map((itm, index) => (
                       <a key={index} href={itm.url}>
@@ -108,7 +108,7 @@ export default function InstractorSingle({ id }) {
                       </a>
                     ))}
                   </div>
-                </div>
+                </div> */}
               </div>
             </div>
           </div>
@@ -150,22 +150,7 @@ export default function InstractorSingle({ id }) {
                     } `}
                   >
                     <h4 className="text-20">{t('description')}</h4>
-                    <p className="text-light-1 mt-30">
-                    هذا النص هو مثال لنص يمكن أن يستبدل في نفس المساحة، لقد تم توليد هذا النص من مولد النص العربى،
-                     حيث يمكنك أن تولد مثل هذا النص أو العديد من النصوص الأخرى إضافة إلى زيادة عدد الحروف التى يولدها التطبيق.
-                      <br />
-                      <br />
-                      هذا النص هو مثال لنص يمكن أن يستبدل في نفس المساحة، لقد تم توليد هذا النص من مولد النص العربى،
-                     حيث يمكنك أن تولد مثل هذا النص أو العديد من النصوص الأخرى إضافة إلى زيادة عدد الحروف التى يولدها التطبيق.
-                     هذا النص هو مثال لنص يمكن أن يستبدل في نفس المساحة، لقد تم توليد هذا النص من مولد النص العربى،
-                     حيث يمكنك أن تولد مثل هذا النص أو العديد من النصوص الأخرى إضافة إلى زيادة عدد الحروف التى يولدها التطبيق.
-                      <br />
-                      <br />
-                      هذا النص هو مثال لنص يمكن أن يستبدل في نفس المساحة، لقد تم توليد هذا النص من مولد النص العربى،
-                     حيث يمكنك أن تولد مثل هذا النص أو العديد من النصوص الأخرى إضافة إلى زيادة عدد الحروف التى يولدها التطبيق.
-                     هذا النص هو مثال لنص يمكن أن يستبدل في نفس المساحة، لقد تم توليد هذا النص من مولد النص العربى،
-                     حيث يمكنك أن تولد مثل هذا النص أو العديد من النصوص الأخرى إضافة إلى زيادة عدد الحروف التى يولدها التطبيق.
-                    </p>
+                    <Overview instractor={instractor}/>
                   </div>
 
                   <div
@@ -174,8 +159,8 @@ export default function InstractorSingle({ id }) {
                     } `}
                   >
                     <div className="row">
-                      {arCoursesData.slice(0, 2).map((elm, i) => (
-                        <div key={i} className="col-md-6">
+                      {instractor.courses.slice(0, 2).map((elm) => (
+                        <div key={elm.id} className="col-md-6">
                           <div className="coursesCard -type-1 rounded-8 shadow-3 bg-white">
                             <div className="relative">
                               <div className="coursesCard__image overflow-hidden rounded-top-8">
@@ -183,13 +168,13 @@ export default function InstractorSingle({ id }) {
                                   width={510}
                                   height={360}
                                   className="w-1/1"
-                                  src={elm.imageSrc}
-                                  alt="image"
+                                  src={coursesUploadUrl + elm.image}
+                                  alt={elm.en_name}
                                 />
                                 <div className="coursesCard__image_overlay rounded-top-8"></div>
                               </div>
                               <div className="d-flex justify-between py-10 px-10 absolute-full-center z-3">
-                                {elm.popular && (
+                                {/* {elm.popular && ( */}
                                   <div>
                                     <div className="px-15 rounded-200 bg-purple-1">
                                       <span className="text-11 lh-1 uppercase fw-500 text-white">
@@ -197,8 +182,8 @@ export default function InstractorSingle({ id }) {
                                       </span>
                                     </div>
                                   </div>
-                                )}
-                                {elm.bestSeller && (
+                                {/* )} */}
+                                {/* {elm.bestSeller && ( */}
                                   <div>
                                     <div className="px-15 rounded-200 bg-green-1">
                                       <span className="text-11 lh-1 uppercase fw-500 text-dark-1">
@@ -206,7 +191,7 @@ export default function InstractorSingle({ id }) {
                                       </span>
                                     </div>
                                   </div>
-                                )}
+                                {/* )} */}
                               </div>
                             </div>
 
@@ -219,7 +204,7 @@ export default function InstractorSingle({ id }) {
                                   <Star star={Math.round(elm.rating)} />
                                 </div>
                                 <div className={`text-13 lh-1 ${ locale == 'en' ? 'ml-10' : 'mr-10' }`}>
-                                  ({elm.ratingCount})
+                                  ({elm.rating_count})
                                 </div>
                               </div>
 
@@ -228,7 +213,7 @@ export default function InstractorSingle({ id }) {
                                   className="linkCustom"
                                   href={`/courses/${elm.id}`}
                                 >
-                                  {elm.title}
+                                  { locale == "en" ? elm.en_name : elm.ar_name }
                                 </Link>
                               </div>
 
@@ -243,7 +228,7 @@ export default function InstractorSingle({ id }) {
                                     />
                                   </div>
                                   <div className="text-14 lh-1">
-                                    {elm.lessonCount} {t('lesson')}
+                                    {elm.lesson_count} {t('lesson')}
                                   </div>
                                 </div>
 
@@ -271,7 +256,7 @@ export default function InstractorSingle({ id }) {
                                     />
                                   </div>
                                   <div className="text-14 lh-1">
-                                    {elm.level}
+                                    { locale == "en" ? elm.level_en : elm.level_ar }
                                   </div>
                                 </div>
                               </div>
@@ -281,24 +266,24 @@ export default function InstractorSingle({ id }) {
                                   <Image
                                     width={30}
                                     height={30}
-                                    src={elm.authorImageSrc}
-                                    alt="image"
+                                    src={ teachersUploadUrl + instractor.image }
+                                    alt={instractor.en_name}
                                   />
-                                  <div className={ locale == 'en' ? 'ml-8' : 'mr-8' }>{elm.authorName}</div>
+                                  <div className={ locale == 'en' ? 'ml-8' : 'mr-8' }>{ locale == "en" ? instractor.en_name : instractor.ar_name }</div>
                                 </div>
 
                                 <div className="coursesCard-footer__price">
-                                  {elm.paid ? (
+                                  {/* {elm.paid ? ( */}
                                     <>
-                                      <div>{t('currancy')} {elm.originalPrice}</div>
-                                      <div>{t('currancy')} {elm.discountedPrice}</div>
+                                      <div>{t('currancy')} {elm.original_price}</div>
+                                      <div>{t('currancy')} {elm.discounted_price}</div>
                                     </>
-                                  ) : (
+                                  {/* ) : (
                                     <>
                                       <div></div>
                                       <div>{t('free')}</div>
                                     </>
-                                  )}
+                                  )} */}
                                 </div>
                               </div>
                             </div>

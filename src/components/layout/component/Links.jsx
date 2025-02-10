@@ -1,5 +1,5 @@
 import { arLinks } from "../../../../data/links";
-import Link from "next/link";
+import { Link } from "@/src/i18n/routing";
 import React from "react";
 
 export default function Links({ allClasses }) {

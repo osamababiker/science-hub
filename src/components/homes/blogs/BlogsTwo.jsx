@@ -2,7 +2,7 @@
 
 import React from "react";
 import Image from "next/image";
-import Link from "next/link";
+import { Link } from "@/src/i18n/routing";
 import { useTranslations, useLocale } from "next-intl";
 import moment from 'moment';
 import { blogsUploadUrl } from "@/lib/constants";
@@ -28,7 +28,7 @@ export default function BlogsTwo({posts}) {
 
           <div className="col-auto">
             <Link
-              href="#"
+              href="/blog-list"
               className="button -icon -purple-3 text-purple-1"
             >
               {t('link')}

@@ -7,6 +7,7 @@ import { EffectCards } from "swiper";
 import { statictis } from "../../../../data/features";
 import "swiper/css/effect-cards";
 import { useTranslations, useLocale } from "use-intl";
+import { usersUploadUrl } from "@/lib/constants";
 
 export default function TestimonialsSix({testimonials}) {
 
@@ -108,12 +109,15 @@ export default function TestimonialsSix({testimonials}) {
 
                             <div className="testimonials-footer">
                               <div className="testimonials-footer__image">
+                                {elm.image ?
                                 <Image
                                   width={60}
                                   height={60}
-                                  src={elm.imageSrc}
-                                  alt="image"
+                                  src={usersUploadUrl + elm.image}
+                                  alt={elm.en_name}
                                 />
+                                :   <i className="icon-person"></i>
+                                }
                               </div>
 
                               <div className="testimonials-footer__content">

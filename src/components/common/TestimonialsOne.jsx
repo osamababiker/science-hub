@@ -75,12 +75,16 @@ export default function TestimonialsOne({testimonials}) {
 
                       <div className="testimonials-footer">
                         <div className="testimonials-footer__image">
+                          {elm.user.image ?
                           <Image
                             width={60}
                             height={60}
                             src={elm.user.image}
-                            alt="image"
+                            alt={elm.user.en_name}
                           />
+                          : 
+                          <i className="icon-person"></i>
+                          }
                         </div>
 
                         <div className="testimonials-footer__content">

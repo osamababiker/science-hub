@@ -2,6 +2,7 @@
 
 import React from "react";
 import Image from "next/image";
+import { Link } from "@/src/i18n/routing";
 import { useTranslations } from "use-intl";
 export default function LearningPathsSix() {
 
@@ -39,9 +40,9 @@ export default function LearningPathsSix() {
             {t('bio')}
             </p>
             <div className="d-inline-block mt-30">
-              <a href="#" className="button -md -dark-1 text-white">
+              <Link href="/signup" className="button -md -dark-1 text-white">
               {t('call_action')}
-              </a>
+              </Link>
             </div>
           </div>
 
@@ -67,7 +68,7 @@ export default function LearningPathsSix() {
                   height={670}
                   style={{ width: "100%", height: "100%" }}
                   className="w-1/1"
-                  src="/assets/img/home-6/learn/1.png"
+                  src="/assets/img/general/5.jpeg" 
                   alt="image"
                 />
               </div>

@@ -1,6 +1,6 @@
 import React from "react";
 import Image from "next/image";
-import Link from "next/link";
+import { Link } from "@/src/i18n/routing";
 import { useTranslations } from "next-intl";
 export default function About() {
 
@@ -36,7 +36,7 @@ export default function About() {
                   <Image
                     width={300}
                     height={400}
-                    src="/assets/img/about-1/1.png"
+                    src="/assets/img/general/1.jpeg"
                     alt="image"
                   />
                 </div>
@@ -44,7 +44,7 @@ export default function About() {
                   <Image
                     width={200}
                     height={200}
-                    src="/assets/img/about-1/2.png"
+                    src="/assets/img/general/2.jpeg"
                     alt="image"
                   />
                 </div>
@@ -52,7 +52,7 @@ export default function About() {
                   <Image
                     width={255}
                     height={250}
-                    src="/assets/img/about-1/3.png"
+                    src="/assets/img/general/3.jpeg"
                     alt="image"
                   />
                 </div>

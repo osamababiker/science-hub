@@ -1,5 +1,5 @@
 export const links = [
-  { id: 1, href: "/help-center", label: "Help" },
+  // { id: 1, href: "/help-center", label: "Help" },
   { id: 2, href: "/terms", label: "Privacy Policy" },
   { id: 3, href: "/terms", label: "Cookie Notice" },
   { id: 4, href: "/terms", label: "Security" },
@@ -7,7 +7,7 @@ export const links = [
 ];
 
 export const arLinks = [
-  { id: 1, href: "/help-center", label: "المساعدة" },
+  // { id: 1, href: "/help-center", label: "المساعدة" },
   { id: 2, href: "/terms", label: "سياسة الخصوصية" },
   { id: 3, href: "/terms", label: " ملفات تعريف الارتباط" },
   { id: 4, href: "/terms", label: "حماية" },

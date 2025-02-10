@@ -2,14 +2,17 @@
 
 import React from "react";
 import { useFormState } from "react-dom"
-import { arLocationData } from "@/data/officeLocation";
-import { useTranslations } from "next-intl";
-import { sendMessage } from "@/lib/action"
+import { locationData, arLocationData } from "@/data/officeLocation";
+import { useTranslations, useLocale } from "next-intl";
+import { sendMessage } from "@/lib/action";
 
 export default function ContactTwo() {
 
   const t = useTranslations("ContactPage");
-  const [state, formAction] = useFormState(sendMessage, undefined); 
+  const locale = useLocale();
+  const [state, formAction] = useFormState(sendMessage, undefined);  
+  
+  const locations = locale == "en" ? locationData : arLocationData;
 
 
   return (
@@ -40,7 +43,7 @@ export default function ContactTwo() {
             <div className="col-xl-5 col-lg-6">
               <h3 className="text-24 lh-1 fw-500">{t("address_title")}</h3>
               <div className="row y-gap-30 pt-40">
-                {arLocationData.map((elm, i) => (
+                {locations.map((elm, i) => (
                   <div key={i} className="col-sm-6">
                     <div className="text-20 fw-500 text-dark-1">
                       {elm.location}
@@ -64,14 +67,16 @@ export default function ContactTwo() {
             <div className="col-lg-6">
               <div className="px-40 py-40 bg-white border-light shadow-1 rounded-8 contact-form-to-top">
                 <h3 className="text-24 fw-500">{t("form_title")}</h3>
-                <p className="mt-25">
-                {t("form_bio")}
-                </p>
-
                 <form
-                  className="contact-form row y-gap-30 pt-60 lg:pt-40"
+                  className="contact-form row y-gap-30 pt-30 lg:pt-40"
                   action={formAction} id="messageForm"
                 >
+                  {state?.error && <div className="alert alert-danger mt-4">{state?.error}</div>}
+                  {state?.success && 
+                    <div className="alert alert-success mt-4">
+                      {t("success_message")} &#128519;
+                    </div>
+                  }
                   <div className="col-12">
                     <label className="text-16 lh-1 fw-500 text-dark-1 mb-10">
                     {t("name_label")}
@@ -105,12 +110,7 @@ export default function ContactTwo() {
                       required
                     ></textarea>
                   </div>
-                  {state?.error && <div className="alert alert-danger mt-4">{state?.error}</div>}
-                  {state?.success && 
-                    <div className="alert alert-success mt-4">
-                      {t("success_message")} &#128519;
-                    </div>
-                  }
+                  
                   <div className="col-12">
                     <button
                       type="submit"

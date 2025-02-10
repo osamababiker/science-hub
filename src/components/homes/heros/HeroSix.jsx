@@ -189,12 +189,16 @@ export default function HeroSix() {
 
                 <div data-move="60" className="-el-2 md:d-none js-mouse-move">
                   <div className="img-el -w-260 px-20 py-20 d-flex items-center bg-white rounded-8">
-                    <Image
-                      width={70}
-                      height={70}
-                      src="/assets/img/masthead/4.png"
-                      alt="icon"
-                    />
+                    <div className="img-el__side">
+                      <div className="size-50 d-flex justify-center items-center bg-purple-1 rounded-full">
+                        <Image
+                          width={20}
+                          height={27}
+                          src="/assets/img/masthead/2.svg"
+                          alt="icon"
+                        />
+                      </div>
+                    </div>
                     <div className="ml-20">
                       <div className="text-dark-1 text-16 fw-500 lh-1">
                       {t('card_three_title')}

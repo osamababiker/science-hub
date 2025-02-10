@@ -6,26 +6,28 @@
 import PageLinks from '@/src/components/common/PageLinks'
 import Preloader from '@/src/components/common/Preloader'
 
-import FooterOne from '@/src/components/layout/footers/FooterOne'
-import Header from '@/src/components/layout/headers/Header'
-import Terms from '@/src/components/terms/Terms'
+import FooterThree from "@/src/components/layout/footers/FooterThree";
+import HeaderSix from "@/src/components/layout/headers/HeaderSix";
+import Terms from '@/src/components/terms/Terms' 
 import React from 'react'
+
 export const metadata = {
-  title: 'Terms || Educrat - Professional LMS Online Education Course NextJS Template',
+  title:
+    "Home || Science Hub",
   description:
-    'Elevate your e-learning content with Educrat, the most impressive LMS template for online courses, education and LMS platforms.',
-  
-}
+    "Science Hub is a leading educational platform specializing in delivering high-quality training, online courses, and tutoring services .",
+};
+
 export default function page() {
   return (
     <div className="main-content  ">
       <Preloader/>
 
-        <Header/>
+        <HeaderSix/>
         <div className="content-wrapper js-content-wrapper overflow-hidden">
             <PageLinks/>
             <Terms/>
-            <FooterOne/>
+            <FooterThree/>
         </div>
 
     </div>

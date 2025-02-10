@@ -1,6 +1,12 @@
 "use client";
+import { Link } from "@/src/i18n/routing";
 import { useTranslations } from "next-intl";
 import React, { useRef, useEffect, useState } from "react";
+import { signIn } from 'next-auth/react';
+import { z } from 'zod';
+import {useRouter} from '@/src/i18n/routing'; 
+import { useSession } from "next-auth/react";
+
 export default function CountdownRegistration() {
   const [timerDays, setTimerDays] = useState("00");
   const [timerHours, setTimerHours] = useState("00");
@@ -43,24 +49,60 @@ export default function CountdownRegistration() {
     };
   });
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
+  const { data: session, status} = useSession();
+  const router = useRouter();
+  const [error, setError] = useState(null);
+  const [loading, setLoading] = useState(false);
+
+  const handleSubmit = async (formData) => {
+    setLoading(true);
+    const email = formData.get("email");
+    const password = formData.get("password");
+    const parsedCredentials = z
+        .object({ email: z.string().email(), password: z.string().min(6) })
+        .safeParse({ email, password });
+
+    if (parsedCredentials.success) {
+      const res =  await signIn("credentials", {email: email, password: password, redirect: false});
+      if(res.status == 401) {
+        setLoading(false);
+        setError(t("auth_error"));
+      } else {
+        setLoading(false);
+        router.push('/dashboard');
+      }
+    }else {
+      setLoading(false);
+      setError(t("validation_error"));
+    }
   };
+
+  if (status === "loading") {
+    return <p>...</p>; 
+  }
+
+  if (status === "authenticated") {
+    router.push('/dashboard');
+  }
+
   return (
     <>
       <section className="layout-pt-lg bg-purple-1">
         <div className="container">
           <div className="row y-gap-30 items-center">
-            <div className="col-lg-5">
+            <div className="offset-xl-2 col-xl-8 offset-lg-1 col-lg-5 col-md-9">
               <div className="bg-white rounded-16 px-30 py-30">
                 <h3 className="text-20 lh-15 text-center">
                   {t('title_one')}
-                  <span className="text-purple-1"> {t('title_two')} </span>
+                  <Link href="/signup">
+                    <span className="text-purple-1"> {t('title_two')} </span>
+                  </Link>
                 </h3>
                 <form
-                  onSubmit={handleSubmit}
+                   action={handleSubmit}
                   className="contact-form row y-gap-30 pt-30"
                 >
+                   {error ? <div className="alert alert-danger"> { error } </div>: ''}
                   <div className="col-12">
                     <label className="text-16 lh-1 fw-500 text-dark-1 mb-10">
                     {t('email_label')}
@@ -84,9 +126,15 @@ export default function CountdownRegistration() {
                     />
                   </div>
                   <div className="col-12">
-                    <button className="button -md -purple-1 w-1/1 text-white">
-                    {t('btn')}
+                    { !loading ?
+                    <button type="submit" className="button -md -purple-1 w-1/1 text-white">
+                      {t('btn')}
                     </button>
+                    : 
+                    <button disabled className="button -md -purple-1 w-1/1 text-white">
+                      {t('loading')}
+                    </button>
+                    }
                     <div className="text-13 lh-17 mt-15">
                     {t('tearms_conditions')}
                     </div>
@@ -95,7 +143,7 @@ export default function CountdownRegistration() {
               </div>
             </div>
 
-            <div className="offset-xl-2 col-xl-4 offset-lg-1 col-lg-5 col-md-9">
+            {/* <div className="offset-xl-2 col-xl-4 offset-lg-1 col-lg-5 col-md-9">
               <h2 className="text-30 lh-13 text-white">
                 {t('count_down_title')}
               </h2>
@@ -142,7 +190,7 @@ export default function CountdownRegistration() {
                   </div>
                 </div>
               </div>
-            </div>
+            </div> */}
           </div>
         </div>
       </section>

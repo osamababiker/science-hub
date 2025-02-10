@@ -12,14 +12,17 @@ export const metadata = {
     "Science Hub is a leading educational platform specializing in delivering high-quality training, online courses, and tutoring services .",
 };
 
-export default function page({ params }) {
+export default async function page({ params }) {
+
+  const { id } = await params;
+
   return (
     <div  className="main-content  ">
       <Preloader/>
         <Header/>
         <div  className="content-wrapper  js-content-wrapper overflow-hidden">
             <PageLinks/>
-            <InstractorSingle  id={params.id} />
+            <InstractorSingle  instractorId={id} />
             <FooterThree/>
         </div>
     </div>

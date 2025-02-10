@@ -56,7 +56,7 @@
     },
     "Courses": {
         "title": "Explore Our Featured Courses",
-        "bio": "60 + online courses available right now ",
+        "bio": "The Best online courses available right now ",
         "leason": "leason",
         "currancy": "AED",
         "free": "Free"
@@ -68,7 +68,7 @@
         "sample_courses_count": "Course",
         "teachers_features_title_one": "Trusted By Best",
         "teachers_features_title_two": "Teachers",
-        "teachers_features_bio": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed doeiusmod tempor incididunt.",
+        "teachers_features_bio": "Science Hub is trusted by the top teachers in the region",
         "teachers_features_one": "Last Education of Bachelor Degree",
         "teachers_features_two": "More Than 15 Years Experience",
         "teachers_features_three": "12 Education Award Winning",
@@ -81,7 +81,7 @@
     },
     "Testimonials": {
         "title": "Best Learning Experience",
-        "bio": "Lorem ipsum dolor sit amet, consectetur.",
+        "bio": "We Provide the Best Learning Experience in the Region",
         "statictis_one": "9/10 users reported better learning outcomes.",
         "statictis_two": "85% of students see their course through to completion"
     },
@@ -104,17 +104,20 @@
         "password_label": "Password",
         "password_placeholder": "Password...",
         "btn": "Start Learning For Free",
-        "tearms_conditions": "By continuing, you accept our Terms of Use, our Privacy Policy and that your data is stored in the USA. You confirm you are at least 16 years old (13 if you are an authorized Classrooms user).",
+        "tearms_conditions": "By continuing, you accept our Terms of Use, our Privacy Policy and that your data is stored in the UAE. You confirm you are at least 16 years old (13 if you are an authorized Classrooms user).",
         "count_down_title": "Register Now and Get a 70% Discount",
         "count_down_bio": "Get 100 Online Courses For Free",
         "days": "Days",
         "hours": "Hours",
         "minutes": "Minutes",
-        "seconds": "Seconds"
+        "seconds": "Seconds",
+        "loading": "Loading",
+        "auth_error":"Email or/and password are not correct",
+        "validation_error":"Invalid email or password"
     },
     "Blogs": {
         "title": "Blog",
-        "bio": "10,000+ unique online course list designs",
+        "bio": "Read our blog posts and discover more about the education in uae",
         "link": "Browse Blog"
     },
     "Footer": {
@@ -179,7 +182,7 @@
         "message_placeholder": "Message",
         "send_btn": "Send Message" ,
         "faq_title": "Frequently Asked Questions.",
-        "faq_bio": "Ut enim ad minim veniam, quis nostrud exercitation ullamco",
+        "faq_bio": "List of the most asked Questions By Our Students",
         "success_message": "Thanks For Contact Us, Well Get Back to You Soon"
     },
 
@@ -277,7 +280,8 @@
         "best_sellers": "Best sellers",
         "lesson": "lesson",
         "free": "Free",
-        "currancy": "AED"
+        "currancy": "AED",
+        "loading":"Loading"
     },
 
     "CheckoutPage": {

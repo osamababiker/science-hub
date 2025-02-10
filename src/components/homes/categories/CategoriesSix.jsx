@@ -8,7 +8,8 @@ import "swiper/css";
 
 import "swiper/css/pagination";
 import { useEffect, useState } from "react";
-import Link from "next/link";
+import {Link} from '@/src/i18n/routing';
+import { categoriesUploadUrl } from "@/lib/constants";
 
 export default function CategoriesSix({categories}) {
 
@@ -76,7 +77,7 @@ export default function CategoriesSix({categories}) {
               {categories.map((elm) => (
                 <SwiperSlide key={elm.id}>
                   <Link
-                    href="#"
+                    href="/courses-list"
                     className="swiper-slide linkCustomTwo"
                   >
                     <div
@@ -86,7 +87,16 @@ export default function CategoriesSix({categories}) {
                     >
                       <div className="py-30 px-40 text-center">
                         <div className="featureCard__icon size-90 mx-auto d-flex items-center justify-center rounded-full bg-light-3">
-                          <i className={elm.icon}></i>
+                          {elm.image ?
+                          <Image
+                            width={50}
+                            height={50}
+                            src={categoriesUploadUrl + elm.image}
+                            alt="icon"
+                          />
+                          : 
+                          <i className="icon-flag"></i>
+                          }
                         </div>
                         <div className="featureCard__title text-17 fw-500 text-dark-1 mt-20">
                           { locale == 'en' ? elm.en_name : elm.ar_name }
