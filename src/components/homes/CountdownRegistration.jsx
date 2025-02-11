@@ -81,9 +81,6 @@ export default function CountdownRegistration() {
     return <p>...</p>; 
   }
 
-  if (status === "authenticated") {
-    router.push('/dashboard');
-  }
 
   return (
     <>

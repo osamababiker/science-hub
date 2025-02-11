@@ -149,7 +149,8 @@
         "buy_courses":"مواصلة التسوق",
         "alredy_added":"مضاف مسبقا",
         "description":"الوصف",
-        "loading":"جاري التحميل"
+        "loading":"جاري التحميل",
+        "free":"مجاني"
     },
 
     "AboutPage": {

@@ -57,19 +57,28 @@ export default function CourseDetailsSix({ courseId }) {
               <div className="col-xl-6 col-lg-6">
                 <div className="d-flex x-gap-15 y-gap-10 pb-20">
                   <div>
+                    {course.level_en ?
                     <div className="badge px-15 py-8 text-11 bg-green-1 text-dark-1 fw-400">
                     { locale == 'en' ? course.level_en : course.level_ar }
                     </div>
+                    : ""
+                    }
                   </div>
                   <div>
+                    {course.difficulty_en ?
                     <div className="badge px-15 py-8 text-11 bg-orange-1 text-white fw-400">
                     { locale == 'en' ? course.difficulty_en : course.difficulty_ar }
                     </div>
+                    : "" 
+                    }
                   </div>
                   <div>
+                    {course.language_en ?
                     <div className="badge px-15 py-8 text-11 bg-purple-1 text-white fw-400">
                     { locale == 'en' ? course.language_en : course.language_ar }                    
                     </div>
+                    : ""
+                    }
                   </div>
                 </div>
 
@@ -159,15 +168,23 @@ export default function CourseDetailsSix({ courseId }) {
                 </div>
 
                 <div className="mt-30">
+                {course.original_price || course.discounted_price ? (
+                  <>
                   <div className="d-flex justify-between items-center">
                     <div className="text-24 lh-1 text-white fw-500">
                       {t("currancy")} {course.original_price}
                     </div>
-                    <div className="lh-1 line-through text-dark-3">
+                    <div className="lh-1 line-through text-white">
                     {t("currancy")} {course.discounted_price}
                     </div>
                   </div>
-
+                  </>
+                  ) : (
+                    <>
+                      <div></div>
+                      <div className="text-18 fw-500 text-white"> { t("free") } </div>
+                    </>
+                  )}
                   <div className="row x-gap-30 y-gap-20 pt-30">
                     <div className="col-sm-6">
                       <button
