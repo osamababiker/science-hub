@@ -11,7 +11,7 @@ export default function Calender() {
   const locale = useLocale();
 
   return (
-    <div className="dashboard__main">
+    <div className="">
       <div className="dashboard__content bg-light-4">
         <div className="row pb-50 mb-10">
           <div className="col-auto">

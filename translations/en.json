@@ -384,7 +384,20 @@
         "400Error": "Plese enter valide information",
         "500Error":"Something went wrong Please try again later",
         "loading": "Loading",
-        "un_authrized": "You need to sign in to access this page."
+        "un_authrized": "You need to sign in to access this page.",
+        "signin": "Log in",
+        "signup": "Sign Up",
+        "dashboard": "Dashboard",
+        "home": "Home",
+        "courses": "Courses",
+        "blog": "Blog",
+        "pages": "Pages",
+        "about_us": "About Us",
+        "contact": "Contact",
+        "shop": "Shop",
+        "lang": "Language",
+        "english": "English",
+        "arabic": "Arabic"
     },
 
     "breadcrumbs": {

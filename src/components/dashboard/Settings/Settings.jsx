@@ -6,7 +6,7 @@ import Password from "./Password";
 import FooterThree from "@/src/components/layout/footers/FooterThree";
 import { useTranslations } from "next-intl";
 
-export default function Settings() {
+export default function Settings({user}) {
 
   const [activeTab, setActiveTab] = useState(1);
   const t = useTranslations('Dashboard');
@@ -17,7 +17,7 @@ export default function Settings() {
   ];
 
   return (
-    <div className="dashboard__main">
+    <div className="">
       <div className="dashboard__content bg-light-4">
         <div className="row pb-50 mb-10">
           <div className="col-auto">
@@ -48,7 +48,7 @@ export default function Settings() {
                 </div>
 
                 <div className="tabs__content py-30 px-30 js-tabs-content">
-                  <EditProfile activeTab={activeTab} />
+                  <EditProfile activeTab={activeTab} user={user} />
                   <Password activeTab={activeTab} />
                 </div>
               </div>

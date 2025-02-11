@@ -29,11 +29,12 @@ export default function Password({ activeTab }) {
     if (parsedCredentials.success) {
       parsedCredentials.data.userId = session.user.id;
       const res = await passwordUpdate(parsedCredentials);
+      console.log("res", res)
       if(res.user) {
         setSuccess(t("200Message"));
         reset();
         setError(null);
-      } else if(res.status == 400 || res.status == 401) {
+      } else if(res.status == 400 || res.status == 401 || res == 'Unauthorized') {
         setError(t("400Error"));
         setSuccess(null);
       } else if(res.status == 500) {

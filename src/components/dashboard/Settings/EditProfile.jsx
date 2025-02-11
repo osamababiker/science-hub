@@ -10,7 +10,7 @@ import { useRouter } from '@/src/i18n/routing';
 import { useSession } from "next-auth/react";
 import { usersUploadUrl } from "@/lib/constants";
 
-export default function EditProfile({ activeTab }) {
+export default function EditProfile({ activeTab, user }) { 
   
   const t = useTranslations('Dashboard');
   const router = useRouter();
@@ -52,7 +52,7 @@ export default function EditProfile({ activeTab }) {
       if(profilePic){
         parsedCredentials.data.image = profilePic;
       }
-      parsedCredentials.data.userId = session.user.id;
+      parsedCredentials.data.userId = user.id;
       const res = await profileUpdate(parsedCredentials);
       if(res.user) {
         setSuccess(t("200Message"));
@@ -181,7 +181,7 @@ export default function EditProfile({ activeTab }) {
             <Controller 
               name="name"
               control={editControl}
-              render={({ field }) => <input {...field} required type="text" name="name" placeholder={t("edit_profile_name_label")} />}
+              render={({ field }) => <input {...field}  required type="text" name="name" placeholder={session.user.name} />}
             />
           </div>
 
@@ -192,7 +192,7 @@ export default function EditProfile({ activeTab }) {
             <Controller 
               name="bio"
               control={editControl}
-              render={({ field }) => <textarea {...field} name="bio" required placeholder={t("edit_profile_bio_label")} rows="5"></textarea>}
+              render={({ field }) => <textarea {...field} name="bio" placeholder={t("edit_profile_bio_label")} rows="5"></textarea>}
             />
           </div>
 

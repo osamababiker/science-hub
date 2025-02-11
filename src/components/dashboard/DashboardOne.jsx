@@ -1,40 +1,77 @@
 "use client";
 
-// import { states } from "@/data/dashboard";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import FooterThree from "@/src/components/layout/footers/FooterThree";
 import { useTranslations, useLocale } from "next-intl";
+import { getUserOrders } from '@/lib/data';
 
-export default function DashboardOne() {
+export default function DashboardOne({userId}) { 
 
+
+  const [orders, setOrders] = useState(null);
   const t = useTranslations('Dashboard');
   const locale = useLocale();
+  const courses = new Map();
+  let totalLessons = 0;
+
+  useEffect(() => {
+
+    const fetchOrders = async () => {
+      try { 
+        const res = await getUserOrders(userId);
+        if (res) 
+          setOrders(res);
+        console.log("orders", orders)
+      } catch (error) {
+        console.error("Error fetching orders details:", error);
+      }
+    };
+
+    fetchOrders();
+  }, [userId]);
+
+
+  if (!orders) {
+    return <p>{t("loading")}...</p>; 
+  }
+
+  // cacluate the number of courses and totoal of leasons for this user
+  const data = orders.forEach((entry) => {
+    if (entry.course) {
+      const courseId = entry.course.id;
+      if (!courses.has(courseId)) {
+        courses.set(courseId, entry.course);
+        totalLessons += entry.course.lesson_count || 0;
+      }
+    }
+  });
+
   const states = [
     {
       id: 1,
       title: t("total_courses"),
-      value: 4,
+      value: courses.size,
       new: 40,
       iconClass: "icon-play-button",
     },
     {
       id: 2,
       title: t("total_leasons"),
-      value: 23,
+      value: totalLessons,
       new: 90,
       iconClass: "icon-online-learning",
     },
     {
       id: 3,
       title: t("totoal_certificates"),
-      value: 1,
+      value: 0,
       new: 290,
       iconClass: "icon-graduate-cap",
     },
   ];
 
   return (
-    <div className="dashboard__main">
+    <div className="">
       <div className="dashboard__content bg-light-4">
         <div className="row pb-50 mb-10">
           <div className="col-auto">
