@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
-import { faq, arFaq } from "@/data/faq";
+import { aboutUsFaq, arAboutUsFaq } from "@/data/faq";
 import { faMinus, faPlus } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useTranslations, useLocale } from "next-intl";
@@ -11,13 +11,13 @@ export default function Faq() {
   const [activeFaq, setActiveFaq] = useState(0);
   const locale = useLocale();
 
-  const faqData = locale == "en" ? faq : arFaq;
+  const faqData = locale == "en" ? aboutUsFaq : arAboutUsFaq;
 
   return (
     <section className="layout-pt-lg layout-pb-lg bg-light-4">
       <div className="container">
         <div className="row justify-center text-center">
-          <div className="col-xl-8 col-lg-9 col-md-11">
+          <div className="col-xl-8 col-lg-9 col-md-11"> . 
             <div className="sectionTitle ">
               <h2 className="sectionTitle__title ">
                 {t("faq_title")}
@@ -70,7 +70,7 @@ export default function Faq() {
                   </div>
 
                   <div
-                    style={activeFaq == elm.id ? { maxHeight: "139px" } : {}}
+                    style={activeFaq == elm.id ? { maxHeight: "300px" } : {}}
                     className="accordion__content"
                   >
                     <div  className={`accordion__content__inner ${ locale == "en" ? ' text-left' : '' }`}>
