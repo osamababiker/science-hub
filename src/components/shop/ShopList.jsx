@@ -5,9 +5,8 @@ import Image from "next/image";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEye, faHeart } from "@fortawesome/free-regular-svg-icons";
 import Slider from "@mui/material/Slider";
-import Pagination from "../common/Pagination";
 import { faChevronDown } from "@fortawesome/free-solid-svg-icons";
-import { useContextElement } from "@/context/Context";
+import useCartStore from "@/store/cartStore";
 import {Link} from '@/src/i18n/routing';
 import { useTranslations, useLocale } from "next-intl";
 import { coursesUploadUrl } from "@/lib/constants";
@@ -17,7 +16,7 @@ export default function ShopList({categories, courses}) {
   const t = useTranslations("ShopListPage");
   const locale = useLocale();
 
-  const { addCourseToCart, isAddedToCartCourses } = useContextElement();
+  const { addCourseToCart, isAddedToCartCourses } = useCartStore();
 
   const [value, setValue] = useState([200, 1500]);
   const [pageData, setpageData] = useState();
@@ -62,7 +61,8 @@ export default function ShopList({categories, courses}) {
       <section className="layout-pt-md layout-pb-lg">
         <div className="container">
           <div className="row x-gap-60">
-            <div className="col-lg-3">
+
+            {/* <div className="col-lg-3">
               <div className="sidebar -shop">
                 <div className="sidebar__item">
                   <div className="sidebar__search mb-30">
@@ -126,13 +126,13 @@ export default function ShopList({categories, courses}) {
                 </div>
 
               </div>
-            </div>
+            </div> */}
 
-            <div className="col-lg-9">
+            <div className="col-lg-12">
               <div className="row y-gap-10 justify-between items-center">
                 <div className="col-auto">
                   <div className="text-14">
-                  {t("result_count_one")} <span className="fw-500 text-dark-1">250</span>{" "}
+                  {t("result_count_one")} <span className="fw-500 text-dark-1">{pageItems.length}</span>{" "}
                   {t("result_count_two")}
                   </div>
                 </div>
@@ -212,7 +212,7 @@ export default function ShopList({categories, courses}) {
 
                         <div
                           className="productCard__button d-inline-block cursor"
-                          onClick={() => addCourseToCart(elm.id)}
+                          onClick={() => addCourseToCart(elm)}
                         >
                           <span className="button -md -outline-purple-1 text-dark-1 mt-15">
                             {isAddedToCartCourses(elm.id)

@@ -12,7 +12,7 @@ import { coursesUploadUrl } from "@/lib/constants";
 export default function CourseCart() {
 
   const t = useTranslations('CartPage');
-  const locale = useLocale();
+  const locale = useLocale(); 
 
   const { cartCourses, removeCourseFromCart, increaseQuantity, decreaseQuantity } = useCartStore();
   const [totalPrice, setTotalPrice] = useState(0);

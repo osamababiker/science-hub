@@ -18,7 +18,7 @@ export default function CourseDetailsSix({ courseId }) {
   const [activeTab, setActiveTab] = useState(1);
   const t = useTranslations('CourseDetails');
   const locale = useLocale();
-  const { addCourseToCart, isAddedToCartCourses } = useCartStore();
+  const { addCourseToCart, isAddedToCartCourses } = useCartStore(); 
   
   useEffect(() => {
     if (!courseId) return; 
