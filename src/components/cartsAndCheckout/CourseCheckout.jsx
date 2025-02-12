@@ -66,12 +66,12 @@ export default function CourseCheckOut() {
 
   useEffect(() => {
     const sum = cartCourses.reduce((accumulator, currentValue) => {
-      return accumulator + currentValue.discounted_price * currentValue.quantity;
+      return currentValue.discounted_price * currentValue.quantity;
     }, 0);
     const sumQuantity = cartCourses.reduce((accumulator, currentValue) => {
-      return accumulator + currentValue.quantity;
+      return  currentValue.quantity;
     }, 0);
-    setShiping(sumQuantity * 10);
+    setShiping(sumQuantity);
     setTotalPrice(sum);
   }, [cartCourses]);
 
@@ -267,7 +267,7 @@ export default function CourseCheckOut() {
                   <div className="d-flex justify-between border-top-dark px-30">
                     <div className="py-15 fw-500 text-dark-1">{t("total")}</div>
                     <div className="py-15 fw-500 text-dark-1">
-                    {t("currancy")} {(totalPrice + shiping).toFixed(2)}
+                    {t("currancy")} {(totalPrice ).toFixed(2)}
                     </div>
                   </div>
                 </div>

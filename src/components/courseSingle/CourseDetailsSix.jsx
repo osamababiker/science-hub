@@ -172,10 +172,10 @@ export default function CourseDetailsSix({ courseId }) {
                   <>
                   <div className="d-flex justify-between items-center">
                     <div className="text-24 lh-1 text-white fw-500">
-                      {t("currancy")} {course.original_price}
+                      {t("currancy")} {course.discounted_price}
                     </div>
                     <div className="lh-1 line-through text-white">
-                    {t("currancy")} {course.discounted_price}
+                    {t("currancy")} {course.original_price}
                     </div>
                   </div>
                   </>

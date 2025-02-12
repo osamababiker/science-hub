@@ -24,6 +24,7 @@ export default function CourseCardSix({ data }) {
           <Image
             width={250}
             height={175}
+            style={{ height: "150px" }}
             className="w-1/1 rounded-8"
             src={coursesUploadUrl + data.image}
             alt="image"

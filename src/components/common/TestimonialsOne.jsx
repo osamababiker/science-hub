@@ -25,9 +25,9 @@ export default function TestimonialsOne({testimonials}) {
                 {t("testimonial_title")}
               </h2>
 
-              <p className="sectionTitle__text text-white">
+              {/* <p className="sectionTitle__text text-white">
               {t("testimonial_bio")}
-              </p>
+              </p> */}
             </div>
           </div>
         </div>

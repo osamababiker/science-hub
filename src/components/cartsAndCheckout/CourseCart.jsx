@@ -197,7 +197,7 @@ export default function CourseCart() {
               <div className="shopCart-footer px-16 mt-30">
                 {cartCourses.length > 0 ? (
                   <div className="row justify-between y-gap-30">
-                    <div className="col-xl-5">
+                    {/* <div className="col-xl-5">
                       <form className="" onSubmit={handleSubmit}>
                         <div className="d-flex justify-between border-dark">
                           <input
@@ -211,15 +211,15 @@ export default function CourseCart() {
                           </button>
                         </div>
                       </form>
-                    </div>
+                    </div> */}
 
-                    <div className="col-auto">
+                    {/* <div className="col-auto">
                       <div className="shopCart-footer__item">
                         <button className="button -md -purple-3 text-purple-1">
                         {t('update_cart')}
                         </button>
                       </div>
-                    </div>
+                    </div> */}
                   </div>
                 ) : (
                   <div className="row justify-center pt-60 lg:pt-40">
