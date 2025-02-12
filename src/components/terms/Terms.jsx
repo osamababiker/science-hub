@@ -40,7 +40,7 @@ export default function Terms() {
                   {elm.bio}
                 </p>
               </div>
-            ))}
+            ))} .  
             
           </div>
         </div>
