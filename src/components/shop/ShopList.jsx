@@ -14,7 +14,7 @@ import { coursesUploadUrl } from "@/lib/constants";
 export default function ShopList({categories, courses}) {
 
   const t = useTranslations("ShopListPage");
-  const locale = useLocale();
+  const locale = useLocale();  
 
   const { addCourseToCart, isAddedToCartCourses } = useCartStore();
 
@@ -199,7 +199,7 @@ export default function ShopList({categories, courses}) {
                         </div> */}
                         <h4 className="text-17 fw-500 mt-15 linkCustom">
                           <Link
-                            href={`/shop/${elm.id}`}
+                            href={`/courses/${elm.id}`}
                             style={{ textDecoration: "none", color: "inherit" }}
                           >
                             {" "}

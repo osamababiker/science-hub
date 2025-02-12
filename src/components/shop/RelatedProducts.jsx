@@ -3,7 +3,7 @@ import React from "react";
 import { arProductData } from "@/data/products";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEye, faHeart } from "@fortawesome/free-solid-svg-icons";
-import { useContextElement } from "@/context/Context";
+import useCartStore from "@/store/cartStore";
 
 import Image from "next/image";
 import Link from "next/link";
@@ -11,8 +11,8 @@ import { useTranslations } from "next-intl";
 export default function RelatedProducts() {
 
   const t = useTranslations("ShopPage");
-  const { addProductToCart, isAddedToCartProducts } = useContextElement();
-  return (
+  const { addCourseToCart, isAddedToCartCourses } = useCartStore();
+  return ( 
     <section className="layout-pt-md layout-pb-lg">
       <div className="container">
         <div className="row justify-center text-center">
@@ -65,10 +65,10 @@ export default function RelatedProducts() {
 
                   <div
                     className="productCard__button d-inline-block"
-                    onClick={() => addProductToCart(elm.id)}
+                    onClick={() => addCourseToCart(elm)}
                   >
                     <span className="button -md -outline-purple-1 -rounded text-dark-1 mt-15">
-                      {isAddedToCartProducts(elm.id)
+                      {isAddedToCartCourses(elm.id)
                         ? t("alredy_added")
                         : t("add_to_cart")}
                     </span>

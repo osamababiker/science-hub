@@ -1,19 +1,19 @@
 "use client";
 import { Navigation, Pagination } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { arProductData } from "@/data/products";
+
 import { useRef, useEffect, useState } from "react";
 import Image from "next/image";
 import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faMinus, faPlus } from "@fortawesome/free-solid-svg-icons";
 import ImageLightBox from "./ImageLightBox";
-import { useContextElement } from "@/context/Context";
+import useCartStore from "@/store/cartStore";
 import { useTranslations } from "next-intl";
 export default function ProductDetails({ id }) {
 
   const t = useTranslations("ShopPage");
-  const { addProductToCart, isAddedToCartProducts } = useContextElement();
+  const { addCourseToCart, isAddedToCartCourses } = useCartStore();
   const swiperRef = useRef(null);
   const [currentSlideIndex, setCurrentSlideIndex] = useState(0);
   const [showSlider, setShowSlider] = useState(false);
@@ -192,9 +192,9 @@ export default function ProductDetails({ id }) {
                   <div className="col-auto">
                     <button
                       className="button h-50 px-45 -purple-1 text-white"
-                      onClick={() => addProductToCart(currentItem.id)}
+                      onClick={() => addProductToCart(currentItem)}
                     >
-                      {isAddedToCartProducts(currentItem.id)
+                      {isAddedToCartCourses(currentItem.id)
                         ? t("alredy_added")
                         : t("add_to_cart")}
                     </button>
