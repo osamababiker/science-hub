@@ -28,8 +28,8 @@ export default function CourceCardFive({ data }) {
               <Image
                 width={500}
                 height={500}
-                style={{ height: "100%", width: "100%" }}
-                className="w-1/1"
+                style={{ height: "150px" }}
+                className="w-1/1 rounded-8"
                 src={coursesUploadUrl + data.image}
                 alt="image"
               />
