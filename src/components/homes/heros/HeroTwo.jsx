@@ -90,7 +90,7 @@ export default function HeroTwo() {
                     alt="Slide Image"
                     layout="fill"
                     objectFit="cover"
-                    className="customedBg"
+                    className="bg-image customedBg"
                   />
                     {/* <div
                       className="bg-image js-lazy customedBg"
