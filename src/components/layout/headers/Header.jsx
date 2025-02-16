@@ -59,7 +59,7 @@ export default function Header() {
                       data-el-toggle=".js-mobile-menu-toggle"
                       onClick={() => setActiveMobileMenu(true)}
                     >
-                      <i className="text-11 icon icon-mobile-menu"></i>
+                      <i className="text-11 icon icon-mobile-menu text-white"></i> 
                     </button>
                   </div>
                 </div>
