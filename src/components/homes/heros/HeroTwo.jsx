@@ -98,15 +98,52 @@ export default function HeroTwo() {
         )}
       </div> */}
 
-      <div className="swiper-wrapper-two">
+      {/* <div className="swiper-wrapper-two">
         <div className="swiper-slide hightFull">
           <div className="mainSlider__bg">
             <div
               className="bg-image js-lazy customedBg"
-              style={{ backgroundImage: `url(/assets/img/general/6-min.jpg)` }}
+              style={{ backgroundImage: `url(/assets/img/general/teacher.jpg)` }}
             ></div>
           </div>
         </div>
+      </div> */}
+
+      <div className="swiper-wrapper-two">
+        {showSlider && (
+          <Swiper
+            modules={[Navigation, Pagination]}
+            navigation={{
+              nextEl: ".hero-slider-next",
+              prevEl: ".hero-slider-prev",
+            }}
+            spaceBetween={0}
+            slidesPerView={1}
+            breakpoints={{
+              450: { slidesPerView: 1 },
+              768: { slidesPerView: 1 },
+              1200: { slidesPerView: 1 },
+            }}
+            speed={1200}
+          >
+            {slidesData.map((item, i) => (
+              <SwiperSlide key={i}>
+                <div className="swiper-slide hightFull">
+                  <div className="mainSlider__bg">
+                    <div
+                      className="bg-image customedBg"
+                      style={{
+                        backgroundImage: `url(${item.bgImage})`,
+                        backgroundSize: "cover",
+                        backgroundPosition: "center",
+                      }}
+                    ></div>
+                  </div>
+                </div>
+              </SwiperSlide>
+            ))}
+          </Swiper>
+        )}
       </div>
 
       <div className="container">
@@ -161,13 +198,13 @@ export default function HeroTwo() {
         </div>
       </div>
 
-      {/* <button className="swiper-prev hero-slider-prev button -white-20 text-white size-60 rounded-full d-flex justify-center items-center js-prev">
+      <button className="swiper-prev hero-slider-prev button -white-20 text-white size-60 rounded-full d-flex justify-center items-center js-prev">
         <i className="icon icon-arrow-left text-24"></i>
       </button>
 
       <button className="swiper-next hero-slider-next button -white-20 text-white size-60 rounded-full d-flex justify-center items-center js-next">
         <i className="icon icon-arrow-right text-24"></i>
-      </button> */}
+      </button>
     </section>
   );
 }
