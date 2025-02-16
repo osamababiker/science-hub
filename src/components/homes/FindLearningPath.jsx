@@ -26,34 +26,34 @@ export default function FindLearningPath() {
           </video>
       </div>
 
-      <div className="container">
-        <div className="row justify-center text-center">
-          <div className="col-auto">
-            <h2 className="text-45 md:text-30 text-white">
-              {t("title")}
-            </h2>
+      {/* <div className="container">
+          <div className="row justify-center text-center">
+            <div className="col-auto">
+              <h2 className="text-45 md:text-30 text-white">
+                {t("title")}
+              </h2>
+            </div>
+
+            <div className="w-100"></div>
+
+            <div className="col-lg-4 col-md-8">
+              <p className="text-white mt-15">
+              {t("bio")}
+              </p>
+            </div>
+
+            <div className="w-100"></div>
+
+            <div className="col-auto">
+              <Link
+                href="/courses-list"
+                className="button -md -outline-white text-white mt-45 md:mt-20"
+              >
+                {t("btn")}
+              </Link>
+            </div>
           </div>
-
-          <div className="w-100"></div>
-
-          <div className="col-lg-4 col-md-8">
-            <p className="text-white mt-15">
-            {t("bio")}
-            </p>
-          </div>
-
-          <div className="w-100"></div>
-
-          <div className="col-auto">
-            <Link
-              href="/courses-list"
-              className="button -md -outline-white text-white mt-45 md:mt-20"
-            >
-              {t("btn")}
-            </Link>
-          </div>
-        </div>
-      </div>
+      </div> */}
     </section>
   );
 }

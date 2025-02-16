@@ -24,7 +24,7 @@ export default function BecomeInstactor() {
             />
           </div>
 
-          <div  dir={locale == "ar" ? "rtl" : ""} className="col-xl-4 offset-xl-1 col-lg-6">
+          <div  dir={locale == "ar" ? "rtl" : ""} className="col-xl-4 offset-xl-1 col-lg-6 pt-4">
             <h3 className="text-24 lh-1">{t("title")}</h3>
             <p className="mt-20">
             {t("bio")}

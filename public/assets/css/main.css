@@ -3892,12 +3892,14 @@ h1, h2, h3, h4, h5, h6 {
   position: relative;
   padding-top: 208px;
   padding-bottom: 168px;
+  margin-bottom: 200px;
 }
 
 @media (max-width: 767px) {
   .cta.-type-1 {
     padding-top: 100px;
     padding-bottom: 100px;
+    margin-bottom: 400px;
   }
 }
 
