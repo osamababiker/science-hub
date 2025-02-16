@@ -85,10 +85,17 @@ export default function HeroTwo() {
               <SwiperSlide key={i}>
                 <div className="swiper-slide hightFull">
                   <div className="mainSlider__bg">
-                    <div
+                  <Image
+                    src={item.bgImage}
+                    alt="Slide Image"
+                    layout="fill"
+                    objectFit="cover"
+                    className="customedBg"
+                  />
+                    {/* <div
                       className="bg-image js-lazy customedBg"
                       style={{ backgroundImage: `url(${item.bgImage})` }}
-                    ></div>
+                    ></div> */}
                   </div>
                 </div>
               </SwiperSlide>
