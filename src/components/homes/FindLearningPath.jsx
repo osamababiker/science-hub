@@ -22,7 +22,7 @@ export default function FindLearningPath() {
             playsInline
             className="bg-video"
           >
-            <source src="/assets/video/science_hub_2.mp4" type="video/mp4" />
+            <source src="/assets/video/science_hub.mp4" type="video/mp4" />
           </video>
       </div>
 
