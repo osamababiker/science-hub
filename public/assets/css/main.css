@@ -15771,3 +15771,13 @@ table.table td {
 .header .header-menu .menu__nav.dashboard_menu > li > a {
   color: #150342!important;
 }
+
+
+.bg-video {
+  width: 100%;
+  object-fit: cover;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1; /* Ensure it's behind the content */
+}

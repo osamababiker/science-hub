@@ -85,13 +85,15 @@ export default function HeroTwo() {
               <SwiperSlide key={i}>
                 <div className="swiper-slide hightFull">
                   <div className="mainSlider__bg">
-                  <Image
-                    src={item.bgImage}
-                    alt="Slide Image"
-                    layout="fill"
-                    objectFit="cover"
-                    className="bg-image customedBg"
-                  />
+                    <video
+                      autoPlay
+                      loop
+                      muted
+                      playsInline
+                      className="bg-video"
+                    >
+                      <source src={item.video} type="video/mp4" />
+                    </video>
                     {/* <div
                       className="bg-image js-lazy customedBg"
                       style={{ backgroundImage: `url(${item.bgImage})` }}
@@ -157,13 +159,13 @@ export default function HeroTwo() {
         </div>
       </div>
 
-      <button className="swiper-prev hero-slider-prev button -white-20 text-white size-60 rounded-full d-flex justify-center items-center js-prev">
+      {/* <button className="swiper-prev hero-slider-prev button -white-20 text-white size-60 rounded-full d-flex justify-center items-center js-prev">
         <i className="icon icon-arrow-left text-24"></i>
       </button>
 
       <button className="swiper-next hero-slider-next button -white-20 text-white size-60 rounded-full d-flex justify-center items-center js-next">
         <i className="icon icon-arrow-right text-24"></i>
-      </button>
+      </button> */}
     </section>
   );
 }
