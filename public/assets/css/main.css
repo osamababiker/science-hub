@@ -9351,7 +9351,11 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .bg-beige-1 {
-  background-color: var(--color-beige-1);
+  /* background-color: var(--color-beige-1); */
+  background-image: url("/assets/img/general/students.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: top center;
 }
 
 .bg-blue-1 {

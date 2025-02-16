@@ -24,7 +24,7 @@ export default function page() {
             <ContactTwo/>
             <Faq/> 
             <FooterThree/>
-        </div>
+        </div> 
 
     </div>
   )

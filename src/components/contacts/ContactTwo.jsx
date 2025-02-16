@@ -5,6 +5,7 @@ import { useFormState } from "react-dom"
 import { locationData, arLocationData } from "@/data/officeLocation";
 import { useTranslations, useLocale } from "next-intl";
 import { sendMessage } from "@/lib/action";
+import Socials from "@/src/components/common/Socials";
 
 export default function ContactTwo() {
 
@@ -23,11 +24,11 @@ export default function ContactTwo() {
             <div className="row">
               <div className="col-auto">
                 <div>
-                  <h1 className="page-header__title">{t("title")}</h1>
+                  <h1 className="page-header__title text-white">{t("title")}</h1>
                 </div>
 
                 <div>
-                  <p className="page-header__text">
+                  <p className="page-header__text text-white">
                   {t("bio")}
                   </p>
                 </div>
@@ -61,7 +62,13 @@ export default function ContactTwo() {
                     </div>
                   </div>
                 ))}
+
+              <div  className=" pt-30">
+                <Socials  />
+               </div>
+
               </div>
+              
             </div>
 
             <div className="col-lg-6">
