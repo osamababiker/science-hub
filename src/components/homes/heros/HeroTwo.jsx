@@ -53,43 +53,62 @@ export default function HeroTwo() {
   }, []); 
   return (
     <section className="mainSlider -type-1 js-mainSlider customizedHeroBackground">
-      <div className="swiper-wrapper-two">
+      {/* <div className="swiper-wrapper-two">
         {showSlider && (
-          <>
-            <Swiper
-              modules={[Navigation, Pagination]}
-              navigation={{
-                nextEl: ".hero-slider-next",
-                prevEl: ".hero-slider-prev",
-              }}
-              pagination={{ clickable: true }}
-              spaceBetween={0}
-              slidesPerView={1}
-              touchEventsTarget="wrapper"
-              breakpoints={{
-                450: { slidesPerView: 1 },
-                768: { slidesPerView: 1 },
-                1200: { slidesPerView: 1 },
-              }}
-              speed={1200}
-            >
-              {slidesData.map((item, i) => (
-                <SwiperSlide key={i}>
-                  <div className="swiper-slide hightFull">
-                    <div className="mainSlider__bg">
-                      <div
-                        className="bg-image js-lazy customedBg"
-                        style={{ backgroundImage: `url(${item.bgImage})` }}
-                      ></div>
-                    </div>
+          <Swiper
+            // {...setting}
+
+            modules={[Navigation, Pagination]}
+            navigation={{
+              nextEl: ".hero-slider-next",
+              prevEl: ".hero-slider-prev",
+            }}
+            spaceBetween={0}
+            slidesPerView={1}
+            breakpoints={{
+              // when window width is >= 576px
+              450: {
+                slidesPerView: 1,
+              },
+              // when window width is >= 768px
+              768: {
+                slidesPerView: 1,
+              },
+              1200: {
+                // when window width is >= 992px
+                slidesPerView: 1,
+              },
+            }}
+            speed={1200}
+          >
+            {slidesData.map((item, i) => (
+              <SwiperSlide key={i}>
+                <div className="swiper-slide hightFull">
+                  <div className="mainSlider__bg">
+                    <div
+                      className="bg-image js-lazy customedBg"
+                      style={{ backgroundImage: `url(${item.bgImage})` }}
+                    ></div>
                   </div>
-                </SwiperSlide>
-              ))}
-            </Swiper>
-          </>
+                </div>
+              </SwiperSlide>
+              // 140,90
+            ))}
+          </Swiper>
         )}
+      </div> */}
+
+      <div className="swiper-wrapper-two">
+        <div className="swiper-slide hightFull">
+          <div className="mainSlider__bg">
+            <div
+              className="bg-image js-lazy customedBg"
+              style={{ backgroundImage: `url(/assets/img/general/6-min.jpg)` }}
+            ></div>
+          </div>
+        </div>
       </div>
- 
+
       <div className="container">
         <div className="row justify-center text-center">
           <div className="col-xl-7 col-lg-8">

@@ -10,11 +10,20 @@ export default function FindLearningPath() {
   return (
     <section className="cta -type-1 layout-pt-lg layout-pb-lg">
       <div data-parallax="0.6" className="cta__bg">
-        <div
+        {/* <div
           data-parallax-target
           className="bg-image js-lazy"
           style={{ backgroundImage: "url(/assets/img/general/5.jpeg)" }}
-        ></div> 
+        ></div>  */}
+        <video
+            autoPlay
+            loop
+            muted
+            playsInline
+            className="bg-video"
+          >
+            <source src="/assets/video/science_hub_2.mp4" type="video/mp4" />
+          </video>
       </div>
 
       <div className="container">
