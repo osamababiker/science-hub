@@ -8,16 +8,49 @@ import "swiper/css/pagination";
 import { useEffect, useState } from "react";
 
 import React from "react";
-import { featureTwo } from "../../../../data/features";
-import { slidesData } from "../../../../data/hero";
-import { useRouter } from "next/navigation";
+import { slidesData } from "@/data/hero";
+import { useRouter } from "next/navigation"; 
+import { useTranslations, useLocale } from "next-intl";
+
 export default function HeroTwo() {
+
   const router = useRouter();
   const [showSlider, setShowSlider] = useState(false);
+  const t = useTranslations('HomeHero');
+  const locale = useLocale(); 
+  const [searchTerm, setSearchTerm] = useState("");
+
+  const handleSearch = () => {
+    if (searchTerm.trim()) {
+      router.push(`/${locale}/courses-list?search=${encodeURIComponent(searchTerm)}`);
+    }
+  };
+
+  
+  const featureTwo = [
+    {
+      id: 1,
+      imgSrc: "/assets/img/home-5/learning/3.svg",
+      title: t('feature_title_one'),
+      description: t('feature_description_one'),
+    },
+    {
+      id: 2,
+      imgSrc: "/assets/img/home-5/learning/4.svg",
+      title: t('feature_title_two'),
+      description: t('feature_description_two'),
+    },
+    {
+      id: 3,
+      imgSrc: "/assets/img/home-5/learning/2.svg",
+      title: t('feature_title_three'),
+      description: t('feature_description_three'),
+    }
+  ];
 
   useEffect(() => {
     setShowSlider(true);
-  }, []);
+  }, []); 
   return (
     <section className="mainSlider -type-1 js-mainSlider customizedHeroBackground">
       <div className="swiper-wrapper-two">
@@ -67,34 +100,35 @@ export default function HeroTwo() {
 
       <div className="container">
         <div className="row justify-center text-center">
-          <div className="col-xl-6 col-lg-8">
+          <div className="col-xl-7 col-lg-8">
             <div
               className="mainSlider__content"
               data-aos="fade-up"
               data-aos-delay="500"
             >
               <h1 className="mainSlider__title text-white">
-                Learn Your Way With Educrat To{" "}
-                <span className="text-green-1 underline">Web Design</span>
+              {t('title_one')}  {" "}
+                <span className="text-green-1 "> {t('title_two')} {t('title_three')} </span>
               </h1>
 
               <p className="mainSlider__text text-white">
-                More than 6.500 online courses
+                {t("bio")}
               </p>
 
-              <div className="mainSlider__form">
+              <div className={`mainSlider__form ${ locale == "en" ? "" : "mainSlider__form_ar" }`}> 
                 <input
-                  required
                   type="text"
-                  placeholder="What do you want to learn today?"
+                  placeholder={t("search_placeholder")}
+                  value={searchTerm}
+                  onChange={(e) => setSearchTerm(e.target.value)}
                 />
 
                 <button
                   className="button -md -purple-1 text-white"
-                  onClick={() => router.push("/courses-list-1")}
+                  onClick={handleSearch}
                 >
-                  <i className="icon icon-search mr-15"></i>
-                  Search
+                  <i className={`icon icon-search ${ locale == "en" ? "mr-15" : "ml-15" }`}></i>
+                  {t("search_btn")}
                 </button>
               </div>
             </div>

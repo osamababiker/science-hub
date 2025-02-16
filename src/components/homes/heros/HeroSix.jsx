@@ -4,14 +4,14 @@ import React, { useEffect, useState } from "react";
 import Image from "next/image";
 import ModalVideo from "@/src/components/common/ModalVideo";
 import gsap from "gsap";
-import Link from "next/link";
+import Link from "next/link"; 
 import { useTranslations, useLocale } from "next-intl";
  
 export default function HeroSix() {
 
   const [isOpen, setIsOpen] = useState(false);
   const t = useTranslations('HomeHero');
-  const locale = useLocale();
+  const locale = useLocale(); 
 
 
   useEffect(() => {

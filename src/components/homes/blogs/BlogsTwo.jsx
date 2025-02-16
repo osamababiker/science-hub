@@ -61,7 +61,7 @@ export default function BlogsTwo({posts}) {
                 <div className="blogCard__content mt-20">
                   <div className="blogCard__category">{locale == 'en' ? elm.category.en_name : elm.category.ar_name}</div>
                   <h4 className="blogCard__title text-17 lh-15 mt-5">
-                    <Link className="linkCustom" href="#">
+                    <Link className="linkCustom" href={`/blogs/${elm.id}`}>
                       {locale == 'en' ? elm.en_title : elm.ar_title}{" "}
                     </Link>
                   </h4>

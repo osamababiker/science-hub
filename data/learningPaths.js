@@ -2,7 +2,7 @@ export const learningPath = [
   {
     id: "item1",
     iconBg: "bg-green-2",
-    iconSrc: "/assets/img/home-2/learning/icons/1.svg",
+    iconSrc: "/assets/img/home-2/learning/icons/1.svg", 
     title: "Leadership development",
     description:
       "Lorem ipsum is placeholder text commonly used in the graphic, print, and publishing industries",

@@ -34,7 +34,7 @@ export default function HeaderSix() {
   return (
     <header
       className={`header -type-4 js-header ${
-        scrollPosition > 40 ? "bg-white" : ""
+        scrollPosition > 40 ? "bg-dark-1" : ""
       } `}
     >
       <div className="header__container py-5 border-bottom-dark">
@@ -46,7 +46,7 @@ export default function HeaderSix() {
                   <Image
                     width={140}
                     height={50}
-                    src="/assets/img/general/logo.png"
+                    src="/assets/img/general/logo-white.png"
                     alt="logo"
                   />
                 </Link>
@@ -63,10 +63,10 @@ export default function HeaderSix() {
           <div className="col-auto">
             <div className="header-right d-flex items-center">
               <div className="header-right__icons text-white d-flex items-center">
-                <SearchToggle color={"text-dark-1"} />
+                {/* <SearchToggle color={"text-dark-1"} /> */}
                 <CartToggle
                   parentClassess={`relative sm:pl-15 ${ locale == 'en' ? 'pl-30' : 'pr-30' }`}
-                  allClasses={"d-flex items-center text-dark-1"}
+                  allClasses={"d-flex items-center text-white"}
                 />
 
                 <div className={`d-none xl:d-block sm:pl-15 ${ locale == 'en'  ? 'pl-30'  : 'pr-30' }`}>
@@ -83,7 +83,7 @@ export default function HeaderSix() {
               <div className={`header-right__buttons d-flex items-center xl:ml-20 lg:d-none ${ locale == 'en' ? 'ml-30' : 'mr-30 ' }`}>
                 {!session ?
                   <>
-                  <Link href="/login" className="button -underline text-dark-1">
+                  <Link href="/login" className="button -underline text-white">
                     {t('signin')}
                   </Link>
                   <Link
@@ -94,7 +94,7 @@ export default function HeaderSix() {
                   </Link>
                   </>
                 : 
-                <Link href="/dashboard" className="button -underline text-dark-1">
+                <Link href="/dashboard" className="button -underline text-white">
                   {t('dashboard')}
                 </Link>
                 }

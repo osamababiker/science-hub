@@ -4,7 +4,7 @@ import React, { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { useTranslations, useLocale } from "next-intl";
-const SearchToggle = ({ allClasses, color }) => {
+const SearchToggle = ({ allClasses, color }) => { 
 
   const t = useTranslations("SearchToggle");
   const locale = useLocale();
@@ -36,7 +36,7 @@ const SearchToggle = ({ allClasses, color }) => {
                 <input
                   required
                   type="text"
-                  className="col-12 text-18 lh-12 text-dark-1 fw-500 mr-8"
+                  className={`col-12 text-18 lh-12 text-dark-1 fw-500 ${ locale == "en" ? 'ml-8' : 'mr-8' }`}
                   placeholder={t("search_placeholder")}
                 />
 

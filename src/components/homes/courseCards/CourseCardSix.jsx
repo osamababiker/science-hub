@@ -38,8 +38,8 @@ export default function CourseCardSix({ data }) {
                 {data.rating}
               </div>
               <div className="d-flex x-gap-5 items-center">
-              {Array.from({ length: data.rating }).map((_, i) => (
-                <div key={i} className="icon-star text-9 text-yellow-1"></div>
+              {Array.from({ length: data.rating }, (_, i) => (
+                <div key={i}>⭐</div>
               ))}
             </div>
             </div>

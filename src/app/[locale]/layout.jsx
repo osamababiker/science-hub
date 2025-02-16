@@ -29,7 +29,7 @@ export default async function RootLayout({ children, params }) {
   return (
     <html lang={locale} dir={locale == 'ar' ? "rtl" : "ltr"}>
       <head></head>
-      <body>
+      <body className={locale} >
         <NextIntlClientProvider messages={messages}>
           <SessionProviders>
             {children}

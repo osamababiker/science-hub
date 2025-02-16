@@ -40,7 +40,7 @@ export default function FooterThree() {
               </div>
             </div>
           </div>
-          <div className="footer-header-socials__list pt-30">
+          <div className=" pt-30">
             <Socials  />
           </div>
         </div>

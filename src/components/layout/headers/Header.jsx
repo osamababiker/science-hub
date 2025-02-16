@@ -47,7 +47,7 @@ export default function Header() {
             <div className="col-auto">
               <div className="header-right d-flex items-center">
                 <div className="header-right__icons text-white d-flex items-center">
-                  <SearchToggle color={"text-white"} />
+                  {/* <SearchToggle color={"text-white"} /> */}
                   <CartToggle
                     parentClassess={`relative sm:pl-15 ${ locale == 'en' ? 'pl-30' : 'pr-30' }`}
                     allClasses={"d-flex items-center text-white"}

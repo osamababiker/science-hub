@@ -1,6 +1,6 @@
 "use client";
 import { Link } from "@/src/i18n/routing";
-import { useTranslations } from "next-intl";
+import { useTranslations, useLocale } from "next-intl";
 import React, { useRef, useEffect, useState } from "react";
 import { signIn } from 'next-auth/react';
 import { z } from 'zod';
@@ -14,6 +14,7 @@ export default function CountdownRegistration() {
   const [timerSeconds, setTimerSeconds] = useState("00");
   
   const t = useTranslations("Registeration");
+  const locale = useLocale();
 
   let interval = useRef();
   const setTimer = () => {
@@ -84,7 +85,7 @@ export default function CountdownRegistration() {
 
   return (
     <>
-      <section className="layout-pt-lg bg-purple-1">
+      <section dir={locale == "ar" ? "ltr" : ""} className="layout-pt-lg bg-purple-1">
         <div className="container">
           <div className="row y-gap-30 items-center">
             <div className="offset-xl-2 col-xl-8 offset-lg-1 col-lg-5 col-md-9">
@@ -95,7 +96,8 @@ export default function CountdownRegistration() {
                     <span className="text-purple-1"> {t('title_two')} </span>
                   </Link>
                 </h3>
-                <form
+                <form 
+                  dir={locale == "ar" ? "rtl" : ""}
                    action={handleSubmit}
                   className="contact-form row y-gap-30 pt-30"
                 >

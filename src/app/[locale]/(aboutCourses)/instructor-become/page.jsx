@@ -1,15 +1,13 @@
 
 
 
-import JoinToday from '@/src/components/aboutCourses/become/JoinToday'
 import PageHeading from '@/src/components/aboutCourses/become/PageHeading'
 import Tabs from '@/src/components/aboutCourses/become/Tabs'
-import Instructors from '@/src/components/common/Instructors'
 import LearningCommon from '@/src/components/common/LearningCommon'
 
 import PageLinks from '@/src/components/common/PageLinks'
 import Preloader from '@/src/components/common/Preloader'
-import FooterOne from '@/src/components/layout/footers/FooterOne'
+import FooterThree from '@/src/components/layout/footers/FooterThree'
 import Header from '@/src/components/layout/headers/Header'
 
 import React from 'react'
@@ -31,18 +29,12 @@ export default function page() {
             <PageHeading/>
             <section  className=" layout-pb-lg">
         <div  className="container">
-            <Tabs/>
+            <Tabs/> 
             <LearningCommon/>
 
             </div>
             </section>
-
-            <JoinToday/>
-
-            <Instructors/>
-
-
-            <FooterOne/>
+            <FooterThree/>
 
 
         </div>

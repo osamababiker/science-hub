@@ -30,17 +30,16 @@
         "title_one": "The Premier",
         "title_two": "Online Education Platform",
         "title_three": "In UAE",
-        "call_action_one": "Get Started",
-        "call_action_two": "Watch Video",
-        "feature_one": "Over 12000 students",
-        "feature_two": "More than 60 courses",
-        "feature_three": "Learn anything online",
-        "card_one_title": "List of the best",
-        "card_one_bio": "Online Courses",
-        "card_two_title": "Trusted",
-        "card_two_bio": "Certificates",
-        "card_three_title": "The Best",
-        "card_three_bio": "Qualified Teachers"
+        "bio": "The most prominent professors and teachers in the Arab world",
+        "feature_title_one": "Lifetime Access",
+        "feature_description_one": "Unlock courses once and enjoy unlimited access for a lifetime—learn at your own pace, anytime.",
+        "feature_title_two": "Expert Teachers",
+        "feature_description_two": "Learn from the best! Our courses are led by industry experts passionate about sharing their knowledge.",
+        "feature_title_three": "Access Anytime",
+        "feature_description_three": "Flexible learning at your fingertips—study whenever it suits you, day or night.",
+        "search_placeholder": "What do you want to learn?",
+        "search_btn": "Search"
+       
     },
     "LearningPath": {
         "title": "Why Science Hub?",
@@ -51,6 +50,7 @@
         "description_two": "Learn from the best! Our courses are led by industry experts passionate about sharing their knowledge.",
         "title_three": "Access Anytime",
         "description_three": "Flexible learning at your fingertips—study whenever it suits you, day or night.",
+       
         "title_four": "Learn Anything",
         "description_four": "Explore a world of possibilities with diverse courses designed to match your interests and goals."
     },
@@ -95,6 +95,11 @@
         "feature_two": "Easy to follow curriculum",
         "feature_three": "Free courses",
         "feature_four": "Money-back guarantee"
+    },
+    "LearningPathThree": {
+        "title": "Find the right course that match your Goals",
+        "bio": "  Match your goals to our courses, explore your options and map out your path to success.",
+        "btn": "Started Learning Now"
     },
     "Registeration": {
         "title_one": "Create Your",
@@ -408,6 +413,18 @@
     "Terms": {
         "title": "Terms & Conditions",
         "bio": "We’re on a mission to deliver engaging, curated courses at a reasonable price."
+    },
+
+    "BecomeTeacher": {
+        "title": "Become a Teacher",
+        "bio": "Join a group of talented doctors and teachers from around the world, providing the most advanced courses. Share your expertise with eager learners while collaborating with distinguished professionals from prestigious institutions across six continents. ",
+        "btn": "Learn More"
+    },
+
+    "BecomeStuden": {
+        "title": "Become a Student",
+        "bio": "Discover your potential in a vibrant global community of learners. Whether you're looking to advance your career, explore new interests, or master cutting-edge skills, your journey starts here. Our diverse course catalog taught by industry experts and leading academics.",
+        "btn": " Register Now"
     }
 
   }

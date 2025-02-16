@@ -3,6 +3,7 @@ import HeroSix from "@/src/components/homes/heros/HeroSix";
 import HeaderSix from "@/src/components/layout/headers/HeaderSix";
 import CoursesSix from "@/src/components/homes/courses/CoursesSix";
 import React from "react";
+import FindLearningPath from "@/src/components/homes/FindLearningPath";
 import Teachers from "@/src/components/homes/instractors/Teachers";
 import CategoriesSix from "@/src/components/homes/categories/CategoriesSix";
 import TestimonialsSix from "@/src/components/homes/testimonials/TestimonialsSix";
@@ -11,7 +12,10 @@ import CountdownRegistration from "@/src/components/homes/CountdownRegistration"
 import BlogsTwo from "@/src/components/homes/blogs/BlogsTwo";
 import FooterThree from "@/src/components/layout/footers/FooterThree";
 import Preloader from "@/src/components/common/Preloader";
+import BecomeInstactor from "@/src/components/common/BecomeInstactor";
+import BecomeStudent from '@/src/components/common/BecomeStudent'
 import { getTeachers, getPosts, getCategories, getCourses, getTestimonials } from "@/lib/data";
+import HeroTwo from "@/src/components/homes/heros/HeroTwo";
 
 export const metadata = {
   title:
@@ -33,14 +37,18 @@ export default async function page() {
       <Preloader />
       <HeaderSix />
       <div className="content-wrapper  js-content-wrapper overflow-hidden">
-        <HeroSix />
-        <LearningPathSix />
+        {/* <HeroSix /> */}
+        <HeroTwo />
+        {/* <LearningPathSix /> */}
         <CoursesSix categories={categories} courses={courses} />
-        <Teachers teachers={teachers} />
+        {/* <Teachers teachers={teachers} /> */}
+        <FindLearningPath/>
         <CategoriesSix categories={categories} />
         <TestimonialsSix testimonials={testimonials} />
         {/* <BrandsSix /> */}
-        <LearningPathsSix />
+        {/* <LearningPathsSix /> */}
+        <BecomeInstactor/>
+        <BecomeStudent/>
         <CountdownRegistration />
         <BlogsTwo posts={posts} />
         <FooterThree /> 

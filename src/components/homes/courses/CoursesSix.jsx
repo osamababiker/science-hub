@@ -28,7 +28,7 @@ export default function CoursesSix({categories, courses}) {
 
 
   return (
-    <section className="layout-pt-md layout-pb-lg">
+    <section className="layout-pt-lg layout-pb-lg">
       <div className="container tabs -pills-2 js-tabs">
         <div className="row y-gap-20 justify-between items-end">
           <div className="col-auto">

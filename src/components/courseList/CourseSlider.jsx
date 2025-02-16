@@ -6,6 +6,7 @@ import CourceCard from "../homes/courseCards/CourseCardFive";
 import { Navigation, Pagination } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { useTranslations, useLocale } from "next-intl";
+import { useSearchParams } from "next/navigation";
 
 export default function CoursesSlider({ categories, courses }) {
 
@@ -14,17 +15,31 @@ export default function CoursesSlider({ categories, courses }) {
   const [showSlider, setShowSlider] = useState(false);
   const [currentCourseState, setCurrentCourseState] = useState(categories[0].id);
   const [pageItem, setPageItem] = useState([]);
+  const searchParams = useSearchParams();
+  const search = searchParams.get("search") || ""; 
+  const searchTerm = search.toLowerCase();
 
   useEffect(() => {
-    if (currentCourseState == categories[0].id) {
-      setPageItem(courses);
-    } else {
-      const filtered = courses.filter(
-        (elm) => elm.category.id == currentCourseState,
+    let filteredCourses = courses;
+  
+    // Filter by search term
+    if (searchTerm.trim() !== "") {
+      filteredCourses = filteredCourses.filter(
+        (course) =>
+          course.en_name.toLowerCase().includes(searchTerm.toLowerCase()) ||
+          course.ar_name.toLowerCase().includes(searchTerm.toLowerCase())
       );
-      setPageItem(filtered);
     }
-  }, [currentCourseState]);
+  
+    // Filter by category (if not "All Categories")
+    if (currentCourseState !== categories[0].id) {
+      filteredCourses = filteredCourses.filter(
+        (course) => course.category.id === currentCourseState
+      );
+    }
+  
+    setPageItem(filteredCourses);
+  }, [searchTerm, currentCourseState, courses]);
 
   useEffect(() => {
     setShowSlider(true);

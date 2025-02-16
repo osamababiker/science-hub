@@ -178,7 +178,7 @@ export default function ShopList({categories, courses}) {
                           width={528}
                           height={528}
                           style={{ height: "150px" }}
-                          className="w-1/1 rounded-8"
+                        className="w-1/1 rounded-8"
                           src={coursesUploadUrl + elm.image}
                           alt="Product image"
                         />

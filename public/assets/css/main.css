@@ -61,8 +61,12 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Tajawal:wght@200;300;400;500;700;800;900&display=swap');
 
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
 :root {
   --font-primary: "Tajawal", sans-serif;
+  --font-primary-en: "Roboto", serif;
   --text-6: 6px;
   --text-9: 9px;
   --text-11: 11px;
@@ -1075,15 +1079,18 @@
 html {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  font-family: var(--font-primary)!important;
   min-height: 100%;
   font-size: 15px;
   line-height: 1;
 }
 
-body, h1, h2, h3, h4, h5, h6, p, div, span, a {
+/* .ar, .ar h1, .ar h2, .ar h3, .ar h4, .ar h5, .ar h6, .ar p, .ar div, .ar span, .ar a {
   font-family: var(--font-primary)!important;
 }
+
+.en, .en h1, .en h2, .en h3, .en h4, .en h5, .en h6, .en p, .en div, .en span, .en a {
+  font-family: var(--font-primary-en)!important;
+} */
 
 html:not(.-dark-mode) .-light-d-none {
   display: none;
@@ -1226,13 +1233,20 @@ html.-dark-mode .button.-purple-3 {
 body {
   overflow-x: hidden;
   padding: 0;
-  font-family: var(--font-primary);
   width: 100%;
   max-width: 100%;
   background-color: white;
   color: var(--color-light-1);
   font-size: 15px;
   line-height: 1.7;
+}
+
+body.ar{
+  font-family: var(--font-primary);
+}
+
+body.en{
+  font-family: var(--font-primary-en);
 }
 
 .container {
@@ -4327,6 +4341,9 @@ h1, h2, h3, h4, h5, h6 {
     color: var(--color-green-1);
     background-color: rgba(255, 255, 255, 0.15);
   }
+  .header .header-menu .menu__nav > li > a {
+    color: white!important;
+  }
   .header .header-menu .menu__nav > li > .subnav-ar::before {
     content: '';
     position: absolute;
@@ -6573,6 +6590,18 @@ h1, h2, h3, h4, h5, h6 {
   top: 10px;
   bottom: 10px;
   right: 10px;
+  height: auto;
+  min-width: auto;
+  padding: 15px 32px;
+  border-radius: 100px;
+}
+
+.mainSlider.-type-1 .mainSlider__form_ar button {
+  position: absolute;
+  top: 10px;
+  bottom: 10px;
+  right: unset;
+  left: 10px;
   height: auto;
   min-width: auto;
   padding: 15px 32px;
