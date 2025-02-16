@@ -59,7 +59,7 @@ export default function Menu({ allClasses, headerPosition }) {
             {t('signin')}
           </Link>
           <Link href="/signup" className="text-dark-1 ml-30">
-            {t('signup')}
+            {t('signup')} 
           </Link>
         </div>
 
@@ -71,7 +71,7 @@ export default function Menu({ allClasses, headerPosition }) {
                 href="/"
                 className={menuItem == "Home" ? "activeMenu" : ""}
               >
-                {t('home')} <i className="text-13 ml-10"></i>
+                {t('home')} <i className="text-13 ml-10 "></i>
               </Link>
             </li>
 

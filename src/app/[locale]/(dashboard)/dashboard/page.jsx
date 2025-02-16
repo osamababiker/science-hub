@@ -22,6 +22,7 @@ export default async function page() {
   const session = await getServerSession(authOptions);
   if (!session) {
     return <div>Please log in to access this page.</div>;
+    
   }
 
   return (
