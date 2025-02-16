@@ -54,57 +54,23 @@ export default function HeroTwo() {
   return (
     <section className="mainSlider -type-1 js-mainSlider customizedHeroBackground">
       <div className="swiper-wrapper-two">
-        {showSlider && (
-          <Swiper
-            // {...setting}
-
-            modules={[Navigation, Pagination]}
-            navigation={{
-              nextEl: ".hero-slider-next",
-              prevEl: ".hero-slider-prev",
-            }}
-            spaceBetween={0}
-            slidesPerView={1}
-            breakpoints={{
-              // when window width is >= 576px
-              450: {
-                slidesPerView: 1,
-              },
-              // when window width is >= 768px
-              768: {
-                slidesPerView: 1,
-              },
-              1200: {
-                // when window width is >= 992px
-                slidesPerView: 1,
-              },
-            }}
-            speed={1200}
-          >
-            {slidesData.map((item, i) => (
-              <SwiperSlide key={i}>
-                <div className="swiper-slide hightFull">
-                  <div className="mainSlider__bg">
-                    <video
-                      autoPlay
-                      loop
-                      muted
-                      playsInline
-                      className="bg-video"
-                    >
-                      <source src={item.video} type="video/mp4" />
-                    </video>
-                    {/* <div
-                      className="bg-image js-lazy customedBg"
-                      style={{ backgroundImage: `url(${item.bgImage})` }}
-                    ></div> */}
-                  </div>
-                </div>
-              </SwiperSlide>
-              // 140,90
-            ))}
-          </Swiper>
-        )}
+        <div className="swiper-slide hightFull">
+          <div className="mainSlider__bg">
+            <video
+              autoPlay
+              loop
+              muted
+              playsInline
+              className="bg-video"
+            >
+              <source src="/assets/video/science_hub_2.mp4" type="video/mp4" />
+            </video>
+            {/* <div
+              className="bg-image js-lazy customedBg"
+              style={{ backgroundImage: `url(${item.bgImage})` }}
+            ></div> */}
+          </div>
+        </div>
       </div>
 
       <div className="container">
