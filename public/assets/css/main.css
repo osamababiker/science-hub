@@ -9008,6 +9008,10 @@ h1, h2, h3, h4, h5, h6 {
   align-items: center;
   height: 100%;
   width: 40vw;
+  background-image: url("/assets/img/general/pexels-kobeboy-1516440.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
 }
 
 @media (max-width: 991px) {

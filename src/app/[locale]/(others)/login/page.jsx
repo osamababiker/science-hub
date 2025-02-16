@@ -9,7 +9,7 @@ export const metadata = {
     "Login || Science Hub",
   description:
     "Science Hub is a leading educational platform specializing in delivering high-quality training, online courses, and tutoring services .",
-};
+}; 
 
 export default function page() {
   return (

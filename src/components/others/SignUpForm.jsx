@@ -13,7 +13,7 @@ export default function SignUpForm() {
 
   const t = useTranslations("signipPage");
   const { data: session, status} = useSession();
-  const locale = useLocale();
+  const locale = useLocale(); 
   const router = useRouter();
   const [error, setError] = useState(null);
   const [loading, setLoading] = useState(false);
@@ -72,7 +72,11 @@ export default function SignUpForm() {
               <p className="mt-10">
                 {t("have_account")}
                 <Link href="/login" className={`text-purple-1 ${ locale == 'en' ? 'ml-8' : 'mr-8' }`}>
-                 {t("login_link")}
+                 {t("login_link")} 
+                </Link>
+                
+                <Link href="/" className={`text-purple-1 ${ locale == 'en' ? 'ml-8' : 'mr-8' }`}>
+                 {t("home_link")} 
                 </Link>
               </p>
 

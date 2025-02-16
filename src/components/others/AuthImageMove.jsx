@@ -39,60 +39,8 @@ export default function AuthImageMove() {
     parallaxIt();
   }, []);
   return (
-    <div className="form-page__img bg-dark-1">
+    <div className="form-page__img ">
       <div className="form-page-composition">
-        <div className="-bg">
-          <Image
-            width={1250}
-            height={1000}
-            style={{ width: "100%" }}
-            data-move="30"
-            className="js-mouse-move"
-            src="/assets/img/login/bg.png"
-            alt="bg"
-          />
-        </div>
-        <div className="-el-1">
-          <Image
-            width={1250}
-            height={1000}
-            style={{ width: "100%" }}
-            data-move="20"
-            className="js-mouse-move"
-            src="/assets/img/general/1.jpeg"
-            alt="image"
-          /> 
-        </div>
-        <div className="-el-2">
-          <Image
-            width={488}
-            height={485}
-            data-move="40"
-            className="js-mouse-move"
-            src="/assets/img/general/2.jpeg"
-            alt="icon"
-          />
-        </div>
-        <div className="-el-3">
-          <Image
-            width={108}
-            height={108}
-            data-move="40"
-            className="js-mouse-move"
-            src="/assets/img/general/3.jpeg"
-            alt="icon"
-          />
-        </div>
-        <div className="-el-4">
-          <Image
-            width={108}
-            height={108}
-            data-move="40"
-            className="js-mouse-move"
-            src="/assets/img/general/4.jpeg"
-            alt="icon"
-          />
-        </div>
       </div>
     </div>
   );

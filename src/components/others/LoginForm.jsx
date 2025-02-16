@@ -15,7 +15,7 @@ export default function LoginForm() {
   const { data: session, status} = useSession();
   const locale = useLocale();
   const router = useRouter();
-  const [error, setError] = useState(null);
+  const [error, setError] = useState(null); 
   const [loading, setLoading] = useState(false);
 
   const handleSubmit = async (formData) => {
@@ -60,6 +60,9 @@ export default function LoginForm() {
                 {t("dont_have_account")}
                 <Link href="/signup" className={`text-purple-1 ${ locale == 'en' ? 'ml-8' : 'mr-8' }`}>
                 {t("register_link")}
+                </Link>
+                <Link href="/" className={`text-purple-1 ${ locale == 'en' ? 'ml-8' : 'mr-8' }`}>
+                 {t("home_link")} 
                 </Link>
               </p>
 
