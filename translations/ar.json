@@ -406,7 +406,8 @@
         "shop": "المتجر",
         "lang": "اللغة",
         "english": "انجليزي",
-        "arabic": "عربي"
+        "arabic": "عربي",
+        "access_moodle": "ابدآ التعلم"
     },
 
     "breadcrumbs": {

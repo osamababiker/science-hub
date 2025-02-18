@@ -405,7 +405,8 @@
         "shop": "Shop",
         "lang": "Language",
         "english": "English",
-        "arabic": "Arabic"
+        "arabic": "Arabic",
+        "access_moodle": "Start Learning"
     },
 
     "breadcrumbs": {

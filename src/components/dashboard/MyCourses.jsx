@@ -8,7 +8,7 @@ import { getUserOrders } from '@/lib/data';
 
 export default function MyCourses({ userId }) {
 
-  const [activeTab, setActiveTab] = useState(1);
+  const [activeTab, setActiveTab] = useState(0);
   const [pageData, setPageData] = useState(null);
 
   const t = useTranslations('Dashboard');
@@ -20,8 +20,10 @@ export default function MyCourses({ userId }) {
       try { 
         const res = await getUserOrders(userId);
         if (res) {
-          if (activeTab == 1) {
+          if (activeTab == 0) {
             setPageData(res);
+          } else if (activeTab == 1) {
+            setPageData(res.filter((elm) => elm.status == 0));
           } else if (activeTab == 2) {
             setPageData(res.filter((elm) => elm.status == 1));
           }
@@ -59,13 +61,23 @@ export default function MyCourses({ userId }) {
                 <div className="tabs__controls d-flex items-center pt-20 px-30 border-bottom-light js-tabs-controls">
                   <button
                     className={`text-light-1 lh-12 tabs__button js-tabs-button ${
-                      activeTab == 1 ? "is-active" : ""
+                      activeTab == 0 ? "is-active" : ""
                     } `}
                     data-tab-target=".-tab-item-1"
                     type="button"
-                    onClick={() => setActiveTab(1)}
+                    onClick={() => setActiveTab(0)}
                   >
                     { t("all_courses_tab") }
+                  </button>
+                  <button
+                    className={`text-light-1 lh-12 tabs__button js-tabs-button ${ locale == 'en' ? 'ml-30 ' : 'mr-30 ' }  ${
+                      activeTab == 1 ? "is-active" : ""
+                    } `}
+                    data-tab-target=".-tab-item-2"
+                    type="button"
+                    onClick={() => setActiveTab(1)}
+                  >
+                    { t("not_enrolled") }
                   </button>
                   <button
                     className={`text-light-1 lh-12 tabs__button js-tabs-button ${ locale == 'en' ? 'ml-30 ' : 'mr-30 ' }  ${
