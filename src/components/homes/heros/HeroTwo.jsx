@@ -58,7 +58,7 @@ export default function HeroTwo() {
         <div className="swiper-slide hightFull">
           <div className="mainSlider__bg">
             <div className="bg-image js-lazy customedBg">
-              <video
+              <video 
                 autoPlay
                 loop
                 muted
