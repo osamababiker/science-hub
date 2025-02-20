@@ -25,11 +25,19 @@ export default function CourceCardFive({ data }) {
         >
           <div className="relative">
             <div className="coursesCard__image overflow-hidden rounded-8">
-              <Image
+              {/* <Image
                 width={500}
                 height={500}
                 style={{ height: "150px" }}
                 className="w-1/1 rounded-8"
+                src={coursesUploadUrl + data.image}
+                alt="image"
+              /> */}
+               <Image
+                width={500}
+                height={500}
+                style={{ height: "150px" }}
+                className="rounded-8"
                 src={coursesUploadUrl + data.image}
                 alt="image"
               />

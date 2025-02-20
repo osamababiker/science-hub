@@ -38,7 +38,7 @@ export default function ShopList({categories, courses}) {
   };
   return (
     <>
-      <section className="page-header -type-1">
+      <section className="page-header -type-1"> 
         <div className="container">
           <div className="page-header__content">
             <div className="row justify-center text-center">

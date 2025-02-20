@@ -12,7 +12,8 @@
         "shop": "Shop",
         "lang": "Language",
         "english": "English",
-        "arabic": "Arabic"
+        "arabic": "Arabic",
+        "start_Learning": "Start Learning"
     },
     "CartToggle": {
         "currancy": "AED",
@@ -295,7 +296,9 @@
     "CheckoutPage": {
         "title": "Course Checkout",
         "bio": "We’re on a mission to deliver engaging, curated courses at a reasonable price.",
-        "form_title": "Billing details",
+        "form_title": "Send Order",
+        "form_title_unauthenticated": "Create Account & Buy Courses",
+        "login_link": "Or Login",
         "name_label": "Your name",
         "name_placeholder": "Your name",
         "country_label": "Country / Region *",
@@ -311,6 +314,8 @@
         "phone_placeholder": "Phone *",
         "email_label": "Email address *",
         "email_placeholder": "Email address *",
+        "password_label":"Password *",
+        "password_placeholder":"Password...",
         "additional_info": "  Additional information",
         "order_note_label": "Order notes (optional)",
         "order_note_placeholder": "Order notes (optional)",
@@ -323,12 +328,14 @@
         "bank_transfer_bio": "Make your payment directly into our bank account. Please use your Order ID as the payment reference. Your order will not be shipped until the funds have cleared in our account.",
         "credit_card_title": "Credit Card / Depit Card",
         "place_order_btn": "Place order",
+        "place_order_auth_btn": "Place order & Create account",
         "currancy": "AED",
         "unauthenticated": "You have to login first to send an order ",
         "signin":"Log in",
         "loading": "Loading",
         "orderSuccess": "Your Order has been send Successfully, our team will contact you soon !",
         "400Error": "Plese enter valide information",
+        "401Error": "Plese enter unique email address",
         "500Error":"Something went wrong Please try again later",
         "country": "United Arabs Emirates",
         "sending_order": "Sending Order ..."
@@ -336,6 +343,7 @@
 
     "CartPage": {
         "title": "Course Cart",
+        "checkout_title": "Course Checkout",
         "bio":" We’re on a mission to deliver engaging, curated courses at a reasonable price.",
         "course": "Course",
         "price": "Price",

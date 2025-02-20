@@ -21,11 +21,19 @@ export default function CourseCardSix({ data }) {
     <div className="col-lg-6">
       <div className="coursesCard -type-4 d-flex sm:d-block items-center border-light rounded-8 px-10 py-10">
         <div className="coursesCard__image max-w-250 rounded-8">
-          <Image
+          {/* <Image
             width={250}
             height={175}
             style={{ height: "150px" }}
             className="w-1/1 rounded-8"
+            src={coursesUploadUrl + data.image}
+            alt="image"
+          /> */}
+           <Image
+            width={250}
+            height={175}
+            style={{ height: "150px" }}
+            className="rounded-8"
             src={coursesUploadUrl + data.image}
             alt="image"
           />

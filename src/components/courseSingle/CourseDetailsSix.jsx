@@ -2,11 +2,12 @@
 
 import Overview from "./Overview";
 import React, { useState, useEffect } from "react";
-
+import { Link } from "@/src/i18n/routing";
 import { useLocale, useTranslations } from "next-intl";
 import ModalVideoComponent from "../common/ModalVideo";
 import Image from "next/image";
 import useCartStore from "@/store/cartStore";
+import {useRouter} from '@/src/i18n/routing'; 
 import { getCourseDetails } from "@/lib/data";
 import { coursesUploadUrl, teachersUploadUrl } from "@/lib/constants";
 
@@ -16,6 +17,7 @@ export default function CourseDetailsSix({ courseId }) {
   const [course, setPageCourse] = useState(null);
   const [isOpen, setIsOpen] = useState(false);
   const [activeTab, setActiveTab] = useState(1);
+  const router = useRouter();
   const t = useTranslations('CourseDetails');
   const locale = useLocale();
   const { addCourseToCart, isAddedToCartCourses } = useCartStore(); 
@@ -37,8 +39,17 @@ export default function CourseDetailsSix({ courseId }) {
     fetchCourse();
   }, [courseId]);
 
+  const addToCart = (course) => {
+    addCourseToCart(course);
+    router.push('/course-cart');
+  }
+
   if (!course) {
-    return <p>{t("loading")}...</p>; 
+    return <>
+    <div className="loading-overlay">
+      <div className="loading-spinner"></div>
+    </div>
+    </>
   }
 
   return (
@@ -189,7 +200,7 @@ export default function CourseDetailsSix({ courseId }) {
                     <div className="col-sm-6">
                       <button
                         className="button -md -purple-1 text-white w-1/1"
-                        onClick={() => addCourseToCart(course)}
+                        onClick={() => addToCart(course)}
                       > 
                         {isAddedToCartCourses(course.id)
                           ? t("alredy_added")
@@ -197,9 +208,9 @@ export default function CourseDetailsSix({ courseId }) {
                       </button>
                     </div>
                     <div className="col-sm-6">
-                      <button className="button -md -outline-green-1 text-green-1 w-1/1">
+                      <Link href="/shop-list" className="button -md -outline-green-1 text-green-1 w-1/1">
                         {t("buy_courses")}
-                      </button>
+                      </Link>
                     </div>
                   </div>
                 </div>

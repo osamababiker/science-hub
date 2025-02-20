@@ -19,7 +19,7 @@ export default function CourseCart() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-  };
+  }; 
 
   const handleIncrease = (index) => {
     const item = cartCourses[index]; 
@@ -62,7 +62,7 @@ export default function CourseCart() {
             <div className="row justify-center text-center">
               <div className="col-auto">
                 <div>
-                  <h1 className="page-header__title">{t('title')}</h1>
+                  <h1 className="page-header__title">{t('checkout_title')}</h1>
                 </div>
 
                 <div>
@@ -76,7 +76,7 @@ export default function CourseCart() {
         </div>
       </section>
 
-      <section className="layout-pt-md layout-pb-lg">
+      <section className="layout-pt-md">
         <div className="container">
           <div className="row justify-end">
             <div className="col-12">
@@ -236,7 +236,7 @@ export default function CourseCart() {
               </div>
             </div>
 
-            <div className="col-xl-4 col-lg-5 layout-pt-lg">
+            {/* <div className="col-xl-4 col-lg-5 layout-pt-lg">
               <div className="py-30 bg-light-4 rounded-8 border-light">
                 <h5 className="px-30 text-20 fw-500">{t('cart_totals')}</h5>
 
@@ -261,7 +261,7 @@ export default function CourseCart() {
               >
                 {t('checkout_btn')}
               </Link>
-            </div>
+            </div> */}
           </div>
         </div>
       </section>

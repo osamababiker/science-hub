@@ -38,21 +38,25 @@ export default function MyCourses({ userId }) {
 
 
   if (!pageData) {
-    return <p>{t("loading")}...</p>; 
+    return <>
+    <div className="loading-overlay">
+      <div className="loading-spinner"></div>
+    </div>
+    </>
   }
 
 
   return (
     <div className="">
       <div className="dashboard__content bg-light-4">
-        <div className="row pb-50 mb-10">
+        {/* <div className="row pb-50 mb-10">
           <div className="col-auto">
             <h1 className="text-30 lh-12 fw-700">{t("my_courses_title")}</h1>
             <div className="mt-10">
               {t("my_courses_bio")}
             </div>
           </div>
-        </div>
+        </div> */}
 
         <div className="row y-gap-30">
           <div className="col-12">

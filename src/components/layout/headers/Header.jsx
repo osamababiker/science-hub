@@ -71,10 +71,10 @@ export default function Header() {
                     {t('signin')}
                   </Link>
                   <Link
-                    href="/signup"
+                    href="/courses-list"
                     className={`button h-50 px-40 -purple-1 -rounded text-white xl:ml-20 ${ locale == 'en' ? 'ml-30' : 'mr-30' }`}
                   >
-                    {t('signup')}
+                    {t('start_Learning')}
                   </Link>
                 </>
                 : 

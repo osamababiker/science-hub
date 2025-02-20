@@ -31,6 +31,6 @@ export default async function page() {
             <MyCourses userId={session.user.id} />
           </div>
         </main>
-    </div>
+    </div> 
   )
 }

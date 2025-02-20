@@ -41,8 +41,12 @@ export default function LoginForm() {
     }
   };
 
-  if (status === "loading") {
-    return <p>...</p>; 
+  if (status === "loading") { 
+    return <>
+    <div className="loading-overlay">
+      <div className="loading-spinner"></div>
+    </div>
+    </>
   }
 
   if (status === "authenticated") {

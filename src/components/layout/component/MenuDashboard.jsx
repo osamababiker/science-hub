@@ -85,7 +85,7 @@ export default function Menu({ allClasses, headerPosition }) {
               </Link>
             </li>
 
-            <li>
+            {/* <li>
               <Link
                 data-barba
                 href="/dshb-courses"
@@ -93,7 +93,7 @@ export default function Menu({ allClasses, headerPosition }) {
               >
                 {t('sidebar_courses')} <i className="text-13 ml-10"></i>
               </Link>
-            </li>
+            </li> */}
 
             <li>
               <Link

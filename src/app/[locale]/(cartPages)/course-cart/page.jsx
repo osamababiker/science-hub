@@ -2,10 +2,6 @@
 
 
 
-
-
-
-import BlogsOne from '@/src/components/blogs/BlogsOne'
 import PageLinks from '@/src/components/common/PageLinks'
 import Preloader from '@/src/components/common/Preloader'
 
@@ -15,6 +11,7 @@ import Header from '@/src/components/layout/headers/Header'
 import React from 'react'
 
 import CourseCart from '../../../../components/cartsAndCheckout/CourseCart'
+import DirectCheckout from '@/src/components/cartsAndCheckout/DirectCheckout'
 
 export const metadata = {
   title:
@@ -33,6 +30,8 @@ export default function page() {
             <PageLinks/>
 
             <CourseCart/>
+
+            <DirectCheckout/>
             
             <FooterThree/>
         </div>

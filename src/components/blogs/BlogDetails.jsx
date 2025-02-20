@@ -34,7 +34,11 @@ export default function BlogDetails({ blogId }) {
   }, [blogId]);
 
   if (!blog) {
-    return <p>{t("loading")}...</p>; 
+    return <>
+    <div className="loading-overlay">
+      <div className="loading-spinner"></div>
+    </div>
+    </>
   }
 
   return (

@@ -57,12 +57,19 @@ export default function HeroTwo() {
       <div className="swiper-wrapper-two">
         <div className="swiper-slide hightFull">
           <div className="mainSlider__bg">
-            <div
-              className="bg-image js-lazy customedBg"
-              style={{ backgroundImage: `url(/assets/img/general/teacher.jpg)` }}
-            ></div>
+            <div className="bg-image js-lazy customedBg">
+              <video
+                autoPlay
+                loop
+                muted
+                playsInline
+                className="bg-video"
+              >
+                <source src="/assets/video/science_hub.mp4" type="video/mp4" />
+              </video>
+            </div>
           </div>
-        </div>
+        </div> 
       </div>
 
       {/* <div className="swiper-wrapper-two">
@@ -154,13 +161,13 @@ export default function HeroTwo() {
         </div>
       </div>
 
-      <button className="swiper-prev hero-slider-prev button -white-20 text-white size-60 rounded-full d-flex justify-center items-center js-prev">
+      {/* <button className="swiper-prev hero-slider-prev button -white-20 text-white size-60 rounded-full d-flex justify-center items-center js-prev">
         <i className="icon icon-arrow-left text-24"></i>
       </button>
 
       <button className="swiper-next hero-slider-next button -white-20 text-white size-60 rounded-full d-flex justify-center items-center js-next">
         <i className="icon icon-arrow-right text-24"></i>
-      </button>
+      </button> */}
     </section>
   );
 }

@@ -10,12 +10,12 @@ export default function FindLearningPath() {
   return (
     <section className="cta -type-1 layout-pt-lg layout-pb-lg">
       <div data-parallax="0.6" className="cta__bg">
-        {/* <div
+        <div
           data-parallax-target
           className="bg-image js-lazy"
           style={{ backgroundImage: "url(/assets/img/general/5.jpeg)" }}
-        ></div>  */}
-        <video
+        ></div> 
+        {/* <video
             autoPlay
             loop
             muted
@@ -23,10 +23,10 @@ export default function FindLearningPath() {
             className="bg-video"
           >
             <source src="/assets/video/science_hub.mp4" type="video/mp4" />
-          </video>
+          </video> */}
       </div>
 
-      {/* <div className="container">
+      <div className="container">
           <div className="row justify-center text-center">
             <div className="col-auto">
               <h2 className="text-45 md:text-30 text-white">
@@ -53,7 +53,7 @@ export default function FindLearningPath() {
               </Link>
             </div>
           </div>
-      </div> */}
+      </div>
     </section>
   );
 }

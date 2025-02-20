@@ -6,18 +6,18 @@ export default function PageHeading() {
   const t = useTranslations("CoursesPage");
 
   return (
-    <section className="page-header -type-1">
+    <section className="page-header -type-1"> 
       <div className="container">
         <div className="page-header__content">
-          <div className="row">
+          <div className="row justify-center text-center">
             <div className="col-auto">
               <div>
-                <h1 className="page-header__title">{t('title')}</h1>
+                <h1 className="page-header__title">{t("title")}</h1>
               </div>
 
               <div>
                 <p className="page-header__text">
-                {t('bio')}
+                {t("bio")}
                 </p>
               </div>
             </div>

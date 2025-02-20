@@ -99,8 +99,6 @@ export default function DashboardOne({userId}) {
           ))}
         </div>
       </div>
-
-      <FooterThree />
     </div>
   );
 }
