@@ -46,7 +46,16 @@ export default function CourseCheckOut() {
         notes: z.string().nullable(), city: z.string(), payment_method: z.string()})
       .safeParse({ name, email, phone, password, notes, city, payment_method });
     if (parsedCredentials.success) {
-      session ? formData.user_id = session.user.id : formData.user_id = 0;
+
+      if(session){
+        formData.user_id = session.user.id;
+        formData.name = session.user.name;
+        formData.email = session.user.email;
+        formData.phone = session.user.phone;
+        formData.password = "password";
+      }else {
+        formData.user_id = 0;
+      }
       formData.courses_ids = courses_ids;
       formData.status = 0;
 
