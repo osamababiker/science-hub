@@ -59,13 +59,13 @@ export default function HeroTwo() {
           <div className="mainSlider__bg">
             <div className="bg-image js-lazy customedBg">
               <video 
-                autoPlay
+                autoPlay 
                 loop
                 muted
                 playsInline
                 className="bg-video"
               >
-                <source src="/assets/video/science_hub.mp4" type="video/mp4" />
+                <source src={`${locale == "en" ? "assets/video/science_hub_website_en.mp4" : "assets/video/science_hub_website.mp4"}/`}type="video/mp4" />
               </video>
             </div>
           </div>
@@ -109,7 +109,7 @@ export default function HeroTwo() {
         )}
       </div> */}
 
-      <div className="container">
+      {/* <div className="container">
         <div className="row justify-center text-center">
           <div className="col-xl-7 col-lg-8">
             <div
@@ -126,7 +126,7 @@ export default function HeroTwo() {
                 {t("bio")}
               </p>
 
-              {/* <div className={`mainSlider__form ${ locale == "en" ? "" : "mainSlider__form_ar" }`}> 
+              <div className={`mainSlider__form ${ locale == "en" ? "" : "mainSlider__form_ar" }`}> 
                 <input
                   type="text"
                   placeholder={t("search_placeholder")}
@@ -141,7 +141,7 @@ export default function HeroTwo() {
                   <i className={`icon icon-search ${ locale == "en" ? "mr-15" : "ml-15" }`}></i>
                   {t("search_btn")}
                 </button>
-              </div> */}
+              </div>
             </div>
           </div>
         </div>
@@ -159,7 +159,7 @@ export default function HeroTwo() {
             </div>
           ))}
         </div>
-      </div>
+      </div> */}
 
       {/* <button className="swiper-prev hero-slider-prev button -white-20 text-white size-60 rounded-full d-flex justify-center items-center js-prev">
         <i className="icon icon-arrow-left text-24"></i>

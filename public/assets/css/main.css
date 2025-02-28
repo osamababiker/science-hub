@@ -4342,9 +4342,6 @@ h1, h2, h3, h4, h5, h6 {
     color: var(--color-green-1);
     background-color: rgba(255, 255, 255, 0.15);
   }
-  .header .header-menu .menu__nav > li > a {
-    color: white!important;
-  }
   .header .header-menu .menu__nav > li > .subnav-ar::before {
     content: '';
     position: absolute;
@@ -6401,6 +6398,7 @@ h1, h2, h3, h4, h5, h6 {
 .sectionTitle.-light .sectionTitle__text {
   color: white;
 }
+
 
 .mainSlider.-type-1 {
   position: relative;
@@ -15831,3 +15829,16 @@ table.table td {
     transform: rotate(360deg);
   }
 }
+
+.mainSlider {
+  width: 100%;
+  height: 800px;
+}
+
+ /* .header .header-menu .menu__nav > li > a {
+    color: white!important;
+  } */
+
+  .header.-type-1 {
+    background-color: var(--color-white);
+  }

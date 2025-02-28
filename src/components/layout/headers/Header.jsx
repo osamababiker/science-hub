@@ -30,7 +30,7 @@ export default function Header() {
                     <Image
                       width={140}
                       height={50} 
-                      src="/assets/img/general/logo-white.png"
+                      src="/assets/img/general/logo.png"
                       alt="logo"
                     />
                   </Link>
@@ -38,11 +38,11 @@ export default function Header() {
               </div>
             </div>
 
-            <Menu allClasses={"menu__nav text-white -is-active"} />
+            <Menu allClasses={"menu__nav text-dark-1 -is-active"} />
             <MobileMenu
               setActiveMobileMenu={setActiveMobileMenu}
               activeMobileMenu={activeMobileMenu}
-            />
+            /> 
 
             <div className="col-auto">
               <div className="header-right d-flex items-center">
@@ -50,7 +50,7 @@ export default function Header() {
                   {/* <SearchToggle color={"text-white"} /> */}
                   <CartToggle
                     parentClassess={`relative sm:pl-15 ${ locale == 'en' ? 'pl-30' : 'pr-30' }`}
-                    allClasses={"d-flex items-center text-white"}
+                    allClasses={"d-flex items-center text-dark-1"}
                   />
 
                   <div className={`d-none xl:d-block sm:pl-15 ${ locale == 'en' ? 'pl-30' : 'pr-30' }`}>
@@ -67,7 +67,7 @@ export default function Header() {
                 <div className={`header-right__buttons d-flex items-center  xl:ml-20 lg:d-none ${ locale == 'en' ? 'ml-30' : 'mr-30' }`}>
                 {!session ?
                 <>
-                  <Link href="/login" className="button -underline text-white">
+                  <Link href="/login" className="button -underline text-dark-1">
                     {t('signin')}
                   </Link>
                   <Link

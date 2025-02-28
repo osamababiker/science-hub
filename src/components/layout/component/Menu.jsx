@@ -15,7 +15,7 @@ export default function Menu({ allClasses, headerPosition }) {
 
   const [menuItem, setMenuItem] = useState("");
   const [submenu, setSubmenu] = useState("");
-  const pathname = usePathname();
+  const pathname = usePathname(); 
 
   const t = useTranslations('MainMenu');
   const locale = useLocale();

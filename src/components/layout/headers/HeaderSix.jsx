@@ -34,7 +34,7 @@ export default function HeaderSix() {
   return (
     <header
       className={`header -type-4 js-header ${
-        scrollPosition > 40 ? "bg-dark-1" : ""
+        scrollPosition > 40 ? "bg-white" : ""
       } `}
     >
       <div className="header__container py-5 border-bottom-dark">
@@ -46,7 +46,7 @@ export default function HeaderSix() {
                   <Image
                     width={140}
                     height={50}
-                    src="/assets/img/general/logo-white.png"
+                    src="/assets/img/general/logo.png"
                     alt="logo"
                   />
                 </Link>
@@ -66,7 +66,7 @@ export default function HeaderSix() {
                 {/* <SearchToggle color={"text-dark-1"} /> */}
                 <CartToggle
                   parentClassess={`relative sm:pl-15 ${ locale == 'en' ? 'pl-30' : 'pr-30' }`}
-                  allClasses={"d-flex items-center text-white"}
+                  allClasses={"d-flex items-center text-dark-1"}
                 />
 
                 <div className={`d-none xl:d-block sm:pl-15 ${ locale == 'en'  ? 'pl-30'  : 'pr-30' }`}>
@@ -83,7 +83,7 @@ export default function HeaderSix() {
               <div className={`header-right__buttons d-flex items-center xl:ml-20 lg:d-none ${ locale == 'en' ? 'ml-30' : 'mr-30 ' }`}>
                 {!session ?
                   <>
-                  <Link href="/login" className="button -underline text-white">
+                  <Link href="/login" className="button -underline text-dark-1">
                     {t('signin')}
                   </Link>
                   <Link
@@ -94,7 +94,7 @@ export default function HeaderSix() {
                   </Link>
                   </>
                 : 
-                <Link href="/dashboard" className="button -underline text-white">
+                <Link href="/dashboard" className="button -underline text-dark-1">
                   {t('dashboard')}
                 </Link>
                 }
