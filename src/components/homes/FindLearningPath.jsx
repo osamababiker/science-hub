@@ -47,7 +47,7 @@ export default function FindLearningPath() {
             <div className="col-auto">
               <Link
                 href="/courses-list"
-                className="button -md -outline-white text-white mt-45 md:mt-20"
+                className="button -md -purple-1 -rounded text-white text-white mt-45 md:mt-20"
               >
                 {t("btn")}
               </Link>

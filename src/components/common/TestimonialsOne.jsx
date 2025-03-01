@@ -4,6 +4,7 @@ import React, { useState, useEffect } from "react";
 import { Navigation, Pagination } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { useTranslations, useLocale } from "next-intl";
+import { usersUploadUrl } from "@/lib/constants";
 // SwiperCore.use([Pagination]);
 
 export default function TestimonialsOne({testimonials}) {
@@ -21,7 +22,7 @@ export default function TestimonialsOne({testimonials}) {
         <div className="row justify-center text-center">
           <div className="col-auto">
             <div className="sectionTitle ">
-              <h2 className="sectionTitle__title text-green-1">
+              <h2 className="sectionTitle__title text-white">
                 {t("testimonial_title")}
               </h2>
 
@@ -79,7 +80,7 @@ export default function TestimonialsOne({testimonials}) {
                           <Image
                             width={60}
                             height={60}
-                            src={elm.user.image}
+                            src={usersUploadUrl + elm.user.image}
                             alt={elm.user.en_name}
                           />
                           : 
