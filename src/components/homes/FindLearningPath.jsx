@@ -13,7 +13,7 @@ export default function FindLearningPath() {
         <div
           data-parallax-target
           className="bg-image js-lazy"
-          style={{ backgroundImage: "url(/assets/img/general/5.jpeg)" }}
+          style={{ backgroundImage: "url(/assets/img/general/call_action.png)" }}
         ></div> 
         {/* <video
             autoPlay

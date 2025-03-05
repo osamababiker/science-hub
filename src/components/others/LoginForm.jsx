@@ -99,12 +99,12 @@ export default function LoginForm() {
                     type="submit"
                     name="submit"
                     id="submit"
-                    className="button -md -green-1 text-dark-1 fw-500 w-1/1"
+                    className="button -md -purple-1  text-white fw-500 w-1/1"
                   >
                      {t("login_btn")}
                   </button>
                   : 
-                    <button className="button -md -green-1 text-dark-1 fw-500 w-1/1" >
+                    <button className="button -md -purple-1 text-white fw-500 w-1/1" >
                       {t("auth_loading")}
                     </button> 
                   }

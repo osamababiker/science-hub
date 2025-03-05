@@ -31,7 +31,7 @@ export default function BacomeStudent() {
               width={730}
               height={530}
               className="w-1/1"
-              src="/assets/img/general/students.jpg"
+              src="/assets/img/general/student.png"
               alt="image"
             />
           </div>

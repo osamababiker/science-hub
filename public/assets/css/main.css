@@ -9000,7 +9000,7 @@ h1, h2, h3, h4, h5, h6 {
   align-items: center;
   height: 100%;
   width: 40vw;
-  background-image: url("/assets/img/general/login_1.jpg");
+  background-image: url("/assets/img/general/auth.png");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
@@ -9344,7 +9344,7 @@ h1, h2, h3, h4, h5, h6 {
 
 .bg-beige-1 {
   /* background-color: var(--color-beige-1); */
-  background-image: url("/assets/img/general/students.jpg");
+  background-image: url("/assets/img/general/contact-us.png");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: top center;
@@ -15841,4 +15841,13 @@ table.table td {
 
   .header.-type-1 {
     background-color: var(--color-white);
+  }
+
+ 
+  .nav-dark-color a, .nav-dark-color button, .nav-dark-color #icon-mobile-menu{
+    color: var(--color-dark-1)!important;
+  }
+
+  #nav_call_action_btn{
+    color: #FFF!important;
   }

@@ -15,7 +15,7 @@ export default function Menu({ allClasses, headerPosition }) {
 
   const [menuItem, setMenuItem] = useState("");
   const [submenu, setSubmenu] = useState("");
-  const pathname = usePathname();
+  const pathname = usePathname(); 
 
   const t = useTranslations('MainMenu');
   const locale = useLocale();
@@ -64,21 +64,21 @@ export default function Menu({ allClasses, headerPosition }) {
         <div className="mobile-bg js-mobile-bg"></div>
 
         <div className="d-none xl:d-flex items-center px-20 py-20 border-bottom-light">
-          <Link href="/login" className="text-dark-1">
+          <Link href="/login" className="text-white">
             {t('signin')}
           </Link>
-          <Link href="/signup" className="text-dark-1 ml-30">
+          <Link href="/signup" className="text-white ml-30">
             {t('signup')}
           </Link>
         </div>
 
-        <div className="menu js-navList">
+        <div className="menu js-navList"> 
           <ul className={`${allClasses ? allClasses : ""}`}>
             <li>
               <Link
                 data-barba
                 href="/"
-                className={menuItem == "Home" ? "activeMenu" : ""}
+                className={`text-white ${menuItem == "Home" ? "activeMenu" : ""}`}
               >
                 {t('home')} <i className="text-13 ml-10"></i>
               </Link>
@@ -88,8 +88,7 @@ export default function Menu({ allClasses, headerPosition }) {
               <Link
                 data-barba
                 href="/courses-list"
-                className={menuItem == "Courses" ? "activeMenu" : ""}
-              >
+                className={`text-white ${menuItem == "Courses" ? "activeMenu" : ""}`}>
                {t('courses')} 
               </Link>
             </li>
@@ -98,8 +97,7 @@ export default function Menu({ allClasses, headerPosition }) {
               <Link
                 data-barba
                 href="/blog-list"
-                className={menuItem == "Blogs" ? "activeMenu" : ""}
-              >
+                className={`text-white ${menuItem == "Blogs" ? "activeMenu" : ""}`}>
                 {t('blog')} <i className="text-13 ml-10"></i>
               </Link>
             </li>
@@ -108,8 +106,7 @@ export default function Menu({ allClasses, headerPosition }) {
               <Link
                 data-barba
                 href="#"
-                className={menuItem == "Pages" ? "activeMenu" : ""}
-              >
+                className={`text-white ${menuItem == "Pages" ? "activeMenu" : ""}`}>
                 {locale == 'en' ? (
                   <>
                     {t('pages')}
@@ -167,9 +164,7 @@ export default function Menu({ allClasses, headerPosition }) {
             <li
               
             >
-              <Link data-barba href="/contact"  className={
-                pathname == "/contact" ? "activeMenu" : "inActiveMenuTwo"
-              }>
+              <Link data-barba href="/contact"  className={`text-white ${pathname == "/contact" ? "activeMenu" : "inActiveMenuTwo"}`}>
                 {t('contact')}
               </Link>
             </li>
@@ -178,7 +173,7 @@ export default function Menu({ allClasses, headerPosition }) {
               <Link
                 data-barba
                 href="#"
-                className={menuItem == "Language" ? "activeMenu" : ""}
+                className={`text-white ${menuItem == "Language" ? "activeMenu" : ""}`}
               >
                 {locale == 'en' ? (
                   <>

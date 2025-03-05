@@ -36,7 +36,7 @@ export default function About() {
                   <Image
                     width={300}
                     height={400}
-                    src="/assets/img/general/1.jpeg"
+                    src="/assets/img/general/300 -2.png"
                     alt="image"
                   />
                 </div>
@@ -44,7 +44,7 @@ export default function About() {
                   <Image
                     width={200}
                     height={200}
-                    src="/assets/img/general/2.jpeg"
+                    src="/assets/img/general/300.png"
                     alt="image"
                   />
                 </div>
@@ -52,7 +52,7 @@ export default function About() {
                   <Image
                     width={255}
                     height={250}
-                    src="/assets/img/general/3.jpeg"
+                    src="/assets/img/general/255.png"
                     alt="image"
                   />
                 </div>

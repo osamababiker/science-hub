@@ -25,7 +25,7 @@ export default function ContactTwo() {
               <div className="col-auto">
                 <div>
                   <h1 className="page-header__title text-white">{t("title")}</h1>
-                </div>
+                 </div>
 
                 <div>
                   <p className="page-header__text text-white">

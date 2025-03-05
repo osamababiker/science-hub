@@ -19,7 +19,7 @@ export default function BecomeInstactor() {
               width={730}
               height={530}
               className="w-1/1"
-              src="/assets/img/general/teacher.jpg"
+              src="/assets/img/general/teacher.png"
               alt="image"
             />
           </div>

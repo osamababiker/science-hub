@@ -42,7 +42,7 @@ export default function Header() {
             <MobileMenu
               setActiveMobileMenu={setActiveMobileMenu}
               activeMobileMenu={activeMobileMenu}
-            /> 
+            />  
 
             <div className="col-auto">
               <div className="header-right d-flex items-center">
