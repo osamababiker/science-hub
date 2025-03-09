@@ -17,7 +17,7 @@ export default function HeaderSix() {
   const { data: session, status } = useSession();
 
   const t = useTranslations('MainMenu');
-  const locale = useLocale();
+  const locale = useLocale(); 
  
   useEffect(() => { 
     const handleScroll = () => {

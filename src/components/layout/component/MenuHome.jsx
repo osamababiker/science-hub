@@ -50,7 +50,7 @@ export default function Menu({ allClasses, headerPosition }) {
         {pathname, params},
         {locale: nextLocale}
       );
-    })
+    }) 
   }
 
 

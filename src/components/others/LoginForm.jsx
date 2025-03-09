@@ -31,7 +31,7 @@ export default function LoginForm() {
       if(res.status == 401) {
         setLoading(false);
         setError(t("auth_error"));
-      } else {
+      } else { 
         setLoading(false);
         router.push('/dashboard');
       }

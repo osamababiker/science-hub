@@ -4,7 +4,7 @@
 import {NextIntlClientProvider} from 'next-intl';
 
 import {getMessages} from 'next-intl/server';
-import {routing} from '../../i18n/routing';
+import {routing} from '../../i18n/routing'; 
 
 import "@/public/assets/sass/styles.scss";
 import { config } from "@fortawesome/fontawesome-svg-core";
@@ -21,7 +21,7 @@ export function generateStaticParams() {
 
 export default async function RootLayout({ children, params }) {
 
-
+ 
   // translation messages
   const messages = await getMessages();
   const { locale } = await params; 
