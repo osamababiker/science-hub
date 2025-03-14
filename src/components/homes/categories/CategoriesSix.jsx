@@ -90,7 +90,7 @@ export default function CategoriesSix({categories}) {
                           {elm.image ?
                           <Image
                             width={100}
-                            height={100}
+                            height={100} 
                             src={categoriesUploadUrl + elm.image}
                             alt="icon"
                           />
