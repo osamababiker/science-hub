@@ -15847,7 +15847,7 @@ table.table td {
   .nav-dark-color a, .nav-dark-color button, .nav-dark-color #icon-mobile-menu{
     color: var(--color-dark-1)!important;
   }
-  .nav-dark-color #cart-btn{
+  .nav-dark-color .cart-btn{
     color: #FFF!important;
   }
   #nav_call_action_btn{
