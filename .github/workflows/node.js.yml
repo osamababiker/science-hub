@@ -4,10 +4,6 @@ on:
   push:
     branches: [ "main" ]
 
-env:
-  ACTIONS_RUNNER_DEBUG: true
-  ACTIONS_STEP_DEBUG: true
-
 jobs:
   build:
 
@@ -21,8 +17,6 @@ jobs:
     env: 
       NEXTAUTH_URL: ${{ secrets.NEXTAUTH_URL }}
       NEXTAUTH_SECRET: ${{ secrets.NEXTAUTH_SECRET }} . 
-      GOOGLE_ID: ${{ secrets.GOOGLE_ID }}
-      GOOGLE_SECRET: ${{ secrets.GOOGLE_SECRET }}
 
     steps:
     - uses: actions/checkout@v4
