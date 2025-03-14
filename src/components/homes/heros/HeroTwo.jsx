@@ -33,7 +33,7 @@ export default function HeroTwo() {
       ? "assets/video/science_hub english_mobile.mp4"
       : locale === "en" 
         ? "assets/video/science_hub_website_en.mp4" 
-        : "assets/video/science_hub_website.mp4"
+        : "assets/video/science_hub_website_en.mp4"
   ) : "";
 
   return (
@@ -50,7 +50,7 @@ export default function HeroTwo() {
                   playsInline
                   className="bg-video"
                 >
-                  <source src={videoSrc} type="video/mp4" />
+                  <source src={videoSrc} type="video/mp4" /> 
                 </video>
               )}
             </div>
