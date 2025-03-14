@@ -92,13 +92,13 @@ const CourseCart = () => {
               <Link
                 href={"/course-cart"}
                 style={{ textDecoration: "none" }}
-                className="col-sm-6"
+                className="col-sm-12"
               >
-                <button className="button py-20 -dark-1 text-white -dark-button-white col-12">
+                <button className="button py-20 -dark-1 text-white -dark-button-white cart-btn col-12">
                 {t('view_cart')}
-                </button>
-              </Link>
-              <Link
+                </button> 
+              </Link> 
+              {/* <Link
                 href={"/course-checkout"} 
                 style={{ textDecoration: "none" }}
                 className="col-sm-6"
@@ -106,7 +106,7 @@ const CourseCart = () => {
                 <button className="button py-20 -purple-1 text-white col-12">
                 {t('checkout')}
                 </button>
-              </Link>
+              </Link> */}
             </>
           )}
           {!cartCourses.length && (
@@ -116,7 +116,7 @@ const CourseCart = () => {
                 style={{ textDecoration: "none" }}
                 className="col-12"
               >
-                <button className="button py-20 -purple-1 text-white col-12">
+                <button className="button py-20 -purple-1 text-white cart-btn col-12">
                    {t('view_cart')}
                 </button>
               </Link>

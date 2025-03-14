@@ -199,7 +199,7 @@ export default function CourseDetailsSix({ courseId }) {
                   <div className="row x-gap-30 y-gap-20 pt-30">
                     <div className="col-sm-6">
                       <button
-                        className="button -md -purple-1 text-white w-1/1"
+                        className="button -md -white-1 text-white w-1/1"
                         onClick={() => addToCart(course)}
                       > 
                         {isAddedToCartCourses(course.id)
@@ -208,7 +208,7 @@ export default function CourseDetailsSix({ courseId }) {
                       </button>
                     </div>
                     <div className="col-sm-6">
-                      <Link href="/shop-list" className="button -md -outline-green-1 text-green-1 w-1/1">
+                      <Link href="/shop-list" className="button -md -white-1 text-white w-1/1">
                         {t("buy_courses")}
                       </Link>
                     </div>

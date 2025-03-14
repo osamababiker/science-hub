@@ -89,8 +89,8 @@ export default function CategoriesSix({categories}) {
                         <div className="featureCard__icon size-90 mx-auto d-flex items-center justify-center rounded-full bg-light-3">
                           {elm.image ?
                           <Image
-                            width={50}
-                            height={50}
+                            width={100}
+                            height={100}
                             src={categoriesUploadUrl + elm.image}
                             alt="icon"
                           />

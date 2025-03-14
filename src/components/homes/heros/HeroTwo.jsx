@@ -30,7 +30,7 @@ export default function HeroTwo() {
   // Only determine video source on client
   const videoSrc = isClient ? (
     isMobile 
-      ? "assets/video/science_hub_mobile.mp4"
+      ? "assets/video/science_hub english_mobile.mp4"
       : locale === "en" 
         ? "assets/video/science_hub_website_en.mp4" 
         : "assets/video/science_hub_website.mp4"
