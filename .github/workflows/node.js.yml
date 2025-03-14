@@ -21,8 +21,6 @@ jobs:
       GOOGLE_SECRET: ${{ secrets.GOOGLE_SECRET }}
 
     steps:
-    - name: Clear Cache
-      run: rm -rf node_modules package-lock.json
     - uses: actions/checkout@v4
     - name: Use Node.js ${{ matrix.node-version }}
       uses: actions/setup-node@v4
