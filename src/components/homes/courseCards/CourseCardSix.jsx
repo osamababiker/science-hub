@@ -100,15 +100,19 @@ export default function CourseCardSix({ data }) {
 
           <div className="d-flex justify-between items-center pt-10 border-top-light">
             <div className="d-flex items-center">
+              <Link href={`/instructors/${data.teacher.id}`}>
               <Image
-                width={30}
-                height={30}
+                width={60}
+                height={60}
                 src={teachersUploadUrl + data.teacher.image}
                 alt="image"
               />
+              </Link>
+              <Link href={`/instructors/${data.teacher.id}`}>
               <div className={`text-light-1 ${ locale == 'en' ? 'ml-10' : 'mr-10' }`}>
                 { locale == 'en' ? data.teacher.en_name : data.teacher.ar_name }
               </div>
+              </Link>
             </div>
 
             <div className="d-flex items-center">
