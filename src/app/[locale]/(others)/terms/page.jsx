@@ -7,7 +7,7 @@ import PageLinks from '@/src/components/common/PageLinks'
 import Preloader from '@/src/components/common/Preloader'
 
 import FooterThree from "@/src/components/layout/footers/FooterThree";
-import HeaderSix from "@/src/components/layout/headers/HeaderSix";
+import Header from '@/src/components/layout/headers/Header';
 import Terms from '@/src/components/terms/Terms' 
 import React from 'react'
 
@@ -23,7 +23,7 @@ export default function page() {
     <div className="main-content  ">
       <Preloader/>
 
-        <HeaderSix/>
+        <Header/>
         <div className="content-wrapper js-content-wrapper overflow-hidden">
             <PageLinks/>
             <Terms/>

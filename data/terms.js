@@ -1,56 +1,41 @@
 export const enTerms = [
-    {title: "Using our services", bio: `You must follow any policies made available to you within the
-    Services. Don't misuse our Services. For example, don't
-    interfere with our Services or try to access them using a method
-    other than the interface and the instructions that we provide.
-    You may use our Services only as permitted by law, including
-    applicable export and re-export control laws and regulations. We
-    may suspend or stop providing our Services to you if you do not
-    comply with our terms or policies or if we are investigating
-    suspected misconduct. Using our Services does not give you
-    ownership of any intellectual property rights in our Services or
-    the content you access. You may not use content from our
-    Services unless you obtain permission from its owner or are
-    otherwise permitted by law. These terms do not grant you the
-    right to use any branding or logos used in our Services. Don't
-    remove, obscure, or alter any legal notices displayed in or
-    along with our Services.`},
-    {title: "Your content in our services", bio: ` When you upload, submit, store, send or receive content to or
-    through our Services, you give Front (and those we work with)
-    a worldwide license to use, host, store, reproduce, modify,
-    create derivative works (such as those resulting from
-    translations, adaptations or other changes we make so that
-    your content works better with our Services), communicate,
-    publish, publicly perform, publicly display and distribute
-    such content. The rights you grant in this license are for the
-    limited purpose of operating, promoting, and improving our
-    Services, and to develop new ones. This license continues even
-    if you stop using our Services (for example, for a business
-    listing you have added to Front Maps). Some Services may offer
-    you ways to access and remove content that has been provided
-    to that Service. Also, in some of our Services, there are
-    terms or settings that narrow the scope of our use of the
-    content submitted in those Services.`},
-    {title: "Pay Attention", bio: ` Our Services are very diverse, so sometimes additional terms
-    or product requirements (including age requirements) may
-    apply. Additional terms will be available with the relevant
-    Services, and those additional terms become part of your
-    agreement with us if you use.`}
-]
+    {title: "Privacy Policy", bio: `At Sciance Hub, we respect your privacy and are committed to protecting your personal data. 
+    This Privacy Policy outlines how we collect, use, and safeguard your information when you visit our website. 
+	•	All credit/debit card details and personally identifiable information will NOT be stored, sold, shared, rented, or leased to any third parties. 
+	•	Any personal information collected is used solely to provide our services and improve user experience.
+	•	Our website may use cookies to enhance browsing experience; you may choose to disable cookies via your browser settings.
+	•	We implement secure protocols and technologies to ensure data protection.`},
+    {title: "Terms & Conditions", bio: `By using our website, you agree to the following terms and conditions:
+	•	Sciance Hub will NOT deal with or provide any services or products to any OFAC (Office of Foreign Assets Control) sanctioned countries in accordance with the law of UAE.
+	•	All products and services are subject to availability.
+	•	We reserve the right to make changes to our platform, services, or content without prior notice.
+	•	Users are responsible for maintaining the confidentiality of their account credentials.`},
+    {title: "Governing Law", bio: ` Any purchase, dispute, or claim arising out of or in connection with this website shall be governed and construed in accordance with the laws of the United Arab Emirates.`},
+    {title: "Refund Policy", bio: ` Refunds will be processed only through the original mode of payment used during the transaction. Users must request refunds within 7 days of purchase and the course must not have been completed or significantly accessed.`},
+    {title: "Method of Payment", bio: ` We accept payments online using Visa and MasterCard credit/debit cards in AED (United Arab Emirates Dirhams). Logos of accepted cards should be displayed on the Home Page and on the Payment Checkout Page.`},
+    {title: "Delivery & Shipping Policy", bio: `As Sciance Hub provides digital educational content, there is no physical delivery. Upon successful payment, access to the purchased course or service will be granted via email or user dashboard instantly or within 24 hours.`},
+    {title: "Return Policy", bio: `Due to the nature of digital content, returns are not applicable once the course has been accessed. If there are technical issues preventing access, our support team will work to resolve the issue or offer a refund if necessary.`},
+    {title: "Cancellation & Replacement Policy", bio: `Users may cancel their subscription or course access within 7 days if the content has not been consumed or downloaded. Replacement of a course with another of equal value is subject to availability and management approval.`}
+];
 
 
 export const arTerms = [
-    {title: "استخدام خدماتنا", bio: `يجب عليك اتباع أي سياسات متاحة لك ضمن الخدمات. لا تسيء استخدام خدماتنا. على سبيل المثال، لا تتدخل في خدماتنا أو تحاول الوصول إليها باستخدام طريقة أخرى غير الواجهة والإرشادات التي نقدمها.
-    لا يجوز لك استخدام خدماتنا إلا وفقًا لما يسمح به القانون، بما في ذلك قوانين ولوائح الرقابة على التصدير وإعادة التصدير المعمول بها. يجوز لنا تعليق أو إيقاف تقديم خدماتنا إليك إذا لم تمتثل لشروطنا أو سياساتنا أو إذا كنا نحقق في سوء سلوك مشتبه به. لا يمنحك استخدام خدماتنا ملكية أي حقوق ملكية فكرية في خدماتنا أو المحتوى الذي تصل إليه. لا يجوز لك استخدام المحتوى من خدماتنا ما لم تحصل على إذن من مالكه أو يُسمح لك بذلك بموجب القانون. لا تمنحك هذه الشروط الحق في استخدام أي علامة تجارية أو شعارات مستخدمة في خدماتنا. لا تقم بإزالة أو إخفاء أو تغيير أي إشعارات قانونية معروضة في أو مع خدماتنا.`},
-    {title: "محتواك في خدماتنا", bio: ` عندما تقوم بتحميل أو إرسال أو تخزين أو إرسال أو استلام محتوى إلى أو عبر خدماتنا، فإنك تمنح Front (والجهات التي نعمل معها)
-    ترخيصًا عالميًا لاستخدام واستضافة وتخزين وإعادة إنتاج وتعديل و
-    إنشاء أعمال مشتقة (مثل تلك الناتجة عن
-    الترجمات أو التعديلات أو التغييرات الأخرى التي نجريها حتى يعمل
-    المحتوى الخاص بك بشكل أفضل مع خدماتنا) والتواصل و
-    النشر والأداء العلني والعرض العلني وتوزيع
-    مثل هذا المحتوى. الحقوق التي تمنحها في هذا الترخيص هي لغرض محدود يتمثل في تشغيل خدماتنا والترويج لها وتحسينها وتطوير خدمات جديدة. يستمر هذا الترخيص حتى
-    إذا توقفت عن استخدام خدماتنا (على سبيل المثال، لقائمة أعمال أضفتها إلى Front Maps). قد تقدم لك بعض الخدمات
-    طرقًا للوصول إلى المحتوى الذي تم توفيره لهذه الخدمة وإزالته. أيضًا، في بعض خدماتنا، توجد
-    شروط أو إعدادات تضيق نطاق استخدامنا للمحتوى المقدم في تلك الخدمات.`},
-    {title: "إنتبه", bio: ` خدماتنا متنوعة للغاية، لذا قد تنطبق أحيانًا شروط إضافية أو متطلبات للمنتج (بما في ذلك متطلبات العمر). ستكون الشروط الإضافية متاحة مع الخدمات ذات الصلة، وتصبح هذه الشروط الإضافية جزءًا من اتفاقيتك معنا إذا استخدمت.`}
-]
+    {title: "سياسة الخصوصية", bio: `في ساينس هَب، نحن نحترم خصوصيتك ونلتزم بحماية بياناتك الشخصية.
+     توضح سياسة الخصوصية هذه كيفية جمع معلوماتك واستخدامها وحمايتها عند زيارة موقعنا الإلكتروني.
+	•	لن يتم تخزين أو بيع أو مشاركة أو تأجير أو تأجير أي تفاصيل بطاقات الائتمان/الخصم أو أي معلومات تعريف شخصية لأطراف ثالثة.
+	•	تُستخدم المعلومات الشخصية التي يتم جمعها فقط لتقديم خدماتنا وتحسين تجربة المستخدم.
+	•	قد يستخدم الموقع ملفات تعريف الارتباط (Cookies) لتحسين تجربة التصفح، ويمكنك اختيار تعطيلها من إعدادات المتصفح.
+	•	نستخدم بروتوكولات وتقنيات أمان متقدمة لضمان حماية البيانات.`},
+    {title: "الشروط والأحكام", bio: `باستخدامك لموقعنا، فإنك توافق على الشروط والأحكام التالية:
+	•	لن تتعامل ساينس هَب أو تقدم أي خدمات أو منتجات إلى أي من الدول الخاضعة لعقوبات مكتب مراقبة الأصول الأجنبية (OFAC) وفقًا لقوانين دولة الإمارات العربية المتحدة.
+	•	جميع المنتجات والخدمات المقدمة تخضع للتوافر.
+	•	تحتفظ ساينس هَب بحقها في تعديل محتوى الموقع أو خدماته أو سياساته في أي وقت دون إشعار مسبق.
+	•	يتحمل المستخدم مسؤولية الحفاظ على سرية بيانات حسابه.`},
+    {title: "القانون الحاكم", bio: `أي عملية شراء أو نزاع أو مطالبة تنشأ عن أو تتعلق بهذا الموقع الإلكتروني تخضع وتُفسر وفقًا لقوانين دولة الإمارات العربية المتحدة.`},
+    {title: "سياسة الاسترداد", bio: ` يتم استرداد المدفوعات فقط من خلال نفس وسيلة الدفع الأصلية التي تم استخدامها أثناء عملية الشراء. يجب تقديم طلبات الاسترداد خلال 7 أيام من تاريخ الشراء، بشرط عدم استخدام المحتوى أو الوصول إليه بشكل كبير.`},
+    {title: "طريقة الدفع", bio: `نقبل الدفع عبر الإنترنت باستخدام بطاقات الائتمان/الخصم من نوع Visa وMasterCard وبعملة الدرهم الإماراتي (AED).
+يُرجى عرض شعارات البطاقات المقبولة في الصفحة الرئيسية وصفحة الدفع.`},
+    {title: "سياسة التوصيل والشحن", bio: `نظرًا لأن ساينس هَب تقدم محتوى تعليميًا رقمياً، فلا يوجد شحن فعلي. بعد إتمام عملية الدفع بنجاح، يتم تفعيل الوصول إلى الدورات أو الخدمات من خلال البريد الإلكتروني أو لوحة تحكم المستخدم فورًا أو خلال 24 ساعة كحد أقصى.`},
+    {title: "سياسة الإرجاع", bio: `نظرًا لطبيعة المحتوى الرقمي، لا يمكن إرجاع المحتوى بعد الوصول إليه. في حال وجود مشكلات تقنية تمنع الوصول إلى المحتوى، سيقوم فريق الدعم بمحاولة حل المشكلة أو تقديم استرداد إذا لزم الأمر.`},
+    {title: "سياسة الإلغاء والاستبدال", bio: `يمكن للمستخدمين إلغاء اشتراكهم أو الوصول إلى الدورة خلال 7 أيام من الشراء، بشرط عدم استخدام أو تحميل المحتوى. يمكن استبدال الدورة بدورة أخرى بنفس القيمة بعد مراجعة الإدارة والموافقة عليها.`}
+];
